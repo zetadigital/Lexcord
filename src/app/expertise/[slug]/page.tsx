@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { practiceAreas, getPractice, practiceSummaries } from "@/data/practices";
+import { getPracticeZh } from "@/data/practices/zh";
 import { PracticeSections } from "@/components/practice-sections";
 
 interface PageProps {
@@ -22,6 +23,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
 export default function ExpertisePage({ params }: PageProps) {
   const area = getPractice(params.slug);
-  if (!area) notFound();
-  return <PracticeSections area={area} />;
+  const areaZh = getPracticeZh(params.slug);
+  if (!area || !areaZh) notFound();
+  return <PracticeSections area={area} areaZh={areaZh} />;
 }

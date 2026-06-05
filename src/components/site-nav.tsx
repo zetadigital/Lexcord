@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { practiceAreas, practiceSummaries } from "@/data/practices";
+import { practiceAreas } from "@/data/practices";
 import { useLang } from "@/lib/i18n";
 import { LanguageToggle } from "./language-toggle";
 import styles from "./site-nav.module.css";
@@ -91,7 +91,7 @@ export function SiteNav() {
                     role="menuitem"
                   >
                     <span className={styles.panelItemTitle}>{areaLabel(area.slug, area.navLabel)}</span>
-                    <span className={styles.panelItemDesc}>{practiceSummaries[area.slug]}</span>
+                    <span className={styles.panelItemDesc}>{t.summaries[area.slug]}</span>
                   </Link>
                 ))}
               </div>
@@ -140,7 +140,7 @@ export function SiteNav() {
               onClick={() => setOpen(false)}
             >
               {areaLabel(area.slug, area.navLabel)}
-              <span>{practiceSummaries[area.slug]}</span>
+              <span>{t.summaries[area.slug]}</span>
             </Link>
           ))}
           <p className={styles.sheetLabel}>{t.nav.firm}</p>

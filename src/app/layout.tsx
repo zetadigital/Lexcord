@@ -4,7 +4,6 @@ import { LanguageProvider } from "@/lib/i18n";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingCta } from "@/components/floating-cta";
-import { ZhNotice } from "@/components/zh-notice";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -43,7 +42,6 @@ export default function RootLayout({
             Skip to content
           </a>
           <SiteNav />
-          <ZhNotice />
           <main id="main">{children}</main>
           <SiteFooter />
           <FloatingCta />

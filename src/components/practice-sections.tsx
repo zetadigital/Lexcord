@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import type { PracticeArea } from "@/data/types";
 import { renderAccent } from "@/lib/accent";
+import { useLang } from "@/lib/i18n";
 import { Reveal } from "./reveal";
 import { FaqSection } from "./faq";
 import styles from "./sections.module.css";
@@ -21,7 +24,14 @@ function CheckIcon() {
   );
 }
 
-export function PracticeSections({ area }: { area: PracticeArea }) {
+interface PracticeSectionsProps {
+  area: PracticeArea;
+  areaZh: PracticeArea;
+}
+
+export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps) {
+  const { lang, t } = useLang();
+  const area = lang === "zh" ? areaZh : areaEn;
   const hasProcess = area.process && area.process.length > 0;
   const hasWhy = area.why && area.why.length > 0;
 
@@ -36,10 +46,10 @@ export function PracticeSections({ area }: { area: PracticeArea }) {
             <p className={styles.heroLede}>{area.heroLede}</p>
             <div className={styles.heroActions}>
               <Link href="/contact" className="btn btn--primary">
-                Book a consultation
+                {t.nav.book}
               </Link>
               <a href="#services" className="btn btn--ghost-light">
-                Our services
+                {t.common.ourServices}
               </a>
             </div>
           </div>
@@ -154,7 +164,7 @@ export function PracticeSections({ area }: { area: PracticeArea }) {
         <section className={`section ${styles.why}`}>
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">Why Choose Lexcord</span>
+              <span className="eyebrow">{t.common.whyChoose}</span>
               <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>{area.whyHeading}</h2>
               {area.whyIntro && <p>{area.whyIntro}</p>}
             </div>

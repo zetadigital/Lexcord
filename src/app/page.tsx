@@ -1,38 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { practiceAreas, practiceSummaries } from "@/data/practices";
+import { practiceAreas } from "@/data/practices";
+import { useLang } from "@/lib/i18n";
 import { Reveal } from "@/components/reveal";
 import { PlaceholderText, PlaceholderImage } from "@/components/placeholder";
 import styles from "./home.module.css";
-
-// Grounded in the source document: 7 practice areas, all states & territories,
-// fixed-fee standard matters, PEXA-registered settlements.
-const STATS = [
-  { num: "7", label: "Practice areas under one roof" },
-  { num: "All", label: "Australian states & territories" },
-  { num: "Fixed-fee", label: "Standard conveyancing matters" },
-  { num: "PEXA", label: "Registered electronic settlements" },
-];
-
-// Why-Lexcord points drawn from the source document's "why choose" sections
-// (property: solicitors not just conveyancers; commercial: commercially-minded,
-// transparent costs; criminal: honest assessment).
-const WHY = [
-  {
-    icon: "scale",
-    title: "Solicitors, not just process",
-    text: "Admitted solicitors who can advise on the legal dimensions of a matter — disputes, injunctions, and complex issues — not only the paperwork.",
-  },
-  {
-    icon: "compass",
-    title: "Commercially-minded counsel",
-    text: "Every piece of advice is calibrated to your real-world outcome. We will tell you when settling, or walking away, is the right call.",
-  },
-  {
-    icon: "shield",
-    title: "Honest, upfront, transparent",
-    text: "A frank assessment of your position and clear fee estimates before we spend your money. No open-ended billing surprises.",
-  },
-];
 
 function ArrowRight() {
   return (
@@ -42,8 +15,8 @@ function ArrowRight() {
   );
 }
 
-function WhyIcon({ name }: { name: string }) {
-  if (name === "scale") {
+function WhyIcon({ index }: { index: number }) {
+  if (index === 0) {
     return (
       <svg viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
         <path d="M16 5v22M9 27h14M6 11h20M16 6l-7 5M16 6l7 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,7 +24,7 @@ function WhyIcon({ name }: { name: string }) {
       </svg>
     );
   }
-  if (name === "compass") {
+  if (index === 1) {
     return (
       <svg viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
         <circle cx="16" cy="16" r="11" stroke="currentColor" strokeWidth="1.7" />
@@ -68,6 +41,15 @@ function WhyIcon({ name }: { name: string }) {
 }
 
 export default function HomePage() {
+  const { t, areaLabel, lang } = useLang();
+  const h = t.pages.home;
+  const stats = [
+    { num: "7", label: h.statsAreas },
+    { num: lang === "zh" ? "全澳" : "All", label: h.statsStates },
+    { num: lang === "zh" ? "固定费" : "Fixed-fee", label: h.statsFixed },
+    { num: "PEXA", label: h.statsPexa },
+  ];
+
   return (
     <>
       {/* Hero */}
@@ -77,36 +59,34 @@ export default function HomePage() {
             <div className={styles.heroGrid}>
               <div className={styles.heroLeft}>
                 <span className={`eyebrow eyebrow--light ${styles.heroEyebrow}`}>
-                  Lexcord Lawyers — Australia-wide
+                  {h.heroEyebrow}
                 </span>
                 <h1 className={`${styles.heroTitle} ${styles.heroFade}`}>
-                  <PlaceholderText light tag="Headline">
-                    Firm headline pending — e.g. clear, considered counsel for life&apos;s
-                    significant decisions.
+                  <PlaceholderText light tag={t.pages.placeholderTag}>
+                    {h.heroTitle}
                   </PlaceholderText>
                 </h1>
                 <p className={`${styles.heroLede} ${styles.heroFade} ${styles.heroFade2}`}>
-                  <PlaceholderText light>
-                    Homepage introduction pending. This connective copy is not part of the supplied
-                    document. The firm advises across seven practice areas Australia-wide.
+                  <PlaceholderText light tag={t.pages.placeholderTag}>
+                    {h.heroLede}
                   </PlaceholderText>
                 </p>
                 <div className={`${styles.heroActions} ${styles.heroFade} ${styles.heroFade3}`}>
                   <Link href="/contact" className="btn btn--primary">
-                    Book a consultation <ArrowRight />
+                    {t.nav.book} <ArrowRight />
                   </Link>
                   <a href="#expertise" className="btn btn--ghost-light">
-                    Explore our expertise
+                    {h.explore}
                   </a>
                 </div>
               </div>
               <div className={`${styles.heroMedia} ${styles.heroFade} ${styles.heroFade2}`}>
-                <PlaceholderImage label="Firm / office photography" light ratio="4 / 5" />
+                <PlaceholderImage label={h.firmHeading} light ratio="4 / 5" />
               </div>
             </div>
 
             <div className={styles.stats}>
-              {STATS.map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label} className={styles.stat}>
                   <span className={styles.statNum}>{stat.num}</span>
                   <span className={styles.statLabel}>{stat.label}</span>
@@ -122,14 +102,11 @@ export default function HomePage() {
         <div className="container">
           <Reveal className={styles.introLayout} as="div">
             <p className={styles.introBig}>
-              <PlaceholderText tag="Intro">Opening statement pending firm copy.</PlaceholderText>
+              <PlaceholderText tag={t.pages.placeholderTag}>{h.introBig}</PlaceholderText>
             </p>
             <div className={styles.introBody}>
               <p>
-                <PlaceholderText>
-                  This introductory section is connective copy, not part of the supplied document.
-                  Replace with the firm&apos;s positioning statement.
-                </PlaceholderText>
+                <PlaceholderText tag={t.pages.placeholderTag}>{h.introBody}</PlaceholderText>
               </p>
             </div>
           </Reveal>
@@ -140,29 +117,22 @@ export default function HomePage() {
       <section id="expertise" className={`section ${styles.expertise}`}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow eyebrow--light">Our Expertise</span>
+            <span className="eyebrow eyebrow--light">{h.expertiseEyebrow}</span>
             <h2 style={{ color: "#fff", fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
-              Seven practice areas, one standard of care
+              {h.expertiseHeading}
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.72)" }}>
-              Deep capability across the matters that shape Australian businesses and families.
-            </p>
+            <p style={{ color: "rgba(255,255,255,0.72)" }}>{h.expertiseLede}</p>
           </div>
 
           <div className={styles.expGrid}>
             {practiceAreas.map((area, i) => (
-              <Reveal
-                key={area.slug}
-                as="div"
-                delay={(i % 3) * 70}
-                className={styles.expCell}
-              >
+              <Reveal key={area.slug} as="div" delay={(i % 3) * 70} className={styles.expCell}>
                 <Link href={`/expertise/${area.slug}`} className={styles.expCard}>
                   <span className={styles.expIndex}>{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className={styles.expTitle}>{area.navLabel}</h3>
-                  <p className={styles.expDesc}>{practiceSummaries[area.slug]}</p>
+                  <h3 className={styles.expTitle}>{areaLabel(area.slug, area.navLabel)}</h3>
+                  <p className={styles.expDesc}>{t.summaries[area.slug]}</p>
                   <span className={styles.expLink}>
-                    Learn more <ArrowRight />
+                    {t.common.learnMore} <ArrowRight />
                   </span>
                 </Link>
               </Reveal>
@@ -175,16 +145,14 @@ export default function HomePage() {
       <section className={`section ${styles.approach}`}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Why Lexcord</span>
-            <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
-              The way we work is the difference
-            </h2>
+            <span className="eyebrow">{h.whyEyebrow}</span>
+            <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>{h.whyHeading}</h2>
           </div>
           <div className={styles.approachGrid}>
-            {WHY.map((item, i) => (
+            {h.why.map((item, i) => (
               <Reveal key={item.title} as="article" delay={i * 80} className={styles.approachCard}>
                 <span className={styles.approachIcon}>
-                  <WhyIcon name={item.icon} />
+                  <WhyIcon index={i} />
                 </span>
                 <h3 className={styles.approachTitle}>{item.title}</h3>
                 <p className={styles.approachText}>{item.text}</p>
@@ -199,22 +167,18 @@ export default function HomePage() {
         <div className="container">
           <Reveal className={styles.mediaGrid} as="div">
             <div>
-              <span className="eyebrow">The firm</span>
-              <h2 style={{ fontSize: "var(--text-2xl)", margin: "1rem 0 1rem" }}>
-                People you will actually speak to
-              </h2>
+              <span className="eyebrow">{h.firmEyebrow}</span>
+              <h2 style={{ fontSize: "var(--text-2xl)", margin: "1rem 0 1rem" }}>{h.firmHeading}</h2>
               <p style={{ color: "var(--ink-700)", fontSize: "var(--text-lg)", lineHeight: 1.5 }}>
-                <PlaceholderText>
-                  Firm story and team introduction pending. Replace with real copy and photography.
-                </PlaceholderText>
+                <PlaceholderText tag={t.pages.placeholderTag}>{h.firmBody}</PlaceholderText>
               </p>
               <div style={{ marginTop: "1.8rem" }}>
                 <Link href="/about" className="btn btn--ghost">
-                  About Lexcord <ArrowRight />
+                  {h.aboutCta} <ArrowRight />
                 </Link>
               </div>
             </div>
-            <PlaceholderImage label="Team / portrait photography" ratio="3 / 2" />
+            <PlaceholderImage label={h.firmHeading} ratio="3 / 2" />
           </Reveal>
         </div>
       </section>
@@ -224,18 +188,17 @@ export default function HomePage() {
         <div className="container">
           <div className={styles.closingInner}>
             <span className="eyebrow eyebrow--light" style={{ justifyContent: "center" }}>
-              Speak with us
+              {h.closingEyebrow}
             </span>
             <h2 className={styles.closingTitle}>
-              The right advice, <em>at the right time</em>, changes everything.
+              {h.closingTitlePre}
+              <em>{h.closingTitleEm}</em>
+              {h.closingTitlePost}
             </h2>
-            <p className={styles.closingBody}>
-              Book a confidential consultation. We will assess your situation honestly and map out
-              your options — with no obligation to proceed.
-            </p>
+            <p className={styles.closingBody}>{h.closingBody}</p>
             <div className={styles.closingActions}>
               <Link href="/contact" className="btn btn--primary">
-                Book a consultation <ArrowRight />
+                {t.nav.book} <ArrowRight />
               </Link>
             </div>
           </div>
