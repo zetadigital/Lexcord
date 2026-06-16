@@ -18,9 +18,7 @@ export function ContactContent() {
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroInner}>
-            <span className="eyebrow eyebrow--light">{c.heroEyebrow}</span>
             <h1 className={styles.heroTitle}>{c.heroTitle}</h1>
-            <p className={styles.heroLede}>{c.heroLede}</p>
           </div>
         </div>
       </section>

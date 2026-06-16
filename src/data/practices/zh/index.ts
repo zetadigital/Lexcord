@@ -1,13 +1,17 @@
 import type { PracticeArea } from "../../types";
-import { property } from "../property";
+import { propertyLaw } from "../property-law";
+import { conveyancing } from "../conveyancing";
 import { commercial } from "../commercial";
+import { family } from "../family";
 import { estate } from "../estate";
 import { ip } from "../ip";
 import { criminal } from "../criminal";
 import { notary } from "../notary";
 import { migration } from "../migration";
-import { propertyZh } from "./property";
+import { propertyLawZh } from "./property-law";
+import { conveyancingZh } from "./conveyancing";
 import { commercialZh } from "./commercial";
+import { familyZh } from "./family";
 import { estateZh } from "./estate";
 import { ipZh } from "./ip";
 import { criminalZh } from "./criminal";
@@ -15,10 +19,22 @@ import { notaryZh } from "./notary";
 import { migrationZh } from "./migration";
 import type { Lang } from "../../../lib/i18n";
 
-const EN: PracticeArea[] = [property, commercial, estate, ip, criminal, notary, migration];
+const EN: PracticeArea[] = [
+  propertyLaw,
+  conveyancing,
+  commercial,
+  family,
+  estate,
+  ip,
+  criminal,
+  notary,
+  migration,
+];
 const ZH: PracticeArea[] = [
-  propertyZh,
+  propertyLawZh,
+  conveyancingZh,
   commercialZh,
+  familyZh,
   estateZh,
   ipZh,
   criminalZh,

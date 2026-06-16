@@ -7,6 +7,7 @@ import { team } from "@/data/people";
 import { renderAccent } from "@/lib/accent";
 import { useLang } from "@/lib/i18n";
 import { Reveal } from "./reveal";
+import { Accordion } from "./accordion";
 import { PlaceholderText, PlaceholderImage } from "./placeholder";
 import styles from "./sections.module.css";
 
@@ -104,59 +105,93 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
   // Solicitors who work across this practice area.
   const areaTeam = team.filter((m) => !m.placeholder && m.areas.includes(area.slug));
 
-  return (
-    <>
-      {/* Banner — coloured band with area icon + title */}
-      <section className={styles.areaBanner}>
+  const layout = area.layout ?? ["practice", "news", "experts", "closing"];
+
+  const blocks: Record<string, JSX.Element | null> = {
+    intro: area.introParagraphs?.length ? (
+      <section key="intro" className={`section ${styles.intro}`}>
         <div className="container">
-          <div className={styles.areaBannerInner}>
-            <span className={styles.areaBannerIcon} aria-hidden="true">
-              <AreaIcon slug={area.slug} />
-            </span>
-            <div className={styles.areaBannerText}>
-              <span className={styles.areaKicker}>{area.heroEyebrow}</span>
-              <h1 className={styles.areaTitle}>{area.navLabel}</h1>
-              <p className={styles.areaLede}>{area.heroLede}</p>
-              <div className={styles.areaActions}>
-                <Link href="/contact" className="btn btn--primary">
-                  {t.nav.book} <ArrowRight />
-                </Link>
-                <a href="#services" className="btn btn--ghost">
-                  {c.ourServices}
-                </a>
-              </div>
-            </div>
-          </div>
+          <Reveal className={styles.introInner} as="div">
+            {area.introParagraphs.map((para, i) => (
+              <p key={i} className={styles.introPara}>{para}</p>
+            ))}
+          </Reveal>
         </div>
       </section>
+    ) : null,
 
-      {/* Sub-services */}
-      <section id="services" className="section">
+    practice: (
+      <section key="practice" id="services" className="section">
         <div className="container">
-          <Reveal className={styles.split} as="div">
+          <div className={area.servicesIntro ? styles.split : undefined}>
             <div>
               <span className="eyebrow">{area.servicesEyebrow}</span>
               <h2 className="section-head" style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
                 {area.servicesHeading}
               </h2>
             </div>
-            <p>{area.servicesIntro}</p>
-          </Reveal>
-
-          <div className={styles.grid}>
-            {area.services.map((service, i) => (
-              <article key={service.title} className={styles.card}>
-                <span className={styles.cardIndex}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={styles.cardTitle}>{service.title}</h3>
-                <p className={styles.cardBody}>{service.body}</p>
-              </article>
-            ))}
+            {area.servicesIntro && <p>{area.servicesIntro}</p>}
           </div>
+
+          {area.practiceText?.length ? (
+            <div className={styles.practiceProse}>
+              {area.practiceText.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          ) : area.practiceNumbered ? (
+            <div className={styles.cardsGap}>
+              {area.services.map((service, i) => (
+                <article key={service.title} className={styles.cardGap}>
+                  <span className={styles.cardGapNum}>{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className={styles.cardGapTitle}>{service.title}</h3>
+                  {service.body && <p className={styles.cardGapBody}>{service.body}</p>}
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.grid}>
+              {area.services.map((service, i) => (
+                <article key={service.title} className={styles.card}>
+                  <span className={styles.cardIndex}>{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className={styles.cardTitle}>{service.title}</h3>
+                  <p className={styles.cardBody}>{service.body}</p>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
+    ),
 
-      {/* Related insights / posts */}
-      <section className={`section ${styles.posts}`}>
+    why: area.whyChoose ? (
+      <section key="why" className={`section ${styles.why}`}>
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">{area.whyChoose.eyebrow}</span>
+            <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>{area.whyChoose.heading}</h2>
+            {area.whyChoose.sub && <p>{area.whyChoose.sub}</p>}
+          </div>
+          <Accordion items={area.whyChoose.items} />
+        </div>
+      </section>
+    ) : null,
+
+    qa: area.faqs?.length && area.faqAccordion ? (
+      <section key="qa" className={`section ${styles.qa}`}>
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">{area.faqEyebrow}</span>
+            <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>{area.faqHeading}</h2>
+            {area.faqSub && <p>{area.faqSub}</p>}
+          </div>
+          <Accordion items={area.faqs} />
+        </div>
+      </section>
+    ) : null,
+
+    news: (
+      <section key="news" className={`section ${styles.posts}`}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">{c.relatedPosts}</span>
@@ -178,9 +213,10 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
           </div>
         </div>
       </section>
+    ),
 
-      {/* Area team + book */}
-      <section className={`section ${styles.areaTeam}`}>
+    experts: (
+      <section key="experts" className={`section ${styles.areaTeam}`}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
@@ -226,9 +262,10 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
           )}
         </div>
       </section>
+    ),
 
-      {/* Closing CTA */}
-      <section className={styles.closing}>
+    closing: (
+      <section key="closing" className={styles.closing}>
         <div className="container">
           <div className={styles.closingInner}>
             <span className="eyebrow eyebrow--light" style={{ justifyContent: "center" }}>
@@ -244,6 +281,38 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
           </div>
         </div>
       </section>
+    ),
+  };
+
+  return (
+    <>
+      {/* Banner — coloured band with area icon + title */}
+      <section className={styles.areaBanner}>
+        <div className="container">
+          <div className={styles.areaBannerInner}>
+            <span className={styles.areaBannerIcon} aria-hidden="true">
+              <AreaIcon slug={area.slug} />
+            </span>
+            <div className={styles.areaBannerText}>
+              <span className={styles.areaKicker}>{area.heroEyebrow}</span>
+              <h1 className={styles.areaTitle}>
+                {area.bannerTitle ? renderAccent(area.bannerTitle) : area.navLabel}
+              </h1>
+              <p className={styles.areaLede}>{area.heroLede}</p>
+              <div className={styles.areaActions}>
+                <Link href="/contact" className="btn btn--primary">
+                  {t.nav.book} <ArrowRight />
+                </Link>
+                <a href="#services" className="btn btn--ghost">
+                  {c.ourServices}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {layout.map((key) => blocks[key])}
     </>
   );
 }

@@ -42,7 +42,7 @@ export const team: TeamMember[] = [
     specialty: "Family Law",
     specialtyZh: "家庭法",
     photo: null,
-    areas: [],
+    areas: ["family-law"],
     email: "katherine.ho@lexcord.com.au",
     phone: FIRM_PHONE,
     qualifications: [],
@@ -58,7 +58,7 @@ export const team: TeamMember[] = [
     specialty: "Migration, Property & Business",
     specialtyZh: "移民、房产与商业",
     photo: "/images/team/elijah-feng.png",
-    areas: ["migration-law", "property-conveyancing", "commercial"],
+    areas: ["migration-law", "property-law", "conveyancing", "commercial"],
     email: "elijah.feng@lexcord.com.au",
     phone: FIRM_PHONE,
     qualifications: [

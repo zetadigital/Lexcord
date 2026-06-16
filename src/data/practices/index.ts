@@ -1,6 +1,8 @@
 import type { PracticeArea } from "../types";
-import { property } from "./property";
+import { propertyLaw } from "./property-law";
+import { conveyancing } from "./conveyancing";
 import { commercial } from "./commercial";
+import { family } from "./family";
 import { estate } from "./estate";
 import { ip } from "./ip";
 import { criminal } from "./criminal";
@@ -9,8 +11,10 @@ import { migration } from "./migration";
 
 /** Ordered list of practice areas — drives navigation, home grid, and routing. */
 export const practiceAreas: PracticeArea[] = [
-  property,
+  propertyLaw,
+  conveyancing,
   commercial,
+  family,
   estate,
   ip,
   criminal,
@@ -28,10 +32,14 @@ export function getPractice(slug: string): PracticeArea | undefined {
 
 /** Short one-line summary per area for the home-page service grid. */
 export const practiceSummaries: Record<string, string> = {
-  "property-conveyancing":
-    "End-to-end conveyancing, off-the-plan, development, and title disputes across every Australian state and territory.",
+  "property-law":
+    "Commercial real estate, development, leasing, disputes, and foreign-investment matters across Australia.",
+  conveyancing:
+    "End-to-end residential, commercial, and off-the-plan conveyancing — from contract review to settlement.",
   commercial:
     "Direct, commercially-minded counsel on contracts, employment, disputes, and leasing for startups, SMEs, and corporates.",
+  "family-law":
+    "Compassionate, expert guidance on divorce, parenting, property settlement, and family violence matters.",
   "wills-estates":
     "Wills, testamentary trusts, powers of attorney, probate, and estate administration handled with care.",
   "intellectual-property":

@@ -667,3 +667,94 @@
     gap: 1.3rem;
   }
 }
+
+/* ============================================================
+   Expertise detail — Introduction block
+   ============================================================ */
+.intro {
+  background: var(--paper);
+}
+
+.introInner {
+  max-width: 76ch;
+}
+
+.introPara {
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--ink-700);
+}
+
+.introPara + .introPara {
+  margin-top: 1.3rem;
+}
+
+/* ---- Practice area: prose variant (Conveyancing) ---- */
+.practiceProse {
+  margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+  max-width: 78ch;
+}
+
+.practiceProse p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--ink-700);
+}
+
+.practiceProse p + p {
+  margin-top: 1.3rem;
+}
+
+/* ---- Practice area: numbered, gapped card grid ---- */
+.cardsGap {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  column-gap: 3%;
+  row-gap: clamp(1.4rem, 1rem + 1vw, 2rem);
+}
+
+.cardGap {
+  position: relative;
+  padding: clamp(1.5rem, 1.1rem + 1.2vw, 2.1rem);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+.cardGap:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.cardGapNum {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--navy-600);
+}
+
+.cardGapTitle {
+  font-size: var(--text-lg);
+  margin: 0 3rem 0.7rem 0;
+}
+
+.cardGapBody {
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  line-height: 1.6;
+}
+
+/* ---- Why-choose / Q&A accordion sections ---- */
+.why {
+  background: var(--paper-2);
+}
+
+.qa {
+  background: var(--paper);
+}

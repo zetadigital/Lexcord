@@ -98,17 +98,7 @@ interface Dictionary {
     about: {
       heroEyebrow: string;
       heroTitle: string;
-      heroLede: string;
-      storyEyebrow: string;
-      storyHeading: string;
-      storyBody: string;
-      teamEyebrow: string;
-      teamHeading: string;
-      teamSub: string;
-      teamRole: string;
-      whatEyebrow: string;
-      whatHeading: string;
-      whatLede: string;
+      sections: { title: string; paragraphs: string[] }[];
     };
     contact: {
       heroEyebrow: string;
@@ -163,7 +153,7 @@ const DICT: Record<Lang, Dictionary> = {
       contact: "Contact",
       book: "Book a consultation",
       firm: "Firm",
-      panelHeadline: "Seven areas, one standard of care",
+      panelHeadline: "Every area, one standard of care",
       panelBlurb:
         "Considered counsel across the matters that shape Australian businesses and families — handled by solicitors, not just process.",
       panelAbout: "About the firm",
@@ -201,10 +191,14 @@ const DICT: Record<Lang, Dictionary> = {
     },
     areaZh: {},
     summaries: {
-      "property-conveyancing":
-        "End-to-end conveyancing, off-the-plan, development, and title disputes across every Australian state and territory.",
+      "property-law":
+        "Commercial real estate, development, leasing, disputes, and foreign-investment matters across Australia.",
+      conveyancing:
+        "End-to-end residential, commercial, and off-the-plan conveyancing — from contract review to settlement.",
       commercial:
         "Direct, commercially-minded counsel on contracts, employment, disputes, and leasing for startups, SMEs, and corporates.",
+      "family-law":
+        "Compassionate, expert guidance on divorce, parenting, property settlement, and family violence matters.",
       "wills-estates":
         "Wills, testamentary trusts, powers of attorney, probate, and estate administration handled with care.",
       "intellectual-property":
@@ -258,7 +252,7 @@ const DICT: Record<Lang, Dictionary> = {
       },
       services: {
         heroEyebrow: "Our Services",
-        heroTitlePre: "Seven practice areas, ",
+        heroTitlePre: "Our areas of expertise, ",
         heroTitleEm: "one standard of care",
         heroLede:
           "Lexcord brings the breadth of a general practice together with the depth of specialist counsel — advising individuals, families, and businesses across every Australian state and territory.",
@@ -279,25 +273,48 @@ const DICT: Record<Lang, Dictionary> = {
         cta: "Have a question now? Book a consultation",
       },
       about: {
-        heroEyebrow: "About the firm",
-        heroTitle: "Firm headline pending — e.g. a general practice with specialist depth.",
-        heroLede:
-          "Firm overview pending. This copy is not part of the supplied document. Replace with the firm's real story, values, and positioning.",
-        storyEyebrow: "Our story",
-        storyHeading: "Firm history headline",
-        storyBody:
-          "Firm history, founding story, values, and approach to be supplied. This section is a placeholder, not part of the source document.",
-        teamEyebrow: "The team",
-        teamHeading: "Our people",
-        teamSub: "Lawyer profiles, photos, admissions, and credentials are pending your content.",
-        teamRole: "Title · Admissions",
-        whatEyebrow: "What we do",
-        whatHeading: "Counsel across seven areas of law",
-        whatLede: "Explore any practice area to see how we work.",
+        heroEyebrow: "About Lexcord",
+        heroTitle: "More than your lawyers. Your companions through every legal journey.",
+        sections: [
+          {
+            title: "Mission",
+            paragraphs: [
+              "We provide tailored legal services to everyone in Australia, dedicated to supporting those who need guidance through complex legal matters. From the moment our clients walk through the door, we go beyond simply listening to their stories and offering legal advice, we take their unique background and circumstances as our starting point, walking alongside them step by step toward resolution.",
+              "Every case is treated as distinct. We reject one-size-fits-all approaches in favour of strategies crafted specifically for each client's situation. Throughout the journey, we are more than legal advisors; we are trusted companions, committed to standing by our clients every step of the way.",
+            ],
+          },
+          {
+            title: "Vision",
+            paragraphs: [
+              "At the heart of our vision lies an unwavering client-centred philosophy. We strive to empower every client to understand and exercise their legal rights with confidence and clarity.",
+              "At the same time, we are dedicated to continuous growth across every practice area, aspiring to become one of the most trusted legal advisors in Australia and the wider Asia-Pacific region. We may not be able to right every wrong in the world, but for those who turn to us for help, we are committed to helping them achieve the fairness and justice they seek.",
+            ],
+          },
+          {
+            title: "Global Capability",
+            paragraphs: [
+              "Our professional team brings together lawyers with diverse international backgrounds, and our practice spans cases that reach across continents. In cross-border matters, our role extends beyond providing counsel on the Australian side, we collaborate closely with trusted legal teams in other jurisdictions, working together to navigate the complexities of international law and safeguard our clients' interests on a global scale.",
+            ],
+          },
+          {
+            title: "Sustainability",
+            paragraphs: [
+              "We manage conflicts of interest with the utmost care and diligence, ensuring that our interests never compromise the rights of those we represent. Legal ethics and professional integrity are the cornerstones of our practice. We hold ourselves accountable to the highest standards, never allowing personal gain to undermine our moral obligations.",
+              "Through this principled approach, we build enduring relationships with our clients, founded on stability, transparency, and long-term trust.",
+            ],
+          },
+          {
+            title: "Well-being",
+            paragraphs: [
+              "We value not only the rights of our clients, but also the welfare of our team. We are committed to cultivating a workplace where every member can thrive, maintaining a positive mindset that fuels both productivity and personal fulfilment.",
+              "We actively safeguard our people from the burdens of accumulated stress, ensuring that their physical and mental well-being remains protected. A healthy team is the foundation of exceptional service.",
+            ],
+          },
+        ],
       },
       contact: {
         heroEyebrow: "Book a consultation",
-        heroTitle: "Contact headline pending — e.g. let's talk about your matter.",
+        heroTitle: "Contact Us",
         heroLede:
           "Intro copy pending firm content. The enquiry form below is functional and routes to the firm once connected.",
         firstName: "First name",
@@ -354,7 +371,7 @@ const DICT: Record<Lang, Dictionary> = {
       contact: "联系我们",
       book: "预约咨询",
       firm: "律所",
-      panelHeadline: "七大领域,同一份用心",
+      panelHeadline: "每一个领域,同一份用心",
       panelBlurb: "为塑造澳大利亚企业与家庭的重要事务提供深思熟虑的法律意见——由律师亲自处理,而非流于流程。",
       panelAbout: "了解律所",
     },
@@ -389,8 +406,10 @@ const DICT: Record<Lang, Dictionary> = {
       viewProfile: "查看简介",
     },
     areaZh: {
-      "property-conveyancing": "房产与产权过户",
+      "property-law": "房产法",
+      conveyancing: "产权过户",
       commercial: "商业法",
+      "family-law": "家庭法",
       "wills-estates": "遗嘱与遗产",
       "intellectual-property": "知识产权",
       "criminal-law": "刑事法",
@@ -398,10 +417,13 @@ const DICT: Record<Lang, Dictionary> = {
       "migration-law": "移民法",
     },
     summaries: {
-      "property-conveyancing":
-        "全流程产权过户、楼花购买、地产开发与产权纠纷,服务全澳各州与领地。",
+      "property-law":
+        "商业地产、开发、租赁、纠纷与外国投资事务,服务全澳。",
+      conveyancing:
+        "住宅、商业及楼花的全流程产权过户——从合同审阅到交割。",
       commercial:
         "就合同、雇佣、纠纷与租赁,为初创企业、中小企业及大型企业提供直接、务实的商业法律意见。",
+      "family-law": "就离婚、子女抚养、财产分割与家庭暴力事务,提供专业而富有同理心的指引。",
       "wills-estates": "用心处理遗嘱、遗嘱信托、授权书、遗嘱认证与遗产管理。",
       "intellectual-property":
         "商标、专利、版权与外观设计——从首次注册到国际申请与维权。",
@@ -452,7 +474,7 @@ const DICT: Record<Lang, Dictionary> = {
       },
       services: {
         heroEyebrow: "我们的服务",
-        heroTitlePre: "七大执业领域,",
+        heroTitlePre: "我们的执业领域,",
         heroTitleEm: "同一份用心",
         heroLede:
           "Lexcord 兼具综合性事务所的广度与专业律师的深度——为个人、家庭与企业提供服务,覆盖全澳各州与领地。",
@@ -472,25 +494,48 @@ const DICT: Record<Lang, Dictionary> = {
         cta: "现在就有疑问?预约咨询",
       },
       about: {
-        heroEyebrow: "关于本所",
-        heroTitle: "事务所主标题待定 — 例如:兼具综合广度与专业深度的事务所。",
-        heroLede:
-          "事务所概览待定。此段非源文档内容。请替换为本所真实的故事、价值观与定位。",
-        storyEyebrow: "我们的故事",
-        storyHeading: "事务所历史标题",
-        storyBody:
-          "事务所历史、创立故事、价值观与执业理念有待提供。本区为占位内容,非源文档内容。",
-        teamEyebrow: "团队",
-        teamHeading: "我们的成员",
-        teamSub: "律师简介、照片、执业资格与资历有待您提供内容。",
-        teamRole: "职衔 · 执业资格",
-        whatEyebrow: "我们的业务",
-        whatHeading: "横跨七大法律领域的专业意见",
-        whatLede: "浏览任一执业领域,了解我们的工作方式。",
+        heroEyebrow: "关于 Lexcord",
+        heroTitle: "不止是您的律师,更是您每一段法律旅程的同行者。",
+        sections: [
+          {
+            title: "使命 Mission",
+            paragraphs: [
+              "我们为身处澳大利亚的每一个人提供量身定制的法律服务,致力于支持那些在复杂法律事务中需要指引的人。从客户走进门的那一刻起,我们不只是倾听他们的故事、给出法律意见——我们以他们独特的背景与处境为起点,陪伴他们一步步走向解决方案。",
+              "每一宗案件都被视为独一无二。我们摒弃千篇一律的做法,转而为每位客户的具体情况量身打造策略。在整个过程中,我们不只是法律顾问;我们是值得信赖的同行者,坚定地陪伴客户走好每一步。",
+            ],
+          },
+          {
+            title: "愿景 Vision",
+            paragraphs: [
+              "我们愿景的核心,是坚定不移的「以客户为中心」理念。我们努力让每一位客户都能自信、清晰地理解并行使自己的法律权利。",
+              "与此同时,我们致力于在每一个执业领域持续成长,立志成为澳大利亚乃至整个亚太地区最值得信赖的法律顾问之一。我们或许无法纠正世间所有的不公,但对于每一位向我们求助的人,我们都承诺尽力帮助他们获得所追求的公平与正义。",
+            ],
+          },
+          {
+            title: "全球能力 Global Capability",
+            paragraphs: [
+              "我们的专业团队汇聚了拥有多元国际背景的律师,执业范围涵盖跨越各大洲的案件。在跨境事务中,我们的角色不止于在澳大利亚一侧提供法律意见——我们与其他司法管辖区值得信赖的法律团队紧密协作,共同应对国际法的复杂性,在全球范围内守护客户的利益。",
+            ],
+          },
+          {
+            title: "可持续 Sustainability",
+            paragraphs: [
+              "我们以最大的审慎与勤勉处理利益冲突,确保自身利益绝不损害我们所代表者的权利。法律伦理与职业操守是我们执业的基石。我们以最高标准要求自己,绝不让个人利益凌驾于道德义务之上。",
+              "凭借这一以原则为本的态度,我们与客户建立起以稳定、透明与长期信任为根基的持久关系。",
+            ],
+          },
+          {
+            title: "团队福祉 Well-being",
+            paragraphs: [
+              "我们不仅重视客户的权利,也重视团队的福祉。我们致力于营造一个让每位成员都能茁壮成长的工作环境,保持一种既驱动效率、又带来个人成就感的积极心态。",
+              "我们主动保护团队成员免受长期累积压力的负担,确保他们的身心健康得到守护。一支健康的团队,是卓越服务的根基。",
+            ],
+          },
+        ],
       },
       contact: {
         heroEyebrow: "预约咨询",
-        heroTitle: "联系页主标题待定 — 例如:聊聊您的事务。",
+        heroTitle: "联系我们",
         heroLede: "引言文案待事务所提供。下方的咨询表单已可使用,接通后将直达本所。",
         firstName: "名",
         lastName: "姓",
