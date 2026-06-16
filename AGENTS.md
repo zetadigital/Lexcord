@@ -7,6 +7,10 @@ rules.
 
 Quick essentials (full detail in CLAUDE.md):
 
+- **Skills:** before any UI/design work, invoke the **`frontend-design`** skill (Claude
+  Code: `Skill` tool). If it isn't installed, tell the user to install it (`find-skills` /
+  their ECC set; normally at `~/.claude/skills/frontend-design`) and meanwhile follow the
+  inlined design principles in CLAUDE.md §8. Full procedure in CLAUDE.md §0.
 - **Stack:** Next.js 14 App Router + TypeScript, static (SSG), hand-built CSS (no
   Tailwind). Package manager: **npm**. `npm run dev` / `npm run build`.
 - **Communicate with the user in Chinese; write all code/docs/UI copy in English.**
