@@ -310,36 +310,21 @@
 /* ---- Mobile toggle ---- */
 .toggle {
   display: none;
+  width: 40px;
+  height: 40px;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
   background: transparent;
   border: 0;
   padding: 0;
   color: var(--navy-900);
   cursor: pointer;
+  border-radius: var(--radius);
+  transition: background var(--dur-fast) var(--ease-out);
 }
 
-.toggleCircle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1.5px solid currentColor;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
-}
-
-.toggle:hover .toggleCircle {
-  background: var(--navy-900);
-  color: #fff;
-}
-
-.toggleLabel {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.toggle:hover {
+  background: var(--paper-2);
 }
 
 /* ---- Mobile full-screen overlay ---- */
@@ -348,6 +333,19 @@
 }
 
 @media (max-width: 940px) {
+  /* Hide language toggle and book CTA from utility bar — only keep phone */
+  .utilityLang {
+    display: none;
+  }
+
+  .utilityBook {
+    display: none;
+  }
+
+  .utilityInner {
+    justify-content: center;
+  }
+
   .nav {
     display: none;
   }
@@ -363,7 +361,6 @@
     z-index: 58;
     background: #fff;
     overflow-y: auto;
-    /* sits below sticky header (z-60); push content clear of the header */
     padding-top: 125px;
     opacity: 0;
     visibility: hidden;
@@ -379,7 +376,36 @@
     display: flex;
     flex-direction: column;
     min-height: calc(100dvh - 125px);
-    padding: 2rem var(--gutter) 3rem;
+    padding: 1.25rem var(--gutter) 3rem;
+  }
+
+  /* Top bar inside overlay: language toggle left, close button right */
+  .sheetTopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .sheetClose {
+    width: 40px;
+    height: 40px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1.5px solid var(--hairline-strong);
+    border-radius: 50%;
+    color: var(--navy-900);
+    cursor: pointer;
+    transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
+
+  .sheetClose:hover {
+    background: var(--navy-900);
+    color: #fff;
+    border-color: var(--navy-900);
   }
 
   /* Nav links */
@@ -427,26 +453,22 @@
 
   .sheetContactRow {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.55rem;
     font-size: 0.9rem;
     color: var(--ink-700);
+    line-height: 1.45;
     transition: color var(--dur-fast) var(--ease-out);
   }
 
-  .sheetContactRow:hover {
+  a.sheetContactRow:hover {
     color: var(--navy-900);
   }
 
   .sheetContactRow svg {
     flex: none;
+    margin-top: 2px;
     color: var(--ink-400);
-  }
-
-  .sheetAddress {
-    font-size: 0.85rem;
-    color: var(--ink-500);
-    line-height: 1.5;
   }
 
   .sheetCta {

@@ -66,7 +66,7 @@ export function SiteNav() {
       {/* Utility bar: language (left), phone + book (right) */}
       <div className={styles.utility}>
         <div className={`container ${styles.utilityInner}`}>
-          <LanguageToggle light={false} />
+          <span className={styles.utilityLang}><LanguageToggle light={false} /></span>
           <div className={styles.utilityRight}>
             <a href={`tel:${PHONE_DIAL}`} className={styles.utilityPhone}>
               <PhoneIcon />
@@ -165,24 +165,30 @@ export function SiteNav() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className={styles.toggleCircle} aria-hidden="true">
-            {open ? (
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            )}
-          </span>
-          <span className={styles.toggleLabel}>{open ? "CLOSE" : "MENU"}</span>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
         </button>
       </div>
 
       {/* Mobile full-screen overlay */}
       <div className={`${styles.sheet} ${open ? styles.sheetOpen : ""}`} aria-hidden={!open}>
         <div className={styles.sheetInner}>
+
+          {/* Top bar: language toggle left, close button right */}
+          <div className={styles.sheetTopBar}>
+            <LanguageToggle light={false} />
+            <button
+              className={styles.sheetClose}
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
+
           <nav className={styles.sheetNav}>
             {[
               { href: "/about", label: t.nav.about },
@@ -214,9 +220,13 @@ export function SiteNav() {
               </svg>
               info@lexcord.com.au
             </a>
-            <p className={styles.sheetAddress}>
+            <span className={styles.sheetContactRow}>
+              <svg viewBox="0 0 20 20" width="15" height="15" fill="none" aria-hidden="true">
+                <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+                <circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.4"/>
+              </svg>
               1508/530 Little Collins St, Melbourne VIC 3000
-            </p>
+            </span>
             <Link
               href="/contact"
               className={`btn btn--primary ${styles.sheetCta}`}
