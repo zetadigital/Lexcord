@@ -71,21 +71,23 @@
 }
 
 .logo {
-  height: 44px;
+  height: 38px;
   width: auto;
 }
 
 @media (max-width: 520px) {
   .logo {
-    height: 36px;
+    height: 30px;
   }
 }
 
 /* ---- Desktop nav ---- */
 .nav {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  justify-content: space-evenly;
+  gap: 0;
 }
 
 .navLink {
@@ -124,6 +126,15 @@
 
 .navLink:hover::after {
   transform: scaleX(1);
+}
+
+.active {
+  color: var(--navy-900);
+}
+
+.active::after {
+  transform: scaleX(1);
+  background: var(--navy-900);
 }
 
 .chevron {

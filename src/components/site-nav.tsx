@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { practiceAreas } from "@/data/practices";
@@ -29,6 +30,12 @@ export function SiteNav() {
   const [expOpen, setExpOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { t, areaLabel, lang } = useLang();
+  const pathname = usePathname();
+
+  function isActive(href: string) {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  }
 
   const openExpertise = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -82,7 +89,11 @@ export function SiteNav() {
 
         <nav className={styles.nav} aria-label="Primary">
           {beforeExpertise.map((link) => (
-            <Link key={link.href} href={link.href} className={styles.navLink}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`${styles.navLink} ${isActive(link.href) ? styles.active : ""}`}
+            >
               {link.label}
             </Link>
           ))}
@@ -94,7 +105,7 @@ export function SiteNav() {
           >
             <Link
               href="/expertise"
-              className={styles.navLink}
+              className={`${styles.navLink} ${isActive("/expertise") ? styles.active : ""}`}
               aria-haspopup="true"
               aria-expanded={expOpen}
               onFocus={openExpertise}
@@ -133,7 +144,11 @@ export function SiteNav() {
           </div>
 
           {afterExpertise.map((link) => (
-            <Link key={link.href} href={link.href} className={styles.navLink}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`${styles.navLink} ${isActive(link.href) ? styles.active : ""}`}
+            >
               {link.label}
             </Link>
           ))}
