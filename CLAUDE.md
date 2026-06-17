@@ -6,7 +6,27 @@ continue the work to the same standard. Read it fully before making changes.
 
 ---
 
-## 0. Skills this project uses (invoke before frontend work)
+## 0. Design spec (READ BEFORE ANY UI CHANGE)
+
+The user maintains a live design spec for this project. **Before implementing any UI change, fetch the latest spec and read it:**
+
+```
+URL: https://api.anthropic.com/v1/design/h/ODaFFSaJn3VP7zzhLaWHxg
+```
+
+The response is a gzip tar archive. Extract and read:
+- `ui_kits/website/` — page-level designs (HomeScreen, PeopleScreen, ExpertiseScreen, ContactScreen)
+- `tokens/` — canonical design tokens (colors, typography, spacing)
+- `components/` — component specs with props and usage notes
+- `readme.md` — brand voice, visual rules, content guidelines
+
+The design spec is the source of truth. When the user says "implement the design change", fetch the URL first, read the relevant sections, then code.
+
+The installed skill at `~/.claude/skills/lexcord-design/` holds the last fetched copy — use it as a fallback if the URL is temporarily inaccessible.
+
+---
+
+## 0b. Skills this project uses (invoke before frontend work)
 
 This is a design-led frontend project. **At the start of any session that will touch UI /
 styling / layout / new pages, invoke the Impeccable skill before writing code. Do this
