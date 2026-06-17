@@ -8,35 +8,23 @@ continue the work to the same standard. Read it fully before making changes.
 
 ## 0. Skills this project uses (invoke before frontend work)
 
-This is a design-led frontend project. The work was done with one main skill, and a few
-optional complementary ones. **At the start of any session that will touch UI / styling /
-layout / new pages, do this before writing code:**
+This is a design-led frontend project. **At the start of any session that will touch UI /
+styling / layout / new pages, invoke the Impeccable skill before writing code. Do this
+automatically — do not wait to be asked.**
 
 | Skill | Used for | Priority |
 |-------|----------|----------|
-| **`frontend-design`** | Distinctive, production-grade UI; visual direction, design system, anti-template polish. This is the skill behind the whole site. | **Primary — always** |
-| `layout` | Spacing, rhythm, visual hierarchy fixes | Optional |
-| `critique` | UX review / scoring of a page before shipping | Optional |
+| **`impeccable:impeccable`** | Production-grade UI design: visual hierarchy, typography, spacing, color, motion, anti-patterns, UX polish. Primary design skill for this site. | **Primary — always, auto-invoke** |
 | `vercel-react-best-practices` | React/Next perf patterns when refactoring | Optional |
 
 ### Procedure for a new session
-1. **Check if `frontend-design` is available** (it's a normally-installed global skill,
-   part of the user's "Everything Claude Code" set; it lives at
-   `~/.claude/skills/frontend-design`).
-2. **If available → invoke it** (in Claude Code: the `Skill` tool with
-   `skill: "frontend-design"`) **before** starting any UI work, and announce that you're
-   using it. Re-invoke for each substantive new UI task.
-3. **If NOT available** → tell the user once, plainly:
-   > 本项目的前端工作依赖 `frontend-design` skill,当前会话未安装。建议安装后再继续(它通常位于
-   > `~/.claude/skills/frontend-design`,属于 ECC / Everything Claude Code 技能集;可用
-   > `find-skills` 或你的 ECC 安装流程获取)。在你安装之前,我会按 CLAUDE.md §8 内联的设计原则继续。
-
-   Then proceed using the design principles inlined in **§8** as the fallback — they are a
-   condensed version of that skill, so quality stays consistent even without it.
+1. **At the start of any UI task → immediately invoke `impeccable:impeccable`** using the
+   `Skill` tool (`skill: "impeccable:impeccable"`). Do not wait for the user to ask.
+   Announce that you are using it.
+2. **Re-invoke** for each substantive new UI task in the same session.
+3. **If the skill is unavailable** → proceed using the design principles in **§8** as
+   fallback, and tell the user once.
 4. Non-UI work (data edits, copy, i18n, build fixes) does **not** require a skill.
-
-> Note: this project has no `.claude/SKILLS.md` pointer file. If the user later runs
-> `/skill-provision` or adds one, prefer it over this list.
 
 ---
 

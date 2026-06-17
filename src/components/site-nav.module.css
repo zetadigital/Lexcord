@@ -71,13 +71,13 @@
 }
 
 .logo {
-  height: 52px;
+  height: 44px;
   width: auto;
 }
 
 @media (max-width: 520px) {
   .logo {
-    height: 42px;
+    height: 36px;
   }
 }
 
