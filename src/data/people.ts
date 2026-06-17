@@ -127,7 +127,7 @@ export const team: TeamMember[] = [
     name: "Taylor Zhang",
     role: "Paralegal",
     roleZh: "律师助理",
-    photo: "/images/team/taylor-zhang.jpg",
+    photo: "/images/team/taylor-zhang.png",
     areas: [],
     email: "taylor.zhang@lexcord.com.au",
     phone: FIRM_PHONE,
