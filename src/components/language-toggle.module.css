@@ -12,6 +12,9 @@
 }
 
 .option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   background: transparent;
   border: 0;
   padding: 0.1rem 0.2rem;
@@ -20,6 +23,11 @@
   letter-spacing: 0.02em;
   color: var(--ink-400);
   transition: color var(--dur-fast) var(--ease-out);
+}
+
+.flag {
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
 .light .option {

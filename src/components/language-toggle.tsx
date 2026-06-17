@@ -12,7 +12,7 @@ export function LanguageToggle({ light = true }: { light?: boolean }) {
         aria-pressed={lang === "en"}
         onClick={() => setLang("en")}
       >
-        EN
+        <span className={styles.flag} aria-hidden="true">🇦🇺</span>EN
       </button>
       <span className={styles.divider} aria-hidden="true" />
       <button
@@ -20,7 +20,7 @@ export function LanguageToggle({ light = true }: { light?: boolean }) {
         aria-pressed={lang === "zh"}
         onClick={() => setLang("zh")}
       >
-        中文
+        <span className={styles.flag} aria-hidden="true">🇨🇳</span>中文
       </button>
     </div>
   );
