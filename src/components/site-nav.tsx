@@ -51,7 +51,7 @@ export function SiteNav() {
   // Primary nav order: About, Expertise (dropdown), People, Resources, Contact.
   const beforeExpertise = [{ href: "/about", label: t.nav.about }];
   const afterExpertise = [
-    { href: "/people", label: lang === "zh" ? "团队" : "Our People" },
+    { href: "/people", label: (lang === "zh" || lang === "zh-tw") ? (lang === "zh-tw" ? "團隊" : "团队") : "Our People" },
     { href: "/resources", label: t.nav.resources },
     { href: "/contact", label: t.nav.contact },
   ];
@@ -121,7 +121,7 @@ export function SiteNav() {
                 <p className={styles.panelHeadline}>{t.nav.panelHeadline}</p>
                 <p className={styles.panelBlurb}>{t.nav.panelBlurb}</p>
                 <Link href="/expertise" className={styles.panelAll} role="menuitem">
-                  {lang === "zh" ? "全部领域" : "All expertise"}
+                  {lang === "zh" ? "全部领域" : lang === "zh-tw" ? "全部領域" : "All expertise"}
                   <svg viewBox="0 0 20 20" width="14" height="14" fill="none" aria-hidden="true">
                     <path d="M4 10h11M10 5l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

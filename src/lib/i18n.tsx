@@ -10,7 +10,7 @@ import {
   type ReactNode,
 } from "react";
 
-export type Lang = "en" | "zh";
+export type Lang = "en" | "zh" | "zh-tw";
 
 interface Dictionary {
   nav: {
@@ -579,6 +579,209 @@ const DICT: Record<Lang, Dictionary> = {
       placeholderTag: "占位",
     },
   },
+  "zh-tw": {
+    nav: {
+      expertise: "執業領域",
+      services: "服務",
+      resources: "資訊",
+      about: "關於我們",
+      contact: "聯絡我們",
+      book: "預約諮詢",
+      firm: "律所",
+      panelHeadline: "每一個領域，同一份用心",
+      panelBlurb: "為塑造澳大利亞企業與家庭的重要事務提供深思熟慮的法律意見——由律師親自處理，而非流於流程。",
+      panelAbout: "了解律所",
+    },
+    footer: {
+      blurb: "覆蓋全澳的清晰、審慎法律意見——從房產與商業事務，到遺產、知識產權、刑事、移民及公證服務。",
+      disclaimer: "本網站資訊僅為一般性內容，不構成法律意見。請聯絡我們獲取針對您具體情況的建議。",
+      expertise: "執業領域",
+      firm: "律所",
+      aboutLexcord: "關於 Lexcord",
+      contact: "聯絡我們",
+      book: "預約諮詢",
+      rights: "版權所有。",
+      australiaWide: "服務全澳",
+      contactTitle: "聯絡方式",
+      address: "維多利亞州墨爾本市 Little Collins St 530 號 1508 室，郵編 3000",
+      lift: "電梯坐到 14 樓，對面電梯再上 15 樓，出電梯後右轉直走。",
+      legal: "法律",
+    },
+    common: {
+      ourServices: "我們的服務",
+      whyChoose: "為何選擇 Lexcord",
+      bookConsultation: "預約諮詢",
+      learnMore: "了解更多",
+      relatedPosts: "相關資訊",
+      relatedPostsLede: "關於本領域的通俗解讀——文章內容有待律所提供真實出版物。",
+      postTitle: "文章標題占位",
+      postExcerpt: "提供內容後，此處將顯示概括文章的簡短導語。",
+      areaTeam: "您的法律團隊",
+      areaTeamLede: "處理此類事務的律師。預約諮詢即可開始。",
+      areaTeamEmpty: "該領域的團隊簡介正在陸續加入。請聯絡我們，我們會為您對接合適的律師。",
+      viewProfile: "查看簡介",
+    },
+    areaZh: {
+      "property-law": "房產法",
+      conveyancing: "產權過戶",
+      commercial: "商業法",
+      "family-law": "家庭法",
+      "wills-estates": "遺囑與遺產",
+      "intellectual-property": "知識產權",
+      "criminal-law": "刑事法",
+      "notary-public": "公證服務",
+      "migration-law": "移民法",
+    },
+    summaries: {
+      "property-law": "商業地產、開發、租賃、糾紛與外國投資事務，服務全澳。",
+      conveyancing: "住宅、商業及樓花的全流程產權過戶——從合約審閱到交割。",
+      commercial: "就合約、僱傭、糾紛與租賃，為初創企業、中小企業及大型企業提供直接、務實的商業法律意見。",
+      "family-law": "就離婚、子女撫養、財產分割與家庭暴力事務，提供專業而富有同理心的指引。",
+      "wills-estates": "用心處理遺囑、遺囑信託、授權書、遺囑認證與遺產管理。",
+      "intellectual-property": "商標、專利、版權與外觀設計——從首次註冊到國際申請與維權。",
+      "criminal-law": "就交通、傷害、毒品、家庭暴力與保釋事務，提供清晰、誠實的代理。",
+      "notary-public": "為境外使用的文件提供具資質的公證服務，包括海牙認證（Apostille）與 DFAT 認證。",
+      "migration-law": "就技術、家庭、學生、商業、人道及複議途徑提供註冊移民意見。",
+    },
+    pages: {
+      home: {
+        bannerTitle: "清晰、用心、兼具商業判斷的法律意見。",
+        bannerLede: "Lexcord Lawyers 是一家位於墨爾本的律師事務所，為個人、家庭與企業處理房產、商業、移民、遺囑與遺產、知識產權、刑事等各類法律事務。",
+        whyEyebrow: "為何選擇 Lexcord",
+        whyTitle: "為何選擇 Lexcord?",
+        whySubtitle: "敏銳的法律思考，以用心的方式交付。",
+        why: [
+          {
+            title: "清晰而務實的建議",
+            text: "我們以清晰、直接、易於理解的方式，向您說明法律處境、可選方案與風險。",
+          },
+          {
+            title: "貼身的個性化關注",
+            text: "在提出下一步建議之前，我們會用心了解您的處境、優先事項與顧慮。",
+          },
+          {
+            title: "在核心領域的深厚專長",
+            text: "我們的合夥人與律師各自在其執業領域擁有專注的經驗，讓客戶能就合適的事務，從合適的人那裡獲得量身定制的建議。",
+          },
+        ],
+        sayEyebrow: "客戶評價",
+        sayTitle: "客戶怎麼說",
+        testimonials: [
+          { quote: "從第一次溝通起，Lexcord 就把我的選擇講得清清楚楚，讓原本壓力很大的過程變得從容可控。", name: "J. Williams", detail: "產權過戶" },
+          { quote: "回應及時、做法務實，真心站在我這一邊。我始終清楚自己的事務進展到哪一步。", name: "A. Chen", detail: "商業法" },
+          { quote: "他們非常用心地處理了我的簽證申請，每一步都讓我了解進展。", name: "R. Kumar", detail: "移民法" },
+          { quote: "建議清晰、收費合理、毫無意外。這正是你對一家律所的期待。", name: "M. Rossi", detail: "遺囑與遺產" },
+          { quote: "專業、沉穩、細致。在一段艱難的時期裡，我始終感到被支持。", name: "S. Nguyen", detail: "刑事法" },
+          { quote: "對細節把握精準，溝通也很輕鬆。我會毫不猶豫地推薦他們。", name: "D. Brown", detail: "知識產權" },
+        ],
+        readyEyebrow: "與我們聯絡",
+        readyTitle: "準備好談談您的事務了嗎？",
+        readyLede: "與我們聊聊您的處境。預約一次保密諮詢，或通過電話、郵件聯絡我們。",
+        addressLabel: "地址",
+        phoneLabel: "電話",
+        emailLabel: "郵箱",
+      },
+      services: {
+        heroEyebrow: "我們的服務",
+        heroTitlePre: "我們的執業領域，",
+        heroTitleEm: "同一份用心",
+        heroLede: "Lexcord 兼具綜合性事務所的廣度與專業律師的深度——為個人、家庭與企業提供服務，覆蓋全澳各州與領地。",
+      },
+      resources: {
+        heroEyebrow: "資訊與洞見",
+        heroTitlePre: "用通俗語言解讀",
+        heroTitleEm: "與你相關的法律",
+        heroLede: "文章與洞見內容非源文件的一部分，有待本所提供真實出版內容。下方版式展示其呈現方式。",
+        latest: "最新洞見",
+        heading: "文章與指南",
+        sub: "占位卡片——內容就緒後逐一替換為真實文章。",
+        cardTitle: "文章標題占位",
+        cardExcerpt: "提供真實內容後，此處將顯示概括文章的簡短導語。",
+        cardMeta: "作者 · 日期 · 5 分鐘閱讀",
+        cta: "現在就有疑問？預約諮詢",
+      },
+      about: {
+        heroEyebrow: "關於 Lexcord",
+        heroTitle: "不止是您的律師，更是您每一段法律旅程的同行者。",
+        sections: [
+          {
+            title: "使命 Mission",
+            paragraphs: [
+              "我們為身處澳大利亞的每一個人提供量身定制的法律服務，致力於支持那些在複雜法律事務中需要指引的人。從客戶走進門的那一刻起，我們不只是傾聽他們的故事、給出法律意見——我們以他們獨特的背景與處境為起點，陪伴他們一步步走向解決方案。",
+              "每一宗案件都被視為獨一無二。我們摒棄千篇一律的做法，轉而為每位客戶的具體情況量身打造策略。在整個過程中，我們不只是法律顧問；我們是值得信賴的同行者，堅定地陪伴客戶走好每一步。",
+            ],
+          },
+          {
+            title: "願景 Vision",
+            paragraphs: [
+              "我們願景的核心，是堅定不移的「以客戶為中心」理念。我們努力讓每一位客戶都能自信、清晰地理解並行使自己的法律權利。",
+              "與此同時，我們致力於在每一個執業領域持續成長，立志成為澳大利亞乃至整個亞太地區最值得信賴的法律顧問之一。我們或許無法糾正世間所有的不公，但對於每一位向我們求助的人，我們都承諾盡力幫助他們獲得所追求的公平與正義。",
+            ],
+          },
+          {
+            title: "全球能力 Global Capability",
+            paragraphs: [
+              "我們的專業團隊匯聚了擁有多元國際背景的律師，執業範圍涵蓋跨越各大洲的案件。在跨境事務中，我們的角色不止於在澳大利亞一側提供法律意見——我們與其他司法管轄區值得信賴的法律團隊緊密協作，共同應對國際法的複雜性，在全球範圍內守護客戶的利益。",
+            ],
+          },
+          {
+            title: "可持續 Sustainability",
+            paragraphs: [
+              "我們以最大的審慎與勤勉處理利益衝突，確保自身利益絕不損害我們所代表者的權利。法律倫理與職業操守是我們執業的基石。我們以最高標準要求自己，絕不讓個人利益凌駕於道德義務之上。",
+              "憑藉這一以原則為本的態度，我們與客戶建立起以穩定、透明與長期信任為根基的持久關係。",
+            ],
+          },
+          {
+            title: "團隊福祉 Well-being",
+            paragraphs: [
+              "我們不僅重視客戶的權利，也重視團隊的福祉。我們致力於營造一個讓每位成員都能茁壯成長的工作環境，保持一種既驅動效率、又帶來個人成就感的積極心態。",
+              "我們主動保護團隊成員免受長期累積壓力的負擔，確保他們的身心健康得到守護。一支健康的團隊，是卓越服務的根基。",
+            ],
+          },
+        ],
+      },
+      contact: {
+        heroEyebrow: "預約諮詢",
+        heroTitle: "聯絡我們",
+        heroLede: "引言文案待事務所提供。下方的諮詢表單已可使用，接通後將直達本所。",
+        firstName: "名",
+        lastName: "姓",
+        email: "電子郵箱",
+        phone: "電話",
+        area: "法律領域",
+        areaSelect: "請選擇最相符的領域……",
+        areaOther: "其他事務",
+        message: "我們能為您做些什麼？",
+        messagePlaceholder: "請簡單描述您的事務。無需任何義務，且您的諮詢將予以保密。",
+        submit: "申請諮詢",
+        consent: "提交此表單即表示您同意我們就您的諮詢與您聯絡。您提供的資訊為一般性內容，不構成律師—委託人關係。",
+        thanksTitle: "感謝您——我們已收到您的諮詢。",
+        thanksBody: "我們的團隊成員將在一個工作日內與您聯絡，安排諮詢。如遇緊急刑事或保釋事務，請直接致電我們。",
+        asideEmail: "電子郵箱",
+        asidePhone: "電話",
+        asideOffices: "辦公地點",
+        asideHours: "工作時間",
+        pendingConfirm: "待確認",
+        emailValue: "hello@lexcord.com.au",
+        officesValue: "服務全澳各州與領地。辦公地址待確認。",
+        hoursValue: "週一至週五，需預約。緊急刑事與保釋事務：可隨時聯絡我們。",
+      },
+      people: {
+        heroEyebrow: "我們的團隊",
+        heroTitlePre: "為您的事務",
+        heroTitleEm: "保駕護航的團隊",
+        heroLede: "Lexcord 由正式執業的律師領銜，把您的事務當作自己的事務。認識我們的團隊——更多成員簡介正在陸續加入。",
+        viewProfile: "查看簡介",
+        qualifications: "資歷與執業資格",
+        expertise: "專長領域",
+        backToPeople: "返回團隊",
+        contactLabel: "聯絡方式",
+        bookWith: "預約諮詢",
+      },
+      legalPending: "本頁為占位內容。本所的最終措辭有待確定，發布前應由具資質的執業者審核。",
+      placeholderTag: "占位",
+    },
+  },
 };
 
 interface LanguageContextValue {
@@ -597,19 +800,25 @@ const STORAGE_KEY = "lexcord-lang";
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
 
+  function htmlLang(l: Lang) {
+    if (l === "zh") return "zh-CN";
+    if (l === "zh-tw") return "zh-TW";
+    return "en-AU";
+  }
+
   // Restore persisted preference after hydration.
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "en" || stored === "zh") {
-      setLangState(stored);
-      document.documentElement.lang = stored === "zh" ? "zh-CN" : "en-AU";
+    if (stored === "en" || stored === "zh" || stored === "zh-tw") {
+      setLangState(stored as Lang);
+      document.documentElement.lang = htmlLang(stored as Lang);
     }
   }, []);
 
   const setLang = useCallback((next: Lang) => {
     setLangState(next);
     window.localStorage.setItem(STORAGE_KEY, next);
-    document.documentElement.lang = next === "zh" ? "zh-CN" : "en-AU";
+    document.documentElement.lang = htmlLang(next);
   }, []);
 
   const toggle = useCallback(() => {
@@ -623,7 +832,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLang,
       toggle,
       t,
-      areaLabel: (slug, enLabel) => (lang === "zh" ? t.areaZh[slug] ?? enLabel : enLabel),
+      areaLabel: (slug, enLabel) =>
+        (lang === "zh" || lang === "zh-tw") ? t.areaZh[slug] ?? enLabel : enLabel,
     };
   }, [lang, setLang, toggle]);
 
