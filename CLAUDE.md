@@ -39,16 +39,12 @@ automatically — do not wait to be asked.**
   over-explain options.
 
 ### Git / commits (IMPORTANT)
-- **Commit when work is a real unit** (new files, features, refactors, bug fixes, or when
-  the user asks). **Never `git push` unless the user explicitly says so.**
-- **Do NOT auto-commit pure visual/styling tweaks** (colour, opacity, size, spacing,
-  filter, copy micro-adjustments). Apply the change, then stop and wait for the user's
-  explicit go-ahead before committing. Visual iteration is back-and-forth; auto-commits
-  create history churn. When in doubt, ask.
+- **After completing any task, commit AND push immediately** (`git push origin main`).
+  Do not wait to be asked. Every completed unit of work goes straight to remote.
 - Commit message format: `type: short description` (types: feat, fix, refactor, docs,
   test, chore, perf, ci) with a body when useful.
 - **No attribution trailer** (no `Co-Authored-By`, no "Generated with…"). It's disabled.
-- The default branch is `main`. The user reviews/pushes themselves.
+- The default branch is `main`.
 
 ### Before claiming done
 - `npm run build` must pass. Verify visually (see §10) — don't assert success without
