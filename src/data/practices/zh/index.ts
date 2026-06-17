@@ -54,10 +54,12 @@ export function localizedPractice(
   lang: Lang,
 ): PracticeArea {
   if (lang === "en") return enArea;
+  // zh-tw falls back to Simplified Chinese content (Traditional Chinese practice data pending)
   return zhBySlug.get(enArea.slug) ?? enArea;
 }
 
 export const practiceAreasByLang: Record<Lang, PracticeArea[]> = {
   en: EN,
   zh: ZH,
+  "zh-tw": ZH,
 };
