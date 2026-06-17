@@ -6,29 +6,6 @@ import { team } from "@/data/people";
 import { useLang } from "@/lib/i18n";
 import styles from "./people.module.css";
 
-const AREA_LABELS_EN: Record<string, string> = {
-  "property-law": "Property Law",
-  "conveyancing": "Conveyancing",
-  "commercial": "Commercial Law",
-  "family-law": "Family Law",
-  "wills-estates": "Wills & Estates",
-  "intellectual-property": "Intellectual Property",
-  "criminal-law": "Criminal Law",
-  "notary-public": "Notary Public",
-  "migration-law": "Migration Law",
-};
-
-const AREA_LABELS_ZH: Record<string, string> = {
-  "property-law": "房产法",
-  "conveyancing": "房产过户",
-  "commercial": "商业法",
-  "family-law": "家庭法",
-  "wills-estates": "遗嘱与遗产",
-  "intellectual-property": "知识产权",
-  "criminal-law": "刑事法",
-  "notary-public": "公证",
-  "migration-law": "移民法",
-};
 
 function initials(name: string): string {
   return name
@@ -42,7 +19,6 @@ function initials(name: string): string {
 export function PeopleContent() {
   const { t, lang } = useLang();
   const p = t.pages.people;
-  const areaLabels = lang === "zh" ? AREA_LABELS_ZH : AREA_LABELS_EN;
 
   return (
     <>
@@ -78,22 +54,18 @@ export function PeopleContent() {
                       <h3 className={styles.name}>{member.name}.</h3>
                     </Link>
                     <p className={styles.role}>{role}.</p>
-                    {specialty && <p className={styles.specialty}>{specialty}</p>}
 
-                    {member.areas.length > 0 && (
-                      <ul className={styles.areas}>
-                        {member.areas.map((slug) => (
-                          <li key={slug} className={styles.area}>
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true" className={styles.chevron}>
-                              <path d="M3 1.5L6.5 5 3 8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                            {areaLabels[slug] ?? slug}
-                          </li>
-                        ))}
-                      </ul>
+                    {specialty && (
+                      <span className={styles.metaRow}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <rect x="1" y="4" width="12" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
+                          <path d="M5 4V2.5a1.5 1.5 0 0 1 3 0V4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                        </svg>
+                        {specialty}
+                      </span>
                     )}
 
-                    <a href={`mailto:${member.email}`} className={styles.email}>
+                    <a href={`mailto:${member.email}`} className={styles.metaRow}>
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <rect x="1" y="2.5" width="12" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
                         <path d="M1 4l6 4.5L13 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
@@ -102,7 +74,10 @@ export function PeopleContent() {
                     </a>
 
                     <Link href="/contact" className={styles.cta}>
-                      {t.common.bookConsultation}
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      Book a Consultation
                     </Link>
                   </div>
                 </div>
