@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -36,6 +36,11 @@ export function SiteNav() {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(href + "/");
   }
+
+  useEffect(() => {
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    return () => { document.documentElement.style.overflow = ""; };
+  }, [open]);
 
   const openExpertise = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -160,54 +165,66 @@ export function SiteNav() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+          <span className={styles.toggleCircle} aria-hidden="true">
             {open ? (
-              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             )}
-          </svg>
+          </span>
+          <span className={styles.toggleLabel}>{open ? "CLOSE" : "MENU"}</span>
         </button>
       </div>
 
-      {/* Mobile sheet */}
-      <div className={`${styles.sheet} ${open ? styles.sheetOpen : ""}`}>
+      {/* Mobile full-screen overlay */}
+      <div className={`${styles.sheet} ${open ? styles.sheetOpen : ""}`} aria-hidden={!open}>
         <div className={styles.sheetInner}>
-          <Link href="/about" className={styles.sheetLink} onClick={() => setOpen(false)}>
-            {t.nav.about}
-          </Link>
-          <p className={styles.sheetLabel}>{t.nav.expertise}</p>
-          {practiceAreas.map((area) => (
+          <nav className={styles.sheetNav}>
+            {[
+              { href: "/about", label: t.nav.about },
+              { href: "/expertise", label: t.nav.expertise },
+              { href: "/people", label: lang === "zh" ? "团队" : lang === "zh-tw" ? "團隊" : "Our People" },
+              { href: "/resources", label: t.nav.resources },
+              { href: "/contact", label: t.nav.contact },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${styles.sheetLink} ${isActive(link.href) ? styles.sheetLinkActive : ""}`}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className={styles.sheetFooter}>
+            <a href={`tel:${PHONE_DIAL}`} className={styles.sheetContactRow}>
+              <PhoneIcon />
+              {PHONE_DISPLAY}
+            </a>
+            <a href="mailto:info@lexcord.com.au" className={styles.sheetContactRow}>
+              <svg viewBox="0 0 20 20" width="15" height="15" fill="none" aria-hidden="true">
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.4"/>
+                <path d="M2 6l8 6 8-6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+              </svg>
+              info@lexcord.com.au
+            </a>
+            <p className={styles.sheetAddress}>
+              1508/530 Little Collins St, Melbourne VIC 3000
+            </p>
             <Link
-              key={area.slug}
-              href={`/expertise/${area.slug}`}
-              className={styles.sheetLink}
+              href="/contact"
+              className={`btn btn--primary ${styles.sheetCta}`}
               onClick={() => setOpen(false)}
             >
-              {areaLabel(area.slug, area.navLabel)}
-              <span>{t.summaries[area.slug]}</span>
+              {t.nav.book}
             </Link>
-          ))}
-          {afterExpertise.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={styles.sheetLink}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a href={`tel:${PHONE_DIAL}`} className={styles.sheetLink} onClick={() => setOpen(false)}>
-            {PHONE_DISPLAY}
-          </a>
-          <Link
-            href="/contact"
-            className={`btn btn--primary ${styles.sheetCta}`}
-            onClick={() => setOpen(false)}
-          >
-            {t.nav.book}
-          </Link>
+          </div>
         </div>
       </div>
     </header>

@@ -310,17 +310,39 @@
 /* ---- Mobile toggle ---- */
 .toggle {
   display: none;
-  width: 44px;
-  height: 44px;
   align-items: center;
-  justify-content: center;
-  color: var(--navy-900);
+  gap: 0.5rem;
   background: transparent;
-  border: 1px solid var(--hairline-strong);
-  border-radius: var(--radius);
+  border: 0;
+  padding: 0;
+  color: var(--navy-900);
+  cursor: pointer;
 }
 
-/* ---- Mobile sheet ---- */
+.toggleCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.toggle:hover .toggleCircle {
+  background: var(--navy-900);
+  color: #fff;
+}
+
+.toggleLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ---- Mobile full-screen overlay ---- */
 .sheet {
   display: none;
 }
@@ -336,53 +358,106 @@
 
   .sheet {
     display: block;
-    overflow: hidden;
-    max-height: 0;
+    position: fixed;
+    inset: 0;
+    z-index: 58;
     background: #fff;
-    border-top: 1px solid var(--hairline);
-    transition: max-height var(--dur-slow) var(--ease-out);
+    overflow-y: auto;
+    /* sits below sticky header (z-60); push content clear of the header */
+    padding-top: 125px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur) var(--ease-out), visibility var(--dur) var(--ease-out);
   }
 
   .sheetOpen {
-    max-height: 90vh;
-    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
   }
 
   .sheetInner {
-    padding: 1.2rem var(--gutter) 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100dvh - 125px);
+    padding: 2rem var(--gutter) 3rem;
   }
 
-  .sheetLabel {
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--navy-600);
-    margin: 1.2rem 0 0.5rem;
+  /* Nav links */
+  .sheetNav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .sheetLink {
     display: block;
-    padding: 0.85rem 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 9vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
     color: var(--navy-900);
+    text-decoration: none;
+    padding: 0.55rem 0;
     border-bottom: 1px solid var(--hairline);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    transition: color var(--dur-fast) var(--ease-out);
   }
 
-  .sheetLink span {
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    text-transform: none;
+  .sheetLink::after {
+    content: ".";
+  }
+
+  .sheetLinkActive {
+    color: var(--gold-600);
+  }
+
+  .sheetLink:hover {
+    color: var(--gold-600);
+  }
+
+  /* Footer contact block */
+  .sheetFooter {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .sheetContactRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.9rem;
+    color: var(--ink-700);
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+
+  .sheetContactRow:hover {
+    color: var(--navy-900);
+  }
+
+  .sheetContactRow svg {
+    flex: none;
+    color: var(--ink-400);
+  }
+
+  .sheetAddress {
+    font-size: 0.85rem;
     color: var(--ink-500);
-    margin-top: 2px;
+    line-height: 1.5;
   }
 
   .sheetCta {
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
     width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet {
+    transition: none;
   }
 }
