@@ -102,7 +102,7 @@ export function PeopleContent() {
                     </a>
 
                     <Link href="/contact" className={styles.cta}>
-                      {t.bookConsultation}
+                      {t.common.bookConsultation}
                     </Link>
                   </div>
                 </div>
