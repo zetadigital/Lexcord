@@ -357,12 +357,13 @@
   .sheet {
     display: block;
     position: fixed;
-    inset: 0;
+    top: 124px; /* sticky header: utility(40px) + main bar(84px) */
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 58;
     background: #fff;
     overflow-y: auto;
-    /* No padding-top — the sticky header (z-60) covers the top ~124px naturally */
-    padding-top: 0;
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--dur) var(--ease-out), visibility var(--dur) var(--ease-out);
@@ -376,9 +377,8 @@
   .sheetInner {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
-    /* top padding: sticky header = utility(40px) + main bar(84px) + small gap */
-    padding: 132px var(--gutter) 3rem;
+    min-height: calc(100dvh - 124px);
+    padding: 0.75rem var(--gutter) 3rem;
   }
 
   /* Close button row — right aligned */
