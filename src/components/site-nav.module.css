@@ -361,7 +361,8 @@
     z-index: 58;
     background: #fff;
     overflow-y: auto;
-    padding-top: 125px;
+    /* No padding-top — the sticky header (z-60) covers the top ~124px naturally */
+    padding-top: 0;
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--dur) var(--ease-out), visibility var(--dur) var(--ease-out);
@@ -375,8 +376,9 @@
   .sheetInner {
     display: flex;
     flex-direction: column;
-    min-height: calc(100dvh - 125px);
-    padding: 0.5rem var(--gutter) 3rem;
+    min-height: 100dvh;
+    /* top padding: sticky header = utility(40px) + main bar(84px) + small gap */
+    padding: 132px var(--gutter) 3rem;
   }
 
   /* Close button row — right aligned */
@@ -440,14 +442,14 @@
     color: var(--gold-600);
   }
 
-  /* Language toggle below nav links */
+  /* Language toggle — centered between nav bottom border and footer top border */
   .sheetLang {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
   }
 
   /* Footer contact block */
   .sheetFooter {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid var(--hairline);
     display: flex;
