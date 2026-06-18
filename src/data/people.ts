@@ -14,6 +14,8 @@ export interface TeamMember {
   phone: string;
   qualifications: string[];
   qualificationsZh: string[];
+  memberships?: string[];
+  membershipsZh?: string[];
   bio: string[];
   bioZh: string[];
   /** True when name/role themselves are not yet supplied. */
@@ -68,8 +70,6 @@ export const team: TeamMember[] = [
       "Solicitor of the Supreme Court of Victoria",
       "Solicitor of the High Court of Australia",
       "Registered Migration Agent (Department of Home Affairs, Australia)",
-      "Member of the Law Institute of Victoria",
-      "Member of the Migration Institute of Australia",
     ],
     qualificationsZh: [
       "法学博士(Juris Doctor)— 墨尔本大学",
@@ -78,16 +78,28 @@ export const team: TeamMember[] = [
       "维多利亚州最高法院律师",
       "澳大利亚高等法院律师",
       "注册移民代理(澳大利亚内政部)",
+    ],
+    memberships: [
+      "Member of the Law Institute of Victoria",
+      "Member of the Migration Institute of Australia",
+    ],
+    membershipsZh: [
       "维多利亚州法学会会员",
       "澳大利亚移民协会会员",
     ],
     bio: [
-      "Mr Feng specialises in Australian immigration law, possessing extensive practical experience and exceptional professional expertise. Whether handling routine visa applications or complex immigration legal matters, he provides precise and efficient legal solutions, ensuring that every case is managed with the highest level of professionalism.",
-      "He has in-depth knowledge of various Australian visa categories. With a thorough understanding of visa application processes, assessment criteria, and policy changes, he assists clients in strategic planning to enhance their chances of visa approval. He is also highly skilled in handling visa refusals, cancellations, and complex legal challenges, including Administrative Appeals Tribunal (AAT) appeals, Federal Court appeals, visa cancellation reviews, and Section 57 natural justice responses.",
+      "Elijah is an Australian legal practitioner with broad experience across immigration, property and commercial law. He advises and assists individual and business clients in a wide range of legal matters, with a focus on practical solutions, careful risk assessment and clear communication.",
+      "In immigration matters, Elijah assists clients with the preparation and management of various visa applications, including family, skilled, employer-sponsored, business, visitor and other temporary and permanent visa pathways. He has a strong understanding of Australian visa requirements, application processes, evidentiary standards and policy considerations, and provides clients with strategic and practical guidance throughout the application process. He also assists with complex immigration matters, including responses to Departmental requests, natural justice letters, refusal and cancellation issues, character-related concerns and compliance matters.",
+      "Elijah also practises in property law, particularly residential and commercial conveyancing. He assists clients with contract reviews, section 32 vendor statements, due diligence, settlement preparation, transfer of land, off-the-plan purchases, lease assignments and property-related issues. He is experienced in identifying legal and practical risks in property transactions and providing clients with clear advice before they proceed.",
+      "In addition, Elijah advises on a range of commercial law matters, including business sales and purchases, commercial contracts, shareholder and partnership arrangements, referral agreements, lease matters, corporate structuring issues and general business disputes. His commercial practice focuses on helping clients understand their legal position, manage risk and structure transactions in a commercially sensible manner.",
+      "With combined experience in immigration, property and commercial law, Elijah provides practical and well-rounded legal support to clients, particularly where their legal needs involve both personal and business considerations.",
     ],
     bioZh: [
-      "Feng 律师专注于澳大利亚移民法,拥有丰富的实务经验与卓越的专业能力。无论是常规签证申请还是复杂的移民法律事务,他都能提供精准、高效的法律解决方案,确保每一宗案件都以最高的专业水准处理。",
-      "他对澳大利亚各类签证类别有深入了解,透彻掌握签证申请流程、评审标准与政策变化,协助客户进行策略规划,以提高签证获批的机会。他同样擅长处理签证拒签、取消及复杂法律挑战,包括行政上诉仲裁庭(AAT)上诉、联邦法院上诉、签证取消复审,以及 Section 57 自然公正回应。",
+      "Elijah 是一名澳大利亚执业律师，在移民、房产及商业法领域拥有丰富的实务经验。他为个人与商业客户提供广泛的法律事务建议与协助，注重实用解决方案、审慎的风险评估以及清晰有效的沟通。",
+      "在移民事务方面，Elijah 协助客户准备和管理各类签证申请，涵盖家庭、技术、雇主担保、商业、访客及其他临时与永久签证类别。他对澳大利亚签证要求、申请流程、证据标准及政策考量有深入了解，并在整个申请过程中为客户提供策略性与实务性的指引。他亦协助处理复杂的移民事务，包括回应移民局要求函、自然公正信函、拒签与取消签证问题、品格相关事宜及合规问题。",
+      "Elijah 亦在房产法领域执业，尤其专注于住宅及商业产权过户。他协助客户审阅合同、第 32 条卖方声明、尽职调查、结算准备、土地转让、楼花购买、租约转让及与房产相关的各类事宜。他在识别房产交易中的法律与实务风险，以及在客户推进交易前提供明确建议方面具有丰富经验。",
+      "此外，Elijah 就广泛的商业法律事务提供咨询，包括商业买卖、商业合同、股东及合伙安排、转介协议、租赁事务、公司架构问题及一般商业纠纷。其商业法律实务着力于协助客户了解自身法律处境、管控风险，并以合理的商业方式构建交易。",
+      "凭借在移民、房产及商业法领域的综合经验，Elijah 为客户提供实用而全面的法律支持，尤其适合法律需求同时涉及个人与商业事务的客户。",
     ],
   },
   {

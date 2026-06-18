@@ -40,10 +40,13 @@ export function PersonDetail({ slug }: { slug: string }) {
   if (!member) return null;
 
   const name = member.name;
-  const role = lang === "zh" ? member.roleZh : member.role;
-  const specialty = lang === "zh" ? member.specialtyZh : member.specialty;
-  const bio = lang === "zh" ? member.bioZh : member.bio;
-  const quals = lang === "zh" ? member.qualificationsZh : member.qualifications;
+  const isChinese = lang === "zh" || lang === "zh-tw";
+  const role = isChinese ? member.roleZh : member.role;
+  const specialty = isChinese ? member.specialtyZh : member.specialty;
+  const bio = isChinese ? member.bioZh : member.bio;
+  const quals = isChinese ? member.qualificationsZh : member.qualifications;
+  const memberships = isChinese ? (member.membershipsZh ?? []) : (member.memberships ?? []);
+  const membershipsLabel = lang === "zh" ? "会员资格" : lang === "zh-tw" ? "會員資格" : "Memberships";
   const phoneDial = member.phone.replace(/[^+\d]/g, "");
 
   return (
@@ -123,6 +126,20 @@ export function PersonDetail({ slug }: { slug: string }) {
                       <div key={i} className={styles.qual}>
                         <Tick />
                         <span>{q}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {memberships.length > 0 && (
+                <div className={styles.section}>
+                  <p className={styles.sectionTitle}>{membershipsLabel}</p>
+                  <div className={styles.quals}>
+                    {memberships.map((m, i) => (
+                      <div key={i} className={styles.qual}>
+                        <Tick />
+                        <span>{m}</span>
                       </div>
                     ))}
                   </div>

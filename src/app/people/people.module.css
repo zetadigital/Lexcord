@@ -304,8 +304,8 @@ a.metaRow:hover {
 }
 
 .sectionTitle {
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--navy-600);
   padding-bottom: 0.8rem;
@@ -314,7 +314,7 @@ a.metaRow:hover {
 }
 
 .bio p {
-  font-size: var(--text-lg);
+  font-size: 1.02rem;
   line-height: var(--leading-normal);
   color: var(--ink-700);
 }
