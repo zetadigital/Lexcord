@@ -157,7 +157,7 @@ export const team: TeamMember[] = [
   {
     slug: "carol-ma",
     name: "Carol Ma",
-    role: "Legal Associate",
+    role: "Paralegal",
     roleZh: "法律顾问",
     specialty: "Commercial, IPO & Capital Markets",
     specialtyZh: "商业、IPO 与资本市场",
@@ -174,7 +174,7 @@ export const team: TeamMember[] = [
       "法学学士 — 贵州大学",
     ],
     bio: [
-      "Carol is a Legal Associate at Lexcord with extensive experience in Chinese and cross-border commercial legal practice. She holds a Master of Law from the University of Sydney and a Bachelor of Laws from Guizhou University, and brings significant experience from her time practising at a leading Beijing commercial law firm.",
+      "Carol is a Paralegal at Lexcord with extensive experience in Chinese and cross-border commercial legal practice. She holds a Master of Law from the University of Sydney and a Bachelor of Laws from Guizhou University, and brings significant experience from her time practising at a leading Beijing commercial law firm.",
       "Carol's practice background spans securities issuance and IPO transactions (A-share and Hong Kong listings), private equity and M&A, and corporate advisory for listed and unlisted companies. Her work has encompassed legal due diligence, drafting investment agreements, shareholder agreements and share transfer documents, regulatory compliance, and corporate governance.",
       "Carol's deep expertise in Chinese capital markets law and her bilingual English and Mandarin capability make her a valuable resource for clients involved in cross-border transactions and China-related commercial matters.",
     ],
