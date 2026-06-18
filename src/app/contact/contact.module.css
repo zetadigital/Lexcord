@@ -5,146 +5,171 @@
 /* ── Hero ── */
 .hero {
   background:
-    radial-gradient(110% 80% at 90% -10%, rgba(55, 80, 137, 0.18), transparent 55%),
+    radial-gradient(130% 90% at 100% 0%, rgba(55, 80, 137, 0.2), transparent 50%),
     var(--navy-950);
-  color: #fff;
 }
 
 .heroInner {
-  padding-block: clamp(3rem, 2rem + 5vw, 5.5rem);
-}
-
-.heroEyebrow {
-  font-size: 0.74rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-400);
-  margin-bottom: 1rem;
+  padding-block: clamp(3.5rem, 2.5rem + 5vw, 6rem);
+  max-width: 56rem;
 }
 
 .heroTitle {
-  color: #fff;
   font-size: var(--text-3xl);
+  color: #fff;
+  text-wrap: balance;
 }
 
-/* ── Intro text ── */
-.introSection {
-  padding-block: clamp(2.8rem, 2rem + 3vw, 4.5rem) clamp(2rem, 1.2rem + 2vw, 3rem);
+.heroLede {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.12rem);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 62ch;
+  text-wrap: pretty;
 }
 
-.introText {
-  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
-  line-height: 1.75;
-  color: var(--ink-700);
-  max-width: 72ch;
+/* ── Contact info section ── */
+.infoSection {
+  padding-block: clamp(2rem, 1rem + 3vw, 3.5rem) clamp(2.5rem, 1.5rem + 3vw, 4rem);
 }
 
-/* ── Contact section: full-bleed dark panel + map ── */
-.contactSection {
-  background: var(--navy-950);
+/* Editorial definition-list table */
+.table {
+  border-top: 1px solid var(--hairline-strong);
 }
 
-.contactGrid {
+.row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  min-height: 560px;
+  grid-template-columns: min(10rem, 24%) 1fr;
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  align-items: start;
+  padding-block: clamp(1.8rem, 1.2rem + 1.5vw, 2.6rem);
+  border-bottom: 1px solid var(--hairline);
+  margin: 0;
 }
 
-/* Left info panel */
-.infoPanel {
-  padding: clamp(2.4rem, 1.5rem + 3vw, 4rem) clamp(1.5rem, 1rem + 3vw, 3.5rem);
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-.infoItem {
-  display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
-}
-
-.infoIcon {
-  flex: none;
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--gold-400);
-  margin-top: 0.1rem;
-}
-
-.infoLabel {
+/* Label (dt) */
+.key {
   font-size: 0.7rem;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold-400);
-  margin-bottom: 0.45rem;
+  color: var(--ink-500);
+  padding-top: 0.7rem; /* optical hang against the large phone text */
+  line-height: 1;
 }
 
-.infoValue {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #fff;
-  line-height: 1.55;
+/* Value (dd) */
+.val {
+  margin: 0;
+  line-height: 1;
+}
+
+/* Phone — Fraunces display, unmissable */
+.phone {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 1.4rem + 3.5vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--navy-950);
   text-decoration: none;
+  line-height: 1.05;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
-a.infoValue:hover {
-  color: var(--gold-400);
+.phone:hover { color: var(--gold-600); }
+
+/* Email — large and prominent */
+.email {
+  display: block;
+  font-size: clamp(1.1rem, 0.85rem + 1.2vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--navy-900);
+  text-decoration: none;
+  line-height: 1.25;
+  word-break: break-all;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.infoValueMuted {
-  font-weight: 400;
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.72);
-}
+.email:hover { color: var(--gold-600); }
 
-.infoHintLabel {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  margin-top: 0.9rem;
-  margin-bottom: 0.35rem;
-}
-
-.infoHint {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
+/* Address */
+.address {
+  display: block;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
+  font-weight: 500;
+  color: var(--navy-900);
+  text-decoration: none;
   line-height: 1.6;
-  max-width: 36ch;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-/* Booking button */
-.bookingWrap {
-  margin-top: 0.4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.address:hover { color: var(--gold-600); }
+
+/* Hours */
+.hours {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ink-500);
+  line-height: 1.7;
+  padding-top: 0.15rem;
 }
 
+/* ── Map section ── */
+.mapSection {
+  background: var(--navy-950);
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 30vw, 460px);
+  border: 0;
+  filter: grayscale(10%) contrast(1.04) brightness(0.97);
+}
+
+.mapFooter {
+  padding: clamp(2rem, 1.5rem + 2vw, 3rem) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.liftText {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 56ch;
+  line-height: 1.72;
+}
+
+/* Booking button — white pill on navy */
 .bookingBtn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.9rem 1.8rem;
+  padding: 1rem 2.4rem;
   background: #fff;
   color: var(--navy-950);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
   border-radius: 999px;
   text-decoration: none;
-  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
 }
 
 .bookingBtn:hover {
-  background: var(--gold-400);
-  color: var(--navy-950);
-  transform: translateY(-1px);
+  background: var(--mist);
+  transform: translateY(-2px);
 }
 
 .bookingBtn svg {
@@ -152,40 +177,27 @@ a.infoValue:hover {
 }
 
 .bookingBtn:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
-/* Right: Map */
-.mapWrap {
-  position: relative;
-  overflow: hidden;
-}
-
-.map {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-  filter: grayscale(20%) contrast(1.05);
-}
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  .contactGrid {
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .row {
     grid-template-columns: 1fr;
-    min-height: unset;
+    gap: 0.55rem;
   }
 
-  .mapWrap {
-    position: relative;
-    height: 340px;
+  .key {
+    padding-top: 0;
   }
 }
 
-@media (max-width: 560px) {
-  .infoPanel {
-    gap: 2rem;
+@media (prefers-reduced-motion: reduce) {
+  .phone,
+  .email,
+  .address,
+  .bookingBtn,
+  .bookingBtn svg {
+    transition: none;
   }
 }
