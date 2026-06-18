@@ -204,19 +204,22 @@ export const team: TeamMember[] = [
       "法學學士（主修：犯罪學）— 中國人民公安大學，北京",
     ],
     bio: [
-      "Taylor is a Paralegal at Lexcord and is currently completing his Juris Doctor at Monash University. He brings a distinctive multidisciplinary background — combining legal training in both China and Australia with a Master of Social Work and over eight years of frontline community services experience.",
+      "Taylor is a Paralegal at Lexcord and is currently completing his Juris Doctor at Monash University. He brings a distinctive multidisciplinary background, combining legal training in both China and Australia with a Master of Social Work, a Bachelor of Laws in Criminology, and extensive experience in frontline police and community services.",
+      "Before transitioning into legal practice, Taylor served as a police officer in China, where he gained firsthand experience in criminal investigations, law enforcement procedures, and the practical operation of the justice system. This background provides him with a unique understanding of criminal justice processes, evidence gathering, regulatory frameworks, and the challenges faced by individuals interacting with legal institutions.",
       "At Lexcord, Taylor assists solicitors across a broad range of matters, including drafting and reviewing legal documents and correspondence, conducting legal research, and liaising with clients, barristers and courts. His prior paralegal experience spans community legal services in regional Victoria and private practice in Melbourne, providing exposure to diverse client needs and court procedures.",
-      "Taylor's social work background informs a compassionate, client-centred approach — particularly in matters involving families, vulnerable individuals and those navigating complex personal circumstances.",
+      "Taylor's social work background informs a compassionate, client-centred approach, particularly in matters involving families, vulnerable individuals, and those navigating complex personal circumstances. His combined experience in law, criminology, policing and social work enables him to approach legal issues with both analytical rigour and practical insight, while maintaining a strong commitment to accessible and effective client service.",
     ],
     bioZh: [
-      "Taylor 担任律和律师助理，同时在蒙纳士大学攻读法学博士（JD）课程。他拥有跨学科的多元背景，融合了中澳两国法学训练、社会工作硕士学位，以及逾八年的社区服务一线经验。",
+      "Taylor 担任律和律师助理，同时在蒙纳士大学攻读法学博士（JD）课程。他拥有跨学科的多元背景，融合了中澳两国法学训练、社会工作硕士学位、犯罪学法学学士学位，以及在一线警务与社区服务领域的丰富经验。",
+      "在转型进入法律行业之前，Taylor 曾在中国担任警察，亲历了刑事调查、执法程序以及司法系统的实际运作。这一背景使他对刑事司法流程、证据收集、监管框架及个人与法律机构打交道时所面临的挑战有着独到的理解。",
       "在律和，他协助律师处理各类事务，包括起草与审阅法律文书及往来函件、开展法律研究，以及联络客户与大律师及法院。此前，他曾在维多利亚州社区法律服务机构及墨尔本私人律师事务所担任律师助理，积累了丰富的实务经验。",
-      "Taylor 的社会工作背景赋予他以客户为中心的同理心视角，尤其擅长处理涉及家庭、弱势群体及复杂个人处境的法律事务。",
+      "Taylor 的社会工作背景赋予他以客户为中心的同理心视角，尤其擅长处理涉及家庭、弱势群体及复杂个人处境的法律事务。其在法律、犯罪学、警务及社会工作领域的综合经验，使他能够以严谨的分析思维与务实的洞察力处理法律问题，同时致力于为客户提供高效、可及的法律服务。",
     ],
     bioZhTw: [
-      "Taylor 擔任律和律師助理，同時在蒙納士大學攻讀法學博士（JD）課程。他擁有跨學科的多元背景，融合了中澳兩國法學訓練、社會工作碩士學位，以及逾八年的社區服務一線經驗。",
+      "Taylor 擔任律和律師助理，同時在蒙納士大學攻讀法學博士（JD）課程。他擁有跨學科的多元背景，融合了中澳兩國法學訓練、社會工作碩士學位、犯罪學法學學士學位，以及在一線警務與社區服務領域的豐富經驗。",
+      "在轉型進入法律行業之前，Taylor 曾在中國擔任警察，親歷了刑事調查、執法程序以及司法系統的實際運作。這一背景使他對刑事司法流程、證據收集、監管框架及個人與法律機構打交道時所面臨的挑戰有著獨到的理解。",
       "在律和，他協助律師處理各類事務，包括起草與審閱法律文書及往來函件、開展法律研究，以及聯絡客戶與大律師及法院。此前，他曾在維多利亞州社區法律服務機構及墨爾本私人律師事務所擔任律師助理，積累了豐富的實務經驗。",
-      "Taylor 的社會工作背景賦予他以客戶為中心的同理心視角，尤其擅長處理涉及家庭、弱勢群體及複雜個人處境的法律事務。",
+      "Taylor 的社會工作背景賦予他以客戶為中心的同理心視角，尤其擅長處理涉及家庭、弱勢群體及複雜個人處境的法律事務。其在法律、犯罪學、警務及社會工作領域的綜合經驗，使他能夠以嚴謹的分析思維與務實的洞察力處理法律問題，同時致力於為客戶提供高效、可及的法律服務。",
     ],
   },
   {
