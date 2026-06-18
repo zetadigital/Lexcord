@@ -1,157 +1,191 @@
+/* ============================================================
+   Contact page
+   ============================================================ */
+
+/* ── Hero ── */
 .hero {
   background:
-    radial-gradient(110% 80% at 90% -10%, rgba(55, 80, 137, 0.16), transparent 55%),
+    radial-gradient(110% 80% at 90% -10%, rgba(55, 80, 137, 0.18), transparent 55%),
     var(--navy-950);
   color: #fff;
 }
 
 .heroInner {
-  padding-block: clamp(3.5rem, 2.5rem + 6vw, 6.5rem);
-  max-width: 52rem;
+  padding-block: clamp(3rem, 2rem + 5vw, 5.5rem);
+}
+
+.heroEyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: 1rem;
 }
 
 .heroTitle {
   color: #fff;
   font-size: var(--text-3xl);
-  margin-top: 1.4rem;
 }
 
-.heroLede {
-  margin-top: 1.4rem;
-  font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.82);
-  line-height: var(--leading-snug);
-  max-width: 48ch;
+/* ── Intro text ── */
+.introSection {
+  padding-block: clamp(2.8rem, 2rem + 3vw, 4.5rem) clamp(2rem, 1.2rem + 2vw, 3rem);
 }
 
-.layout {
+.introText {
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--ink-700);
+  max-width: 72ch;
+}
+
+/* ── Contact section: full-bleed dark panel + map ── */
+.contactSection {
+  background: var(--navy-950);
+}
+
+.contactGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(2rem, 1rem + 4vw, 4.5rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  min-height: 560px;
 }
 
-/* ---- Form ---- */
-.form {
-  display: grid;
-  gap: 1.2rem;
-}
-
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-}
-
-.field {
+/* Left info panel */
+.infoPanel {
+  padding: clamp(2.4rem, 1.5rem + 3vw, 4rem) clamp(1.5rem, 1rem + 3vw, 3.5rem);
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 2.4rem;
 }
 
-.label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--ink-700);
+.infoItem {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
 }
 
-.input,
-.textarea,
-.select {
-  font: inherit;
-  font-size: 0.95rem;
-  padding: 0.85rem 1rem;
-  background: var(--card);
-  border: 1px solid var(--hairline-strong);
-  border-radius: var(--radius);
-  color: var(--ink-900);
-  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+.infoIcon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold-400);
+  margin-top: 0.1rem;
 }
 
-.input:focus,
-.textarea:focus,
-.select:focus {
-  outline: none;
-  border-color: var(--gold-600);
-  box-shadow: 0 0 0 3px var(--gold-soft);
-}
-
-.textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
-.submit {
-  justify-self: start;
-  margin-top: 0.4rem;
-}
-
-.note {
-  font-size: 0.8rem;
-  color: var(--ink-500);
-}
-
-/* ---- Aside ---- */
-.aside {
-  background: var(--paper-2);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.6rem, 1rem + 2vw, 2.4rem);
-}
-
-.asideBlock + .asideBlock {
-  margin-top: 1.6rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid var(--hairline);
-}
-
-.asideLabel {
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
+.infoLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold-600);
-  margin-bottom: 0.6rem;
+  color: var(--gold-400);
+  margin-bottom: 0.45rem;
 }
 
-.asideValue {
+.infoValue {
   font-size: 1rem;
-  color: var(--ink-900);
-  line-height: 1.5;
-}
-
-.asideValue a:hover {
-  color: var(--gold-600);
-}
-
-.asideLink {
-  color: var(--ink-900);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.55;
+  text-decoration: none;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
-.asideLink:hover {
-  color: var(--gold-600);
+a.infoValue:hover {
+  color: var(--gold-400);
 }
 
-.asideHint {
-  margin-top: 0.6rem;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--ink-500);
-  padding-left: 0.8rem;
-  border-left: 2px solid var(--gold-500);
+.infoValueMuted {
+  font-weight: 400;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.placeholder {
-  font-style: italic;
-  color: var(--ink-400);
+.infoHintLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 0.9rem;
+  margin-bottom: 0.35rem;
 }
 
-@media (max-width: 820px) {
-  .layout {
+.infoHint {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  max-width: 36ch;
+}
+
+/* Booking button */
+.bookingWrap {
+  margin-top: 0.4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bookingBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  background: #fff;
+  color: var(--navy-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.bookingBtn:hover {
+  background: var(--gold-400);
+  color: var(--navy-950);
+  transform: translateY(-1px);
+}
+
+.bookingBtn svg {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.bookingBtn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Right: Map */
+.mapWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: grayscale(20%) contrast(1.05);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .contactGrid {
     grid-template-columns: 1fr;
+    min-height: unset;
   }
 
-  .row {
-    grid-template-columns: 1fr;
+  .mapWrap {
+    position: relative;
+    height: 340px;
+  }
+}
+
+@media (max-width: 560px) {
+  .infoPanel {
+    gap: 2rem;
   }
 }

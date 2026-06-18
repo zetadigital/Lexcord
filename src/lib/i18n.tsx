@@ -103,28 +103,14 @@ interface Dictionary {
     contact: {
       heroEyebrow: string;
       heroTitle: string;
-      heroLede: string;
-      firstName: string;
-      lastName: string;
-      email: string;
-      phone: string;
-      area: string;
-      areaSelect: string;
-      areaOther: string;
-      message: string;
-      messagePlaceholder: string;
-      submit: string;
-      consent: string;
-      thanksTitle: string;
-      thanksBody: string;
+      introText: string;
       asideEmail: string;
       asidePhone: string;
       asideOffices: string;
       asideHours: string;
-      pendingConfirm: string;
-      emailValue: string;
-      officesValue: string;
       hoursValue: string;
+      liftLabel: string;
+      bookingCta: string;
     };
     people: {
       heroEyebrow: string;
@@ -313,36 +299,17 @@ const DICT: Record<Lang, Dictionary> = {
         ],
       },
       contact: {
-        heroEyebrow: "Book a consultation",
+        heroEyebrow: "Get in touch",
         heroTitle: "Contact Us",
-        heroLede:
-          "Intro copy pending firm content. The enquiry form below is functional and routes to the firm once connected.",
-        firstName: "First name",
-        lastName: "Last name",
-        email: "Email",
-        phone: "Phone",
-        area: "Area of law",
-        areaSelect: "Select the area that best fits…",
-        areaOther: "Something else",
-        message: "How can we help?",
-        messagePlaceholder:
-          "Tell us a little about your matter. There is no obligation, and your enquiry is confidential.",
-        submit: "Request a consultation",
-        consent:
-          "By submitting this form you agree to be contacted about your enquiry. The information you provide is general and does not create a lawyer–client relationship.",
-        thanksTitle: "Thank you — we have your enquiry.",
-        thanksBody:
-          "A member of our team will be in touch within one business day to arrange your consultation. For urgent criminal or bail matters, please call us directly.",
+        introText:
+          "Get in touch with our team to discuss how we can assist with your legal matter. Whether you have questions or are simply looking for guidance on where to start, we welcome the opportunity to hear from you. To speak with us directly, call during business hours — or use the booking link below to schedule a consultation at a time that suits you.",
         asideEmail: "Email",
         asidePhone: "Phone",
-        asideOffices: "Offices",
+        asideOffices: "Office",
         asideHours: "Hours",
-        pendingConfirm: "To be confirmed",
-        emailValue: "hello@lexcord.com.au",
-        officesValue:
-          "Servicing all Australian states & territories. Office address to be confirmed.",
-        hoursValue:
-          "Monday – Friday, by appointment. Urgent criminal & bail matters: contact us any time.",
+        hoursValue: "Monday – Friday, 9:00 am – 5:30 pm. Urgent criminal and bail matters: contact us any time.",
+        liftLabel: "Getting here",
+        bookingCta: "Book a Consultation",
       },
       people: {
         heroEyebrow: "Our People",
@@ -534,32 +501,17 @@ const DICT: Record<Lang, Dictionary> = {
         ],
       },
       contact: {
-        heroEyebrow: "预约咨询",
+        heroEyebrow: "与我们联系",
         heroTitle: "联系我们",
-        heroLede: "引言文案待事务所提供。下方的咨询表单已可使用,接通后将直达本所。",
-        firstName: "名",
-        lastName: "姓",
-        email: "电子邮箱",
-        phone: "电话",
-        area: "法律领域",
-        areaSelect: "请选择最相符的领域……",
-        areaOther: "其他事务",
-        message: "我们能为您做些什么?",
-        messagePlaceholder: "请简单描述您的事务。无需任何义务,且您的咨询将予以保密。",
-        submit: "申请咨询",
-        consent:
-          "提交此表单即表示您同意我们就您的咨询与您联系。您提供的信息为一般性内容,不构成律师—委托人关系。",
-        thanksTitle: "感谢您——我们已收到您的咨询。",
-        thanksBody:
-          "我们的团队成员将在一个工作日内与您联系,安排咨询。如遇紧急刑事或保释事务,请直接致电我们。",
+        introText:
+          "欢迎联系我们的团队，与我们探讨如何协助处理您的法律事务。无论您有初步疑问，还是已准备好寻求专业意见，我们都诚挚欢迎您与我们沟通。如需直接联系，请在工作时间致电，或点击下方按钮预约一次方便您的咨询。",
         asideEmail: "电子邮箱",
         asidePhone: "电话",
-        asideOffices: "办公地点",
+        asideOffices: "办公室",
         asideHours: "工作时间",
-        pendingConfirm: "待确认",
-        emailValue: "hello@lexcord.com.au",
-        officesValue: "服务全澳各州与领地。办公地址待确认。",
-        hoursValue: "周一至周五,需预约。紧急刑事与保释事务:可随时联系我们。",
+        hoursValue: "周一至周五，上午 9:00 至下午 5:30。紧急刑事与保释事务可随时联系我们。",
+        liftLabel: "前往指引",
+        bookingCta: "预约咨询",
       },
       people: {
         heroEyebrow: "我们的团队",
@@ -741,30 +693,17 @@ const DICT: Record<Lang, Dictionary> = {
         ],
       },
       contact: {
-        heroEyebrow: "預約諮詢",
+        heroEyebrow: "與我們聯絡",
         heroTitle: "聯絡我們",
-        heroLede: "引言文案待事務所提供。下方的諮詢表單已可使用，接通後將直達本所。",
-        firstName: "名",
-        lastName: "姓",
-        email: "電子郵箱",
-        phone: "電話",
-        area: "法律領域",
-        areaSelect: "請選擇最相符的領域……",
-        areaOther: "其他事務",
-        message: "我們能為您做些什麼？",
-        messagePlaceholder: "請簡單描述您的事務。無需任何義務，且您的諮詢將予以保密。",
-        submit: "申請諮詢",
-        consent: "提交此表單即表示您同意我們就您的諮詢與您聯絡。您提供的資訊為一般性內容，不構成律師—委託人關係。",
-        thanksTitle: "感謝您——我們已收到您的諮詢。",
-        thanksBody: "我們的團隊成員將在一個工作日內與您聯絡，安排諮詢。如遇緊急刑事或保釋事務，請直接致電我們。",
+        introText:
+          "歡迎聯絡我們的團隊，與我們探討如何協助處理您的法律事務。無論您有初步疑問，還是已準備好尋求專業意見，我們都誠摯歡迎您與我們溝通。如需直接聯絡，請在工作時間致電，或點擊下方按鈕預約一次方便您的諮詢。",
         asideEmail: "電子郵箱",
         asidePhone: "電話",
-        asideOffices: "辦公地點",
+        asideOffices: "辦公室",
         asideHours: "工作時間",
-        pendingConfirm: "待確認",
-        emailValue: "hello@lexcord.com.au",
-        officesValue: "服務全澳各州與領地。辦公地址待確認。",
-        hoursValue: "週一至週五，需預約。緊急刑事與保釋事務：可隨時聯絡我們。",
+        hoursValue: "週一至週五，上午 9:00 至下午 5:30。緊急刑事與保釋事務可隨時聯絡我們。",
+        liftLabel: "前往指引",
+        bookingCta: "預約諮詢",
       },
       people: {
         heroEyebrow: "我們的團隊",
