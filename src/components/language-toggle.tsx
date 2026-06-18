@@ -28,7 +28,7 @@ export function LanguageToggle({ light = true }: { light?: boolean }) {
         aria-pressed={lang === "zh-tw"}
         onClick={() => setLang("zh-tw")}
       >
-        <span className={styles.flag} aria-hidden="true">🇹🇼</span>繁體
+        繁體
       </button>
     </div>
   );
