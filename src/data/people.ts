@@ -223,6 +223,44 @@ export const team: TeamMember[] = [
     ],
   },
   {
+    slug: "gloria-guo",
+    name: "Gloria Guo",
+    role: "Paralegal",
+    roleZh: "律师助理",
+    roleZhTw: "律師助理",
+    photo: null,
+    areas: [],
+    email: "gloria.guo@lexcord.com.au",
+    phone: FIRM_PHONE,
+    qualifications: [
+      "Juris Doctor — Monash University",
+      "Bachelor of Laws — Renmin University of China",
+    ],
+    qualificationsZh: [
+      "法学博士 Juris Doctor — 蒙纳士大学",
+      "法学学士 — 中国人民大学",
+    ],
+    qualificationsZhTw: [
+      "法學博士 Juris Doctor — 蒙納士大學",
+      "法學學士 — 中國人民大學",
+    ],
+    bio: [
+      "Gloria is a Paralegal at Lexcord and a Juris Doctor candidate at Monash University. At Lexcord, Gloria primarily focuses on family law, including divorce, parenting and property settlement. She is responsible for a wide range of work including conducting legal research, assisting with client consultation and drafting court documents.",
+      "Gloria began her legal career at a community legal service centre, where she gained broad experience in family law, family violence intervention orders, parenting matters, and property settlement disputes.",
+      "Her passion for helping people navigate deeply personal and often emotionally charged issues drove her to specialise in this area. Gloria understands that family law issues can be one of the most difficult experiences in one's life. Her goal is to provide clients with quality legal services while ensuring they feel understood, supported and empowered.",
+    ],
+    bioZh: [
+      "Gloria 担任律和律师助理，同时在蒙纳士大学攻读法学博士（JD）课程。在律和，Gloria 主要专注于家庭法事务，涵盖离婚、亲权安排及财产分割等领域。她的工作内容广泛，包括开展法律研究、协助客户咨询及起草法庭文书。",
+      "Gloria 的法律职业生涯始于一家社区法律援助中心，在那里她积累了家庭法、家庭暴力干预令、亲权事务及财产分割纠纷等方面的丰富经验。",
+      "她对帮助当事人处理高度私密、往往伴随强烈情感压力的法律问题充满热忱，这驱使她深耕家庭法领域。Gloria 深知家庭法纠纷往往是人生中最艰难的经历之一，她致力于为客户提供优质法律服务，同时让他们感到被理解、被支持，并有能力面对挑战。",
+    ],
+    bioZhTw: [
+      "Gloria 擔任律和律師助理，同時在蒙納士大學攻讀法學博士（JD）課程。在律和，Gloria 主要專注於家庭法事務，涵蓋離婚、親權安排及財產分割等領域。她的工作內容廣泛，包括開展法律研究、協助客戶諮詢及起草法庭文書。",
+      "Gloria 的法律職業生涯始於一家社區法律援助中心，在那裡她積累了家庭法、家庭暴力干預令、親權事務及財產分割糾紛等方面的豐富經驗。",
+      "她對幫助當事人處理高度私密、往往伴隨強烈情感壓力的法律問題充滿熱忱，這驅使她深耕家庭法領域。Gloria 深知家庭法糾紛往往是人生中最艱難的經歷之一，她致力於為客戶提供優質法律服務，同時讓他們感到被理解、被支持，並有能力面對挑戰。",
+    ],
+  },
+  {
     slug: "carol-ma",
     name: "Carol Ma",
     role: "Paralegal & P.R.C. Qualified Lawyer",
