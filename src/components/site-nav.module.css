@@ -357,10 +357,7 @@
   .sheet {
     display: block;
     position: fixed;
-    top: 124px; /* sticky header: utility(40px) + main bar(84px) */
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 58;
     background: #fff;
     overflow-y: auto;
@@ -377,8 +374,8 @@
   .sheetInner {
     display: flex;
     flex-direction: column;
-    min-height: calc(100dvh - 124px);
-    padding: 0.75rem var(--gutter) 3rem;
+    min-height: 100dvh;
+    padding: 52px var(--gutter) 3rem;
   }
 
   /* Close button row — right aligned */
