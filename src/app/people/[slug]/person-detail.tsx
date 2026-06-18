@@ -40,13 +40,25 @@ export function PersonDetail({ slug }: { slug: string }) {
   if (!member) return null;
 
   const name = member.name;
-  const isChinese = lang === "zh" || lang === "zh-tw";
-  const role = isChinese ? member.roleZh : member.role;
-  const specialty = isChinese ? member.specialtyZh : member.specialty;
-  const bio = isChinese ? member.bioZh : member.bio;
-  const quals = isChinese ? member.qualificationsZh : member.qualifications;
-  const memberships = isChinese ? (member.membershipsZh ?? []) : (member.memberships ?? []);
+  const role =
+    lang === "zh-tw" ? (member.roleZhTw ?? member.roleZh) :
+    lang === "zh" ? member.roleZh : member.role;
+  const specialty =
+    lang === "zh-tw" ? (member.specialtyZhTw ?? member.specialtyZh) :
+    lang === "zh" ? member.specialtyZh : member.specialty;
+  const bio =
+    lang === "zh-tw" ? (member.bioZhTw ?? member.bioZh) :
+    lang === "zh" ? member.bioZh : member.bio;
+  const quals =
+    lang === "zh-tw" ? (member.qualificationsZhTw ?? member.qualificationsZh) :
+    lang === "zh" ? member.qualificationsZh : member.qualifications;
+  const memberships =
+    lang === "zh-tw" ? (member.membershipsZhTw ?? member.membershipsZh ?? []) :
+    lang === "zh" ? (member.membershipsZh ?? []) : (member.memberships ?? []);
   const membershipsLabel = lang === "zh" ? "会员资格" : lang === "zh-tw" ? "會員資格" : "Memberships";
+  const profileLabel = lang === "zh" ? "简介" : lang === "zh-tw" ? "簡介" : "Profile";
+  const phoneLabel = lang === "zh" ? "电话" : lang === "zh-tw" ? "電話" : "Phone";
+  const emailLabel = lang === "zh" ? "邮箱" : lang === "zh-tw" ? "郵箱" : "Email";
   const phoneDial = member.phone.replace(/[^+\d]/g, "");
 
   return (
@@ -78,13 +90,13 @@ export function PersonDetail({ slug }: { slug: string }) {
 
               <div className={styles.contactCard}>
                 <div className={styles.contactRow}>
-                  <span className={styles.contactKey}>{lang === "zh" ? "电话" : "Phone"}</span>
+                  <span className={styles.contactKey}>{phoneLabel}</span>
                   <span className={styles.contactVal}>
                     <a href={`tel:${phoneDial}`}>{member.phone}</a>
                   </span>
                 </div>
                 <div className={styles.contactRow}>
-                  <span className={styles.contactKey}>{lang === "zh" ? "邮箱" : "Email"}</span>
+                  <span className={styles.contactKey}>{emailLabel}</span>
                   <span className={styles.contactVal}>
                     <a href={`mailto:${member.email}`}>{member.email}</a>
                   </span>
@@ -97,7 +109,7 @@ export function PersonDetail({ slug }: { slug: string }) {
 
             <div>
               <div className={styles.section}>
-                <p className={styles.sectionTitle}>{lang === "zh" ? "简介" : "Profile"}</p>
+                <p className={styles.sectionTitle}>{profileLabel}</p>
                 <div className={styles.bio}>
                   {bio.map((para, i) => (
                     <p key={i}>{para}</p>
