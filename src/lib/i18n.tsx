@@ -381,7 +381,7 @@ const DICT: Record<Lang, Dictionary> = {
       disclaimer: "本网站信息仅为一般性内容,不构成法律意见。请联系我们获取针对您具体情况的建议。",
       expertise: "执业领域",
       firm: "律所",
-      aboutLexcord: "关于 Lexcord",
+      aboutLexcord: "关于律和",
       contact: "联系我们",
       book: "预约咨询",
       rights: "版权所有。",
@@ -393,7 +393,7 @@ const DICT: Record<Lang, Dictionary> = {
     },
     common: {
       ourServices: "我们的服务",
-      whyChoose: "为何选择 Lexcord",
+      whyChoose: "为何选择律和",
       bookConsultation: "预约咨询",
       learnMore: "了解更多",
       relatedPosts: "相关资讯",
@@ -436,9 +436,9 @@ const DICT: Record<Lang, Dictionary> = {
       home: {
         bannerTitle: "清晰、用心、兼具商业判断的法律意见。",
         bannerLede:
-          "Lexcord Lawyers 是一家位于墨尔本的律师事务所,为个人、家庭与企业处理房产、商业、移民、遗嘱与遗产、知识产权、刑事等各类法律事务。",
-        whyEyebrow: "为何选择 Lexcord",
-        whyTitle: "为何选择 Lexcord?",
+          "律和律师事务所是一家位于墨尔本的律师事务所,为个人、家庭与企业处理房产、商业、移民、遗嘱与遗产、知识产权、刑事等各类法律事务。",
+        whyEyebrow: "为何选择律和",
+        whyTitle: "为何选择律和?",
         whySubtitle: "敏锐的法律思考,以用心的方式交付。",
         why: [
           {
@@ -457,7 +457,7 @@ const DICT: Record<Lang, Dictionary> = {
         sayEyebrow: "客户评价",
         sayTitle: "客户怎么说",
         testimonials: [
-          { quote: "从第一次沟通起,Lexcord 就把我的选择讲得清清楚楚,让原本压力很大的过程变得从容可控。", name: "J. Williams", detail: "产权过户" },
+          { quote: "从第一次沟通起,律和就把我的选择讲得清清楚楚,让原本压力很大的过程变得从容可控。", name: "J. Williams", detail: "产权过户" },
           { quote: "回应及时、做法务实,真心站在我这一边。我始终清楚自己的事务进展到哪一步。", name: "A. Chen", detail: "商业法" },
           { quote: "他们非常用心地处理了我的签证申请,每一步都让我了解进展。", name: "R. Kumar", detail: "移民法" },
           { quote: "建议清晰、收费合理、毫无意外。这正是你对一家律所的期待。", name: "M. Rossi", detail: "遗嘱与遗产" },
@@ -477,7 +477,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitlePre: "我们的执业领域,",
         heroTitleEm: "同一份用心",
         heroLede:
-          "Lexcord 兼具综合性事务所的广度与专业律师的深度——为个人、家庭与企业提供服务,覆盖全澳各州与领地。",
+          "律和兼具综合性事务所的广度与专业律师的深度——为个人、家庭与企业提供服务,覆盖全澳各州与领地。",
       },
       resources: {
         heroEyebrow: "资讯与洞见",
@@ -494,7 +494,7 @@ const DICT: Record<Lang, Dictionary> = {
         cta: "现在就有疑问?预约咨询",
       },
       about: {
-        heroEyebrow: "关于 Lexcord",
+        heroEyebrow: "关于律和",
         heroTitle: "不止是您的律师,更是您每一段法律旅程的同行者。",
         sections: [
           {
@@ -566,7 +566,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitlePre: "为您的事务",
         heroTitleEm: "保驾护航的团队",
         heroLede:
-          "Lexcord 由正式执业的律师领衔,把您的事务当作自己的事务。认识我们的团队——更多成员简介正在陆续加入。",
+          "律和由正式执业的律师领衔,把您的事务当作自己的事务。认识我们的团队——更多成员简介正在陆续加入。",
         viewProfile: "查看简介",
         qualifications: "资历与执业资格",
         expertise: "专长领域",
@@ -597,7 +597,7 @@ const DICT: Record<Lang, Dictionary> = {
       disclaimer: "本網站資訊僅為一般性內容，不構成法律意見。請聯絡我們獲取針對您具體情況的建議。",
       expertise: "執業領域",
       firm: "律所",
-      aboutLexcord: "關於 Lexcord",
+      aboutLexcord: "關於律和",
       contact: "聯絡我們",
       book: "預約諮詢",
       rights: "版權所有。",
@@ -609,7 +609,7 @@ const DICT: Record<Lang, Dictionary> = {
     },
     common: {
       ourServices: "我們的服務",
-      whyChoose: "為何選擇 Lexcord",
+      whyChoose: "為何選擇律和",
       bookConsultation: "預約諮詢",
       learnMore: "了解更多",
       relatedPosts: "相關資訊",
@@ -646,9 +646,9 @@ const DICT: Record<Lang, Dictionary> = {
     pages: {
       home: {
         bannerTitle: "清晰、用心、兼具商業判斷的法律意見。",
-        bannerLede: "Lexcord Lawyers 是一家位於墨爾本的律師事務所，為個人、家庭與企業處理房產、商業、移民、遺囑與遺產、知識產權、刑事等各類法律事務。",
-        whyEyebrow: "為何選擇 Lexcord",
-        whyTitle: "為何選擇 Lexcord?",
+        bannerLede: "律和國際律師事務所是一家位於墨爾本的律師事務所，為個人、家庭與企業處理房產、商業、移民、遺囑與遺產、知識產權、刑事等各類法律事務。",
+        whyEyebrow: "為何選擇律和",
+        whyTitle: "為何選擇律和?",
         whySubtitle: "敏銳的法律思考，以用心的方式交付。",
         why: [
           {
@@ -667,7 +667,7 @@ const DICT: Record<Lang, Dictionary> = {
         sayEyebrow: "客戶評價",
         sayTitle: "客戶怎麼說",
         testimonials: [
-          { quote: "從第一次溝通起，Lexcord 就把我的選擇講得清清楚楚，讓原本壓力很大的過程變得從容可控。", name: "J. Williams", detail: "產權過戶" },
+          { quote: "從第一次溝通起，律和就把我的選擇講得清清楚楚，讓原本壓力很大的過程變得從容可控。", name: "J. Williams", detail: "產權過戶" },
           { quote: "回應及時、做法務實，真心站在我這一邊。我始終清楚自己的事務進展到哪一步。", name: "A. Chen", detail: "商業法" },
           { quote: "他們非常用心地處理了我的簽證申請，每一步都讓我了解進展。", name: "R. Kumar", detail: "移民法" },
           { quote: "建議清晰、收費合理、毫無意外。這正是你對一家律所的期待。", name: "M. Rossi", detail: "遺囑與遺產" },
@@ -685,7 +685,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroEyebrow: "我們的服務",
         heroTitlePre: "我們的執業領域，",
         heroTitleEm: "同一份用心",
-        heroLede: "Lexcord 兼具綜合性事務所的廣度與專業律師的深度——為個人、家庭與企業提供服務，覆蓋全澳各州與領地。",
+        heroLede: "律和兼具綜合性事務所的廣度與專業律師的深度——為個人、家庭與企業提供服務，覆蓋全澳各州與領地。",
       },
       resources: {
         heroEyebrow: "資訊與洞見",
@@ -701,7 +701,7 @@ const DICT: Record<Lang, Dictionary> = {
         cta: "現在就有疑問？預約諮詢",
       },
       about: {
-        heroEyebrow: "關於 Lexcord",
+        heroEyebrow: "關於律和",
         heroTitle: "不止是您的律師，更是您每一段法律旅程的同行者。",
         sections: [
           {
@@ -770,7 +770,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroEyebrow: "我們的團隊",
         heroTitlePre: "為您的事務",
         heroTitleEm: "保駕護航的團隊",
-        heroLede: "Lexcord 由正式執業的律師領銜，把您的事務當作自己的事務。認識我們的團隊——更多成員簡介正在陸續加入。",
+        heroLede: "律和由正式執業的律師領銜，把您的事務當作自己的事務。認識我們的團隊——更多成員簡介正在陸續加入。",
         viewProfile: "查看簡介",
         qualifications: "資歷與執業資格",
         expertise: "專長領域",
