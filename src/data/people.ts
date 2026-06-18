@@ -155,8 +155,8 @@ export const team: TeamMember[] = [
   {
     slug: "carol-ma",
     name: "Carol Ma",
-    role: "Paralegal",
-    roleZh: "法律顾问",
+    role: "Paralegal & P.R.C. Qualified Lawyer",
+    roleZh: "律师助理 · 中国执业律师",
     photo: "/images/team/carol-ma.jpg",
     areas: [],
     email: "carol.ma@lexcord.com.au",
