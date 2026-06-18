@@ -228,7 +228,7 @@ export const team: TeamMember[] = [
     role: "Paralegal",
     roleZh: "律师助理",
     roleZhTw: "律師助理",
-    photo: null,
+    photo: "/images/team/gloria-guo.jpg",
     areas: [],
     email: "gloria.guo@lexcord.com.au",
     phone: FIRM_PHONE,
