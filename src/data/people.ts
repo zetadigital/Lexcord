@@ -147,9 +147,9 @@ export const team: TeamMember[] = [
       "Taylor's social work background informs a compassionate, client-centred approach — particularly in matters involving families, vulnerable individuals and those navigating complex personal circumstances.",
     ],
     bioZh: [
-      "张彦伊（Taylor）担任律和律师助理，同时在莫纳什大学攻读法学博士（JD）课程。他拥有跨学科的多元背景，融合了中澳两国法学训练、社会工作硕士学位，以及逾八年的社区服务一线经验。",
+      "Taylor 担任律和律师助理，同时在莫纳什大学攻读法学博士（JD）课程。他拥有跨学科的多元背景，融合了中澳两国法学训练、社会工作硕士学位，以及逾八年的社区服务一线经验。",
       "在律和，他协助律师处理各类事务，包括起草与审阅法律文书及往来函件、开展法律研究，以及联络客户与大律师及法院。此前，他曾在维多利亚州社区法律服务机构及墨尔本私人律师事务所担任律师助理，积累了丰富的实务经验。",
-      "张彦伊的社会工作背景赋予他以客户为中心的同理心视角，尤其擅长处理涉及家庭、弱势群体及复杂个人处境的法律事务。",
+      "Taylor 的社会工作背景赋予他以客户为中心的同理心视角，尤其擅长处理涉及家庭、弱势群体及复杂个人处境的法律事务。",
     ],
   },
   {
@@ -175,7 +175,7 @@ export const team: TeamMember[] = [
       "Carol's deep expertise in Chinese capital markets law and her bilingual English and Mandarin capability make her a valuable resource for clients involved in cross-border transactions and China-related commercial matters.",
     ],
     bioZh: [
-      "马菊鸿（Carol）担任律和法律顾问，在中国及跨境商业法律实务方面积累了深厚经验。她持有悉尼大学法学硕士及贵州大学法学学士学位，并曾在北京一家知名商业律师事务所执业，积累了丰富的专业经验。",
+      "Carol 担任律和律师助理，在中国及跨境商业法律实务方面积累了深厚经验。她持有悉尼大学法学硕士及贵州大学法学学士学位，并曾在北京一家知名商业律师事务所执业，积累了丰富的专业经验。",
       "Carol 的执业背景涵盖证券发行与 IPO（A 股及港股上市）、私募股权融资与并购交易，以及为上市与非上市企业提供常年法律顾问服务。其工作内容包括法律尽职调查、起草投资协议、股东协议与股权转让文件，以及监管合规与公司治理咨询。",
       "Carol 在中国资本市场法领域拥有深厚积累，兼具中英双语能力，能够为涉及跨境交易及中国商业事务的客户提供独特的专业支持。",
     ],
