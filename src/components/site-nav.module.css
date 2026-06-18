@@ -96,9 +96,9 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.6rem 0.8rem;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--navy-900);
   background: transparent;
