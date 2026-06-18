@@ -175,9 +175,8 @@ export function SiteNav() {
       <div className={`${styles.sheet} ${open ? styles.sheetOpen : ""}`} aria-hidden={!open}>
         <div className={styles.sheetInner}>
 
-          {/* Top bar: language toggle left, close button right */}
+          {/* Close button — top right */}
           <div className={styles.sheetTopBar}>
-            <LanguageToggle light={false} />
             <button
               className={styles.sheetClose}
               aria-label="Close menu"
@@ -207,6 +206,11 @@ export function SiteNav() {
               </Link>
             ))}
           </nav>
+
+          {/* Language toggle below nav links */}
+          <div className={styles.sheetLang}>
+            <LanguageToggle light={false} />
+          </div>
 
           <div className={styles.sheetFooter}>
             <a href={`tel:${PHONE_DIAL}`} className={styles.sheetContactRow}>

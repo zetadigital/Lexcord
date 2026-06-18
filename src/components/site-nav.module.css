@@ -376,15 +376,14 @@
     display: flex;
     flex-direction: column;
     min-height: calc(100dvh - 125px);
-    padding: 1.25rem var(--gutter) 3rem;
+    padding: 0.5rem var(--gutter) 3rem;
   }
 
-  /* Top bar inside overlay: language toggle left, close button right */
+  /* Close button row — right aligned */
   .sheetTopBar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
   }
 
   .sheetClose {
@@ -439,6 +438,11 @@
 
   .sheetLink:hover {
     color: var(--gold-600);
+  }
+
+  /* Language toggle below nav links */
+  .sheetLang {
+    margin-top: 1.25rem;
   }
 
   /* Footer contact block */
