@@ -101,15 +101,19 @@ interface Dictionary {
       sections: { title: string; paragraphs: string[] }[];
     };
     contact: {
-      heroEyebrow: string;
       heroTitle: string;
       introText: string;
-      asideEmail: string;
-      asidePhone: string;
-      asideOffices: string;
-      asideHours: string;
-      hoursValue: string;
-      liftLabel: string;
+      cardVisitLabel: string;
+      cardVisitSub: string;
+      cardVisitCta: string;
+      cardCallLabel: string;
+      cardCallSub: string;
+      cardCallCta: string;
+      cardEmailLabel: string;
+      cardEmailSub: string;
+      cardEmailCta: string;
+      readyTitle: string;
+      readyBody: string;
       bookingCta: string;
     };
     people: {
@@ -299,17 +303,21 @@ const DICT: Record<Lang, Dictionary> = {
         ],
       },
       contact: {
-        heroEyebrow: "Get in touch",
         heroTitle: "Contact Us",
         introText:
-          "Get in touch with our team to discuss how we can assist with your legal matter. Whether you have questions or are simply looking for guidance on where to start, we welcome the opportunity to hear from you. To speak with us directly, call during business hours — or use the booking link below to schedule a consultation at a time that suits you.",
-        asideEmail: "Email",
-        asidePhone: "Phone",
-        asideOffices: "Office",
-        asideHours: "Hours",
-        hoursValue: "Monday – Friday, 9:00 am – 5:30 pm. Urgent criminal and bail matters: contact us any time.",
-        liftLabel: "Getting here",
-        bookingCta: "Book a Consultation",
+          "Get in touch with our team to discuss how we can assist with your legal matter. Whether you have questions or are simply looking for guidance on where to start, we welcome the opportunity to hear from you.",
+        cardVisitLabel: "Visit",
+        cardVisitSub: "Melbourne VIC 3000, Australia",
+        cardVisitCta: "Get directions",
+        cardCallLabel: "Call",
+        cardCallSub: "Monday – Friday, 9:00 am – 5:30 pm",
+        cardCallCta: "Call now",
+        cardEmailLabel: "Email",
+        cardEmailSub: "We reply within one business day",
+        cardEmailCta: "Send email",
+        readyTitle: "Ready when you are",
+        readyBody: "Book a time that suits you and we will match you with the right person for your matter.",
+        bookingCta: "Book a consultation",
       },
       people: {
         heroEyebrow: "Our People",
@@ -501,16 +509,20 @@ const DICT: Record<Lang, Dictionary> = {
         ],
       },
       contact: {
-        heroEyebrow: "与我们联系",
         heroTitle: "联系我们",
         introText:
-          "欢迎联系我们的团队，与我们探讨如何协助处理您的法律事务。无论您有初步疑问，还是已准备好寻求专业意见，我们都诚挚欢迎您与我们沟通。如需直接联系，请在工作时间致电，或点击下方按钮预约一次方便您的咨询。",
-        asideEmail: "电子邮箱",
-        asidePhone: "电话",
-        asideOffices: "办公室",
-        asideHours: "工作时间",
-        hoursValue: "周一至周五，上午 9:00 至下午 5:30。紧急刑事与保释事务可随时联系我们。",
-        liftLabel: "前往指引",
+          "欢迎联系我们的团队，与我们探讨如何协助处理您的法律事务。无论您有初步疑问，还是已准备好寻求专业意见，我们都诚挚欢迎您与我们沟通。",
+        cardVisitLabel: "前往",
+        cardVisitSub: "墨尔本 VIC 3000，澳大利亚",
+        cardVisitCta: "获取路线",
+        cardCallLabel: "致电",
+        cardCallSub: "周一至周五，上午 9:00 至下午 5:30",
+        cardCallCta: "立即致电",
+        cardEmailLabel: "邮件",
+        cardEmailSub: "我们将在一个工作日内回复",
+        cardEmailCta: "发送邮件",
+        readyTitle: "随时为您服务",
+        readyBody: "预约一个适合您的时间，我们将为您的事务安排最合适的律师。",
         bookingCta: "预约咨询",
       },
       people: {
@@ -693,16 +705,20 @@ const DICT: Record<Lang, Dictionary> = {
         ],
       },
       contact: {
-        heroEyebrow: "與我們聯絡",
         heroTitle: "聯絡我們",
         introText:
-          "歡迎聯絡我們的團隊，與我們探討如何協助處理您的法律事務。無論您有初步疑問，還是已準備好尋求專業意見，我們都誠摯歡迎您與我們溝通。如需直接聯絡，請在工作時間致電，或點擊下方按鈕預約一次方便您的諮詢。",
-        asideEmail: "電子郵箱",
-        asidePhone: "電話",
-        asideOffices: "辦公室",
-        asideHours: "工作時間",
-        hoursValue: "週一至週五，上午 9:00 至下午 5:30。緊急刑事與保釋事務可隨時聯絡我們。",
-        liftLabel: "前往指引",
+          "歡迎聯絡我們的團隊，與我們探討如何協助處理您的法律事務。無論您有初步疑問，還是已準備好尋求專業意見，我們都誠摯歡迎您與我們溝通。",
+        cardVisitLabel: "前往",
+        cardVisitSub: "墨爾本 VIC 3000，澳大利亞",
+        cardVisitCta: "獲取路線",
+        cardCallLabel: "致電",
+        cardCallSub: "週一至週五，上午 9:00 至下午 5:30",
+        cardCallCta: "立即致電",
+        cardEmailLabel: "郵件",
+        cardEmailSub: "我們將在一個工作日內回覆",
+        cardEmailCta: "傳送郵件",
+        readyTitle: "隨時為您服務",
+        readyBody: "預約一個適合您的時間，我們將為您的事務安排最合適的律師。",
         bookingCta: "預約諮詢",
       },
       people: {
