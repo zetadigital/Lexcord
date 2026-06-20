@@ -101,7 +101,7 @@
 .services {
   background: var(--paper);
   padding-block: clamp(3.5rem, 2rem + 5vw, 6rem);
-  border-top: 1px solid var(--hairline);
+  border-radius: clamp(1.2rem, 2.5vw, 2.5rem) clamp(1.2rem, 2.5vw, 2.5rem) 0 0;
 }
 
 .servicesTitle {
