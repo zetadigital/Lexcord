@@ -207,7 +207,7 @@ const DICT: Record<Lang, Dictionary> = {
     },
     pages: {
       home: {
-        bannerTitle: "Legal advice with clarity, care and commercial sense.",
+        bannerTitle: "For what matters next.",
         bannerTagline: "Thoughtful advice. Practical direction. People first.",
         bannerLede:
           "We help individuals, families and businesses navigate property, commercial, migration and dispute matters with confidence.",
@@ -419,7 +419,7 @@ const DICT: Record<Lang, Dictionary> = {
     },
     pages: {
       home: {
-        bannerTitle: "清晰、用心、兼具商业判断的法律意见。",
+        bannerTitle: "为您所重要的事。",
         bannerTagline: "用心建议。务实方向。以人为本。",
         bannerLede:
           "我们协助个人、家庭及企业，自信应对房产、商业、移民与纠纷等法律事务。",
@@ -624,7 +624,7 @@ const DICT: Record<Lang, Dictionary> = {
     },
     pages: {
       home: {
-        bannerTitle: "清晰、用心、兼具商業判斷的法律意見。",
+        bannerTitle: "為您所重要的事。",
         bannerTagline: "用心建議。務實方向。以人為本。",
         bannerLede: "我們協助個人、家庭及企業，自信應對房產、商業、移民與糾紛等法律事務。",
         bannerCta1: "關於律和",

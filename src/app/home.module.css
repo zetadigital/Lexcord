@@ -62,37 +62,35 @@
   /* size override — default btn is fine, this keeps them consistent */
 }
 
-/* Right: light grey, arch photos */
+/* Right: same white as left, arch photos */
 .bannerRight {
-  background: var(--paper);
+  background: #fff;
   display: flex;
-  align-items: flex-end;
-  padding: clamp(2.5rem, 1.5rem + 3vw, 4rem)
-           clamp(1.5rem, 2vw, 3rem)
-           0
-           clamp(1rem, 1.5vw, 2rem);
+  align-items: stretch;
+  padding: clamp(2rem, 3vw, 3.5rem) clamp(1.5rem, 2.5vw, 3rem);
   overflow: hidden;
 }
 
 .archGroup {
   display: flex;
-  align-items: flex-end;
-  gap: 0.75rem;
+  align-items: center; /* vertically centre the three arches */
+  gap: 0;             /* no gap between arches */
   width: 100%;
+  height: 100%;
 }
 
 .arch {
   position: relative;
   flex: 1;
-  aspect-ratio: 2 / 3;
+  min-width: 0;
   border-radius: 9999px 9999px 0 0;
   overflow: hidden;
 }
 
-/* Stagger for visual rhythm — arch 1 tallest, arch 2 lower, arch 3 mid */
-.arch1 { /* default, full height */ }
-.arch2 { margin-top: clamp(2rem, 5vw, 4rem); }
-.arch3 { margin-top: clamp(1rem, 2.5vw, 2rem); }
+/* Stagger heights using vh so they relate to the banner height */
+.arch1 { height: clamp(280px, 52vh, 520px); }
+.arch2 { height: clamp(220px, 42vh, 420px); }
+.arch3 { height: clamp(250px, 47vh, 470px); }
 
 .archImg {
   object-fit: cover;
@@ -120,7 +118,7 @@
 .servicesGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 2.5rem 2rem;
+  gap: 3rem 2.5rem;
 }
 
 .serviceItem {
@@ -130,32 +128,32 @@
 
 .serviceIcon {
   color: var(--navy-900);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   line-height: 0;
 }
 
 .serviceName {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--navy-950);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.65rem;
   line-height: 1.3;
 }
 
 .serviceDesc {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--ink-700);
-  line-height: 1.68;
+  line-height: 1.7;
   flex: 1;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.2rem;
   text-wrap: pretty;
 }
 
 .serviceCta {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.84rem;
+  gap: 0.4rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--gold-600);
   text-decoration: none;
@@ -163,7 +161,7 @@
 }
 
 .serviceCta:hover {
-  gap: 0.6rem;
+  gap: 0.65rem;
   color: var(--navy-900);
 }
 
