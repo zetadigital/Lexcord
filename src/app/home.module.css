@@ -97,16 +97,22 @@
   object-position: center top;
 }
 
-/* First arch shows the statue + books on the left of the photo */
-.arch1 .archImg {
-  object-position: 20% top;
+/* Third arch (bookshelf) — show statue + books on the far left */
+.arch3 .archImg {
+  object-position: 0% top;
 }
 
 /* ── How we can support you ── */
 .services {
   background: var(--paper);
-  padding-block: clamp(3.5rem, 2rem + 5vw, 6rem);
-  border-radius: clamp(1.2rem, 2.5vw, 2.5rem) clamp(1.2rem, 2.5vw, 2.5rem) 0 0;
+  /* Overlap the white banner section above so the rounded corners
+     cut against white and become visible */
+  margin-top: -2.5rem;
+  padding-block-start: calc(clamp(3.5rem, 2rem + 5vw, 6rem) + 2.5rem);
+  padding-block-end: clamp(3.5rem, 2rem + 5vw, 6rem);
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+  z-index: 1;
 }
 
 .servicesTitle {
