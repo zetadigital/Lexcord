@@ -6,11 +6,19 @@ import { useLang } from "@/lib/i18n";
 import { Reveal } from "@/components/reveal";
 import styles from "./home.module.css";
 
-const BANNER_IMG = "/images/office/office-7.jpg";
-const MAPS = "https://maps.google.com/?q=530+Little+Collins+St+Melbourne+VIC+3000";
+const MAPS  = "https://maps.google.com/?q=530+Little+Collins+St+Melbourne+VIC+3000";
 const EMAIL = "info@lexcord.com.au";
 const PHONE_DISPLAY = "+61 3 7054 5135";
-const PHONE_DIAL = "+61370545135";
+const PHONE_DIAL    = "+61370545135";
+
+/* 5 practice areas featured in the "How we can support you" section */
+const FEATURED = [
+  { slug: "commercial",    label: "Commercial" },
+  { slug: "property-law",  label: "Property Law" },
+  { slug: "family-law",    label: "Family Law" },
+  { slug: "migration-law", label: "Migration" },
+  { slug: "wills-estates", label: "Wills & Estates" },
+] as const;
 
 function ArrowRight() {
   return (
@@ -20,31 +28,39 @@ function ArrowRight() {
   );
 }
 
-function WhyIcon({ index }: { index: number }) {
-  if (index === 0) {
-    // clarity — speech / document
-    return (
-      <svg viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
-        <path d="M6 7h20v14H13l-5 4v-4H6V7z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-        <path d="M11 12h10M11 16h6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      </svg>
-    );
-  }
-  if (index === 1) {
-    // personal attention — person + heart
-    return (
-      <svg viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
-        <circle cx="13" cy="11" r="5" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M4 27c0-5 4-8.5 9-8.5 2 0 3.8.6 5.3 1.6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <path d="M24.5 19.5c1.6-1.5 4.2-.6 4.2 1.6 0 2.2-4.2 4.9-4.2 4.9s-4.2-2.7-4.2-4.9c0-2.2 2.6-3.1 4.2-1.6z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-  // depth — layered / pillars
+function ServiceIcon({ slug }: { slug: string }) {
+  if (slug === "commercial") return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+      <rect x="2" y="7" width="20" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+      <path d="M8 7V5a4 4 0 018 0v2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+      <path d="M2 12h20" stroke="currentColor" strokeWidth="1.6"/>
+    </svg>
+  );
+  if (slug === "property-law") return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+      <path d="M3 10.5L12 3l9 7.5V22H3V10.5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+      <rect x="8.5" y="14" width="3" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.5"/>
+      <rect x="13" y="14" width="2.5" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.5"/>
+    </svg>
+  );
+  if (slug === "family-law") return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+      <circle cx="8" cy="7" r="3" stroke="currentColor" strokeWidth="1.6"/>
+      <circle cx="17" cy="7" r="2.5" stroke="currentColor" strokeWidth="1.6"/>
+      <path d="M2 21c0-4 2.7-7 6-7h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+      <path d="M16 14c2.5 0 5 2 5 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
+  if (slug === "migration-law") return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6"/>
+      <path d="M3 12h18M12 3c-2.5 2.5-4 5.5-4 9s1.5 6.5 4 9M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
   return (
-    <svg viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
-      <path d="M16 4l11 5-11 5L5 9l11-5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-      <path d="M6 14l10 4.5L26 14M6 19l10 4.5L26 19" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+      <path d="M6 3h12a1 1 0 011 1v16a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+      <path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
     </svg>
   );
 }
@@ -58,55 +74,71 @@ function QuoteMark() {
 }
 
 export default function HomePage() {
-  const { t } = useLang();
+  const { t, areaLabel } = useLang();
   const h = t.pages.home;
-
-  // Duplicate the testimonials so the marquee scrolls seamlessly.
   const marquee = [...h.testimonials, ...h.testimonials];
 
   return (
     <>
-      {/* Banner */}
+      {/* ── Banner — split layout ── */}
       <section className={styles.banner}>
-        <div className={styles.bannerMedia}>
-          <Image src={BANNER_IMG} alt="" fill priority sizes="100vw" className={styles.bannerImg} />
-          <div className={styles.bannerScrim} />
+        {/* Left — white, text content */}
+        <div className={styles.bannerLeft}>
+          <div className={styles.bannerContent}>
+            <h1 className={styles.bannerTitle}>{h.bannerTitle}</h1>
+            <p className={styles.bannerTagline}>{h.bannerTagline}</p>
+            <p className={styles.bannerLede}>{h.bannerLede}</p>
+            <div className={styles.bannerCtas}>
+              <Link href="/about" className={`btn btn--primary ${styles.bannerBtn}`}>
+                {h.bannerCta1} <ArrowRight />
+              </Link>
+              <Link href="/people" className={`btn btn--ghost ${styles.bannerBtn}`}>
+                {h.bannerCta2}
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className={`container ${styles.bannerInner}`}>
-          <div className={styles.glass}>
-            <span className={styles.glassKicker}>Lexcord Lawyers</span>
-            <h1 className={styles.glassTitle}>{h.bannerTitle}</h1>
-            <p className={styles.glassLede}>{h.bannerLede}</p>
-            <Link href="/contact" className={`btn btn--primary ${styles.glassCta}`}>
-              {t.nav.book} <ArrowRight />
-            </Link>
+
+        {/* Right — three arched office photos */}
+        <div className={styles.bannerRight} aria-hidden="true">
+          <div className={styles.archGroup}>
+            <div className={`${styles.arch} ${styles.arch1}`}>
+              <Image src="/images/office/office-7.jpg" alt="" fill className={styles.archImg} sizes="15vw" />
+            </div>
+            <div className={`${styles.arch} ${styles.arch2}`}>
+              <Image src="/images/office/office-1.jpg" alt="" fill className={styles.archImg} sizes="15vw" />
+            </div>
+            <div className={`${styles.arch} ${styles.arch3}`}>
+              <Image src="/images/office/office-3.jpg" alt="" fill className={styles.archImg} sizes="15vw" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why choose Lexcord */}
-      <section className={`section ${styles.why}`}>
+      {/* ── How we can support you ── */}
+      <section className={styles.services}>
         <div className="container">
-          <div className={styles.whyHead}>
-            <span className="eyebrow">{h.whyEyebrow}</span>
-            <h2 className={styles.whyTitle}>{h.whyTitle}</h2>
-            <p className={styles.whySub}>{h.whySubtitle}</p>
-          </div>
-          <div className={styles.whyGrid}>
-            {h.why.map((item, i) => (
-              <Reveal key={item.title} as="article" delay={i * 90} className={styles.whyCard}>
-                <span className={styles.whyIcon}>
-                  <WhyIcon index={i} />
+          <h2 className={styles.servicesTitle}>{h.servicesTitle}</h2>
+          <div className={styles.servicesGrid}>
+            {FEATURED.map((area, i) => (
+              <Reveal key={area.slug} as="div" delay={i * 70} className={styles.serviceItem}>
+                <span className={styles.serviceIcon}>
+                  <ServiceIcon slug={area.slug} />
                 </span>
-                <h3 className={styles.whyCardTitle}>{item.title}</h3>
-                <p className={styles.whyCardText}>{item.text}</p>
+                <h3 className={styles.serviceName}>
+                  {areaLabel(area.slug, area.label)}
+                </h3>
+                <p className={styles.serviceDesc}>{t.summaries[area.slug]}</p>
+                <Link href={`/expertise/${area.slug}`} className={styles.serviceCta}>
+                  {h.servicesLearnMore} <ArrowRight />
+                </Link>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What do they say — scrolling testimonials */}
+      {/* ── What do they say — scrolling testimonials ── */}
       <section className={`section ${styles.say}`}>
         <div className="container">
           <div className={styles.sayHead}>
@@ -118,9 +150,7 @@ export default function HomePage() {
           <div className={styles.marqueeTrack}>
             {marquee.map((tm, i) => (
               <figure key={i} className={styles.quoteCard} aria-hidden={i >= h.testimonials.length}>
-                <span className={styles.quoteMark}>
-                  <QuoteMark />
-                </span>
+                <span className={styles.quoteMark}><QuoteMark /></span>
                 <blockquote className={styles.quoteText}>{tm.quote}</blockquote>
                 <figcaption className={styles.quoteName}>
                   {tm.name} <span>· {tm.detail}</span>
@@ -131,7 +161,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ready to discuss your matter? */}
+      {/* ── Ready to discuss your matter? ── */}
       <section className={`section ${styles.ready}`}>
         <div className="container">
           <div className={styles.readyGrid}>
@@ -146,9 +176,7 @@ export default function HomePage() {
             <dl className={styles.readyList}>
               <div>
                 <dt>{h.addressLabel}</dt>
-                <dd>
-                  <a href={MAPS} target="_blank" rel="noopener noreferrer">{t.footer.address}</a>
-                </dd>
+                <dd><a href={MAPS} target="_blank" rel="noopener noreferrer">{t.footer.address}</a></dd>
               </div>
               <div>
                 <dt>{h.phoneLabel}</dt>

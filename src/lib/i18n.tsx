@@ -61,7 +61,12 @@ interface Dictionary {
   pages: {
     home: {
       bannerTitle: string;
+      bannerTagline: string;
       bannerLede: string;
+      bannerCta1: string;
+      bannerCta2: string;
+      servicesTitle: string;
+      servicesLearnMore: string;
       whyEyebrow: string;
       whyTitle: string;
       whySubtitle: string;
@@ -203,8 +208,13 @@ const DICT: Record<Lang, Dictionary> = {
     pages: {
       home: {
         bannerTitle: "Legal advice with clarity, care and commercial sense.",
+        bannerTagline: "Thoughtful advice. Practical direction. People first.",
         bannerLede:
-          "Lexcord Lawyers is a Melbourne-based law firm assisting individuals, families and businesses with property, commercial, migration, wills and estates, intellectual property, criminal law and other legal matters.",
+          "We help individuals, families and businesses navigate property, commercial, migration and dispute matters with confidence.",
+        bannerCta1: "About Lexcord",
+        bannerCta2: "Meet our people",
+        servicesTitle: "How we can support you",
+        servicesLearnMore: "Learn more",
         whyEyebrow: "Why Lexcord",
         whyTitle: "Why choose Lexcord?",
         whySubtitle: "Sharp legal thinking, delivered with care.",
@@ -410,8 +420,13 @@ const DICT: Record<Lang, Dictionary> = {
     pages: {
       home: {
         bannerTitle: "清晰、用心、兼具商业判断的法律意见。",
+        bannerTagline: "用心建议。务实方向。以人为本。",
         bannerLede:
-          "律和律师事务所是一家位于墨尔本的律师事务所,为个人、家庭与企业处理房产、商业、移民、遗嘱与遗产、知识产权、刑事等各类法律事务。",
+          "我们协助个人、家庭及企业，自信应对房产、商业、移民与纠纷等法律事务。",
+        bannerCta1: "关于律和",
+        bannerCta2: "认识我们的团队",
+        servicesTitle: "我们如何为您提供支持",
+        servicesLearnMore: "了解更多",
         whyEyebrow: "为何选择律和",
         whyTitle: "为何选择律和?",
         whySubtitle: "敏锐的法律思考,以用心的方式交付。",
@@ -610,7 +625,12 @@ const DICT: Record<Lang, Dictionary> = {
     pages: {
       home: {
         bannerTitle: "清晰、用心、兼具商業判斷的法律意見。",
-        bannerLede: "律和國際律師事務所是一家位於墨爾本的律師事務所，為個人、家庭與企業處理房產、商業、移民、遺囑與遺產、知識產權、刑事等各類法律事務。",
+        bannerTagline: "用心建議。務實方向。以人為本。",
+        bannerLede: "我們協助個人、家庭及企業，自信應對房產、商業、移民與糾紛等法律事務。",
+        bannerCta1: "關於律和",
+        bannerCta2: "認識我們的團隊",
+        servicesTitle: "我們如何為您提供支持",
+        servicesLearnMore: "了解更多",
         whyEyebrow: "為何選擇律和",
         whyTitle: "為何選擇律和?",
         whySubtitle: "敏銳的法律思考，以用心的方式交付。",

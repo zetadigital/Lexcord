@@ -1,172 +1,173 @@
 /* ============================================================
-   Home — banner / why / testimonials / ready
+   Home — banner / services / testimonials / ready
    ============================================================ */
 
-/* ---- Banner ---- */
+/* ── Banner — split layout ── */
 .banner {
-  position: relative;
-  min-height: 64vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: clamp(400px, 56vh, 680px);
+}
+
+/* Left: white bg, text content */
+.bannerLeft {
+  background: #fff;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  background: var(--navy-900);
+  padding: clamp(3.5rem, 2rem + 5vw, 6rem)
+           clamp(2rem, 3vw, 4rem)
+           clamp(3.5rem, 2rem + 5vw, 6rem)
+           max(var(--gutter), calc((100vw - var(--maxw)) / 2));
 }
 
-.bannerMedia {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.bannerContent {
+  max-width: 42rem;
 }
 
-.bannerImg {
-  object-fit: cover;
-  object-position: center;
+.bannerTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1.1rem + 3vw, 3.2rem);
+  font-weight: 600;
+  color: var(--navy-950);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
-.bannerScrim {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(11, 19, 38, 0.72) 0%, rgba(11, 19, 38, 0.4) 42%, rgba(11, 19, 38, 0.12) 70%);
+.bannerTagline {
+  margin-top: 1.3rem;
+  font-size: clamp(0.95rem, 0.82rem + 0.5vw, 1.1rem);
+  font-weight: 500;
+  color: var(--navy-800, var(--navy-900));
+  line-height: 1.5;
 }
 
-.bannerInner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding-block: clamp(3rem, 2rem + 4vw, 5rem);
-}
-
-.glass {
-  width: clamp(320px, 42%, 520px);
-  padding: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(15, 25, 48, 0.62);
-  backdrop-filter: blur(10px) saturate(120%);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.8);
-  color: #fff;
-  animation: glassIn 0.7s var(--ease-out) both;
-}
-
-@keyframes glassIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .glass {
-    animation: none;
-  }
-}
-
-.glassKicker {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-
-.glassTitle {
-  margin-top: 0.9rem;
-  color: #fff;
-  font-size: clamp(1.8rem, 1.3rem + 1.9vw, 2.7rem);
-  line-height: 1.12;
-  letter-spacing: -0.015em;
-}
-
-.glassLede {
-  margin-top: 1.1rem;
-  font-size: 0.98rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.84);
-}
-
-.glassCta {
-  margin-top: 1.6rem;
-}
-
-@media (max-width: 720px) {
-  .banner {
-    min-height: 0;
-  }
-
-  .glass {
-    width: 100%;
-    max-width: 520px;
-  }
-
-  .bannerScrim {
-    background: linear-gradient(90deg, rgba(11, 19, 38, 0.78), rgba(11, 19, 38, 0.5));
-  }
-}
-
-/* ---- Why choose Lexcord ---- */
-.why {
-  background: var(--paper);
-}
-
-.whyHead {
-  max-width: 60ch;
-}
-
-.whyTitle {
-  font-size: var(--text-2xl);
-  margin-top: 1rem;
-}
-
-.whySub {
-  margin-top: 0.8rem;
-  font-size: var(--text-lg);
-  color: var(--muted);
-}
-
-.whyGrid {
-  margin-top: clamp(2.2rem, 1.5rem + 3vw, 3.6rem);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
-}
-
-.whyCard {
-  background: var(--card);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.7rem, 1.2rem + 1.5vw, 2.4rem);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
-}
-
-.whyCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
-}
-
-.whyIcon {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--navy-900);
-  color: #fff;
-  margin-bottom: 1.3rem;
-}
-
-.whyCardTitle {
-  font-size: var(--text-lg);
-  margin-bottom: 0.6rem;
-}
-
-.whyCardText {
+.bannerLede {
+  margin-top: 0.85rem;
   font-size: 0.95rem;
+  line-height: 1.72;
   color: var(--ink-700);
-  line-height: 1.62;
+  max-width: 56ch;
+  text-wrap: pretty;
 }
 
-/* ---- What do they say (marquee) ---- */
+.bannerCtas {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.bannerBtn {
+  /* size override — default btn is fine, this keeps them consistent */
+}
+
+/* Right: light grey, arch photos */
+.bannerRight {
+  background: var(--paper);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(2.5rem, 1.5rem + 3vw, 4rem)
+           clamp(1.5rem, 2vw, 3rem)
+           0
+           clamp(1rem, 1.5vw, 2rem);
+  overflow: hidden;
+}
+
+.archGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.arch {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 2 / 3;
+  border-radius: 9999px 9999px 0 0;
+  overflow: hidden;
+}
+
+/* Stagger for visual rhythm — arch 1 tallest, arch 2 lower, arch 3 mid */
+.arch1 { /* default, full height */ }
+.arch2 { margin-top: clamp(2rem, 5vw, 4rem); }
+.arch3 { margin-top: clamp(1rem, 2.5vw, 2rem); }
+
+.archImg {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ── How we can support you ── */
+.services {
+  background: var(--paper);
+  padding-block: clamp(3.5rem, 2rem + 5vw, 6rem);
+  border-top: 1px solid var(--hairline);
+}
+
+.servicesTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 1.1rem + 2.2vw, 2.8rem);
+  font-weight: 600;
+  color: var(--navy-950);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin-bottom: clamp(2.2rem, 1.5rem + 3vw, 4rem);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.serviceItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceIcon {
+  color: var(--navy-900);
+  margin-bottom: 1rem;
+  line-height: 0;
+}
+
+.serviceName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy-950);
+  margin-bottom: 0.55rem;
+  line-height: 1.3;
+}
+
+.serviceDesc {
+  font-size: 0.88rem;
+  color: var(--ink-700);
+  line-height: 1.68;
+  flex: 1;
+  margin-bottom: 1.1rem;
+  text-wrap: pretty;
+}
+
+.serviceCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--gold-600);
+  text-decoration: none;
+  transition: gap var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.serviceCta:hover {
+  gap: 0.6rem;
+  color: var(--navy-900);
+}
+
+/* ── What do they say (marquee) ── */
 .say {
   background: var(--navy-900);
   color: #fff;
@@ -210,7 +211,7 @@
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -258,7 +259,7 @@
   color: var(--mist);
 }
 
-/* ---- Ready to discuss ---- */
+/* ── Ready to discuss ── */
 .ready {
   background: var(--paper-2);
 }
@@ -315,8 +316,38 @@
 /* ============================================================
    Responsive
    ============================================================ */
-@media (max-width: 1000px) {
-  .whyGrid {
+
+/* Tablet — banner collapses, services go 2-3 col */
+@media (max-width: 900px) {
+  .banner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .bannerLeft {
+    padding-inline: var(--gutter);
+    padding-block: clamp(3rem, 2rem + 4vw, 5rem);
+  }
+
+  .bannerRight {
+    display: none;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .servicesGrid {
     grid-template-columns: 1fr;
   }
 }
@@ -325,5 +356,11 @@
   .readyGrid {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serviceCta {
+    transition: none;
   }
 }
