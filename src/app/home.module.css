@@ -28,7 +28,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 1.2rem + 3.8vw, 3.8rem);
   font-weight: 600;
-  color: var(--navy-950);
+  color: var(--navy-900);
   line-height: 1.08;
   letter-spacing: -0.03em;
   text-wrap: balance;
@@ -108,7 +108,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 1.1rem + 2.2vw, 2.8rem);
   font-weight: 600;
-  color: var(--navy-950);
+  color: var(--navy-900);
   letter-spacing: -0.025em;
   line-height: 1.15;
   text-wrap: balance;
@@ -135,7 +135,7 @@
 .serviceName {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--navy-950);
+  color: var(--navy-900);
   margin-bottom: 0.7rem;
   line-height: 1.25;
 }
