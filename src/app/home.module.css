@@ -97,6 +97,11 @@
   object-position: center top;
 }
 
+/* First arch shows the statue + books on the left of the photo */
+.arch1 .archImg {
+  object-position: 20% top;
+}
+
 /* ── How we can support you ── */
 .services {
   background: var(--paper);
