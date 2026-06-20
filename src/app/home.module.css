@@ -103,14 +103,20 @@
 }
 
 /* ── How we can support you ── */
+/*
+ * Arc technique: border-radius: 0 100% 0 0 / 0 Rv 0 0
+ * — horizontal 100% means the arc spans the full element width,
+ *   starting at the top-left corner and sweeping down to Rv at the right edge.
+ * — margin-top: -Rv pulls the section up so the arc cutout sits over the
+ *   white banner background and becomes visible.
+ */
 .services {
+  --arc-depth: clamp(6rem, 12vw, 14rem);
   background: var(--paper);
-  /* Overlap the white banner section above so the rounded corners
-     cut against white and become visible */
-  margin-top: -2.5rem;
-  padding-block-start: calc(clamp(3.5rem, 2rem + 5vw, 6rem) + 2.5rem);
+  margin-top: calc(-1 * var(--arc-depth));
+  padding-block-start: calc(clamp(3.5rem, 2rem + 5vw, 6rem) + var(--arc-depth));
   padding-block-end: clamp(3.5rem, 2rem + 5vw, 6rem);
-  border-radius: 0 clamp(3rem, 6vw, 6rem) 0 0;
+  border-radius: 0 100% 0 0 / 0 var(--arc-depth) 0 0;
   position: relative;
   z-index: 1;
 }
@@ -348,6 +354,13 @@
   .arch2,
   .arch3 {
     height: clamp(140px, 38vw, 220px);
+  }
+
+  /* Reset arc — no overlap with arch photos on mobile */
+  .services {
+    margin-top: 0;
+    padding-block-start: clamp(3rem, 2rem + 4vw, 5rem);
+    border-radius: 0;
   }
 
   .servicesGrid {
