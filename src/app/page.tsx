@@ -103,7 +103,7 @@ export default function HomePage() {
         <div className={styles.bannerRight} aria-hidden="true">
           <div className={styles.archGroup}>
             <div className={`${styles.arch} ${styles.arch1}`}>
-              <Image src="/images/office/office-7.jpg" alt="" fill className={styles.archImg} sizes="15vw" />
+              <Image src="/images/office/office-10.jpg" alt="" fill className={styles.archImg} sizes="15vw" />
             </div>
             <div className={`${styles.arch} ${styles.arch2}`}>
               <Image src="/images/office/office-1.jpg" alt="" fill className={styles.archImg} sizes="15vw" />
