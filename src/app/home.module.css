@@ -103,14 +103,16 @@
 }
 
 /* ── How we can support you ── */
+/* White outer makes the paper-bg section's top-right rounded corner visible */
+.servicesOuter {
+  background: #fff;
+}
+
 .services {
   background: var(--paper);
   border-radius: 0 3.5rem 0 0;
-  margin-top: -3.5rem;
-  padding-block-start: calc(clamp(3.5rem, 2rem + 5vw, 6rem) + 3.5rem);
+  padding-block-start: clamp(3.5rem, 2rem + 5vw, 6rem);
   padding-block-end: clamp(3.5rem, 2rem + 5vw, 6rem);
-  position: relative;
-  z-index: 1;
 }
 
 .servicesTitle {
@@ -348,9 +350,7 @@
     height: clamp(140px, 38vw, 220px);
   }
 
-  /* Reset arc — no overlap with arch photos on mobile */
   .services {
-    margin-top: 0;
     padding-block-start: clamp(3rem, 2rem + 4vw, 5rem);
     border-radius: 0;
   }

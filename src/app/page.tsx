@@ -116,6 +116,7 @@ export default function HomePage() {
       </section>
 
       {/* ── How we can support you ── */}
+      <div className={styles.servicesOuter}>
       <section className={styles.services}>
         <div className="container">
           <h2 className={styles.servicesTitle}>{h.servicesTitle}</h2>
@@ -137,6 +138,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </div>
 
       {/* ── What do they say — scrolling testimonials ── */}
       <section className={`section ${styles.say}`}>
