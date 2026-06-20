@@ -30,21 +30,21 @@ function ArrowRight() {
 
 function ServiceIcon({ slug }: { slug: string }) {
   if (slug === "commercial") return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" aria-hidden="true">
       <rect x="2" y="7" width="20" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
       <path d="M8 7V5a4 4 0 018 0v2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
       <path d="M2 12h20" stroke="currentColor" strokeWidth="1.6"/>
     </svg>
   );
   if (slug === "property-law") return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" aria-hidden="true">
       <path d="M3 10.5L12 3l9 7.5V22H3V10.5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
       <rect x="8.5" y="14" width="3" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.5"/>
       <rect x="13" y="14" width="2.5" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.5"/>
     </svg>
   );
   if (slug === "family-law") return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" aria-hidden="true">
       <circle cx="8" cy="7" r="3" stroke="currentColor" strokeWidth="1.6"/>
       <circle cx="17" cy="7" r="2.5" stroke="currentColor" strokeWidth="1.6"/>
       <path d="M2 21c0-4 2.7-7 6-7h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
@@ -52,13 +52,13 @@ function ServiceIcon({ slug }: { slug: string }) {
     </svg>
   );
   if (slug === "migration-law") return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" aria-hidden="true">
       <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6"/>
       <path d="M3 12h18M12 3c-2.5 2.5-4 5.5-4 9s1.5 6.5 4 9M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
     </svg>
   );
   return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" aria-hidden="true">
       <path d="M6 3h12a1 1 0 011 1v16a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
       <path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
     </svg>
