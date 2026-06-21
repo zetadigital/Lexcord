@@ -336,7 +336,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitlePre: "The people behind ",
         heroTitleEm: "your matter",
         heroLede:
-          "Lexcord is led by admitted solicitors who treat your matter as their own. Meet the team — more profiles are being added.",
+          "Lexcord is led by solicitors who understand that every legal matter is personal to the people behind it. We take the time to understand your circumstances, what is at stake and the outcome you are working towards.",
         viewProfile: "View profile",
         qualifications: "Qualifications",
         expertise: "Areas of expertise",
@@ -548,7 +548,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitlePre: "为您的事务",
         heroTitleEm: "保驾护航的团队",
         heroLede:
-          "律和由正式执业的律师领衔,把您的事务当作自己的事务。认识我们的团队——更多成员简介正在陆续加入。",
+          "律和由执业律师领衔，深知每一件法律事务对当事人而言都有其独特的个人意义。我们会认真了解您的处境、充分权衡事务的利害所在，以及您所期望达到的结果。",
         viewProfile: "查看简介",
         qualifications: "资历与执业资格",
         expertise: "专长领域",
@@ -749,7 +749,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroEyebrow: "我們的團隊",
         heroTitlePre: "為您的事務",
         heroTitleEm: "保駕護航的團隊",
-        heroLede: "律和由正式執業的律師領銜，把您的事務當作自己的事務。認識我們的團隊——更多成員簡介正在陸續加入。",
+        heroLede: "律和由執業律師領銜，深知每一件法律事務對當事人而言都有其獨特的個人意義。我們會認真了解您的處境、充分權衡事務的利害所在，以及您所期望達到的結果。",
         viewProfile: "查看簡介",
         qualifications: "資歷與執業資格",
         expertise: "專長領域",

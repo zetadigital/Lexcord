@@ -24,7 +24,6 @@ export function PeopleContent() {
     <>
       <section className={styles.intro}>
         <div className="container">
-          <span className="eyebrow">{p.heroEyebrow}</span>
           <h1 className={styles.introTitle}>
             {p.heroTitlePre}
             <span className="accent">{p.heroTitleEm}</span>
