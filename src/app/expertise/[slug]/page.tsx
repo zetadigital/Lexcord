@@ -16,8 +16,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const area = getPractice(params.slug);
   if (!area) return {};
   return {
-    title: area.navLabel,
-    description: practiceSummaries[area.slug],
+    title: area.seoTitle ?? area.navLabel,
+    description: area.seoDescription ?? practiceSummaries[area.slug],
   };
 }
 

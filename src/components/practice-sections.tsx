@@ -124,11 +124,56 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
     intro: area.introParagraphs?.length ? (
       <section key="intro" className={`section ${styles.intro}`}>
         <div className="container">
-          <Reveal className={styles.introInner} as="div">
-            {area.introParagraphs.map((para, i) => (
-              <p key={i} className={styles.introPara}>{para}</p>
-            ))}
+          <Reveal className={area.introQuote ? styles.introInnerSplit : styles.introInner} as="div">
+            <div>
+              {area.introHeading && (
+                <h2 className={styles.introHeading}>{area.introHeading}</h2>
+              )}
+              {area.introParagraphs.map((para, i) => (
+                <p key={i} className={styles.introPara}>{para}</p>
+              ))}
+            </div>
+            {area.introQuote && (
+              <aside className={styles.introEditorial}>
+                <p>{area.introQuote}</p>
+              </aside>
+            )}
           </Reveal>
+        </div>
+      </section>
+    ) : null,
+
+    coreServices: area.coreServices?.length ? (
+      <section key="coreServices" className={`section ${styles.coreServices}`}>
+        <div className="container">
+          {(area.coreServicesEyebrow || area.coreServicesHeading) && (
+            <div className={styles.coreServicesHead}>
+              {area.coreServicesEyebrow && (
+                <span className="eyebrow">{area.coreServicesEyebrow}</span>
+              )}
+              {area.coreServicesHeading && (
+                <h2 className={styles.coreServicesHeading}>{area.coreServicesHeading}</h2>
+              )}
+            </div>
+          )}
+          <div className={styles.coreGrid}>
+            {area.coreServices.map((item) => (
+              <article key={item.number} className={styles.coreCard}>
+                <span className={styles.coreCardNum}>{item.number}</span>
+                <hr className={styles.coreCardRule} />
+                <h3 className={styles.coreCardTitle}>{item.title}</h3>
+                <p className={styles.coreCardDesc}>{item.description}</p>
+                <ul className={styles.coreCardList}>
+                  {item.services.map((s) => (
+                    <li key={s} className={styles.coreCardListItem}>{s}</li>
+                  ))}
+                </ul>
+                {item.note && (
+                  <p className={styles.coreCardNote}>{item.note}</p>
+                )}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     ) : null,
@@ -208,8 +253,10 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">{c.relatedPosts}</span>
-            <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>{area.navLabel}</h2>
-            <p>{c.relatedPostsLede}</p>
+            <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
+              {area.newsSectionHeading ?? area.navLabel}
+            </h2>
+            <p>{area.newsSectionLede ?? c.relatedPostsLede}</p>
           </div>
           <div className={styles.postGrid}>
             {[0, 1, 2].map((i) => (
@@ -228,15 +275,80 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
       </section>
     ),
 
+    approach: area.approachSteps?.length ? (
+      <section key="approach" className={styles.approach}>
+        <div className="container">
+          <div className={styles.approachInner}>
+            <div className={styles.approachHead}>
+              {area.approachEyebrow && (
+                <span className={styles.approachEyebrow}>{area.approachEyebrow}</span>
+              )}
+              {area.approachHeading && (
+                <h2 className={styles.approachHeading}>{area.approachHeading}</h2>
+              )}
+              {area.approachBody && (
+                <p className={styles.approachBody}>{area.approachBody}</p>
+              )}
+            </div>
+            <div className={styles.approachSteps}>
+              {area.approachSteps.map((step) => (
+                <div key={step.number} className={styles.approachStep}>
+                  <span className={styles.approachStepNum}>{step.number}</span>
+                  <div className={styles.approachStepRule} aria-hidden="true" />
+                  <h3 className={styles.approachStepTitle}>{step.title}</h3>
+                  <p className={styles.approachStepBody}>{step.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    ) : null,
+
+    artJr: area.artJr ? (
+      <section key="artJr" className={`section ${styles.artJr}`}>
+        <div className="container">
+          <div className={styles.artJrHead}>
+            {area.artJr.eyebrow && (
+              <span className="eyebrow">{area.artJr.eyebrow}</span>
+            )}
+            <h2 className={styles.artJrHeading}>{area.artJr.heading}</h2>
+            <p className={styles.artJrIntro}>{area.artJr.intro}</p>
+          </div>
+          <div className={styles.artJrGrid}>
+            <div className={styles.artJrCol}>
+              <h3 className={styles.artJrColTitle}>{area.artJr.art.heading}</h3>
+              <div className={styles.artJrColBody}>
+                {area.artJr.art.body.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+            <div className={styles.artJrCol}>
+              <h3 className={styles.artJrColTitle}>{area.artJr.jr.heading}</h3>
+              <div className={styles.artJrColBody}>
+                {area.artJr.jr.body.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+          <p className={styles.artJrFooter}>{area.artJr.footer}</p>
+        </div>
+      </section>
+    ) : null,
+
     experts: (
       <section key="experts" className={`section ${styles.areaTeam}`}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
             <h2 style={{ color: "#fff", fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
-              {area.navLabel}
+              {area.expertsSectionHeading ?? area.navLabel}
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.72)" }}>{c.areaTeamLede}</p>
+            <p style={{ color: "rgba(255,255,255,0.72)" }}>
+              {area.expertsSectionLede ?? c.areaTeamLede}
+            </p>
           </div>
 
           {areaTeam.length > 0 ? (
@@ -290,6 +402,11 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               <Link href="/contact" className="btn btn--primary">
                 {area.closingCta} <ArrowRight />
               </Link>
+              {area.closingCtaSecondary && (
+                <Link href="/contact" className="btn btn--ghost">
+                  {area.closingCtaSecondary}
+                </Link>
+              )}
             </div>
           </div>
         </div>

@@ -49,5 +49,5 @@ export const practiceSummaries: Record<string, string> = {
   "notary-public":
     "Qualified notarial services for documents destined for use overseas, including apostille and DFAT authentication.",
   "migration-law":
-    "Registered advice across skilled, family, student, business, humanitarian, and tribunal review pathways.",
+    "Lexcord advises on Australian visa applications, employer sponsorship, visa refusals and cancellations, ART reviews and migration judicial review proceedings.",
 };

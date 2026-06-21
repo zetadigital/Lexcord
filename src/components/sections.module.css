@@ -666,6 +666,37 @@
   max-width: 76ch;
 }
 
+/* Two-column intro: body left + editorial pull-quote right */
+.introInnerSplit {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2.5rem, 2rem + 5vw, 6rem);
+  align-items: start;
+}
+
+.introHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  margin-bottom: clamp(1.2rem, 0.8rem + 1.5vw, 1.8rem);
+  text-wrap: balance;
+}
+
+.introEditorial {
+  position: sticky;
+  top: 120px;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 0.95rem + 1.4vw, 1.75rem);
+  line-height: 1.36;
+  color: var(--navy-700);
+  font-style: italic;
+  font-weight: 400;
+  padding-left: clamp(1.4rem, 1rem + 1.5vw, 2.2rem);
+  border-left: 2px solid var(--navy-700);
+}
+
 .introPara {
   font-size: var(--text-lg);
   line-height: var(--leading-normal);
@@ -674,6 +705,310 @@
 
 .introPara + .introPara {
   margin-top: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .introInnerSplit {
+    grid-template-columns: 1fr;
+  }
+
+  .introEditorial {
+    position: static;
+    border-left: none;
+    border-top: 2px solid var(--navy-700);
+    padding-left: 0;
+    padding-top: 1.2rem;
+    font-size: clamp(1.15rem, 0.95rem + 1vw, 1.45rem);
+  }
+}
+
+/* ============================================================
+   Core services — three equal editorial cards
+   ============================================================ */
+.coreServices {
+  background: var(--paper-2);
+}
+
+.coreServicesHead {
+  margin-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+}
+
+.coreServicesHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
+  margin-top: 0.8rem;
+  text-wrap: balance;
+}
+
+.coreGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 0.8rem + 2vw, 2rem);
+  align-items: stretch;
+}
+
+.coreCard {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.8rem, 1.4rem + 1.5vw, 2.4rem);
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+}
+
+.coreCardNum {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: var(--navy-600);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.coreCardRule {
+  border: none;
+  border-top: 1px solid var(--hairline-strong);
+  margin: 1.1rem 0 1.3rem;
+}
+
+.coreCardTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--navy-900);
+  line-height: 1.25;
+  margin-bottom: 0.9rem;
+  text-wrap: balance;
+}
+
+.coreCardDesc {
+  font-size: 0.94rem;
+  color: var(--ink-700);
+  line-height: 1.65;
+  margin-bottom: 1.4rem;
+}
+
+.coreCardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.coreCardListItem {
+  font-size: 0.855rem;
+  color: var(--ink-700);
+  padding-left: 1.1rem;
+  position: relative;
+  line-height: 1.45;
+}
+
+.coreCardListItem::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--navy-600);
+  font-size: 0.8rem;
+}
+
+.coreCardNote {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hairline);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--navy-700);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .coreGrid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+}
+
+/* ============================================================
+   Approach — numbered steps on navy background
+   ============================================================ */
+.approach {
+  background: var(--navy-900);
+}
+
+.approachInner {
+  padding-block: clamp(4rem, 3rem + 5vw, 7rem);
+}
+
+.approachHead {
+  max-width: 58ch;
+  margin-bottom: clamp(3rem, 2rem + 4vw, 5.5rem);
+}
+
+.approachEyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 1rem;
+}
+
+.approachHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1.4rem + 2vw, 2.7rem);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.approachBody {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  max-width: 58ch;
+  text-wrap: pretty;
+}
+
+.approachSteps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+.approachStep {
+  display: flex;
+  flex-direction: column;
+}
+
+.approachStepNum {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  color: var(--mist);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.8rem;
+}
+
+.approachStepRule {
+  width: 2rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin-bottom: 1.1rem;
+}
+
+.approachStepTitle {
+  font-size: var(--text-lg);
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.approachStepBody {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.62;
+  text-wrap: pretty;
+}
+
+@media (max-width: 900px) {
+  .approachSteps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .approachSteps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   ART / Judicial Review two-column explanation
+   ============================================================ */
+.artJr {
+  background: var(--paper);
+}
+
+.artJrHead {
+  max-width: 58ch;
+  margin-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+}
+
+.artJrHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
+  margin-top: 0.7rem;
+  margin-bottom: 0.9rem;
+  text-wrap: balance;
+}
+
+.artJrIntro {
+  font-size: var(--text-lg);
+  color: var(--ink-700);
+  line-height: 1.6;
+  max-width: 54ch;
+}
+
+.artJrGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+}
+
+.artJrCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.artJrColTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--navy-900);
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--navy-800);
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.artJrColBody {
+  font-size: 0.96rem;
+  color: var(--ink-700);
+  line-height: 1.68;
+}
+
+.artJrColBody p + p {
+  margin-top: 1rem;
+}
+
+.artJrFooter {
+  margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+  padding: 1.2rem 1.6rem;
+  background: var(--paper-2);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--navy-700);
+  font-size: 0.91rem;
+  color: var(--navy-800);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+@media (max-width: 680px) {
+  .artJrGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---- Practice area: prose variant (Conveyancing) ---- */

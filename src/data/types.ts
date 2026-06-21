@@ -42,15 +42,38 @@ export interface ExtraSection {
   stages?: StageItem[];
 }
 
-/** Ordered content blocks rendered between the hero and footer of a practice page. */
-export type PracticeBlock =
-  | "intro"
-  | "practice"
-  | "why"
-  | "experts"
-  | "news"
-  | "qa"
-  | "closing";
+/** One of three large editorial service blocks (e.g. migration core areas). */
+export interface CoreServiceItem {
+  number: string;
+  title: string;
+  description: string;
+  services: string[];
+  /** Optional note shown at the bottom of this card (e.g. time-limit warning). */
+  note?: string;
+}
+
+/** One step in a numbered approach / process section. */
+export interface ApproachStep {
+  number: string;
+  title: string;
+  body: string;
+}
+
+/** One column of the ART / Judicial Review two-column block. */
+export interface ArtJrSection {
+  heading: string;
+  body: string[];
+}
+
+/** Two-column ART vs Judicial Review explanation block. */
+export interface ArtJrBlock {
+  eyebrow?: string;
+  heading: string;
+  intro: string;
+  art: ArtJrSection;
+  jr: ArtJrSection;
+  footer: string;
+}
 
 /** A collapsible accordion section (why-choose / Q&A). */
 export interface AccordionBlock {
@@ -59,6 +82,19 @@ export interface AccordionBlock {
   sub?: string;
   items: Faq[];
 }
+
+/** Ordered content blocks rendered between the hero and footer of a practice page. */
+export type PracticeBlock =
+  | "intro"
+  | "practice"
+  | "why"
+  | "experts"
+  | "news"
+  | "qa"
+  | "closing"
+  | "coreServices"
+  | "approach"
+  | "artJr";
 
 export interface PracticeArea {
   slug: string;
@@ -72,13 +108,21 @@ export interface PracticeArea {
   /** Optional banner display title (defaults to navLabel when omitted). */
   bannerTitle?: string;
 
+  /** Optional SEO title override (defaults to navLabel). */
+  seoTitle?: string;
+  /** Optional SEO description override (defaults to practiceSummaries[slug]). */
+  seoDescription?: string;
+
   servicesEyebrow: string;
   servicesHeading: string;
   servicesIntro: string;
   services: ServiceItem[];
 
   /** Optional prose "Introduction" block shown after the hero. */
+  introHeading?: string;
   introParagraphs?: string[];
+  /** Editorial pull-quote shown to the right of intro text. */
+  introQuote?: string;
   /** Render practice-area cards as a numbered, gapped grid (01..n). */
   practiceNumbered?: boolean;
   /** Render the practice-area block as prose paragraphs instead of cards. */
@@ -107,6 +151,31 @@ export interface PracticeArea {
   faqHeading: string;
   faqIntro: string;
   faqs: Faq[];
+
+  /** Three large editorial core-service blocks (migration, etc.). */
+  coreServicesEyebrow?: string;
+  coreServicesHeading?: string;
+  coreServices?: CoreServiceItem[];
+
+  /** Numbered-steps approach section with contrasting background. */
+  approachEyebrow?: string;
+  approachHeading?: string;
+  approachBody?: string;
+  approachSteps?: ApproachStep[];
+
+  /** ART vs Judicial Review two-column block. */
+  artJr?: ArtJrBlock;
+
+  /** Custom heading/lede for the "Your legal team" experts block. */
+  expertsSectionHeading?: string;
+  expertsSectionLede?: string;
+
+  /** Custom heading/lede for the "Related insights" news block. */
+  newsSectionHeading?: string;
+  newsSectionLede?: string;
+
+  /** Optional secondary CTA button label in the closing block. */
+  closingCtaSecondary?: string;
 
   closingKicker: string;
   closingTitle: string;
