@@ -358,57 +358,56 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
     experts: (
       <section key="experts" className={`section ${styles.areaTeam}`}>
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
-            <h2 style={{ color: "#fff", fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
-              {area.expertsSectionHeading ?? area.navLabel}
-            </h2>
-            <p
-              className={area.expertsSectionLede ? styles.areaTeamCustomLede : undefined}
-              style={{ color: "rgba(255,255,255,0.72)" }}
-            >
-              {area.expertsSectionLede ?? c.areaTeamLede}
-            </p>
-          </div>
-
-          {areaTeam.length > 0 ? (
-            <>
-              <div className={styles.teamRow}>
-                {areaTeam.map((m) => (
-                  <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
-                    <div className={styles.teamPhoto}>
-                      {m.photo ? (
-                        <Image src={m.photo} alt={m.name} fill sizes="120px" />
-                      ) : (
-                        <span className={styles.teamInitials}>
-                          {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
-                        </span>
-                      )}
-                    </div>
-                    <div className={styles.teamInfo}>
-                      <h3 className={styles.teamName}>{m.name}</h3>
-                      <span className={styles.teamRole}>{lang === "zh" ? m.roleZh : m.role}</span>
-                      <span className={styles.teamLink}>
-                        {c.viewProfile} <ArrowRight />
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-              <div className={styles.teamCtaRow}>
-                <Link href="/contact" className="btn btn--ghost-light">
-                  {t.nav.book} <ArrowRight />
-                </Link>
-              </div>
-            </>
-          ) : (
-            <div className={styles.teamEmpty}>
-              <p>{c.areaTeamEmpty}</p>
-              <Link href="/contact" className="btn btn--ghost-light">
-                {t.nav.book} <ArrowRight />
-              </Link>
+          <div className={styles.teamInner}>
+            {/* Left: heading + lede */}
+            <div className={styles.teamLeft}>
+              <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
+              <h2>{area.expertsSectionHeading ?? area.navLabel}</h2>
+              <p>{area.expertsSectionLede ?? c.areaTeamLede}</p>
             </div>
-          )}
+
+            {/* Right: team cards + CTA */}
+            <div className={styles.teamRight}>
+              {areaTeam.length > 0 ? (
+                <>
+                  <div className={styles.teamRow}>
+                    {areaTeam.map((m) => (
+                      <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
+                        <div className={styles.teamPhoto}>
+                          {m.photo ? (
+                            <Image src={m.photo} alt={m.name} fill sizes="90px" />
+                          ) : (
+                            <span className={styles.teamInitials}>
+                              {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
+                            </span>
+                          )}
+                        </div>
+                        <div className={styles.teamInfo}>
+                          <h3 className={styles.teamName}>{m.name}</h3>
+                          <span className={styles.teamRole}>{lang === "zh" ? m.roleZh : m.role}</span>
+                          <span className={styles.teamLink}>
+                            {c.viewProfile} <ArrowRight />
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className={styles.teamCtaRow}>
+                    <Link href="/contact" className="btn btn--ghost-light">
+                      {t.nav.book} <ArrowRight />
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <div className={styles.teamEmpty}>
+                  <p>{c.areaTeamEmpty}</p>
+                  <Link href="/contact" className="btn btn--ghost-light">
+                    {t.nav.book} <ArrowRight />
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </section>
     ),
