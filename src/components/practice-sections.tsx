@@ -514,8 +514,8 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                 );
               })()}
             </div>
-          ) : areaTeam.length === 2 ? (
-            /* ── Two lawyers: editorial duo-card layout (mirrors single-lawyer split) ── */
+          ) : areaTeam.length >= 2 ? (
+            /* ── Two or more lawyers: editorial duo-card layout (mirrors single-lawyer split) ── */
             <div className={styles.teamGrid}>
               <div className={styles.teamIntro}>
                 <span className="eyebrow eyebrow--light">{area.expertsSectionEyebrow ?? c.areaTeam}</span>
@@ -558,48 +558,6 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                 ))}
               </div>
             </div>
-          ) : areaTeam.length > 2 ? (
-            /* ── Three or more lawyers: compact grid + CTA ── */
-            <>
-              <div className="section-head">
-                <span className="eyebrow eyebrow--light">{area.expertsSectionEyebrow ?? c.areaTeam}</span>
-                <h2 style={{ color: "#fff", fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
-                  {area.expertsSectionHeading ?? area.navLabel}
-                </h2>
-                <p style={{ color: "rgba(255,255,255,0.72)" }}>
-                  {area.expertsSectionLede ?? c.areaTeamLede}
-                </p>
-              </div>
-              <div className={styles.teamRow}>
-                {areaTeam.map((m) => (
-                  <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
-                    <div className={styles.teamPhoto}>
-                      {m.photo ? (
-                        <Image src={m.photo} alt={m.name} fill sizes="90px"
-                          style={m.photoPosition ? { objectPosition: m.photoPosition } : undefined}
-                        />
-                      ) : (
-                        <span className={styles.teamInitials}>
-                          {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
-                        </span>
-                      )}
-                    </div>
-                    <div className={styles.teamInfo}>
-                      <h3 className={styles.teamName}>{m.name}</h3>
-                      <span className={styles.teamRole}>{lang === "zh" ? m.roleZh : m.role}</span>
-                      <span className={styles.teamLink}>{c.viewProfile} <ArrowRight /></span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-              {area.expertsCta && (
-                <div style={{ marginTop: "clamp(2rem, 1.5rem + 2vw, 3rem)" }}>
-                  <Link href="/contact" className={styles.teamDiscussLink}>
-                    {area.expertsCta} <ArrowRight />
-                  </Link>
-                </div>
-              )}
-            </>
           ) : (
             /* ── Empty state ── */
             <div className={styles.teamEmpty}>
