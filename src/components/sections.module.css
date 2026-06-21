@@ -1495,3 +1495,155 @@
   max-width: 58ch;
   line-height: 1.65;
 }
+
+/* ============================================================
+   Risk Items block — "Before You Sign"
+   Two-column: large heading left / stacked items with dividers right
+   ============================================================ */
+
+.riskSection {
+  /* White surface between dark approach and paper-2 highlight */
+  background: var(--card);
+}
+
+.riskInner {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: clamp(3rem, 2rem + 5vw, 8rem);
+  align-items: start;
+}
+
+.riskLeft {
+  /* stays flush with top of first item */
+  position: sticky;
+  top: clamp(5rem, 10vw, 8rem);
+  padding-bottom: 1rem;
+}
+
+.riskHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 460;
+  color: var(--navy-900);
+  margin-top: 1rem;
+  line-height: 1.1;
+  text-wrap: balance;
+  letter-spacing: -0.015em;
+}
+
+.riskIntro {
+  margin-top: 1.1rem;
+  font-size: var(--text-base);
+  color: var(--muted);
+  line-height: var(--leading-normal);
+  max-width: 36ch;
+  text-wrap: pretty;
+}
+
+.riskList {
+  /* no extra wrapper needed — items handle their own borders */
+}
+
+.riskItem {
+  padding-block: clamp(1.4rem, 1rem + 1.5vw, 2rem);
+  border-top: 1px solid var(--hairline-strong);
+}
+
+.riskItem:last-child {
+  border-bottom: 1px solid var(--hairline-strong);
+}
+
+.riskItemTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 460;
+  color: var(--navy-900);
+  line-height: 1.22;
+  margin-bottom: 0.55rem;
+}
+
+.riskItemBody {
+  font-size: var(--text-base);
+  color: var(--muted);
+  line-height: var(--leading-normal);
+  text-wrap: pretty;
+  max-width: 56ch;
+}
+
+@media (max-width: 860px) {
+  .riskInner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .riskLeft {
+    position: static;
+  }
+
+  .riskIntro {
+    max-width: 60ch;
+  }
+}
+
+/* ============================================================
+   Highlight block — "More Than Settlement"
+   Split layout: text left / architectural line art right
+   ============================================================ */
+
+.highlight {
+  background: var(--paper-2);
+}
+
+.highlightInner {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: clamp(2.5rem, 1.5rem + 5vw, 6rem);
+  align-items: center;
+}
+
+.highlightLeft {
+  /* text column */
+}
+
+.highlightHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 460;
+  color: var(--navy-900);
+  margin-top: 1rem;
+  line-height: 1.1;
+  text-wrap: balance;
+  letter-spacing: -0.015em;
+}
+
+.highlightBody {
+  margin-top: 1.2rem;
+  font-size: var(--text-base);
+  color: var(--ink-700);
+  line-height: var(--leading-normal);
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+
+.highlightRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlightArt {
+  width: 100%;
+  max-width: 280px;
+  opacity: 0.18;
+  color: var(--navy-900);
+}
+
+@media (max-width: 860px) {
+  .highlightInner {
+    grid-template-columns: 1fr;
+  }
+
+  .highlightRight {
+    display: none;
+  }
+}

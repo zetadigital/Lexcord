@@ -11,6 +11,43 @@ import { Accordion } from "./accordion";
 import { PlaceholderText, PlaceholderImage } from "./placeholder";
 import styles from "./sections.module.css";
 
+/** Architectural site-plan line art for the "More Than Settlement" highlight section. */
+function PropertySitePlan() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Site boundary — slightly irregular like a real property lot */}
+      <path d="M35 195 L32 28 L205 18 L272 52 L265 195 Z" stroke="currentColor" strokeWidth="1.1" />
+      {/* Building footprint */}
+      <rect x="75" y="62" width="155" height="112" stroke="currentColor" strokeWidth="1.1" />
+      {/* Internal room divisions */}
+      <line x1="162" y1="62" x2="162" y2="174" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="75" y1="118" x2="162" y2="118" stroke="currentColor" strokeWidth="0.8" />
+      <line x1="162" y1="95" x2="230" y2="95" stroke="currentColor" strokeWidth="0.8" />
+      {/* Setback lines — dashed */}
+      <rect x="55" y="47" width="194" height="137" stroke="currentColor" strokeWidth="0.55" strokeDasharray="5 4" />
+      {/* Survey pegs */}
+      <circle cx="32" cy="28" r="3" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="205" cy="18" r="3" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="272" cy="52" r="3" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="265" cy="195" r="3" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="35" cy="195" r="3" stroke="currentColor" strokeWidth="0.8" />
+      {/* Entry path */}
+      <line x1="150" y1="174" x2="150" y2="195" stroke="currentColor" strokeWidth="0.7" strokeDasharray="3 3" />
+      {/* Dimension — width */}
+      <line x1="32" y1="210" x2="265" y2="210" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="32" y1="205" x2="32" y2="215" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="265" y1="205" x2="265" y2="215" stroke="currentColor" strokeWidth="0.5" />
+      {/* Dimension — height */}
+      <line x1="285" y1="28" x2="285" y2="195" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="280" y1="28" x2="290" y2="28" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="280" y1="195" x2="290" y2="195" stroke="currentColor" strokeWidth="0.5" />
+      {/* North arrow */}
+      <line x1="20" y1="145" x2="20" y2="120" stroke="currentColor" strokeWidth="0.7" />
+      <path d="M17 128 L20 119 L23 128" stroke="currentColor" strokeWidth="0.7" />
+    </svg>
+  );
+}
+
 function ArrowRight() {
   return (
     <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
@@ -281,7 +318,9 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                 <PlaceholderImage label={area.navLabel} ratio="16 / 9" />
                 <div className={styles.postBody}>
                   <h3 className={styles.postTitle}>
-                    <PlaceholderText tag={`${t.pages.placeholderTag} ${i + 1}`}>{c.postTitle}</PlaceholderText>
+                    <PlaceholderText tag={`${t.pages.placeholderTag} ${i + 1}`}>
+                      {area.newsPlaceholders?.[i] ?? c.postTitle}
+                    </PlaceholderText>
                   </h3>
                   <p className={styles.postExcerpt}>{c.postExcerpt}</p>
                 </div>
@@ -449,6 +488,57 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
         </div>
       </section>
     ),
+
+    riskItems: area.riskItems?.length ? (
+      <section key="riskItems" className={`section ${styles.riskSection}`}>
+        <div className="container">
+          <div className={styles.riskInner}>
+            <div className={styles.riskLeft}>
+              {area.riskItemsEyebrow && (
+                <span className="eyebrow">{area.riskItemsEyebrow}</span>
+              )}
+              {area.riskItemsHeading && (
+                <h2 className={styles.riskHeading}>{area.riskItemsHeading}</h2>
+              )}
+              {area.riskItemsIntro && (
+                <p className={styles.riskIntro}>{area.riskItemsIntro}</p>
+              )}
+            </div>
+            <div className={styles.riskList}>
+              {area.riskItems.map((item) => (
+                <div key={item.title} className={styles.riskItem}>
+                  <h3 className={styles.riskItemTitle}>{item.title}</h3>
+                  <p className={styles.riskItemBody}>{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    ) : null,
+
+    highlight: (area.highlightHeading || area.highlightBody) ? (
+      <section key="highlight" className={`section ${styles.highlight}`}>
+        <div className="container">
+          <div className={styles.highlightInner}>
+            <div className={styles.highlightLeft}>
+              {area.highlightEyebrow && (
+                <span className="eyebrow">{area.highlightEyebrow}</span>
+              )}
+              {area.highlightHeading && (
+                <h2 className={styles.highlightHeading}>{area.highlightHeading}</h2>
+              )}
+              {area.highlightBody && (
+                <p className={styles.highlightBody}>{area.highlightBody}</p>
+              )}
+            </div>
+            <div className={styles.highlightRight} aria-hidden="true">
+              <PropertySitePlan />
+            </div>
+          </div>
+        </div>
+      </section>
+    ) : null,
 
     closing: (
       <section key="closing" className={styles.closing}>

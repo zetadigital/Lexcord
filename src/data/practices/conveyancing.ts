@@ -3,57 +3,126 @@ import type { PracticeArea } from "../types";
 export const conveyancing: PracticeArea = {
   slug: "conveyancing",
   navLabel: "Conveyancing",
-  heroEyebrow: "Conveyancing",
+  heroEyebrow: "Expertise",
   heroTitle: "Conveyancing",
-  heroLede: "From contract to keys in hand, we walk every step with you.",
+  heroLede:
+    "Whether you are buying your first home, selling an investment property or navigating a complex development transaction, we provide careful, practical guidance from contract review through to settlement.",
 
-  introParagraphs: [
-    "Buying or selling property is rarely just a transaction — it is often one of the most significant financial and emotional milestones in our clients' lives. Behind every contract lies a web of legal obligations, deadlines, and risks that, if overlooked, can lead to costly consequences. In Australia's property landscape, where each state operates under its own legislative framework, the conveyancing process demands precision, vigilance, and genuine care.",
-    "At Lexcord Lawyers, we approach every conveyancing matter with the same diligence and attention we bring to our most complex commercial cases. From the moment our clients engage with us, we take the time to understand their circumstances — whether they are stepping into their first home, expanding an investment portfolio, or entering the Australian property market from abroad. We review every clause, anticipate every risk, and ensure that nothing is left to chance.",
+  seoTitle: "Conveyancing Lawyers Melbourne | Property Transactions | Lexcord",
+  seoDescription:
+    "Lexcord provides solicitor-led conveyancing for residential and commercial property transactions — contract reviews, off-the-plan advice, foreign buyer requirements and settlement management.",
+
+  servicesEyebrow: "Property Transactions",
+  servicesHeading: "Every property journey, carefully handled",
+  servicesIntro:
+    "Property transactions involve more than forms and settlement dates. We identify the legal and practical risks early, explain your position clearly and manage each stage with care.",
+  services: [
+    {
+      title: "Buying Property",
+      body: "Contract reviews, due diligence and settlement support for home buyers and investors. We explain the contract, identify risks and help you make an informed decision before you commit.",
+    },
+    {
+      title: "Selling Property",
+      body: "Preparation and review of contracts and vendor disclosure documents, management of purchaser enquiries and guidance through to settlement.",
+    },
+    {
+      title: "Off-the-Plan Property",
+      body: "Advice on proposed plans, sunset clauses, construction changes, settlement requirements and the particular risks associated with buying before construction is completed.",
+    },
+    {
+      title: "Commercial Property",
+      body: "Conveyancing support for the purchase and sale of offices, retail premises, warehouses, development sites and other commercial property.",
+    },
+    {
+      title: "Foreign Buyers",
+      body: "Advice for overseas purchasers on contract conditions, Foreign Investment Review Board requirements, surcharge duty and the practical steps involved in buying property in Australia.",
+    },
+    {
+      title: "Complex Transactions",
+      body: "Support where a transaction involves title defects, caveats, easements, finance delays, nomination arrangements, related-party transfers or disputes arising before settlement.",
+    },
   ],
 
-  servicesEyebrow: "Practice Area",
-  servicesHeading: "From Contract to Keys — We've Got You Covered",
-  servicesIntro: "",
-  services: [],
-  practiceText: [
-    "Our role goes beyond reviewing contracts and managing settlement. We act as our clients' trusted guide throughout the entire journey, explaining each step in plain language, flagging concerns before they become problems, and standing firmly in their corner during negotiations. Whether the matter involves residential property, commercial transactions, off-the-plan purchases, or cross-border acquisitions, we tailor our approach to the unique needs of each client.",
-    "We also understand that property transactions often intersect with other areas of law — from stamp duty and land tax considerations to FIRB approvals for international buyers. With a multidisciplinary team and a global perspective, we provide seamless, integrated support that protects our clients' interests from contract to settlement, and well beyond.",
+  approachEyebrow: "Our Approach",
+  approachHeading: "Clear guidance at every stage",
+  approachBody:
+    "We keep the transaction moving while making sure you understand the decisions, deadlines and risks along the way.",
+  approachSteps: [
+    {
+      number: "01",
+      title: "Review",
+      body: "We examine the contract, title, disclosures and special conditions and identify issues that may affect your decision or intended use of the property.",
+    },
+    {
+      number: "02",
+      title: "Advise",
+      body: "We explain the key findings in plain language and recommend any amendments, enquiries or protective conditions required before signing.",
+    },
+    {
+      number: "03",
+      title: "Coordinate",
+      body: "We work with the other solicitors, conveyancers, agents, lenders and relevant authorities to prepare the matter for settlement.",
+    },
+    {
+      number: "04",
+      title: "Settle",
+      body: "We complete the transaction electronically, confirm registration and provide the final documents and settlement records.",
+    },
   ],
+
+  riskItemsEyebrow: "Before You Sign",
+  riskItemsHeading: "The details that can change a transaction",
+  riskItemsIntro:
+    "A property contract may look routine, but the consequences often turn on matters that are easy to overlook before signing.",
+  riskItems: [
+    {
+      title: "Contract conditions",
+      body: "Special conditions can alter your rights concerning finance, inspections, default, settlement, adjustments and termination.",
+    },
+    {
+      title: "Title and property restrictions",
+      body: "Easements, covenants, caveats, planning controls and owners corporation rules may affect how the property can be used or developed.",
+    },
+    {
+      title: "Timing and finance",
+      body: "Missed finance, nomination or settlement deadlines may result in penalty interest, additional costs or loss of contractual rights.",
+    },
+    {
+      title: "Disclosure and property condition",
+      body: "Incomplete disclosures, building issues, tenancy arrangements or changes to the property before settlement may require urgent advice.",
+    },
+  ],
+
+  highlightEyebrow: "More Than Settlement",
+  highlightHeading: "Legal attention from contract to completion",
+  highlightBody:
+    "Our conveyancing matters are handled with the oversight and legal judgment of admitted solicitors. Where a transaction raises questions involving contract enforcement, duty, foreign investment, leasing, development or a pre-settlement dispute, our broader legal team can respond without the matter being passed between disconnected providers.",
+
+  newsSectionHeading: "Conveyancing",
+  newsSectionLede:
+    "Practical guidance on property contracts, disclosure, settlement and the issues that can arise along the way.",
+  newsPlaceholders: [
+    "What to check before signing a property contract",
+    "Buying off the plan: key risks to understand",
+    "What happens when settlement is delayed?",
+  ],
+
+  expertsSectionHeading: "Conveyancing",
+  expertsSectionLede:
+    "The solicitors who guide your transaction from initial review through to settlement.",
+  expertsCta: "Book a consultation",
 
   processHeading: "",
+  faqEyebrow: "",
+  faqHeading: "",
+  faqIntro: "",
+  faqs: [],
 
-  faqEyebrow: "Q&A",
-  faqHeading: "Answer to what you are wondering",
-  faqIntro: "These are the questions we hear most often.",
-  faqSub: "These are the questions we hear most often",
-  faqAccordion: true,
-  faqs: [
-    {
-      q: "I signed the contract at the auction — can I change my mind?",
-      a: "Unlike private treaty sales, auction purchases do not come with a cooling-off period. Once the hammer falls and you sign the contract, you are legally bound to proceed. Many buyers are caught off guard when they discover unfavourable clauses or undisclosed issues after the fact.",
-    },
-    {
-      q: "The contract looks standard — do I really need a lawyer to review it?",
-      a: "Standard contracts are rarely as straightforward as they appear. Special conditions, vendor disclosures, easements, and zoning restrictions are often buried in the fine print. Even small clauses can have significant financial or legal implications down the line.",
-    },
-    {
-      q: "I'm buying off-the-plan — what could go wrong?",
-      a: "Off-the-plan purchases carry unique risks: sunset clauses that allow developers to terminate the contract, changes to floor plans or finishes, delays in completion, and shifts in market value between signing and settlement. Without proper review, buyers may find themselves with a property very different from what they originally agreed to purchase.",
-    },
-    {
-      q: "What happens if I miss the settlement date?",
-      a: "Missing settlement can trigger default interest, penalty fees, and in serious cases, termination of the contract, meaning you could lose your deposit or face legal action from the other party. Settlement delays often stem from financing issues, missing documentation, or poor coordination between parties.",
-    },
-    {
-      q: "The property has an easement / caveat / encumbrance — what does that mean for me?",
-      a: "Easements, caveats, and encumbrances are restrictions or claims registered against a property's title. They can affect your ability to build, renovate, or even resell the property in the future. Many buyers don't fully understand these restrictions until they try to make changes.",
-    },
-  ],
-
-  closingKicker: "Ready to proceed",
-  closingTitle: "From contract to keys. {accent}We walk every step with you.{/accent}",
+  closingKicker: "Planning a transaction?",
+  closingTitle: "Start with a {accent}careful review{/accent}",
+  closingBody:
+    "Send us the contract or speak with our team before you sign. We will explain the key terms, identify the risks and help you move forward with confidence.",
   closingCta: "Book a consultation",
 
-  layout: ["intro", "practice", "qa", "news", "experts", "closing"],
+  layout: ["practice", "approach", "riskItems", "highlight", "news", "experts", "closing"],
 };

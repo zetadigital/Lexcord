@@ -94,7 +94,15 @@ export type PracticeBlock =
   | "closing"
   | "coreServices"
   | "approach"
-  | "artJr";
+  | "artJr"
+  | "riskItems"
+  | "highlight";
+
+/** A concise risk / key-consideration item (used in the riskItems block). */
+export interface RiskItem {
+  title: string;
+  body: string;
+}
 
 export interface PracticeArea {
   slug: string;
@@ -182,6 +190,20 @@ export interface PracticeArea {
 
   /** Optional secondary CTA button label in the closing block. */
   closingCtaSecondary?: string;
+
+  /** "Before You Sign" — editorial 2-col risk-items block. */
+  riskItemsEyebrow?: string;
+  riskItemsHeading?: string;
+  riskItemsIntro?: string;
+  riskItems?: RiskItem[];
+
+  /** "More Than Settlement" — split editorial highlight block. */
+  highlightEyebrow?: string;
+  highlightHeading?: string;
+  highlightBody?: string;
+
+  /** Specific placeholder article titles for the Related Insights news block. */
+  newsPlaceholders?: string[];
 
   closingKicker: string;
   closingTitle: string;
