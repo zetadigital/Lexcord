@@ -211,7 +211,11 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
             <div className={styles.grid}>
               {area.services.map((service, i) => (
                 <article key={service.title} className={styles.card}>
-                  <span className={styles.cardIndex}>{String(i + 1).padStart(2, "0")}</span>
+                  {area.practiceCardDot ? (
+                    <span className={styles.cardDot} aria-hidden="true" />
+                  ) : (
+                    <span className={styles.cardIndex}>{String(i + 1).padStart(2, "0")}</span>
+                  )}
                   <h3 className={styles.cardTitle}>{service.title}</h3>
                   <p className={styles.cardBody}>{service.body}</p>
                 </article>
@@ -228,9 +232,22 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
           <div className="section-head">
             <span className="eyebrow">{area.whyChoose.eyebrow}</span>
             <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>{area.whyChoose.heading}</h2>
-            {area.whyChoose.sub && <p>{area.whyChoose.sub}</p>}
+            {area.whyChoose.sub && (
+              <p className={styles.whySub}>{area.whyChoose.sub}</p>
+            )}
           </div>
-          <Accordion items={area.whyChoose.items} />
+          {area.whyCards ? (
+            <div className={styles.whyCardGrid}>
+              {area.whyChoose.items.map((item) => (
+                <div key={item.q} className={styles.whyCard}>
+                  <h3 className={styles.whyCardTitle}>{item.q}</h3>
+                  <p className={styles.whyCardBody}>{item.a}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <Accordion items={area.whyChoose.items} />
+          )}
         </div>
       </section>
     ) : null,
@@ -346,7 +363,10 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
             <h2 style={{ color: "#fff", fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
               {area.expertsSectionHeading ?? area.navLabel}
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.72)" }}>
+            <p
+              className={area.expertsSectionLede ? styles.areaTeamCustomLede : undefined}
+              style={{ color: "rgba(255,255,255,0.72)" }}
+            >
               {area.expertsSectionLede ?? c.areaTeamLede}
             </p>
           </div>

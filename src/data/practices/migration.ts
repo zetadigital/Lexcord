@@ -76,42 +76,43 @@ export const migration: PracticeArea = {
     },
   ],
 
-  servicesEyebrow: "Our Migration Services",
-  servicesHeading: "Our migration services",
+  servicesEyebrow: "Visa & Migration Pathways",
+  servicesHeading: "Visa pathways we advise on",
   servicesIntro:
-    "Our work spans both planned migration pathways and complex matters arising after an adverse decision.",
+    "We advise individuals, families, employers and businesses across a broad range of Australian visa and migration pathways. The appropriate pathway will depend on each client's circumstances, eligibility, timing and longer-term objectives.",
+  practiceCardDot: true,
   services: [
     {
-      title: "Skilled Migration",
-      body: "Advice on points-tested, state-nominated, regional and other skilled migration pathways for professionals, tradespeople and skilled applicants.",
+      title: "Skilled Visas",
+      body: "Advice on points-tested, state-nominated, regional and other skilled visa pathways for professionals, tradespeople and other eligible applicants.",
     },
     {
-      title: "Employer Sponsorship",
-      body: "Sponsorship, nomination and visa advice for Australian employers and skilled workers across temporary, regional and permanent pathways.",
+      title: "Employer-Sponsored Visas",
+      body: "Advice for Australian employers and skilled workers on sponsorship, nomination and temporary, regional and permanent employer-sponsored visa pathways.",
     },
     {
-      title: "Partner & Family Migration",
-      body: "Partner, prospective marriage, parent, child and other family visa matters, including complex relationship evidence and previous visa histories.",
+      title: "Partner & Family Visas",
+      body: "Advice on partner, prospective marriage, parent, child and other family visa pathways, including matters involving complex relationship evidence or previous visa histories.",
     },
     {
       title: "Student & Graduate Visas",
-      body: "Student and graduate visa applications, genuine student issues, course-related complications, refusals and post-study migration pathways.",
+      body: "Advice on student and graduate visas, genuine student requirements, course-related issues and post-study migration options.",
     },
     {
-      title: "Protection & Humanitarian Matters",
-      body: "Sensitive advice and representation in protection visa applications, refusals, ART reviews and related court proceedings.",
+      title: "Protection & Humanitarian Visas",
+      body: "Sensitive advice and representation in protection and humanitarian visa matters, including applications involving complex personal circumstances.",
     },
     {
-      title: "Business & Innovation",
-      body: "Advice for entrepreneurs, business owners and exceptional applicants, including available business and National Innovation visa pathways.",
+      title: "Business & Innovation Pathways",
+      body: "Advice for entrepreneurs, business owners and applicants considering available business, investment and National Innovation visa pathways.",
     },
     {
-      title: "Visa Cancellations & Character Matters",
-      body: "Responses to notices of intention to consider cancellation, mandatory cancellation matters, non-revocation applications and character-related reviews.",
+      title: "Citizenship & Resident Return",
+      body: "Advice on Australian citizenship, resident return visas and matters involving residence requirements or previous immigration history.",
     },
     {
-      title: "Citizenship, Bridging Visas & Status Issues",
-      body: "Citizenship applications and reviews, resident return visas, bridging visas, unlawful status and other complex immigration status matters.",
+      title: "Bridging Visas & Immigration Status",
+      body: "Advice on bridging visas, visa conditions, unlawful status and options available to people whose immigration status has become uncertain or complex.",
     },
   ],
 
@@ -143,7 +144,6 @@ export const migration: PracticeArea = {
   ],
 
   artJr: {
-    eyebrow: "Review Options",
     heading: "ART review and judicial review",
     intro:
       "The correct pathway depends on the decision made, the available review rights and the applicable deadline.",
@@ -165,6 +165,7 @@ export const migration: PracticeArea = {
       "Not every adverse decision gives rise to a viable judicial review application. Early assessment is important, particularly where a court filing deadline applies.",
   },
 
+  whyCards: true,
   whyChoose: {
     eyebrow: "Why Lexcord",
     heading: "Legal advice that considers the whole matter",
@@ -207,5 +208,5 @@ export const migration: PracticeArea = {
   closingCta: "Discuss your matter",
   closingCtaSecondary: "Contact Lexcord",
 
-  layout: ["intro", "coreServices", "practice", "approach", "artJr", "why", "experts", "news", "closing"],
+  layout: ["intro", "coreServices", "practice", "approach", "artJr", "why", "experts"],
 };

@@ -138,6 +138,18 @@
   letter-spacing: 0.05em;
 }
 
+/* Navy dot variant replacing the number badge */
+.cardDot {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.4rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  display: block;
+}
+
 .cardTitle {
   font-size: var(--text-lg);
   margin: 0.8rem 0 0.7rem;
@@ -666,6 +678,11 @@
   max-width: 76ch;
 }
 
+/* Intro paragraphs slightly smaller when in split layout */
+.introInnerSplit .introPara {
+  font-size: var(--text-base);
+}
+
 /* Two-column intro: body left + editorial pull-quote right */
 .introInnerSplit {
   display: grid;
@@ -1079,4 +1096,58 @@
 
 .qa {
   background: var(--paper);
+}
+
+/* ============================================================
+   Why-choose: sub-text + card variant
+   ============================================================ */
+.whySub {
+  font-size: 0.93rem;
+  color: var(--ink-700);
+  line-height: 1.65;
+  max-width: 64ch;
+  margin-top: 0.9rem;
+  text-wrap: pretty;
+}
+
+.whyCardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 0.8rem + 2vw, 2rem);
+  margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+}
+
+.whyCard {
+  padding: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--hairline);
+}
+
+.whyCardTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
+}
+
+.whyCardBody {
+  font-size: 0.91rem;
+  color: var(--ink-700);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+@media (max-width: 680px) {
+  .whyCardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Experts block: custom lede ---- */
+.areaTeamCustomLede {
+  font-size: 0.91rem;
+  max-width: 58ch;
+  line-height: 1.65;
 }

@@ -127,8 +127,12 @@ export interface PracticeArea {
   practiceNumbered?: boolean;
   /** Render the practice-area block as prose paragraphs instead of cards. */
   practiceText?: string[];
+  /** Replace numbered index badge on service cards with a navy dot. */
+  practiceCardDot?: boolean;
   /** Optional "Why choose Lexcord" accordion. */
   whyChoose?: AccordionBlock;
+  /** Render why-choose items as always-visible 3-column cards instead of accordion. */
+  whyCards?: boolean;
   /** Render the FAQ block as an accordion (with optional subtitle). */
   faqAccordion?: boolean;
   faqSub?: string;
