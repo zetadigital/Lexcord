@@ -46,7 +46,7 @@
 
 /* ── Card grid ── */
 .grid {
-  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem);
+  padding-block: clamp(1.5rem, 0.8rem + 2vw, 2.5rem) clamp(3rem, 2rem + 4vw, 5.5rem);
 }
 
 .cards {
@@ -81,16 +81,24 @@
   border-color: transparent;
 }
 
-/* SVG art panel */
+/* Card image / art panel */
 .cardPanel {
-  height: 180px;
+  position: relative;
+  height: 200px;
   flex-shrink: 0;
   overflow: hidden;
-  transition: transform 0.55s var(--ease-out);
+  /* Explicitly round the top two corners to match the card */
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
-.cardLink:hover .cardPanel {
-  transform: scale(1.04);
+.cardPhoto {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.cardLink:hover .cardPhoto {
+  transform: scale(1.05);
 }
 
 /* Card text body */
