@@ -20,15 +20,15 @@ function ArrowRight() {
  * Any slug not listed falls back to the SVG art below.
  */
 const AREA_PHOTOS: Partial<Record<string, string>> = {
-  // commercial:              "/images/expertise/commercial.jpg",
-  // "family-law":           "/images/expertise/family-law.jpg",
-  // "migration-law":        "/images/expertise/migration-law.jpg",
-  // conveyancing:            "/images/expertise/conveyancing.jpg",
-  // "property-law":         "/images/expertise/property-law.jpg",
-  // "wills-estates":        "/images/expertise/wills-estates.jpg",
-  // "criminal-law":         "/images/expertise/criminal-law.jpg",
-  // "intellectual-property": "/images/expertise/intellectual-property.jpg",
-  // "notary-public":        "/images/expertise/notary-public.jpg",
+  commercial:               "/images/expertise/commercial.png",
+  "family-law":            "/images/expertise/family-law.png",
+  "migration-law":         "/images/expertise/migration-law.png",
+  conveyancing:             "/images/expertise/conveyancing.png",
+  "property-law":          "/images/expertise/property-law.png",
+  "wills-estates":         "/images/expertise/wills-estates.png",
+  "criminal-law":          "/images/expertise/criminal-law.png",
+  "intellectual-property":  "/images/expertise/intellectual-property.png",
+  "notary-public":         "/images/expertise/notary-public.png",
 };
 
 /* SVG fallback art (navy geometric) used when the photo isn't in place yet */
