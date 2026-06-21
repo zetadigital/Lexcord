@@ -16,19 +16,19 @@ function ArrowRight() {
 }
 
 /*
- * Photo map: save images to public/images/expertise/<slug>.jpg
- * Slugs without a photo fall back to the SVG art below.
+ * Photo map: add entries here once images are in public/images/expertise/<slug>.jpg
+ * Any slug not listed falls back to the SVG art below.
  */
 const AREA_PHOTOS: Partial<Record<string, string>> = {
-  commercial:              "/images/expertise/commercial.jpg",
-  "family-law":           "/images/expertise/family-law.jpg",
-  "migration-law":        "/images/expertise/migration-law.jpg",
-  conveyancing:            "/images/expertise/conveyancing.jpg",
-  "property-law":         "/images/expertise/property-law.jpg",
-  "wills-estates":        "/images/expertise/wills-estates.jpg",
-  "criminal-law":         "/images/expertise/criminal-law.jpg",
-  "intellectual-property": "/images/expertise/intellectual-property.jpg",
-  "notary-public":        "/images/expertise/notary-public.jpg",
+  // commercial:              "/images/expertise/commercial.jpg",
+  // "family-law":           "/images/expertise/family-law.jpg",
+  // "migration-law":        "/images/expertise/migration-law.jpg",
+  // conveyancing:            "/images/expertise/conveyancing.jpg",
+  // "property-law":         "/images/expertise/property-law.jpg",
+  // "wills-estates":        "/images/expertise/wills-estates.jpg",
+  // "criminal-law":         "/images/expertise/criminal-law.jpg",
+  // "intellectual-property": "/images/expertise/intellectual-property.jpg",
+  // "notary-public":        "/images/expertise/notary-public.jpg",
 };
 
 /* SVG fallback art (navy geometric) used when the photo isn't in place yet */
