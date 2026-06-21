@@ -92,6 +92,18 @@ function AreaIcon({ slug }: { slug: string }) {
   }
 }
 
+const BANNER_PHOTOS: Partial<Record<string, string>> = {
+  "commercial":             "/images/expertise-banner/commercial.png",
+  "conveyancing":           "/images/expertise-banner/conveyancing.png",
+  "criminal-law":           "/images/expertise-banner/criminal-law.png",
+  "family-law":             "/images/expertise-banner/family-law.png",
+  "intellectual-property":  "/images/expertise-banner/intellectual-property.png",
+  "migration-law":          "/images/expertise-banner/migration-law.png",
+  "notary-public":          "/images/expertise-banner/notary-public.png",
+  "property-law":           "/images/expertise-banner/property-law.png",
+  "wills-estates":          "/images/expertise-banner/will-estates.png",
+};
+
 interface PracticeSectionsProps {
   area: PracticeArea;
   areaZh: PracticeArea;
@@ -106,6 +118,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
   const areaTeam = team.filter((m) => !m.placeholder && m.areas.includes(area.slug));
 
   const layout = area.layout ?? ["practice", "news", "experts", "closing"];
+  const bannerPhoto = BANNER_PHOTOS[areaEn.slug];
 
   const blocks: Record<string, JSX.Element | null> = {
     intro: area.introParagraphs?.length ? (
@@ -286,8 +299,11 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
 
   return (
     <>
-      {/* Banner — coloured band with area icon + title */}
-      <section className={styles.areaBanner}>
+      {/* Banner — photo background with dark overlay */}
+      <section
+        className={styles.areaBanner}
+        style={bannerPhoto ? { backgroundImage: `url(${bannerPhoto})` } : undefined}
+      >
         <div className="container">
           <div className={styles.areaBannerInner}>
             <span className={styles.areaBannerIcon} aria-hidden="true">
