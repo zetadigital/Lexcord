@@ -1,34 +1,45 @@
 /* ============================================================
-   Expertise — index (card grid, Landers-inspired)
+   Expertise — index (card grid)
    ============================================================ */
 
 /* ── Hero ── */
 .hero {
-  background: var(--navy-950);
-  padding-block: clamp(4rem, 3rem + 5vw, 7rem);
+  background: var(--paper);
+  padding-block: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+}
+
+/* Large decorative display label */
+.heroDisplay {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 2rem + 7vw, 8rem);
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: clamp(1.2rem, 0.8rem + 1.5vw, 2rem);
 }
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 1.4rem + 4vw, 4.8rem);
-  font-weight: 600;
-  color: #fff;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-  text-wrap: balance;
-  max-width: 18ch;
+  font-size: clamp(1.1rem, 0.95rem + 0.7vw, 1.4rem);
+  font-weight: 500;
+  color: var(--ink-700);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  max-width: 52ch;
 }
 
 .heroEm {
   font-style: normal;
-  color: var(--gold-600);
+  font-weight: 600;
 }
 
 .heroLede {
-  margin-top: 1.8rem;
-  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
+  margin-top: 1.1rem;
+  font-size: clamp(0.95rem, 0.88rem + 0.3vw, 1.05rem);
   line-height: 1.78;
-  color: rgba(255, 255, 255, 0.58);
+  color: var(--ink-500);
   max-width: 60ch;
   text-wrap: pretty;
 }
@@ -46,7 +57,7 @@
 
 /* ── Individual card ── */
 .card {
-  /* Reveal wrapper — no extra styles needed */
+  /* Reveal wrapper */
 }
 
 .cardLink {
@@ -65,28 +76,57 @@
 }
 
 .cardLink:hover {
-  box-shadow: 0 12px 40px rgba(11, 19, 38, 0.1);
+  box-shadow: 0 12px 40px rgba(11, 19, 38, 0.12);
   transform: translateY(-4px);
   border-color: transparent;
 }
 
-/* Top navy panel */
+/* Photo panel */
 .cardPanel {
-  background: var(--navy-900);
-  height: 160px;
-  display: grid;
-  place-items: center;
+  position: relative;
+  height: 180px;
   flex-shrink: 0;
-  transition: background var(--dur-fast) var(--ease-out);
+  overflow: hidden;
 }
 
-.cardLink:hover .cardPanel {
-  background: var(--navy-800);
+.cardPhoto {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.cardLink:hover .cardPhoto {
+  transform: scale(1.05);
+}
+
+/* Gradient overlay so icon is readable */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 19, 38, 0.28) 0%,
+    rgba(11, 19, 38, 0.6) 100%
+  );
+  transition: background var(--dur-fast) var(--ease-out);
+  z-index: 1;
+}
+
+.cardLink:hover .cardOverlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 19, 38, 0.18) 0%,
+    rgba(11, 19, 38, 0.52) 100%
+  );
 }
 
 .cardIcon {
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 0;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.92);
+  z-index: 2;
   transition: transform var(--dur) var(--ease-out);
 }
 
@@ -94,7 +134,7 @@
   transform: scale(1.08);
 }
 
-/* Card body */
+/* Card text body */
 .cardBody {
   padding: clamp(1.4rem, 1rem + 1.5vw, 2rem);
   display: flex;
@@ -104,7 +144,7 @@
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 0.95rem + 0.8vw, 1.45rem);
+  font-size: clamp(1.15rem, 0.95rem + 0.8vw, 1.4rem);
   font-weight: 600;
   color: var(--navy-900);
   line-height: 1.2;
@@ -154,15 +194,13 @@
   }
 
   .cardPanel {
-    height: 130px;
+    height: 150px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cardLink {
-    transition: none;
-  }
-
+  .cardLink,
+  .cardPhoto,
   .cardIcon,
   .cardCta {
     transition: none;

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { practiceAreas } from "@/data/practices";
 import { useLang } from "@/lib/i18n";
 import { Reveal } from "@/components/reveal";
@@ -113,14 +114,46 @@ function AreaIcon({ slug }: { slug: string }) {
   }
 }
 
+/* Display order for the card grid */
+const SLUG_ORDER = [
+  "commercial",
+  "family-law",
+  "migration-law",
+  "conveyancing",
+  "property-law",
+  "wills-estates",
+  "criminal-law",
+  "intellectual-property",
+  "notary-public",
+];
+
+/* One office photo per practice area */
+const AREA_PHOTOS: Record<string, string> = {
+  commercial:             "/images/office/office-1.jpg",
+  "family-law":          "/images/office/office-2.jpg",
+  "migration-law":       "/images/office/office-3.jpg",
+  conveyancing:           "/images/office/office-4.jpg",
+  "property-law":        "/images/office/office-5.jpg",
+  "wills-estates":       "/images/office/office-6.jpg",
+  "criminal-law":        "/images/office/office-7.jpg",
+  "intellectual-property": "/images/office/office-8.jpg",
+  "notary-public":       "/images/office/office-9.jpg",
+};
+
 export function ExpertiseContent() {
   const { t, areaLabel } = useLang();
   const s = t.pages.services;
 
+  const ordered = SLUG_ORDER
+    .map((slug) => practiceAreas.find((a) => a.slug === slug))
+    .filter(Boolean) as typeof practiceAreas;
+
   return (
     <>
+      {/* ── Hero ── */}
       <section className={styles.hero}>
         <div className="container">
+          <p className={styles.heroDisplay}>EXPERTISE</p>
           <h1 className={styles.heroTitle}>
             {s.heroTitlePre}
             <em className={styles.heroEm}>{s.heroTitleEm}</em>
@@ -129,17 +162,29 @@ export function ExpertiseContent() {
         </div>
       </section>
 
+      {/* ── Card grid ── */}
       <section className={styles.grid}>
         <div className="container">
           <div className={styles.cards}>
-            {practiceAreas.map((area, i) => (
+            {ordered.map((area, i) => (
               <Reveal key={area.slug} as="article" delay={i * 50} className={styles.card}>
                 <Link href={`/expertise/${area.slug}`} className={styles.cardLink}>
+                  {/* Photo panel */}
                   <div className={styles.cardPanel}>
+                    <Image
+                      src={AREA_PHOTOS[area.slug] ?? "/images/office/office-1.jpg"}
+                      alt=""
+                      fill
+                      className={styles.cardPhoto}
+                      sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    />
+                    <div className={styles.cardOverlay} />
                     <span className={styles.cardIcon}>
                       <AreaIcon slug={area.slug} />
                     </span>
                   </div>
+
+                  {/* Text body */}
                   <div className={styles.cardBody}>
                     <h2 className={styles.cardTitle}>
                       {areaLabel(area.slug, area.navLabel)}
