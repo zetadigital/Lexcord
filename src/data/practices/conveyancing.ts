@@ -16,6 +16,7 @@ export const conveyancing: PracticeArea = {
   servicesHeading: "Every property journey, carefully handled",
   servicesIntro:
     "Property transactions involve more than forms and settlement dates. We identify the legal and practical risks early, explain your position clearly and manage each stage with care.",
+  practiceCardDot: true,
   services: [
     {
       title: "Buying Property",
@@ -107,9 +108,10 @@ export const conveyancing: PracticeArea = {
     "What happens when settlement is delayed?",
   ],
 
-  expertsSectionHeading: "Conveyancing",
+  expertsSectionEyebrow: "Planning a transaction?",
+  expertsSectionHeading: "Start with a careful review",
   expertsSectionLede:
-    "The solicitors who guide your transaction from initial review through to settlement.",
+    "Send us the contract or speak with our team before you sign. We will explain the key terms, identify the risks and help you move forward with confidence.",
   expertsCta: "Book a consultation",
 
   processHeading: "",
@@ -124,5 +126,5 @@ export const conveyancing: PracticeArea = {
     "Send us the contract or speak with our team before you sign. We will explain the key terms, identify the risks and help you move forward with confidence.",
   closingCta: "Book a consultation",
 
-  layout: ["practice", "approach", "riskItems", "highlight", "news", "experts", "closing"],
+  layout: ["practice", "approach", "riskItems", "highlight", "experts"],
 };

@@ -16,6 +16,7 @@ export const conveyancingZh: PracticeArea = {
   servicesHeading: "每一段置业旅程，悉心护航",
   servicesIntro:
     "产权过户涉及的远不止表格与交割日期。我们在早期识别法律与实务风险，清晰解释您的法律立场，并审慎管理每一个阶段。",
+  practiceCardDot: true,
   services: [
     {
       title: "购买物业",
@@ -107,9 +108,10 @@ export const conveyancingZh: PracticeArea = {
     "交割延误时如何处理",
   ],
 
-  expertsSectionHeading: "产权过户",
+  expertsSectionEyebrow: "正在计划一宗交易？",
+  expertsSectionHeading: "从审慎审阅开始",
   expertsSectionLede:
-    "从初步审阅到交割完成，全程为您提供法律指导的律师团队。",
+    "在签约前，请将合同发给我们，或与我们的团队沟通。我们将解释主要条款、识别风险，助您以充足信心向前推进。",
   expertsCta: "预约咨询",
 
   processHeading: "",
@@ -124,5 +126,5 @@ export const conveyancingZh: PracticeArea = {
     "在签约前，请将合同发给我们，或与我们的团队沟通。我们将解释主要条款、识别风险，助您以充足信心向前推进。",
   closingCta: "预约咨询",
 
-  layout: ["practice", "approach", "riskItems", "highlight", "news", "experts", "closing"],
+  layout: ["practice", "approach", "riskItems", "highlight", "experts"],
 };

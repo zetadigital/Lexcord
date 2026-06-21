@@ -178,7 +178,8 @@ export interface PracticeArea {
   /** ART vs Judicial Review two-column block. */
   artJr?: ArtJrBlock;
 
-  /** Custom heading/lede for the "Your legal team" experts block. */
+  /** Custom eyebrow / heading / lede for the experts block. */
+  expertsSectionEyebrow?: string;
   expertsSectionHeading?: string;
   expertsSectionLede?: string;
   /** Understated text-link CTA below the lede in the experts section. */

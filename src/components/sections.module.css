@@ -1633,8 +1633,8 @@
 
 .highlightArt {
   width: 100%;
-  max-width: 280px;
-  opacity: 0.18;
+  max-width: 380px;
+  opacity: 0.2;
   color: var(--navy-900);
 }
 

@@ -245,7 +245,8 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               ))}
             </div>
           ) : (
-            <div className={area.practiceCardDot ? styles.gridDot : styles.grid}>
+            /* gridDot (4-col) only when cards divide evenly into 4 rows; else standard 3-col grid */
+            <div className={area.practiceCardDot && area.services.length % 4 === 0 ? styles.gridDot : styles.grid}>
               {area.services.map((service, i) => (
                 <article key={service.title} className={styles.card}>
                   {area.practiceCardDot ? (
@@ -402,7 +403,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
             <div className={styles.teamGrid}>
               {/* Left: intro text */}
               <div className={styles.teamIntro}>
-                <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
+                <span className="eyebrow eyebrow--light">{area.expertsSectionEyebrow ?? c.areaTeam}</span>
                 <h2>{area.expertsSectionHeading ?? area.navLabel}</h2>
                 <p>{area.expertsSectionLede ?? c.areaTeamLede}</p>
                 {area.expertsCta && (
