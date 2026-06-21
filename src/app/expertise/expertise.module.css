@@ -46,7 +46,7 @@
 
 /* ── Card grid ── */
 .grid {
-  padding-block: clamp(1.5rem, 0.8rem + 2vw, 2.5rem) clamp(3rem, 2rem + 4vw, 5.5rem);
+  padding-block: clamp(0.75rem, 0.4rem + 1vw, 1.25rem) clamp(3rem, 2rem + 4vw, 5.5rem);
 }
 
 .cards {
@@ -84,7 +84,7 @@
 /* Card image / art panel */
 .cardPanel {
   position: relative;
-  height: clamp(220px, 22vw, 300px);
+  height: clamp(220px, 22vw, 250px);
   flex-shrink: 0;
   overflow: hidden;
   /* Explicitly round the top two corners to match the card */
