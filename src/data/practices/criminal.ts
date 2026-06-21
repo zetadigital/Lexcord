@@ -3,82 +3,135 @@ import type { PracticeArea } from "../types";
 export const criminal: PracticeArea = {
   slug: "criminal-law",
   navLabel: "Criminal Law",
-  heroEyebrow: "Criminal Law",
-  heroTitle: "Clear advice when {accent}the stakes are at their highest{/accent}",
+  heroEyebrow: "Expertise",
+  heroTitle: "Criminal Law",
   heroLede:
-    "A criminal charge, however serious or seemingly minor, can have lasting consequences for your freedom, your livelihood, and your reputation. Getting sound legal advice from the outset matters more than almost anything else.",
+    "Clear, confidential advice when you are facing charges, police action or court proceedings — with careful preparation and practical representation from the outset.",
 
-  servicesEyebrow: "Areas We Advise On",
-  servicesHeading: "General criminal law representation",
+  seoTitle: "Criminal Lawyers Melbourne | Criminal Defence | Lexcord",
+  seoDescription:
+    "Lexcord provides clear and confidential criminal law advice for individuals facing charges, police interviews or court proceedings in Victoria.",
+
+  servicesEyebrow: "Criminal Matters",
+  servicesHeading: "Advice and representation when the stakes are personal",
   servicesIntro:
-    "We advise and represent clients across a broad range of criminal law matters in Australian courts. The following are the areas we most commonly assist with, though this list is not exhaustive.",
+    "The right approach depends on the charge, the evidence, the stage of the proceeding and what is most important to the client. We explain the available options clearly and prepare each matter with care.",
+  practiceCardDot: true,
   services: [
     {
-      title: "Traffic & Driving Offences",
-      body: "Traffic matters represent one of the most common categories of criminal charges in Australia — and the consequences of a conviction can extend well beyond a fine, including licence disqualification, demerit points, and impacts on employment. We advise on drink and drug driving, speeding, and careless and dangerous driving.",
+      title: "Traffic and Driving Offences",
+      body: "Advice and representation for drink and drug driving, dangerous or careless driving, licence offences, excessive speed and other matters that may affect your ability to drive.",
     },
     {
-      title: "Assault & Violence Offences",
-      body: "[Placeholder] The source document duplicated another section's text in this card, so the description is not yet available. Final copy to be supplied by the firm.",
+      title: "Assault and Violence Offences",
+      body: "Representation in matters involving unlawful assault, recklessly causing injury, affray, threats and other alleged offences involving violence or personal harm.",
     },
     {
       title: "Drug Offences",
-      body: "Drug charges span a wide spectrum — from minor possession matters to more serious supply and trafficking charges. The applicable law, penalties, and available defences vary significantly depending on the substance, quantity, and jurisdiction. We advise on the nature of the charge, applicable sentencing considerations, and the availability of diversion programs for eligible first-time offenders.",
+      body: "Advice on possession, use, cultivation, trafficking and other drug-related charges, including the evidence, available defences and possible sentencing outcomes.",
     },
     {
-      title: "Domestic Violence Offences",
-      body: "Domestic violence charges — including breaches of protection orders, assault in a domestic context, and stalking — are treated seriously by Australian courts and prosecutors. We advise both those charged with domestic violence offences and those seeking legal protection. Where a criminal matter intersects with a family law situation, our experience across both areas of practice is particularly valuable.",
+      title: "Theft, Fraud and Property Offences",
+      body: "Representation in matters involving theft, obtaining property by deception, criminal damage, burglary, handling stolen goods and other dishonesty or property-related allegations.",
     },
     {
-      title: "Bail Applications",
-      body: "Being refused bail — or being subject to restrictive bail conditions — can have immediate and serious consequences for your employment, family, and wellbeing. We make bail applications in the Magistrates Court and, where necessary, in the Supreme Court, presenting the strongest available case for your release on appropriate conditions. Bail applications often need to be made urgently.",
+      title: "Family Violence and Intervention Orders",
+      body: "Advice where criminal charges arise in a family violence context, including alleged breaches of family violence intervention orders and related court proceedings.",
+    },
+    {
+      title: "Bail and Urgent Applications",
+      body: "Urgent advice and representation for bail applications, variations of bail conditions and other situations where liberty or immediate court action is at issue.",
     },
   ],
+
+  approachEyebrow: "How We Approach Your Matter",
+  approachHeading: "Prepared from the first advice to the final outcome",
+  approachBody:
+    "Criminal matters often develop quickly. We identify the immediate priorities, examine the evidence and prepare a strategy suited to the charge and the client's circumstances.",
+  approachSteps: [
+    {
+      number: "01",
+      title: "Assess",
+      body: "We obtain your instructions, identify urgent issues and explain the charge, court process and immediate obligations.",
+    },
+    {
+      number: "02",
+      title: "Examine",
+      body: "We review the brief of evidence, police material, witness accounts and other relevant information to assess the prosecution case.",
+    },
+    {
+      number: "03",
+      title: "Prepare",
+      body: "We advise on pleas, defences, negotiations, supporting material and the practical steps required before the next court date.",
+    },
+    {
+      number: "04",
+      title: "Represent",
+      body: "We appear in court, present your position clearly and pursue the most appropriate available outcome, whether by negotiation, plea or contested hearing.",
+    },
+  ],
+
+  riskItemsEyebrow: "Early Decisions Matter",
+  riskItemsHeading: "What happens at the beginning can shape the whole case",
+  riskItemsIntro:
+    "Before speaking with police, entering a plea or agreeing to a proposed outcome, it is important to understand the evidence, the legal consequences and the available alternatives.",
+  riskItems: [
+    {
+      title: "Police interviews",
+      body: "What is said in an interview may become part of the evidence. Legal advice should be obtained before deciding whether and how to respond.",
+    },
+    {
+      title: "Bail and conditions",
+      body: "Bail conditions may affect where a person can live, who they may contact and whether they can continue working or caring for family members.",
+    },
+    {
+      title: "Plea and negotiation",
+      body: "A plea should only be entered after the charge, evidence and consequences have been properly considered. In some matters, charges or agreed facts may be capable of negotiation.",
+    },
+    {
+      title: "Sentencing consequences",
+      body: "The outcome may affect more than the immediate penalty, including employment, professional registration, travel, immigration status and future court proceedings.",
+    },
+  ],
+
+  highlightEyebrow: "More Than the Charge",
+  highlightHeading: "Advice that considers the consequences beyond court",
+  highlightBody:
+    "A criminal matter may affect employment, professional registration, family arrangements, immigration status and a person's ability to travel or drive. Where these issues intersect, our solicitors consider the broader consequences from the outset and coordinate the advice required.",
+  highlightVariant: "criminal",
+
+  complexMattersEyebrow: "Court and Procedural Matters",
+  complexMattersHeading: "Support at each stage of the proceeding",
+  complexMatters: [
+    "Police interviews and initial advice",
+    "Bail applications and bail variations",
+    "First mentions and directions hearings",
+    "Plea negotiations",
+    "Diversion applications where available",
+    "Guilty pleas and sentencing hearings",
+    "Contested hearings",
+    "Intervention order proceedings",
+    "Breach proceedings",
+    "Appeals and review of sentencing outcomes",
+    "Advice concerning criminal records",
+    "Coordination with barristers and expert witnesses",
+  ],
+
+  expertsSectionEyebrow: "Your Criminal Law Team",
+  expertsSectionHeading: "Speak with us before the next step is taken",
+  expertsSectionLede:
+    "Tell us what has happened, what documents you have received and whether a court date or police interview has been scheduled. We will assess the immediate priorities and explain the available next steps.",
+  expertsCta: "Book a consultation",
 
   processHeading: "",
+  faqEyebrow: "",
+  faqHeading: "",
+  faqIntro: "",
+  faqs: [],
 
-  whyHeading: "We will always tell you when you need a specialist",
-  why: [
-    {
-      title: "Honest assessment from the outset",
-      body: "We give you a frank, objective assessment of your situation — including the strength of the prosecution case, likely outcomes, and the realistic options available to you. We do not overstate prospects or tell you what you want to hear.",
-    },
-    {
-      title: "Transparent about our scope",
-      body: "Criminal law is a broad and highly specialised field. We handle a wide range of general criminal matters competently. When a matter requires specialist criminal defence expertise beyond our practice, we say so and refer you accordingly.",
-    },
-    {
-      title: "Your interests, not just your instructions",
-      body: "We consider not only the immediate legal outcome, but the broader consequences — employment, migration status, professional licences, and family circumstances — that a criminal matter can affect long after the court date.",
-    },
-  ],
-
-  faqEyebrow: "Common Questions",
-  faqHeading: "Questions we hear often",
-  faqIntro:
-    "Criminal law raises urgent and personal questions. These are the ones we are asked most frequently.",
-  faqs: [
-    {
-      q: "Do I need a lawyer if I intend to plead guilty?",
-      a: "Yes. In many cases, representation when pleading guilty is just as important as representation at trial. A lawyer can review the prosecution's summary of facts and negotiate amendments where the facts as stated are inaccurate or overstated. They can present mitigating factors, character references, and evidence of rehabilitation in a way that is most effective for sentencing. The difference between a skilled plea in mitigation and an unrepresented plea can be significant, affecting whether you receive a fine, a community-based order, a conviction recorded, or a custodial sentence. Even for minor matters, it is worth seeking advice before you appear.",
-    },
-    {
-      q: "What happens at my first court appearance?",
-      a: "Your first court date is typically a mention or directions hearing — not a trial. The court will note your presence, confirm whether you have legal representation, and establish the next steps. You may be asked to indicate how you intend to plead, though you are generally not required to enter a formal plea at the first mention. This date is an opportunity to obtain the prosecution brief (the evidence the prosecution intends to rely on), review it with your lawyer, and make informed decisions about how to proceed. We strongly recommend being represented at every court appearance — including the first one.",
-    },
-    {
-      q: "Will a criminal conviction affect my employment or visa status?",
-      a: "Potentially yes, and this is one of the reasons why seemingly minor criminal matters deserve careful legal attention. A criminal conviction can affect security clearances, professional licences (including those for lawyers, accountants, health practitioners, and teachers), working with children checks, employment in certain industries, and visa and citizenship applications or renewals. In some cases, a conviction — even for a minor offence — can trigger visa cancellation under the character requirements of the Migration Act. We consider these broader consequences as part of our advice, and where a matter intersects with migration law, we can advise on both dimensions.",
-    },
-    {
-      q: "What is the difference between a charge being dismissed and a not guilty verdict?",
-      a: "A charge can be dismissed by the court at various stages — for example, if the prosecution withdraws the charge, if it is dismissed for want of prosecution, or if a magistrate finds there is insufficient evidence to commit the matter to trial. A not guilty verdict, on the other hand, is a finding made after a contested hearing or trial — it means the court determined the prosecution did not prove the charge beyond reasonable doubt. Both outcomes result in the charge not proceeding to conviction, but the circumstances and processes differ. In some jurisdictions, a charge dismissed without conviction may still be recorded on police records even if not on your criminal history.",
-    },
-  ],
-
-  closingKicker: "Speak with us today",
-  closingTitle: "The sooner you get advice, {accent}the more options you have{/accent}",
-  closingBody:
-    "If you or someone you know is facing a criminal matter, contact us for a confidential initial consultation. Early legal advice makes a genuine difference to outcomes.",
+  closingKicker: "Ready to proceed?",
+  closingTitle: "Book a criminal law {accent}consultation{/accent}",
   closingCta: "Book a consultation",
+
+  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
 };

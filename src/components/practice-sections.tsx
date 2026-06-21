@@ -48,6 +48,34 @@ function PropertySitePlan() {
   );
 }
 
+/** Layered case-file art for the criminal law "More Than the Charge" highlight section. */
+function CriminalBriefSvg() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Back document */}
+      <rect x="122" y="24" width="112" height="148" stroke="currentColor" strokeWidth="0.8" />
+      {/* Middle document */}
+      <rect x="80" y="17" width="112" height="148" stroke="currentColor" strokeWidth="0.95" />
+      {/* Front document */}
+      <rect x="36" y="10" width="112" height="148" stroke="currentColor" strokeWidth="1.1" />
+      {/* Heading lines */}
+      <line x1="50" y1="29" x2="134" y2="29" stroke="currentColor" strokeWidth="0.7" />
+      <line x1="50" y1="40" x2="134" y2="40" stroke="currentColor" strokeWidth="0.7" />
+      {/* Body text lines */}
+      <line x1="50" y1="60" x2="134" y2="60" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="50" y1="70" x2="128" y2="70" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="50" y1="80" x2="134" y2="80" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="50" y1="100" x2="134" y2="100" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="50" y1="110" x2="124" y2="110" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="50" y1="120" x2="134" y2="120" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="50" y1="140" x2="118" y2="140" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="50" y1="150" x2="134" y2="150" stroke="currentColor" strokeWidth="0.5" />
+      {/* Bottom bracket — all three files, one matter */}
+      <path d="M 40 162 L 40 174 L 230 174 L 230 162" stroke="currentColor" strokeWidth="0.65" />
+    </svg>
+  );
+}
+
 /** Abstract document-hierarchy art for the commercial "Connected Legal Advice" section. */
 function CommercialDocumentSvg() {
   return (
@@ -641,6 +669,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
             <div className={styles.highlightRight} aria-hidden="true">
               {area.highlightVariant === "titlePlan" ? <TitlePlanSvg />
                : area.highlightVariant === "commercial" ? <CommercialDocumentSvg />
+               : area.highlightVariant === "criminal" ? <CriminalBriefSvg />
                : <PropertySitePlan />}
             </div>
           </div>
