@@ -395,7 +395,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                 {/* Right: tall CTA button — same height as person column, icon above label */}
                 <Link href="/contact" className={styles.teamCtaBook}>
                   <span className={styles.teamCtaBookIcon} aria-hidden="true">
-                    <ArrowRight size={15} />
+                    <ArrowRight />
                   </span>
                   <span className={styles.teamCtaBookLabel}>{t.nav.book}</span>
                 </Link>
