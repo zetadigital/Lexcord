@@ -539,40 +539,36 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 1rem;
+  gap: 2.4rem;
 }
 
+/* No box — people float on the dark section bg */
 .teamCard {
-  width: 155px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1.4rem 1.1rem 1.2rem;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.09);
   text-decoration: none;
-  transition: background var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
-}
-
-.teamCard:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.18);
+  width: 120px;
 }
 
 .teamPhoto {
   position: relative;
-  width: 78px;
-  height: 78px;
+  width: 86px;
+  height: 86px;
   border-radius: 50%;
   overflow: hidden;
   background: linear-gradient(160deg, var(--navy-700), var(--navy-800));
-  border: 2px solid rgba(255, 255, 255, 0.14);
+  border: 2px solid rgba(255, 255, 255, 0.18);
   flex: none;
   display: grid;
   place-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
+  transition: border-color var(--dur) var(--ease-out);
+}
+
+.teamCard:hover .teamPhoto {
+  border-color: rgba(255, 255, 255, 0.38);
 }
 
 .teamPhoto :global(img) {
@@ -582,7 +578,7 @@
 
 .teamInitials {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 500;
   color: var(--mist);
   letter-spacing: 0.02em;
@@ -600,36 +596,36 @@
 .teamName {
   font-family: var(--font-display);
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   font-weight: 500;
   line-height: 1.25;
 }
 
 .teamRole {
-  font-size: 0.71rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--mist);
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .teamLink {
-  margin-top: 0.9rem;
+  margin-top: 0.75rem;
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.74rem;
+  font-size: 0.73rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.55);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   padding-bottom: 1px;
   transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
 }
 
 .teamCard:hover .teamLink {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .teamLink svg {

@@ -208,8 +208,8 @@ button {
 .section-head p {
   margin-top: 1.1rem;
   color: var(--muted);
-  font-size: var(--text-lg);
-  line-height: var(--leading-snug);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
   max-width: 60ch;
 }
 
