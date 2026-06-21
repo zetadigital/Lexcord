@@ -133,7 +133,15 @@ export function SiteNav() {
                 </Link>
               </div>
               <div className={styles.panelList}>
-                {practiceAreas.map((area) => (
+                {[
+                  "commercial","family-law","migration-law","conveyancing",
+                  "property-law","wills-estates","criminal-law",
+                  "intellectual-property","notary-public",
+                ]
+                  .map((slug) => practiceAreas.find((a) => a.slug === slug))
+                  .filter(Boolean)
+                  .map((area) => area!)
+                  .map((area) => (
                   <Link
                     key={area.slug}
                     href={`/expertise/${area.slug}`}

@@ -151,7 +151,7 @@ const DICT: Record<Lang, Dictionary> = {
       firm: "Firm",
       panelHeadline: "Every area, one standard of care",
       panelBlurb:
-        "Considered counsel across the matters that shape Australian businesses and families — handled by solicitors, not just process.",
+        "Thoughtful, practical legal advice across the matters that shape businesses, individuals and families with every matter approached personally and handled with care.",
       panelAbout: "About the firm",
     },
     footer: {
@@ -359,7 +359,7 @@ const DICT: Record<Lang, Dictionary> = {
       book: "预约咨询",
       firm: "律所",
       panelHeadline: "每一个领域,同一份用心",
-      panelBlurb: "为塑造澳大利亚企业与家庭的重要事务提供深思熟虑的法律意见——由律师亲自处理,而非流于流程。",
+      panelBlurb: "为企业、个人与家庭提供深思熟虑、切实可行的法律意见——每一件事务都以认真负责的态度亲力亲为、用心处理。",
       panelAbout: "了解律所",
     },
     footer: {
@@ -571,7 +571,7 @@ const DICT: Record<Lang, Dictionary> = {
       book: "預約諮詢",
       firm: "律所",
       panelHeadline: "每一個領域，同一份用心",
-      panelBlurb: "為塑造澳大利亞企業與家庭的重要事務提供深思熟慮的法律意見——由律師親自處理，而非流於流程。",
+      panelBlurb: "為企業、個人與家庭提供深思熟慮、切實可行的法律意見——每一件事務都以認真負責的態度親力親為、用心處理。",
       panelAbout: "了解律所",
     },
     footer: {
