@@ -84,7 +84,7 @@
 /* Card image / art panel */
 .cardPanel {
   position: relative;
-  height: 200px;
+  height: clamp(220px, 22vw, 300px);
   flex-shrink: 0;
   overflow: hidden;
   /* Explicitly round the top two corners to match the card */
