@@ -18,7 +18,7 @@
   margin-top: 1.4rem;
   font-size: var(--text-lg);
   line-height: var(--leading-snug);
-  color: var(--muted);
+  color: var(--ink-700);
   max-width: 56ch;
 }
 
