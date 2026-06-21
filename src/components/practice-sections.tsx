@@ -208,7 +208,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               ))}
             </div>
           ) : (
-            <div className={styles.grid}>
+            <div className={area.practiceCardDot ? styles.gridDot : styles.grid}>
               {area.services.map((service, i) => (
                 <article key={service.title} className={styles.card}>
                   {area.practiceCardDot ? (
@@ -372,35 +372,39 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
           </div>
 
           {areaTeam.length > 0 ? (
-            <div className={styles.teamRow}>
-              {areaTeam.map((m) => (
-                <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
-                  <div className={styles.teamPhoto}>
-                    {m.photo && <Image src={m.photo} alt={m.name} fill sizes="220px" />}
-                  </div>
-                  <div className={styles.teamInfo}>
-                    <h3 className={styles.teamName}>{m.name}</h3>
-                    <span className={styles.teamRole}>{lang === "zh" ? m.roleZh : m.role}</span>
-                    <span className={styles.teamLink}>
-                      {c.viewProfile} <ArrowRight />
-                    </span>
-                  </div>
+            <>
+              <div className={styles.teamRow}>
+                {areaTeam.map((m) => (
+                  <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
+                    <div className={styles.teamPhoto}>
+                      {m.photo ? (
+                        <Image src={m.photo} alt={m.name} fill sizes="120px" />
+                      ) : (
+                        <span className={styles.teamInitials}>
+                          {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
+                        </span>
+                      )}
+                    </div>
+                    <div className={styles.teamInfo}>
+                      <h3 className={styles.teamName}>{m.name}</h3>
+                      <span className={styles.teamRole}>{lang === "zh" ? m.roleZh : m.role}</span>
+                      <span className={styles.teamLink}>
+                        {c.viewProfile} <ArrowRight />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className={styles.teamCtaRow}>
+                <Link href="/contact" className="btn btn--ghost-light">
+                  {t.nav.book} <ArrowRight />
                 </Link>
-              ))}
-              <Link href="/contact" className={styles.teamBook}>
-                <span className={styles.teamBookIcon} aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
-                    <path d="M4 5h16v11H7l-3 3V5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                <span className={styles.teamBookText}>{t.nav.book}</span>
-                <ArrowRight />
-              </Link>
-            </div>
+              </div>
+            </>
           ) : (
             <div className={styles.teamEmpty}>
               <p>{c.areaTeamEmpty}</p>
-              <Link href="/contact" className="btn btn--primary">
+              <Link href="/contact" className="btn btn--ghost-light">
                 {t.nav.book} <ArrowRight />
               </Link>
             </div>

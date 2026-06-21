@@ -89,8 +89,8 @@
 
 .split p {
   color: var(--muted);
-  font-size: var(--text-lg);
-  line-height: var(--leading-snug);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
 }
 
 /* ---- Service / card grid ---- */
@@ -98,6 +98,18 @@
   margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* 4-column variant — used when practiceCardDot is set (8 cards ÷ 4 = 2 clean rows) */
+.gridDot {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--hairline);
   border: 1px solid var(--hairline);
@@ -138,16 +150,14 @@
   letter-spacing: 0.05em;
 }
 
-/* Navy dot variant replacing the number badge */
+/* Navy dot: sits above the card title, left-aligned with first letter */
 .cardDot {
-  position: absolute;
-  top: 1.3rem;
-  right: 1.4rem;
-  width: 7px;
-  height: 7px;
+  display: block;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--navy-800);
-  display: block;
+  margin-bottom: 1rem;
 }
 
 .cardTitle {
@@ -399,6 +409,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .gridDot {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .stages {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 2.6rem;
@@ -418,7 +432,8 @@
 }
 
 @media (max-width: 600px) {
-  .grid {
+  .grid,
+  .gridDot {
     grid-template-columns: 1fr;
   }
 
@@ -485,29 +500,41 @@
 
 .teamRow {
   margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: clamp(1rem, 0.8rem + 1.5vw, 1.5rem);
 }
 
 .teamCard {
-  width: 230px;
-  background: var(--navy-900);
-  border: 1px solid var(--navy-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(1.5rem, 1rem + 1.5vw, 2rem);
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: transform var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  text-decoration: none;
+  transition: background var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
 }
 
 .teamCard:hover {
-  transform: translateY(-4px);
-  border-color: rgba(55, 80, 137, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .teamPhoto {
   position: relative;
-  aspect-ratio: 1 / 1;
-  background: linear-gradient(180deg, var(--navy-800), var(--navy-900));
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--navy-700), var(--navy-800));
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  flex: none;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.15rem;
 }
 
 .teamPhoto :global(img) {
@@ -515,34 +542,56 @@
   object-position: center top;
 }
 
+.teamInitials {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 500;
+  color: var(--mist);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
 .teamInfo {
-  padding: 1.1rem 1.2rem 1.3rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
 }
 
 .teamName {
+  font-family: var(--font-display);
   color: #fff;
-  font-size: var(--text-lg);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .teamRole {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--gold-400);
+  color: var(--mist);
+  opacity: 0.7;
 }
 
 .teamLink {
-  margin-top: 0.7rem;
+  margin-top: 1.1rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.82rem;
+  gap: 0.35rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--gold-400);
+  color: rgba(255, 255, 255, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1px;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.teamCard:hover .teamLink {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .teamLink svg {
@@ -550,32 +599,13 @@
 }
 
 .teamCard:hover .teamLink svg {
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
-.teamBook {
-  width: 230px;
+.teamCtaRow {
+  margin-top: 2.8rem;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  gap: 0.9rem;
-  padding: 1.6rem;
-  border-radius: var(--radius-lg);
-  border: 1px dashed rgba(55, 80, 137, 0.45);
-  color: var(--gold-400);
-  background: rgba(55, 80, 137, 0.05);
-  transition: background var(--dur) var(--ease-out);
-}
-
-.teamBook:hover {
-  background: rgba(55, 80, 137, 0.1);
-}
-
-.teamBookText {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  color: #fff;
 }
 
 .teamEmpty {
@@ -588,7 +618,7 @@
 }
 
 .teamEmpty p {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   line-height: var(--leading-snug);
   color: rgba(255, 255, 255, 0.78);
 }
@@ -602,11 +632,6 @@
 @media (max-width: 600px) {
   .postGrid {
     grid-template-columns: 1fr;
-  }
-
-  .teamCard,
-  .teamBook {
-    width: 100%;
   }
 }
 
@@ -678,10 +703,7 @@
   max-width: 76ch;
 }
 
-/* Intro paragraphs slightly smaller when in split layout */
-.introInnerSplit .introPara {
-  font-size: var(--text-base);
-}
+/* intentionally blank — .introPara now uses text-base globally */
 
 /* Two-column intro: body left + editorial pull-quote right */
 .introInnerSplit {
@@ -715,7 +737,7 @@
 }
 
 .introPara {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--ink-700);
 }
@@ -889,7 +911,7 @@
 }
 
 .approachBody {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.65;
   max-width: 58ch;
@@ -972,7 +994,7 @@
 }
 
 .artJrIntro {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--ink-700);
   line-height: 1.6;
   max-width: 54ch;
