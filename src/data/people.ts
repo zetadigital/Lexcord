@@ -23,6 +23,16 @@ export interface TeamMember {
   bio: string[];
   bioZh: string[];
   bioZhTw?: string[];
+  /**
+   * Display-only practice labels on the profile page.
+   * When set, replaces slug-derived area tag links with plain text chips.
+   * `areas` still controls which expertise pages this person appears on.
+   */
+  practiceDisplay?: string[];
+  practiceDisplayZh?: string[];
+  practiceDisplayZhTw?: string[];
+  /** CSS object-position for the photo circle (e.g. "30% top"). Defaults to "center top". */
+  photoPosition?: string;
   /** True when name/role themselves are not yet supplied. */
   placeholder?: boolean;
 }
@@ -53,26 +63,54 @@ export const team: TeamMember[] = [
     specialty: "Family, Cross-Border & Estate Law",
     specialtyZh: "家庭法、跨境法律及遗产规划",
     specialtyZhTw: "家庭法、跨境法律及遺產規劃",
-    photo: "/images/team/katherine-ho.jpg",
-    areas: ["family-law", "wills-estates", "commercial", "migration-law"],
+    photo: "/images/team/katherine-ho.png",
+    photoPosition: "30% top",
+    areas: ["family-law", "wills-estates", "commercial", "property-law"],
+    practiceDisplay: [
+      "Family Law",
+      "International & Cross-Border Family Law",
+      "Wills & Estates",
+      "Commercial Law",
+      "Property Law (Owners Corporation)",
+    ],
+    practiceDisplayZh: [
+      "家庭法",
+      "国际及跨境家庭法",
+      "遗嘱与遗产规划",
+      "商业法",
+      "物业法（业主企业）",
+    ],
+    practiceDisplayZhTw: [
+      "家庭法",
+      "國際及跨境家庭法",
+      "遺囑與遺產規劃",
+      "商業法",
+      "物業法（業主法人）",
+    ],
     email: "katherine.ho@lexcord.com.au",
     phone: FIRM_PHONE,
     qualifications: [
-      "Solicitor of the Supreme Court of Victoria",
+      "Juris Doctor — Monash University",
+      "Master of Public and International Law — The University of Melbourne",
+      "Solicitor of the Supreme Court of New South Wales",
       "Solicitor of the High Court of Australia",
       "Admitted as a Lawyer — Taiwan",
       "Accredited Mediator — Australia",
       "Certified Elder Financial Planning Consultant — Taiwan",
     ],
     qualificationsZh: [
-      "维多利亚州最高法院律师",
+      "法学博士(Juris Doctor)— 蒙纳士大学",
+      "公法与国际法硕士 — 墨尔本大学",
+      "新南威尔士州最高法院律师",
       "澳大利亚高等法院律师",
       "台湾执业律师",
       "澳大利亚认证调解员",
       "台湾认证老龄化财务规划顾问",
     ],
     qualificationsZhTw: [
-      "維多利亞州最高法院律師",
+      "法學博士(Juris Doctor)— 蒙納士大學",
+      "公法與國際法碩士 — 墨爾本大學",
+      "新南威爾士州最高法院律師",
       "澳大利亞高等法院律師",
       "台灣執業律師",
       "澳大利亞認可調解員",
@@ -191,14 +229,53 @@ export const team: TeamMember[] = [
     specialtyZhTw: "知識產權",
     photo: "/images/team/justin-ho.png",
     areas: ["intellectual-property"],
+    practiceDisplay: ["Patents", "Trade Marks", "Copyright", "IP Management & Strategy", "Commercial"],
+    practiceDisplayZh: ["专利", "商标", "版权", "知识产权管理与战略", "商业法"],
+    practiceDisplayZhTw: ["專利", "商標", "著作權", "知識產權管理與策略", "商業法"],
     email: "justin.ho@lexcord.com.au",
     phone: FIRM_PHONE,
-    qualifications: [],
-    qualificationsZh: [],
-    qualificationsZhTw: [],
-    bio: pendingBio("Justin Ho"),
-    bioZh: pendingBioZh("Justin Ho"),
-    bioZhTw: pendingBioZhTw("Justin Ho"),
+    qualifications: [
+      "Juris Doctor — University of Melbourne",
+      "Master of Biotechnology — University of Melbourne",
+      "Solicitor of the Supreme Court of Victoria",
+      "Solicitor of the High Court of Australia",
+      "TIPO Certified Patent Attorney (Taiwan)",
+    ],
+    qualificationsZh: [
+      "法学博士(Juris Doctor)— 墨尔本大学",
+      "生物技术硕士 — 墨尔本大学",
+      "维多利亚州最高法院律师",
+      "澳大利亚高等法院律师",
+      "台湾智慧财产局（TIPO）认证专利代理人",
+    ],
+    qualificationsZhTw: [
+      "法學博士(Juris Doctor)— 墨爾本大學",
+      "生物技術碩士 — 墨爾本大學",
+      "維多利亞州最高法院律師",
+      "澳大利亞高等法院律師",
+      "台灣智慧財產局（TIPO）認證專利代理人",
+    ],
+    memberships: ["Member of the Intellectual Property Society of Australia and New Zealand"],
+    membershipsZh: ["澳大利亚及新西兰知识产权学会会员"],
+    membershipsZhTw: ["澳大利亞及紐西蘭知識產權學會會員"],
+    bio: [
+      "Chia-Chin (Justin) Ho is an Australian legal practitioner with a specialised focus on intellectual property law, underpinned by a strong scientific background in biotechnology, molecular biology, and biochemistry. He advises individual and business clients on a range of IP matters, bringing technical depth and legal rigour to every engagement.",
+      "Justin practises primarily in patent and trade mark law, managing a diverse file load that spans registration, enforcement, and strategic IP management. He drafts a broad range of legal documents, including affidavits, pleadings, and formal letters of advice, and conducts legal research to support clients in navigating complex IP landscapes. His scientific training enables him to engage directly with technical subject matter, an advantage particularly valued by clients in the life sciences, pharmaceutical, and biotechnology sectors.",
+      "In addition to his IP practice, Justin holds certification as a patent attorney under the Taiwan Intellectual Property Office (TIPO), extending his ability to assist clients with cross-border patent matters in the Asia-Pacific region. His earlier industry experience — including a project partnership with Leica Biosystems and research in protein biochemistry — gives him firsthand insight into how scientific innovation translates into commercial and legal strategy.",
+      "Justin is committed to providing clear, practical advice that helps clients protect and leverage their intellectual property with confidence.",
+    ],
+    bioZh: [
+      "何嘉钦（Justin Ho）是一位澳大利亚执业律师，专注于知识产权法，并具备生物技术、分子生物学及生物化学等扎实的理科学术背景。他为个人及企业客户提供各类知识产权事务的专业法律建议，将深厚的技术积累与严谨的法律素养融入每一次委托服务中。",
+      "Justin 主要执业于专利及商标法，处理涵盖登记注册、权利维护及知识产权战略管理的多元化案件。他起草各类法律文件，包括宣誓陈述书、诉状及正式法律意见函，并开展法律研究，协助客户应对复杂的知识产权挑战。其理科学术背景使他能够直接参与技术性议题的深入研判，这一专业优势尤受生命科学、制药及生物技术行业客户的高度认可。",
+      "除知识产权执业外，Justin 持有台湾智慧财产局（TIPO）认证的专利代理人资格，使他能够协助客户处理亚太地区的跨境专利事务。他早年的行业经验——包括与 Leica Biosystems 的项目合作及蛋白质生物化学研究——使他对科学创新如何转化为商业与法律战略具有直接的亲身感悟。",
+      "Justin 致力于提供清晰、务实的法律建议，帮助客户自信地保护并运用其知识产权资产。",
+    ],
+    bioZhTw: [
+      "何嘉欽（Justin Ho）是一位澳大利亞執業律師，專注於知識產權法，並具備生物技術、分子生物學及生物化學等扎實的理科學術背景。他為個人及企業客戶提供各類知識產權事務的專業法律建議，將深厚的技術積累與嚴謹的法律素養融入每一次委託服務中。",
+      "Justin 主要執業於專利及商標法，處理涵蓋登記注冊、權利維護及知識產權戰略管理的多元化案件。他起草各類法律文件，包括宣誓陳述書、訴狀及正式法律意見函，並開展法律研究，協助客戶應對複雜的知識產權挑戰。其理科學術背景使他能夠直接參與技術性議題的深入研判，這一專業優勢尤受生命科學、製藥及生物技術行業客戶的高度認可。",
+      "除知識產權執業外，Justin 持有台灣智慧財產局（TIPO）認證的專利代理人資格，使他能夠協助客戶處理亞太地區的跨境專利事務。他早年的行業經驗——包括與 Leica Biosystems 的項目合作及蛋白質生物化學研究——使他對科學創新如何轉化為商業與法律戰略具有直接的親身感悟。",
+      "Justin 致力於提供清晰、務實的法律建議，幫助客戶自信地保護並運用其知識產權資產。",
+    ],
   },
   {
     slug: "chang-qi",

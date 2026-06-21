@@ -42,7 +42,14 @@ export function PeopleContent() {
                 <div key={member.slug} className={styles.card}>
                   <Link href={`/people/${member.slug}`} className={styles.avatarWrap} aria-label={member.name}>
                     {member.photo ? (
-                      <Image src={member.photo} alt={member.name} fill sizes="120px" className={styles.avatarImg} />
+                      <Image
+                        src={member.photo}
+                        alt={member.name}
+                        fill
+                        sizes="120px"
+                        className={styles.avatarImg}
+                        style={member.photoPosition ? { objectPosition: member.photoPosition } : undefined}
+                      />
                     ) : (
                       <span className={styles.avatarInitials}>{initials(member.name)}</span>
                     )}

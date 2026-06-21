@@ -82,7 +82,13 @@ export function PersonDetail({ slug }: { slug: string }) {
             <div className={styles.rail}>
               <div className={styles.detailPhoto}>
                 {member.photo ? (
-                  <Image src={member.photo} alt={name} fill sizes="300px" />
+                  <Image
+                    src={member.photo}
+                    alt={name}
+                    fill
+                    sizes="300px"
+                    style={member.photoPosition ? { objectPosition: member.photoPosition } : undefined}
+                  />
                 ) : (
                   <span className={styles.detailInitials}>{initials(name)}</span>
                 )}
@@ -117,18 +123,40 @@ export function PersonDetail({ slug }: { slug: string }) {
                 </div>
               </div>
 
-              {member.areas.length > 0 && (
-                <div className={styles.section}>
-                  <p className={styles.sectionTitle}>{p.expertise}</p>
-                  <div className={styles.areaTags}>
-                    {member.areas.map((s) => (
-                      <Link key={s} href={`/expertise/${s}`} className={styles.areaTag}>
-                        {areaLabel(s, practiceBySlug.get(s)?.navLabel ?? s)}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
+              {(() => {
+                const displayLabels =
+                  lang === "zh-tw" ? (member.practiceDisplayZhTw ?? member.practiceDisplayZh ?? member.practiceDisplay) :
+                  lang === "zh" ? (member.practiceDisplayZh ?? member.practiceDisplay) :
+                  member.practiceDisplay;
+
+                if (displayLabels && displayLabels.length > 0) {
+                  return (
+                    <div className={styles.section}>
+                      <p className={styles.sectionTitle}>{p.expertise}</p>
+                      <div className={styles.areaTags}>
+                        {displayLabels.map((label, i) => (
+                          <span key={i} className={styles.areaTag}>{label}</span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+                if (member.areas.length > 0) {
+                  return (
+                    <div className={styles.section}>
+                      <p className={styles.sectionTitle}>{p.expertise}</p>
+                      <div className={styles.areaTags}>
+                        {member.areas.map((s) => (
+                          <Link key={s} href={`/expertise/${s}`} className={styles.areaTag}>
+                            {areaLabel(s, practiceBySlug.get(s)?.navLabel ?? s)}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+                return null;
+              })()}
 
               {quals.length > 0 && (
                 <div className={styles.section}>
