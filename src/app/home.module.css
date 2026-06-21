@@ -347,7 +347,7 @@
   .arch1,
   .arch2,
   .arch3 {
-    height: clamp(140px, 38vw, 220px);
+    height: clamp(200px, 52vw, 300px);
   }
 
   .services {
