@@ -86,6 +86,7 @@ interface Dictionary {
       heroTitlePre: string;
       heroTitleEm: string;
       heroLede: string;
+      exploreLabel: string;
     };
     resources: {
       heroEyebrow: string;
@@ -256,6 +257,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitleEm: "one standard of care",
         heroLede:
           "Lexcord brings the breadth of a general practice together with the depth of specialist counsel — advising individuals, families, and businesses across every Australian state and territory.",
+        exploreLabel: "Explore",
       },
       resources: {
         heroEyebrow: "Resources & Insights",
@@ -468,6 +470,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitleEm: "同一份用心",
         heroLede:
           "律和兼具综合性事务所的广度与专业律师的深度——为个人、家庭与企业提供服务,覆盖全澳各州与领地。",
+        exploreLabel: "了解更多",
       },
       resources: {
         heroEyebrow: "资讯与洞见",
@@ -670,6 +673,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitlePre: "我們的執業領域，",
         heroTitleEm: "同一份用心",
         heroLede: "律和兼具綜合性事務所的廣度與專業律師的深度——為個人、家庭與企業提供服務，覆蓋全澳各州與領地。",
+        exploreLabel: "了解更多",
       },
       resources: {
         heroEyebrow: "資訊與洞見",

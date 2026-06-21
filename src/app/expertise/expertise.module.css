@@ -1,84 +1,170 @@
 /* ============================================================
-   Expertise — index list (simple, no banner, no numbers)
+   Expertise — index (card grid, Landers-inspired)
    ============================================================ */
-.intro {
-  padding-block: clamp(2.6rem, 2rem + 3vw, 4.5rem) 0;
+
+/* ── Hero ── */
+.hero {
+  background: var(--navy-950);
+  padding-block: clamp(4rem, 3rem + 5vw, 7rem);
 }
 
-.introTitle {
-  font-size: var(--text-3xl);
-  margin-top: 1.1rem;
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.4rem + 4vw, 4.8rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
   max-width: 18ch;
 }
 
-.introLede {
-  margin-top: 1.4rem;
-  font-size: var(--text-lg);
-  line-height: var(--leading-snug);
-  color: var(--muted);
+.heroEm {
+  font-style: normal;
+  color: var(--gold-600);
+}
+
+.heroLede {
+  margin-top: 1.8rem;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.58);
   max-width: 60ch;
+  text-wrap: pretty;
 }
 
-.listSection {
-  padding-block: clamp(2.5rem, 2rem + 3vw, 4rem) var(--space-section);
+/* ── Card grid ── */
+.grid {
+  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem);
 }
 
-.list {
-  border-top: 1px solid var(--hairline-strong);
-}
-
-.row {
+.cards {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: clamp(1rem, 0.5rem + 2vw, 2.5rem);
-  padding: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem) 0;
-  border-bottom: 1px solid var(--hairline-strong);
-  transition: padding-inline var(--dur) var(--ease-out);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
-.row:hover {
-  padding-inline: 1rem;
+/* ── Individual card ── */
+.card {
+  /* Reveal wrapper — no extra styles needed */
 }
 
-.rowTitle {
-  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem);
-  transition: color var(--dur-fast) var(--ease-out);
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: #fff;
+  transition:
+    box-shadow var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
 }
 
-.row:hover .rowTitle {
-  color: var(--navy-700);
+.cardLink:hover {
+  box-shadow: 0 12px 40px rgba(11, 19, 38, 0.1);
+  transform: translateY(-4px);
+  border-color: transparent;
 }
 
-.rowDesc {
-  margin-top: 0.5rem;
-  font-size: 0.98rem;
-  color: var(--ink-500);
-  line-height: 1.55;
-  max-width: 66ch;
-}
-
-.rowGo {
+/* Top navy panel */
+.cardPanel {
+  background: var(--navy-900);
+  height: 160px;
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid var(--hairline-strong);
+  flex-shrink: 0;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.cardLink:hover .cardPanel {
+  background: var(--navy-800);
+}
+
+.cardIcon {
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 0;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.cardLink:hover .cardIcon {
+  transform: scale(1.08);
+}
+
+/* Card body */
+.cardBody {
+  padding: clamp(1.4rem, 1rem + 1.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 0.95rem + 0.8vw, 1.45rem);
+  font-weight: 600;
   color: var(--navy-900);
-  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
-.row:hover .rowGo {
-  background: var(--navy-900);
-  border-color: var(--navy-900);
-  color: #fff;
-  transform: translateX(4px);
+.cardDesc {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--ink-500);
+  line-height: 1.65;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-@media (max-width: 640px) {
-  .rowGo {
-    display: none;
+.cardCta {
+  margin-top: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-600);
+  transition: gap var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.cardLink:hover .cardCta {
+  gap: 0.65rem;
+  color: var(--navy-900);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cardPanel {
+    height: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardLink {
+    transition: none;
+  }
+
+  .cardIcon,
+  .cardCta {
+    transition: none;
   }
 }
