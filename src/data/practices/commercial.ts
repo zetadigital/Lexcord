@@ -3,131 +3,135 @@ import type { PracticeArea } from "../types";
 export const commercial: PracticeArea = {
   slug: "commercial",
   navLabel: "Commercial",
-  heroEyebrow: "Commercial",
-  heroTitle: "Business problems need {accent}business-minded lawyers{/accent}",
+  heroEyebrow: "Expertise",
+  heroTitle: "Commercial",
   heroLede:
-    "Business moves fast. Legal problems move faster. We provide direct, commercially-minded legal advice on contracts, employment, disputes, and commercial leases — for startups, SMEs, and corporates across Australia.",
+    "Practical legal advice for businesses, founders and investors — from contracts and commercial relationships to transactions, disputes and growth.",
 
-  servicesEyebrow: "Practice Area",
-  servicesHeading: "Commercial services",
+  seoTitle: "Commercial Lawyers Melbourne | Business Law | Lexcord",
+  seoDescription:
+    "Lexcord provides practical commercial legal advice for businesses, founders and investors — contracts, business structures, transactions, employment and commercial disputes.",
+
+  servicesEyebrow: "Commercial Services",
+  servicesHeading: "Legal support for the way business operates",
   servicesIntro:
-    "We advise businesses and individuals across the full spectrum of commercial law, from everyday contracts and employment matters through to complex disputes and multi-site lease portfolios. Below are the areas we are most frequently engaged on.",
+    "Commercial decisions involve relationships, obligations and risk. We help clients establish clear arrangements, understand their legal position and respond effectively when circumstances change.",
+  practiceCardDot: true,
   services: [
     {
-      title: "Business Contracts & Agreements",
-      body: "A poorly drafted contract is a liability waiting to trigger. We draft, review, and negotiate commercial contracts that protect your position — from simple supply agreements to complex multi-party arrangements with liquidated damages and IP assignment clauses.",
+      title: "Commercial Contracts",
+      body: "Drafting, review and negotiation of supply, services, distribution, licensing, consultancy and other agreements that define how businesses work together.",
     },
     {
-      title: "Dispute Resolution & Litigation",
-      body: "Commercial disputes are costly and distracting. Our first objective is always resolution without litigation, through negotiation, mediation, or arbitration. Where court proceedings are unavoidable, we represent clients in state and federal courts and tribunals with a strategy built around your commercial outcome, not billable hours.",
+      title: "Business Structures",
+      body: "Advice on companies, trusts, partnerships, joint ventures and other structures used to establish, operate or grow a business.",
     },
     {
-      title: "Employment Law",
-      body: "Employment law in Australia is complex, and the Fair Work Act creates significant obligations for employers of all sizes. We advise businesses on compliant contracts, workplace policies, enterprise agreements, and managing underperformance, and represent both employers and employees when disputes arise.",
+      title: "Business Transactions",
+      body: "Legal support for business sales and acquisitions, asset and share transactions, due diligence, restructures and commercial negotiations.",
     },
     {
-      title: "Commercial Leasing",
-      body: "Commercial, retail, and industrial leases contain clauses that can cost businesses significantly if not properly reviewed — make-good obligations, rent review mechanisms, demolition clauses, and assignment restrictions. We act for landlords and tenants on lease negotiations, renewals, disputes, and early exits.",
+      title: "Shareholders and Partners",
+      body: "Preparation and review of shareholders agreements, partnership arrangements, governance documents and mechanisms for managing ownership, control and exit.",
+    },
+    {
+      title: "Commercial Disputes",
+      body: "Strategic advice and representation in contractual, shareholder, partnership, debt and other business disputes, including negotiation and court proceedings where required.",
+    },
+    {
+      title: "Employment and Workplace",
+      body: "Advice on employment agreements, contractor arrangements, workplace policies, performance management, termination and employment-related disputes.",
     },
   ],
 
-  processEyebrow: "How We Work",
-  processHeading: "A no-nonsense process",
-  processIntro:
-    "We do not run up fees with unnecessary meetings and lengthy internal reviews.",
-  process: [
+  approachEyebrow: "Across the Business Lifecycle",
+  approachHeading: "Advice from establishment to change",
+  approachBody:
+    "We assist businesses when relationships are first established, as operations grow and evolve, and when a transaction or dispute requires a clear legal response.",
+  approachSteps: [
     {
-      step: "01",
-      title: "Initial Brief",
-      body: "A direct conversation with our commercial lawyers. We understand your situation and commercial objectives from the outset.",
+      number: "01",
+      title: "Establish",
+      body: "We advise on business structures, ownership arrangements, governance and the documents needed to establish clear commercial relationships.",
     },
     {
-      step: "02",
-      title: "Risk Assessment",
-      body: "We identify legal exposures, likely costs and timelines, and give you an honest assessment of your position, including where you may be wrong.",
+      number: "02",
+      title: "Operate",
+      body: "We prepare and review the contracts, employment arrangements and commercial terms that support the day-to-day operation of the business.",
     },
     {
-      step: "03",
-      title: "Strategy",
-      body: "A written action plan with options, your recommended path, and fee estimates. No surprises. We take instruction before spending your money.",
+      number: "03",
+      title: "Grow",
+      body: "We assist with investment, acquisitions, partnerships, new ventures, restructuring and other changes associated with business growth.",
     },
     {
-      step: "04",
-      title: "Execution",
-      body: "We move — drafting, negotiating, filing, or representing. Progress updates as milestones are reached. You are never left wondering what is happening.",
-    },
-    {
-      step: "05",
-      title: "Resolution",
-      body: "Agreement, settlement, judgment, or commercial outcome. We close out the matter cleanly and identify any preventative steps to avoid recurrence.",
+      number: "04",
+      title: "Resolve",
+      body: "When a relationship breaks down or obligations are not met, we assess the legal and commercial options and pursue an appropriate resolution strategy.",
     },
   ],
 
-  extra: {
-    variant: "tags",
-    eyebrow: "Clients",
-    heading: "Who we serve",
-    intro:
-      "Our commercial law practice serves businesses and individuals at every stage — from first-hire employment contracts to enterprise-scale dispute resolution.",
-    tags: [
-      {
-        title: "SMEs",
-        body: "Practical, cost-effective legal support for small and medium businesses — from contract templates and employment compliance to dispute resolution. We speak plain language, not legalese.",
-      },
-      {
-        title: "Corporates",
-        body: "Sophisticated commercial counsel for larger organisations — complex contract negotiations, employment law frameworks, multi-party disputes, and commercial lease portfolios across multiple sites.",
-      },
-      {
-        title: "Startups",
-        body: "Legal foundations for early-stage businesses — founder agreements, employment contracts for first hires, commercial terms and conditions, and NDA and IP protection frameworks tailored to lean teams.",
-      },
-      {
-        title: "Individuals",
-        body: "Executives, contractors, and employees facing employment disputes, unfair dismissal claims, restraint of trade issues, or contractual disputes with commercial counterparties.",
-      },
-    ],
-  },
-
-  whyHeading: "Built for your business",
-  whyIntro:
-    "We are commercial lawyers who think like business people. Every piece of advice is calibrated to your commercial context, not just what is legally correct in isolation.",
-  why: [
+  riskItemsEyebrow: "Commercial Considerations",
+  riskItemsHeading: "The terms are only part of the decision",
+  riskItemsIntro:
+    "A legally available option may still carry operational, financial or relationship consequences. Our advice considers how the legal position supports the client's broader commercial objective.",
+  riskItems: [
     {
-      title: "Commercially-minded advice",
-      body: "The best legal advice considers the business outcome, not just the legal position. We understand that sometimes the commercially right decision is to settle, and we tell you that — even when it means less revenue for us.",
+      title: "Control and decision-making",
+      body: "Ownership percentages do not always determine who controls the business. Voting rights, board composition, reserved matters and deadlock provisions may be equally important.",
     },
     {
-      title: "Transparent, predictable costs",
-      body: "We offer fixed fees for defined-scope work and cost estimates before committing to any significant expenditure. No open-ended hourly billing surprises at month end.",
+      title: "Responsibility and risk",
+      body: "Liability may arise through warranties, indemnities, guarantees, service standards, employment obligations and the allocation of risk between the parties.",
+    },
+    {
+      title: "Performance and exit",
+      body: "Clear agreements should address what each party must do, how performance is measured and what happens when the arrangement ends or no longer works.",
+    },
+    {
+      title: "Enforcement and practicality",
+      body: "Before taking formal action, the likely outcome should be weighed against timing, evidence, cost, recoverability and the value of preserving the commercial relationship.",
     },
   ],
 
-  faqEyebrow: "Common Questions",
-  faqHeading: "Questions we hear often",
-  faqIntro: "Commercial matters raise a lot of questions. Here are the most common ones.",
-  faqs: [
-    {
-      q: "Do I need a lawyer to review a commercial contract before I sign?",
-      a: "There is no legal requirement to have a lawyer review a commercial contract before signing. But failing to do so is one of the most common and costly mistakes businesses make. Commercial contracts routinely contain automatic renewal clauses, limitation of liability caps, liquidated damages provisions, and intellectual property assignment terms that can bind your business for years. A contract review is typically one of the lowest-cost legal services we offer, and almost always worth the investment relative to the risk of signing blind.",
-    },
-    {
-      q: "What are my obligations as an employer under the Fair Work Act?",
-      a: "The Fair Work Act 2009 (Cth) establishes minimum employment conditions for most Australian workers through the National Employment Standards (NES) — including minimum notice periods, annual leave, personal/carer's leave, parental leave, and redundancy entitlements. Most employees are also covered by a Modern Award, which imposes minimum pay rates and additional conditions. Employers are required to provide written employment contracts for permanent employees and must not misclassify employees as independent contractors. Breaches can result in Fair Work Commission proceedings, financial penalties, and back-payment orders. We offer employment law audits to identify and rectify compliance gaps before they become claims.",
-    },
-    {
-      q: "What should I look out for in a commercial lease?",
-      a: "The most significant lease provisions to scrutinise are: rent review mechanisms (CPI vs fixed percentage vs market review — the difference can be substantial over a 5-year term); make-good obligations (which can cost tens of thousands in fit-out removal or restoration at lease end); demolition or redevelopment clauses (which can allow a landlord to terminate the lease with limited notice); personal guarantees; and assignment and subletting restrictions (which affect your exit options). We review and negotiate commercial leases for tenants and landlords across all states and territories, and regularly achieve material improvements to the initial draft terms.",
-    },
-    {
-      q: "Do I have to go to court to resolve a commercial dispute?",
-      a: "No — the majority of commercial disputes are resolved without court proceedings. Negotiation, mediation, and arbitration are all effective alternatives that are faster, less expensive, and generally less damaging to commercial relationships than litigation. Many commercial contracts also contain dispute resolution clauses that require the parties to attempt mediation before commencing court proceedings. Where a dispute does proceed to litigation, courts increasingly expect parties to have genuinely attempted alternative resolution first. We advise on the most appropriate dispute resolution pathway for your situation and your commercial objectives.",
-    },
+  highlightEyebrow: "Connected Legal Advice",
+  highlightHeading: "Business issues rarely stay in one category",
+  highlightBody:
+    "A commercial matter may involve corporate structures, employment, intellectual property, finance, property or regulatory obligations at the same time. Our solicitors consider those connections from the outset, helping clients address the matter as a whole rather than dividing it between disconnected providers.",
+  highlightVariant: "commercial",
+
+  complexMattersEyebrow: "Common Commercial Matters",
+  complexMattersHeading: "Documents, transactions and disputes",
+  complexMatters: [
+    "Shareholders and unitholders agreements",
+    "Business sale and purchase agreements",
+    "Supply and distribution agreements",
+    "Services and consultancy agreements",
+    "Joint ventures and strategic partnerships",
+    "Loan agreements, guarantees and securities",
+    "Confidentiality and non-disclosure agreements",
+    "Referral, commission and channel-partner agreements",
+    "Employment and contractor agreements",
+    "Contract termination and breach",
+    "Unpaid debts and enforcement",
+    "Shareholder, director and partnership disputes",
   ],
 
-  closingKicker: "Start here",
+  expertsSectionEyebrow: "Your Commercial Law Team",
+  expertsSectionHeading: "Clear advice for the decisions shaping your business",
+  expertsSectionLede:
+    "Speak with a solicitor who can understand the commercial objective, assess the legal position and help you determine a practical next step.",
+  expertsCta: "Book a consultation",
+
+  processHeading: "",
+  faqEyebrow: "",
+  faqHeading: "",
+  faqIntro: "",
+  faqs: [],
+
+  closingKicker: "Ready to proceed?",
   closingTitle: "Book a commercial law {accent}consultation{/accent}",
-  closingBody:
-    "We will assess your matter, give you an honest view and tell you what it will cost to fix.",
   closingCta: "Book a consultation",
+
+  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
 };

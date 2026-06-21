@@ -48,6 +48,37 @@ function PropertySitePlan() {
   );
 }
 
+/** Abstract document-hierarchy art for the commercial "Connected Legal Advice" section. */
+function CommercialDocumentSvg() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Top document — parent agreement */}
+      <rect x="95" y="14" width="110" height="68" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="108" y1="30" x2="192" y2="30" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="108" y1="41" x2="192" y2="41" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="108" y1="52" x2="174" y2="52" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="108" y1="63" x2="184" y2="63" stroke="currentColor" strokeWidth="0.65" />
+      {/* Left document — related agreement A */}
+      <rect x="18" y="126" width="106" height="68" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="31" y1="142" x2="111" y2="142" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="31" y1="153" x2="111" y2="153" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="31" y1="164" x2="95" y2="164" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="31" y1="175" x2="104" y2="175" stroke="currentColor" strokeWidth="0.65" />
+      {/* Right document — related agreement B */}
+      <rect x="176" y="126" width="106" height="68" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="189" y1="142" x2="269" y2="142" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="189" y1="153" x2="269" y2="153" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="189" y1="164" x2="253" y2="164" stroke="currentColor" strokeWidth="0.65" />
+      <line x1="189" y1="175" x2="262" y2="175" stroke="currentColor" strokeWidth="0.65" />
+      {/* Connectors: top to left / top to right */}
+      <line x1="122" y1="82" x2="68" y2="126" stroke="currentColor" strokeWidth="0.85" />
+      <line x1="178" y1="82" x2="232" y2="126" stroke="currentColor" strokeWidth="0.85" />
+      {/* Lateral relationship — dashed */}
+      <line x1="124" y1="161" x2="176" y2="161" stroke="currentColor" strokeWidth="0.7" strokeDasharray="4 3" />
+    </svg>
+  );
+}
+
 /** Cadastral title-plan line art for the "Connected Legal Advice" highlight section. */
 function TitlePlanSvg() {
   return (
@@ -528,7 +559,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               </div>
             </div>
           ) : areaTeam.length > 2 ? (
-            /* ── Three or more lawyers: compact grid ── */
+            /* ── Three or more lawyers: compact grid + CTA ── */
             <>
               <div className="section-head">
                 <span className="eyebrow eyebrow--light">{area.expertsSectionEyebrow ?? c.areaTeam}</span>
@@ -544,7 +575,9 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                   <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
                     <div className={styles.teamPhoto}>
                       {m.photo ? (
-                        <Image src={m.photo} alt={m.name} fill sizes="90px" />
+                        <Image src={m.photo} alt={m.name} fill sizes="90px"
+                          style={m.photoPosition ? { objectPosition: m.photoPosition } : undefined}
+                        />
                       ) : (
                         <span className={styles.teamInitials}>
                           {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
@@ -559,6 +592,13 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                   </Link>
                 ))}
               </div>
+              {area.expertsCta && (
+                <div style={{ marginTop: "clamp(2rem, 1.5rem + 2vw, 3rem)" }}>
+                  <Link href="/contact" className={styles.teamDiscussLink}>
+                    {area.expertsCta} <ArrowRight />
+                  </Link>
+                </div>
+              )}
             </>
           ) : (
             /* ── Empty state ── */
@@ -641,7 +681,9 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               )}
             </div>
             <div className={styles.highlightRight} aria-hidden="true">
-              {area.highlightVariant === "titlePlan" ? <TitlePlanSvg /> : <PropertySitePlan />}
+              {area.highlightVariant === "titlePlan" ? <TitlePlanSvg />
+               : area.highlightVariant === "commercial" ? <CommercialDocumentSvg />
+               : <PropertySitePlan />}
             </div>
           </div>
         </div>
