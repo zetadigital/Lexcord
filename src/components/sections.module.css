@@ -632,7 +632,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--navy-700);
+  color: var(--navy-800);
   margin-bottom: 1.1rem;
 }
 
@@ -640,7 +640,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 1.4rem + 3.2vw, 3.8rem);
   font-weight: 600;
-  color: var(--navy-950);
+  color: var(--navy-900);
   letter-spacing: -0.025em;
   line-height: 1.05;
   text-wrap: balance;
@@ -648,7 +648,7 @@
 
 .areaLede {
   margin-top: 1.1rem;
-  font-size: var(--text-lg);
+  font-size: clamp(1rem, 0.92rem + 0.35vw, 1.18rem);
   line-height: 1.62;
   color: var(--ink-700);
   max-width: 46ch;
