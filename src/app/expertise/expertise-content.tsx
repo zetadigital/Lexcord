@@ -158,7 +158,6 @@ export function ExpertiseContent() {
             {s.heroTitlePre}
             <em className={styles.heroEm}>{s.heroTitleEm}</em>
           </h1>
-          <p className={styles.heroLede}>{s.heroLede}</p>
         </div>
       </section>
 
