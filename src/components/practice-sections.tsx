@@ -48,6 +48,45 @@ function PropertySitePlan() {
   );
 }
 
+/** Cadastral title-plan line art for the "Connected Legal Advice" highlight section. */
+function TitlePlanSvg() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Outer cadastral boundary */}
+      <rect x="24" y="24" width="252" height="172" stroke="currentColor" strokeWidth="1.2" />
+      {/* Primary vertical lot division */}
+      <line x1="140" y1="24" x2="140" y2="196" stroke="currentColor" strokeWidth="1" />
+      {/* Secondary vertical division — right half */}
+      <line x1="210" y1="24" x2="210" y2="118" stroke="currentColor" strokeWidth="1" />
+      {/* Primary horizontal division */}
+      <line x1="24" y1="118" x2="210" y2="118" stroke="currentColor" strokeWidth="1" />
+      {/* Secondary horizontal division — lower right */}
+      <line x1="140" y1="156" x2="276" y2="156" stroke="currentColor" strokeWidth="1" />
+      {/* Lot labels */}
+      <text x="82" y="70" fill="currentColor" fontSize="9" textAnchor="middle" opacity="0.6" letterSpacing="1">LOT 1</text>
+      <text x="175" y="70" fill="currentColor" fontSize="9" textAnchor="middle" opacity="0.6" letterSpacing="1">LOT 2</text>
+      <text x="243" y="70" fill="currentColor" fontSize="9" textAnchor="middle" opacity="0.6" letterSpacing="1">LOT 3</text>
+      <text x="82" y="162" fill="currentColor" fontSize="9" textAnchor="middle" opacity="0.6" letterSpacing="1">LOT 4</text>
+      <text x="175" y="142" fill="currentColor" fontSize="9" textAnchor="middle" opacity="0.6" letterSpacing="1">LOT 5</text>
+      <text x="243" y="178" fill="currentColor" fontSize="9" textAnchor="middle" opacity="0.6" letterSpacing="1">LOT 6</text>
+      {/* Survey marks at corners */}
+      <circle cx="24" cy="24" r="2.5" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="276" cy="24" r="2.5" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="24" cy="196" r="2.5" stroke="currentColor" strokeWidth="0.8" />
+      <circle cx="276" cy="196" r="2.5" stroke="currentColor" strokeWidth="0.8" />
+      {/* Dimension line — top */}
+      <line x1="24" y1="13" x2="276" y2="13" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="24" y1="10" x2="24" y2="16" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="276" y1="10" x2="276" y2="16" stroke="currentColor" strokeWidth="0.5" />
+      <text x="150" y="10" fill="currentColor" fontSize="7" textAnchor="middle" opacity="0.45" letterSpacing="0.06em">252m</text>
+      {/* North arrow */}
+      <line x1="273" y1="210" x2="273" y2="200" stroke="currentColor" strokeWidth="0.7" />
+      <path d="M270 203 L273 200 L276 203" stroke="currentColor" strokeWidth="0.7" />
+      <text x="273" y="218" fill="currentColor" fontSize="7" textAnchor="middle" opacity="0.55">N</text>
+    </svg>
+  );
+}
+
 function ArrowRight() {
   return (
     <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
@@ -444,11 +483,55 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                 );
               })()}
             </div>
-          ) : areaTeam.length > 1 ? (
-            /* ── Multiple lawyers: grid layout ── */
+          ) : areaTeam.length === 2 ? (
+            /* ── Two lawyers: editorial duo-card layout (mirrors single-lawyer split) ── */
+            <div className={styles.teamGrid}>
+              <div className={styles.teamIntro}>
+                <span className="eyebrow eyebrow--light">{area.expertsSectionEyebrow ?? c.areaTeam}</span>
+                <h2>{area.expertsSectionHeading ?? area.navLabel}</h2>
+                <p>{area.expertsSectionLede ?? c.areaTeamLede}</p>
+                {area.expertsCta && (
+                  <Link href="/contact" className={styles.teamDiscussLink}>
+                    {area.expertsCta} <ArrowRight />
+                  </Link>
+                )}
+              </div>
+              <div className={styles.teamDuoCards}>
+                {areaTeam.map((m) => (
+                  <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamDuoCard}>
+                    <div className={styles.teamDuoPhotoWrap}>
+                      {m.photo ? (
+                        <Image
+                          src={m.photo}
+                          alt={m.name}
+                          fill
+                          sizes="(max-width:860px) 72px, 96px"
+                          style={m.photoPosition ? { objectPosition: m.photoPosition } : undefined}
+                        />
+                      ) : (
+                        <span className={styles.teamFeatInitials}>
+                          {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
+                        </span>
+                      )}
+                    </div>
+                    <div className={styles.teamFeatInfo}>
+                      <h3 className={styles.teamFeatName}>{m.name}</h3>
+                      <span className={styles.teamFeatRole}>
+                        {lang === "zh" ? m.roleZh : m.role}
+                      </span>
+                      <span className={styles.teamFeatViewProfile}>
+                        {c.viewProfile} <ArrowRight />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : areaTeam.length > 2 ? (
+            /* ── Three or more lawyers: compact grid ── */
             <>
               <div className="section-head">
-                <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
+                <span className="eyebrow eyebrow--light">{area.expertsSectionEyebrow ?? c.areaTeam}</span>
                 <h2 style={{ color: "#fff", fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
                   {area.expertsSectionHeading ?? area.navLabel}
                 </h2>
@@ -518,6 +601,30 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
       </section>
     ) : null,
 
+    complexMatters: area.complexMatters?.length ? (
+      <section key="complexMatters" className={`section ${styles.complexSection}`}>
+        <div className="container">
+          <div className="section-head">
+            {area.complexMattersEyebrow && (
+              <span className="eyebrow">{area.complexMattersEyebrow}</span>
+            )}
+            {area.complexMattersHeading && (
+              <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
+                {area.complexMattersHeading}
+              </h2>
+            )}
+          </div>
+          <div className={styles.complexGrid}>
+            {area.complexMatters.map((item) => (
+              <div key={item} className={styles.complexItem}>
+                <span className={styles.complexItemText}>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    ) : null,
+
     highlight: (area.highlightHeading || area.highlightBody) ? (
       <section key="highlight" className={`section ${styles.highlight}`}>
         <div className="container">
@@ -534,7 +641,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               )}
             </div>
             <div className={styles.highlightRight} aria-hidden="true">
-              <PropertySitePlan />
+              {area.highlightVariant === "titlePlan" ? <TitlePlanSvg /> : <PropertySitePlan />}
             </div>
           </div>
         </div>

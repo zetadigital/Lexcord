@@ -96,7 +96,8 @@ export type PracticeBlock =
   | "approach"
   | "artJr"
   | "riskItems"
-  | "highlight";
+  | "highlight"
+  | "complexMatters";
 
 /** A concise risk / key-consideration item (used in the riskItems block). */
 export interface RiskItem {
@@ -202,6 +203,13 @@ export interface PracticeArea {
   highlightEyebrow?: string;
   highlightHeading?: string;
   highlightBody?: string;
+  /** Which architectural SVG to render in the highlight block ("sitePlan" | "titlePlan"). */
+  highlightVariant?: string;
+
+  /** "Complex Property Matters" — compact 2-column label list. */
+  complexMattersEyebrow?: string;
+  complexMattersHeading?: string;
+  complexMatters?: string[];
 
   /** Specific placeholder article titles for the Related Insights news block. */
   newsPlaceholders?: string[];
