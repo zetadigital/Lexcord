@@ -609,82 +609,78 @@
   overflow: hidden;
 }
 
-/* Dark gradient overlay — left-heavy so text stays readable */
+/*
+ * Two-layer overlay:
+ * 1. Horizontal: solid navy panel left → transparent right (photo shows through)
+ * 2. Vertical: subtle top-edge darkening for depth
+ */
 .areaBanner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    100deg,
-    rgba(13, 21, 49, 0.92) 0%,
-    rgba(13, 21, 49, 0.72) 55%,
-    rgba(13, 21, 49, 0.42) 100%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(13, 21, 49, 0.97) 0%,
+      rgba(13, 21, 49, 0.96) 30%,
+      rgba(13, 21, 49, 0.62) 56%,
+      rgba(13, 21, 49, 0.12) 82%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(13, 21, 49, 0.28) 0%,
+      transparent 32%
+    );
   z-index: 0;
 }
 
 .areaBannerInner {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: clamp(1.4rem, 1rem + 2.5vw, 3rem);
-  padding-block: clamp(2.6rem, 2rem + 3vw, 4.6rem);
-}
-
-.areaBannerIcon {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: clamp(76px, 8vw, 104px);
-  height: clamp(76px, 8vw, 104px);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #fff;
-}
-
-.areaBannerText {
-  max-width: 60ch;
+  padding-block: clamp(4rem, 3rem + 5vw, 7rem);
+  max-width: 50ch;
 }
 
 .areaKicker {
-  font-size: 0.74rem;
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--mist);
+  margin-bottom: 1.1rem;
 }
 
 .areaTitle {
-  margin-top: 0.6rem;
-  font-size: clamp(2.1rem, 1.4rem + 3vw, 3.6rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 1.4rem + 3.2vw, 3.8rem);
+  font-weight: 600;
   color: #fff;
-  letter-spacing: -0.02em;
-  line-height: 1.04;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .areaLede {
-  margin-top: 1rem;
+  margin-top: 1.1rem;
   font-size: var(--text-lg);
-  line-height: var(--leading-snug);
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.areaActions {
-  margin-top: 1.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.76);
+  max-width: 46ch;
+  text-wrap: pretty;
 }
 
 @media (max-width: 680px) {
-  .areaBannerInner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.3rem;
+  /* On mobile the horizontal gradient doesn't help — switch to vertical */
+  .areaBanner::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(13, 21, 49, 0.96) 0%,
+      rgba(13, 21, 49, 0.88) 55%,
+      rgba(13, 21, 49, 0.72) 100%
+    );
   }
 }
 

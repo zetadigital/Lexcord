@@ -299,31 +299,18 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
 
   return (
     <>
-      {/* Banner — photo background with dark overlay */}
+      {/* Banner — photo background, dark panel overlay */}
       <section
         className={styles.areaBanner}
         style={bannerPhoto ? { backgroundImage: `url(${bannerPhoto})` } : undefined}
       >
         <div className="container">
           <div className={styles.areaBannerInner}>
-            <span className={styles.areaBannerIcon} aria-hidden="true">
-              <AreaIcon slug={area.slug} />
-            </span>
-            <div className={styles.areaBannerText}>
-              <span className={styles.areaKicker}>{area.heroEyebrow}</span>
-              <h1 className={styles.areaTitle}>
-                {area.bannerTitle ? renderAccent(area.bannerTitle) : area.navLabel}
-              </h1>
-              <p className={styles.areaLede}>{area.heroLede}</p>
-              <div className={styles.areaActions}>
-                <Link href="/contact" className="btn btn--primary">
-                  {t.nav.book} <ArrowRight />
-                </Link>
-                <a href="#services" className="btn btn--ghost">
-                  {c.ourServices}
-                </a>
-              </div>
-            </div>
+            <span className={styles.areaKicker}>Expertise</span>
+            <h1 className={styles.areaTitle}>
+              {area.bannerTitle ? renderAccent(area.bannerTitle) : area.navLabel}
+            </h1>
+            <p className={styles.areaLede}>{area.heroLede}</p>
           </div>
         </div>
       </section>
