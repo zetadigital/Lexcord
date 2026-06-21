@@ -188,7 +188,8 @@ export const migrationZh: PracticeArea = {
 
   expertsSectionHeading: "由律师主导的移民法律服务",
   expertsSectionLede:
-    "我们的移民事务由具备执照的律师处理，他们在签证申请、ART 复核及司法复核诉讼方面均有丰富经验。我们处理每一件事务时，既关注当下的移民问题，也兼顾其长远的法律影响。",
+    "我们的移民事务由具备执照的律师处理，涵盖签证申请、ART 复核及司法复核诉讼。我们就当下的移民问题及其长远法律影响提供清晰的法律意见。",
+  expertsCta: "讨论您的事务",
 
   newsSectionHeading: "移民法律动态",
   newsSectionLede:

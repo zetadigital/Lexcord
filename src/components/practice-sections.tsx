@@ -358,57 +358,94 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
     experts: (
       <section key="experts" className={`section ${styles.areaTeam}`}>
         <div className="container">
-          <div className={styles.teamInner}>
-            {/* Left: heading + lede — constrained flex basis */}
-            <div className={styles.teamLeft}>
-              <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
-              <h2>{area.expertsSectionHeading ?? area.navLabel}</h2>
-              <p>{area.expertsSectionLede ?? c.areaTeamLede}</p>
-            </div>
-
-            {/* Middle: people (no wrapper) */}
-            {areaTeam.length > 0 ? (
-              <>
-                <div className={styles.teamRow}>
-                  {areaTeam.map((m) => (
-                    <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
-                      <div className={styles.teamPhoto}>
-                        {m.photo ? (
-                          <Image src={m.photo} alt={m.name} fill sizes="90px" />
-                        ) : (
-                          <span className={styles.teamInitials}>
-                            {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
-                          </span>
-                        )}
-                      </div>
-                      <div className={styles.teamInfo}>
-                        <h3 className={styles.teamName}>{m.name}</h3>
-                        <span className={styles.teamRole}>{lang === "zh" ? m.roleZh : m.role}</span>
-                        <span className={styles.teamLink}>
-                          {c.viewProfile} <ArrowRight />
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-
-                {/* Right: tall CTA button — same height as person column, icon above label */}
-                <Link href="/contact" className={styles.teamCtaBook}>
-                  <span className={styles.teamCtaBookIcon} aria-hidden="true">
-                    <ArrowRight />
-                  </span>
-                  <span className={styles.teamCtaBookLabel}>{t.nav.book}</span>
-                </Link>
-              </>
-            ) : (
-              <div className={styles.teamEmpty}>
-                <p>{c.areaTeamEmpty}</p>
-                <Link href="/contact" className="btn btn--ghost-light">
-                  {t.nav.book} <ArrowRight />
-                </Link>
+          {areaTeam.length === 1 ? (
+            /* ── Single lawyer: editorial featured layout ── */
+            <div className={styles.teamGrid}>
+              {/* Left: intro text */}
+              <div className={styles.teamIntro}>
+                <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
+                <h2>{area.expertsSectionHeading ?? area.navLabel}</h2>
+                <p>{area.expertsSectionLede ?? c.areaTeamLede}</p>
+                {area.expertsCta && (
+                  <Link href="/contact" className={styles.teamDiscussLink}>
+                    {area.expertsCta} <ArrowRight />
+                  </Link>
+                )}
               </div>
-            )}
-          </div>
+
+              {/* Right: featured lawyer card */}
+              {(() => {
+                const m = areaTeam[0]!;
+                const specialtyLabel = lang === "zh" ? (m.specialtyZh ?? m.specialty) : m.specialty;
+                return (
+                  <Link href={`/people/${m.slug}`} className={styles.teamFeatCard}>
+                    <div className={styles.teamFeatPhotoWrap}>
+                      {m.photo ? (
+                        <Image src={m.photo} alt={m.name} fill sizes="(max-width:860px) 140px, 200px" />
+                      ) : (
+                        <span className={styles.teamFeatInitials}>
+                          {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
+                        </span>
+                      )}
+                    </div>
+                    <div className={styles.teamFeatInfo}>
+                      <h3 className={styles.teamFeatName}>{m.name}</h3>
+                      <span className={styles.teamFeatRole}>
+                        {lang === "zh" ? m.roleZh : m.role}
+                      </span>
+                      {specialtyLabel && (
+                        <span className={styles.teamFeatAreas}>{specialtyLabel}</span>
+                      )}
+                      <span className={styles.teamFeatViewProfile}>
+                        {c.viewProfile} <ArrowRight />
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })()}
+            </div>
+          ) : areaTeam.length > 1 ? (
+            /* ── Multiple lawyers: grid layout ── */
+            <>
+              <div className="section-head">
+                <span className="eyebrow eyebrow--light">{c.areaTeam}</span>
+                <h2 style={{ color: "#fff", fontSize: "var(--text-2xl)", marginTop: "1rem" }}>
+                  {area.expertsSectionHeading ?? area.navLabel}
+                </h2>
+                <p style={{ color: "rgba(255,255,255,0.72)" }}>
+                  {area.expertsSectionLede ?? c.areaTeamLede}
+                </p>
+              </div>
+              <div className={styles.teamRow}>
+                {areaTeam.map((m) => (
+                  <Link key={m.slug} href={`/people/${m.slug}`} className={styles.teamCard}>
+                    <div className={styles.teamPhoto}>
+                      {m.photo ? (
+                        <Image src={m.photo} alt={m.name} fill sizes="90px" />
+                      ) : (
+                        <span className={styles.teamInitials}>
+                          {m.name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase()}
+                        </span>
+                      )}
+                    </div>
+                    <div className={styles.teamInfo}>
+                      <h3 className={styles.teamName}>{m.name}</h3>
+                      <span className={styles.teamRole}>{lang === "zh" ? m.roleZh : m.role}</span>
+                      <span className={styles.teamLink}>{c.viewProfile} <ArrowRight /></span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : (
+            /* ── Empty state ── */
+            <div className={styles.teamEmpty}>
+              <p>{c.areaTeamEmpty}</p>
+              <Link href="/contact" className="btn btn--ghost-light">
+                {t.nav.book} <ArrowRight />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
     ),

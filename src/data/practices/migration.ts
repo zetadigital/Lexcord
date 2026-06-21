@@ -188,7 +188,8 @@ export const migration: PracticeArea = {
 
   expertsSectionHeading: "Migration advice led by lawyers",
   expertsSectionLede:
-    "Our migration matters are handled by admitted solicitors with experience across visa applications, ART reviews and judicial review proceedings. We approach each matter by considering both the immediate immigration issue and its longer-term legal consequences.",
+    "Our migration matters are handled by admitted solicitors across visa applications, ART reviews and judicial review proceedings. We provide clear advice on both the immediate issue and its longer-term legal consequences.",
+  expertsCta: "Discuss your matter",
 
   newsSectionHeading: "Migration law insights",
   newsSectionLede:

@@ -173,6 +173,8 @@ export interface PracticeArea {
   /** Custom heading/lede for the "Your legal team" experts block. */
   expertsSectionHeading?: string;
   expertsSectionLede?: string;
+  /** Understated text-link CTA below the lede in the experts section. */
+  expertsCta?: string;
 
   /** Custom heading/lede for the "Related insights" news block. */
   newsSectionHeading?: string;
