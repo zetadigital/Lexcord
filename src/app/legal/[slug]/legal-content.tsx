@@ -146,7 +146,7 @@ const PRIVACY_DEFS: SectionDef[] = [
         { t: "p", text: "Lexcord Lawyers 尊重与我们往来的人士的隐私。" },
         { t: "p", text: "本隐私政策说明我们如何收集、持有、使用和披露个人信息，以及个人如何请求查阅或更正我们所持有的个人信息。" },
         { t: "p", text: "我们寻求依据《1988年隐私法》（联邦）、澳大利亚隐私原则以及我们作为法律执业机构的职业义务管理个人信息。" },
-        { t: "p", text: "本政策中，"Lexcord"及"我们"均指 Lexcord Lawyers。" },
+        { t: "p", text: "本政策中，「Lexcord」及「我们」均指 Lexcord Lawyers。" },
       ],
     },
     "zh-tw": {
