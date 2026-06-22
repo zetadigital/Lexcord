@@ -10,10 +10,10 @@ export function SiteFooter() {
   const year = 2026;
 
   const links = [
-    { href: "/expertise", label: lang === "zh" ? "执业领域" : "Expertise" },
-    { href: "/legal/privacy", label: lang === "zh" ? "隐私政策" : "Privacy Policy" },
-    { href: "/legal/disclaimer", label: lang === "zh" ? "免责声明" : "Disclaimer" },
-    { href: "/legal/copyright", label: lang === "zh" ? "版权声明" : "Copyright" },
+    { href: "/expertise", label: lang === "zh-tw" ? "執業領域" : lang === "zh" ? "执业领域" : "Expertise" },
+    { href: "/legal/privacy", label: lang === "zh-tw" ? "隱私政策" : lang === "zh" ? "隐私政策" : "Privacy Policy" },
+    { href: "/legal/disclaimer", label: lang === "zh-tw" ? "免責聲明" : lang === "zh" ? "免责声明" : "Disclaimer" },
+    { href: "/legal/copyright", label: lang === "zh-tw" ? "版權聲明" : lang === "zh" ? "版权声明" : "Copyright" },
   ];
 
   return (
@@ -41,7 +41,6 @@ export function SiteFooter() {
 
         <div className={styles.bottom}>
           <span>© {year} Lexcord Lawyers. {t.footer.rights}</span>
-          <span>{t.footer.australiaWide}</span>
         </div>
       </div>
     </footer>

@@ -36,8 +36,8 @@ export function PeopleContent() {
         <div className="container">
           <div className={styles.grid}>
             {team.map((member) => {
-              const role = lang === "zh" ? member.roleZh : member.role;
-              const specialty = lang === "zh" ? member.specialtyZh : member.specialty;
+              const role = lang !== "en" ? member.roleZh : member.role;
+              const specialty = lang !== "en" ? member.specialtyZh : member.specialty;
               return (
                 <div key={member.slug} className={styles.card}>
                   <Link href={`/people/${member.slug}`} className={styles.avatarWrap} aria-label={member.name}>
@@ -83,7 +83,7 @@ export function PeopleContent() {
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      Book a Consultation
+                      {t.common.bookConsultation}
                     </Link>
                   </div>
                 </div>
