@@ -285,11 +285,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Visual transition band ── */}
-      <div className={styles.transitionBand} aria-hidden="true">
-        <p className={styles.transitionPhrase}>For what matters next.</p>
-      </div>
-
       {/* ── Speak With Lexcord — Distinctive Closing CTA ── */}
       <section className={styles.speakSection}>
         {/* Subtle background continuity motif */}

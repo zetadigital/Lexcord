@@ -328,15 +328,13 @@
   transform: translateX(4px);
 }
 
-/* Large outline numbers — ghost/etched style */
+/* Restrained sequence numbers */
 .whyNum {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 1.4rem + 2vw, 3.2rem);
-  font-weight: 600;
-  color: var(--mist); /* solid fallback for browsers without -webkit-text-stroke */
-  -webkit-text-stroke: 1px var(--mist);
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.02em;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+  font-weight: 400;
+  color: var(--mist);
+  letter-spacing: -0.01em;
   line-height: 1;
   display: block;
   margin-bottom: 0.85rem;
@@ -358,35 +356,6 @@
   color: var(--ink-500);
   max-width: 40ch;
   text-wrap: pretty;
-}
-
-/* ============================================================
-   Visual transition band
-   ============================================================ */
-
-.transitionBand {
-  overflow: hidden;
-  background: var(--paper-2);
-  padding-block: clamp(1.75rem, 2vw, 3rem);
-}
-
-/* Large outline phrase — decorative, aria-hidden, cropped by overflow: hidden */
-.transitionPhrase {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.5vw, 7.5rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  margin: 0;
-  /* Left-align with container content */
-  padding-left: max(var(--gutter), calc((100vw - var(--maxw)) / 2));
-  /* Outline text — same pattern as whyNum */
-  color: var(--hairline-strong);
-  -webkit-text-stroke: 1px var(--hairline-strong);
-  -webkit-text-fill-color: transparent;
 }
 
 /* ============================================================
