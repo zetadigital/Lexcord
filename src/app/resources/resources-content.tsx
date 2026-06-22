@@ -1,72 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { practiceAreas } from "@/data/practices";
 import { useLang } from "@/lib/i18n";
-import { PlaceholderText, PlaceholderImage } from "@/components/placeholder";
-import sectionStyles from "@/components/sections.module.css";
 import styles from "./resources.module.css";
 
+const COPY = {
+  en: {
+    eyebrow: "Resources",
+    heading: "Coming Soon",
+    body: "We are currently preparing legal insights and resources across our practice areas. Please check back soon.",
+    cta: "Return to home",
+  },
+  zh: {
+    eyebrow: "资源中心",
+    heading: "即将上线",
+    body: "我们正在整理各执业领域的法律资讯与资源，敬请期待。",
+    cta: "返回首页",
+  },
+} as const;
+
 export function ResourcesContent() {
-  const { t, areaLabel } = useLang();
-  const r = t.pages.resources;
-  const topics = practiceAreas.slice(0, 6);
+  const { lang } = useLang();
+  const c = COPY[lang === "en" ? "en" : "zh"];
 
   return (
-    <>
-      <section className={sectionStyles.hero}>
+    <main>
+      <section className={styles.comingSoon}>
         <div className="container">
-          <div className={sectionStyles.heroInner}>
-            <span className="eyebrow eyebrow--light">{r.heroEyebrow}</span>
-            <h1 className={sectionStyles.heroTitle}>
-              {r.heroTitlePre}
-              <span className="accent">{r.heroTitleEm}</span>
-            </h1>
-            <p className={sectionStyles.heroLede}>
-              <PlaceholderText light tag={t.pages.placeholderTag}>
-                {r.heroLede}
-              </PlaceholderText>
-            </p>
-          </div>
+          <span className="eyebrow">{c.eyebrow}</span>
+          <h1 className={styles.comingHeading}>{c.heading}</h1>
+          <p className={styles.comingBody}>{c.body}</p>
+          <Link href="/" className="btn btn--primary" style={{ marginTop: "2rem", display: "inline-flex" }}>
+            {c.cta}
+          </Link>
         </div>
       </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">{r.latest}</span>
-            <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem" }}>{r.heading}</h2>
-            <p>{r.sub}</p>
-          </div>
-
-          <div className={styles.grid}>
-            {topics.map((area, i) => {
-              const label = areaLabel(area.slug, area.navLabel);
-              return (
-                <article key={area.slug} className={styles.card}>
-                  <PlaceholderImage label={label} ratio="16 / 9" />
-                  <div className={styles.cardBody}>
-                    <span className={styles.cardCat}>{label}</span>
-                    <h3 className={styles.cardTitle}>
-                      <PlaceholderText tag={`${t.pages.placeholderTag} ${i + 1}`}>
-                        {r.cardTitle}
-                      </PlaceholderText>
-                    </h3>
-                    <p className={styles.cardExcerpt}>{r.cardExcerpt}</p>
-                    <span className={styles.cardMeta}>{r.cardMeta}</span>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className={styles.note}>
-            <Link href="/contact" className="btn btn--ghost">
-              {r.cta}
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+    </main>
   );
 }
