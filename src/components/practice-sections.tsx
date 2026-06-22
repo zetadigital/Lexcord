@@ -48,6 +48,29 @@ function PropertySitePlan() {
   );
 }
 
+/** Orthographic product-drawing art for the IP "Connected Commercial Advice" highlight section. */
+function IpTechnicalSvg() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Front view */}
+      <rect x="28" y="20" width="110" height="110" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="28" y1="52" x2="138" y2="52" stroke="currentColor" strokeWidth="0.45" />
+      <line x1="28" y1="96" x2="138" y2="96" stroke="currentColor" strokeWidth="0.45" />
+      <line x1="74" y1="20" x2="74" y2="130" stroke="currentColor" strokeWidth="0.45" />
+      {/* Side view — aligned vertically with front */}
+      <rect x="160" y="20" width="70" height="110" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="160" y1="52" x2="230" y2="52" stroke="currentColor" strokeWidth="0.45" />
+      <line x1="160" y1="96" x2="230" y2="96" stroke="currentColor" strokeWidth="0.45" />
+      {/* Plan view — aligned horizontally with front */}
+      <rect x="28" y="154" width="110" height="56" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="74" y1="154" x2="74" y2="210" stroke="currentColor" strokeWidth="0.45" />
+      {/* Projection lines */}
+      <line x1="138" y1="75" x2="160" y2="75" stroke="currentColor" strokeWidth="0.55" strokeDasharray="3 3" />
+      <line x1="83" y1="130" x2="83" y2="154" stroke="currentColor" strokeWidth="0.55" strokeDasharray="3 3" />
+    </svg>
+  );
+}
+
 /** Formal Will document art for the wills & estates "After a Death" highlight section. */
 function WillsEstateSvg() {
   return (
@@ -701,6 +724,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                : area.highlightVariant === "commercial" ? <CommercialDocumentSvg />
                : area.highlightVariant === "criminal" ? <CriminalBriefSvg />
                : area.highlightVariant === "wills" ? <WillsEstateSvg />
+               : area.highlightVariant === "ip" ? <IpTechnicalSvg />
                : <PropertySitePlan />}
             </div>
           </div>
