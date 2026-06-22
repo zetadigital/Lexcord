@@ -4,23 +4,23 @@ import { LegalContent } from "./legal-content";
 
 const META: Record<string, { title: string; description: string }> = {
   privacy: {
-    title: "Privacy Policy",
+    title: "Privacy Policy | Lexcord Lawyers",
     description:
-      "How Lexcord collects, uses, stores, and protects your personal information under the Privacy Act 1988 (Cth).",
+      "Read how Lexcord Lawyers collects, uses, stores, discloses and protects personal information.",
   },
   terms: {
-    title: "Terms of Use",
+    title: "Terms of Use | Lexcord Lawyers",
     description: "The terms governing your use of the Lexcord website.",
   },
   disclaimer: {
-    title: "Disclaimer",
+    title: "Website Disclaimer | Lexcord Lawyers",
     description:
-      "Important information about the general nature of the content on this website and the absence of a lawyer–client relationship.",
+      "Important information about the general nature and limitations of content published on the Lexcord Lawyers website.",
   },
   copyright: {
-    title: "Copyright",
+    title: "Copyright | Lexcord Lawyers",
     description:
-      "Copyright and permitted-use information for the content published on the Lexcord website.",
+      "Copyright, permitted-use and website-content information for the Lexcord Lawyers website.",
   },
 };
 
