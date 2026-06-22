@@ -1,5 +1,5 @@
 /* ============================================================
-   Home — banner / services / firm / why / speak
+   Home — banner / services / firm / why / transition / speak
    ============================================================ */
 
 /* ── Banner — split layout ── */
@@ -9,7 +9,6 @@
   min-height: clamp(400px, 56vh, 680px);
 }
 
-/* Left: white bg, text content */
 .bannerLeft {
   background: #fff;
   display: flex;
@@ -59,10 +58,9 @@
 }
 
 .bannerBtn {
-  /* size override — default btn is fine, this keeps them consistent */
+  /* size override — default btn is fine */
 }
 
-/* Right: same white as left, arch photos */
 .bannerRight {
   background: #fff;
   display: flex;
@@ -173,32 +171,68 @@
   color: var(--navy-900);
 }
 
-/* ── The Firm ── */
+/* ============================================================
+   The Firm — editorial brand statement
+   ============================================================ */
+
 .firmSection {
   background: var(--paper);
 }
 
-.firmContent {
-  max-width: 46rem;
+/* Three-column grid: heading (65%) | 1px rule | sub-area (35%) */
+.firmGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) 1px minmax(0, 0.35fr);
+  align-items: stretch;
 }
 
+.firmHeadArea {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: clamp(2.5rem, 2rem + 3vw, 5rem);
+  padding-block: clamp(0.5rem, 1vw, 1.5rem);
+}
+
+/* Oversized editorial heading — much larger than section-level headings */
 .firmHeading {
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
+  font-size: clamp(2.8rem, 2rem + 3.8vw, 4.8rem);
   font-weight: 460;
   color: var(--navy-900);
-  letter-spacing: -0.02em;
-  line-height: var(--leading-snug);
-  text-wrap: balance;
-  margin-top: 1rem;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-top: 1.1rem;
+}
+
+/* Each span is a block line on desktop; collapses to inline on mobile */
+.firmHeadLine {
+  display: block;
+}
+
+/* Fine vertical rule between heading and sub-area */
+.firmDivider {
+  background: var(--hairline);
+  align-self: stretch;
+  margin-block: clamp(0.5rem, 2vw, 2rem);
+}
+
+/* Body copy and link, bottom-anchored */
+.firmSubArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: clamp(2.5rem, 2rem + 3vw, 5rem);
+  padding-block: clamp(0.5rem, 1vw, 1.5rem);
 }
 
 .firmBody {
-  margin-top: 1.25rem;
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--ink-700);
-  max-width: 44rem;
+  max-width: 34ch;
   text-wrap: pretty;
 }
 
@@ -206,7 +240,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--navy-700);
@@ -220,89 +254,196 @@
   gap: 0.65rem;
 }
 
-/* ── Why Lexcord ── */
+/* Abstract geometric motif — sits behind content via z-index: -1 */
+.firmMotif {
+  position: absolute;
+  bottom: clamp(1rem, 2vw, 2.5rem);
+  right: 0;
+  width: clamp(90px, 13vw, 170px);
+  color: var(--mist);
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ============================================================
+   Why Lexcord — asymmetric principles grid
+   ============================================================ */
+
 .whySection {
   background: var(--card);
 }
 
-.whyHead {
-  margin-bottom: clamp(2.5rem, 1.5rem + 3.5vw, 4.5rem);
+/* Two-column editorial grid — heading sticky on left, items on right */
+.whyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(3rem, 2rem + 4vw, 6rem);
+  align-items: start;
 }
 
+.whyHeadArea {
+  position: sticky;
+  top: 5rem;
+  align-self: start;
+}
+
+/* Medium-large heading, two deliberate lines */
 .whyHeading {
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
+  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.8rem);
   font-weight: 460;
   color: var(--navy-900);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   line-height: var(--leading-snug);
-  text-wrap: balance;
   margin-top: 1rem;
 }
 
-.whyGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--hairline-strong);
+.whyHeadLine {
+  display: block;
+}
+
+/* Items stacked in the right column */
+.whyItemsArea {
+  display: flex;
+  flex-direction: column;
+  /* Closing hairline — items use border-top only, container provides the bottom edge */
+  border-bottom: 1px solid var(--hairline);
 }
 
 .whyItem {
-  padding: clamp(2rem, 1.5rem + 2vw, 3rem) clamp(1.25rem, 0.75rem + 1.5vw, 2rem);
-  border-right: 1px solid var(--hairline);
+  border-top: 1px solid var(--hairline);
+  padding-block: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
 }
 
-.whyItem:last-child {
-  border-right: none;
+/* Item 2 (Connected advice) — slightly indented for editorial stagger */
+.whyItemIndent {
+  margin-left: clamp(1.5rem, 1rem + 2vw, 3rem);
+}
+
+/* Rightward nudge — keeps horizontal dividers clean, feels "readable" */
+.whyItem:hover {
+  transform: translateX(4px);
+}
+
+/* Large outline numbers — ghost/etched style */
+.whyNum {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 1.4rem + 2vw, 3.2rem);
+  font-weight: 600;
+  color: var(--mist); /* solid fallback for browsers without -webkit-text-stroke */
+  -webkit-text-stroke: 1px var(--mist);
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.85rem;
+  user-select: none;
 }
 
 .whyItemHeading {
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.35rem);
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
   font-weight: 500;
   color: var(--navy-900);
   line-height: var(--leading-snug);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .whyItemBody {
   font-size: var(--text-sm);
   line-height: 1.72;
   color: var(--ink-500);
+  max-width: 40ch;
   text-wrap: pretty;
 }
 
-/* ── Speak With Lexcord ── */
+/* ============================================================
+   Visual transition band
+   ============================================================ */
+
+.transitionBand {
+  overflow: hidden;
+  background: var(--paper-2);
+  padding-block: clamp(1.75rem, 2vw, 3rem);
+}
+
+/* Large outline phrase — decorative, aria-hidden, cropped by overflow: hidden */
+.transitionPhrase {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 7.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  margin: 0;
+  /* Left-align with container content */
+  padding-left: max(var(--gutter), calc((100vw - var(--maxw)) / 2));
+  /* Outline text — same pattern as whyNum */
+  color: var(--hairline-strong);
+  -webkit-text-stroke: 1px var(--hairline-strong);
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   Speak With Lexcord — distinctive closing CTA
+   ============================================================ */
+
 .speakSection {
   background: var(--navy-950);
   padding-block: clamp(5rem, 3.5rem + 8vw, 10rem);
+  position: relative;
+  overflow: hidden;
 }
 
-.speakGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(3rem, 2rem + 5vw, 7rem);
-  align-items: start;
+/* Abstract background motif — visual continuity with The Firm motif */
+.speakMotif {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(200px, 32vw, 420px);
+  height: 100%;
+  color: #fff;
+  opacity: 0.06;
+  pointer-events: none;
 }
 
-.speakLeft {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.speakMotif svg {
+  width: 100%;
+  height: 100%;
 }
 
+/* Upper area — large heading, approximately two-thirds of page width */
+.speakUpper {
+  max-width: 68%;
+}
+
+/* Strong closing heading */
 .speakHeading {
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
+  font-size: clamp(2.4rem, 1.8rem + 3.2vw, 4.2rem);
   font-weight: 460;
   color: #fff;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   line-height: var(--leading-snug);
-  text-wrap: balance;
   margin-top: 1rem;
 }
 
+.speakHeadLine {
+  display: block;
+}
+
+/* Lower area — copy and actions */
+.speakLower {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+  max-width: 44rem;
+}
+
 .speakBody {
-  margin-top: 1.1rem;
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: rgba(255, 255, 255, 0.65);
@@ -314,7 +455,7 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   flex-wrap: wrap;
 }
 
@@ -334,41 +475,44 @@
   gap: 0.6rem;
 }
 
-.speakDetails {
-  padding-top: 0.4rem;
-}
-
-.speakDetails > div {
-  padding-block: 1.15rem;
-  border-bottom: 1px solid var(--navy-line);
-}
-
-.speakDetails > div:first-child {
+/* Contact details — three columns below a fine divider */
+.speakContactRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  padding-top: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
   border-top: 1px solid var(--navy-line);
 }
 
-.speakDetails dt {
+.speakContactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.speakContactItem dt {
+  font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 0.3rem;
 }
 
-.speakDetails dd {
+.speakContactItem dd {
   margin: 0;
   font-size: var(--text-base);
   color: rgba(255, 255, 255, 0.82);
 }
 
-.speakDetails dd a {
+.speakContactItem dd a {
   color: inherit;
   text-decoration: none;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
-.speakDetails dd a:hover {
+.speakContactItem dd a:hover {
   color: #fff;
 }
 
@@ -388,7 +532,6 @@
   }
 
   .bannerRight {
-    display: flex;
     padding: 0;
   }
 
@@ -409,24 +552,94 @@
   }
 }
 
-@media (max-width: 860px) {
-  /* Why Lexcord */
-  .whyGrid {
+/* ── Lower sections — tablet and mobile ── */
+@media (max-width: 900px) {
+  /* The Firm — collapse to single column */
+  .firmGrid {
     grid-template-columns: 1fr;
   }
 
-  .whyItem {
-    border-right: none;
-    border-bottom: 1px solid var(--hairline);
+  .firmDivider {
+    display: none;
   }
 
-  .whyItem:last-child {
-    border-bottom: none;
+  .firmHeadArea {
+    padding-right: 0;
+  }
+
+  /* Allow two-line heading to flow naturally on mobile */
+  .firmHeadLine {
+    display: inline;
+  }
+
+  .firmHeadLine + .firmHeadLine::before {
+    content: " ";
+  }
+
+  .firmMotif {
+    width: clamp(70px, 20vw, 120px);
+    bottom: 0;
+    right: 0;
+  }
+
+  .firmSubArea {
+    padding-left: 0;
+    padding-top: clamp(1.75rem, 2vw, 2.5rem);
+    justify-content: flex-start;
+  }
+
+  .firmBody {
+    max-width: 55ch;
+  }
+
+  /* Why Lexcord — stack heading above items */
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 2rem + 2vw, 3rem);
+  }
+
+  .whyHeadArea {
+    position: static;
+  }
+
+  .whyHeadLine {
+    display: inline;
+  }
+
+  .whyHeadLine + .whyHeadLine::before {
+    content: " ";
+  }
+
+  .whyItemIndent {
+    margin-left: 0;
   }
 
   /* Speak With Lexcord */
-  .speakGrid {
+  .speakUpper {
+    max-width: 100%;
+  }
+
+  .speakHeadLine {
+    display: inline;
+  }
+
+  .speakHeadLine + .speakHeadLine::before {
+    content: " ";
+  }
+
+  .speakContactRow {
     grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--navy-line);
+  }
+
+  .speakContactItem {
+    padding-block: 1.1rem;
+    border-bottom: 1px solid var(--navy-line);
+  }
+
+  .speakContactItem:last-child {
+    border-bottom: none;
   }
 }
 
@@ -458,5 +671,13 @@
   .firmLink,
   .speakSecondary {
     transition: none;
+  }
+
+  .whyItem {
+    transition: none;
+  }
+
+  .whyItem:hover {
+    transform: none;
   }
 }

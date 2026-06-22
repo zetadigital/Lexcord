@@ -23,23 +23,28 @@ const LOWER = {
   en: {
     firm: {
       eyebrow: "The Firm",
-      heading: "Legal advice that considers the whole matter",
-      body: "Legal issues rarely exist in isolation. Lexcord brings together experience across property, commercial, migration, family and dispute matters, with advice shaped around the client's wider circumstances and practical objectives.",
+      headingLine1: "Legal advice that considers",
+      headingLine2: "the whole matter",
+      body: "Legal issues rarely exist in isolation. Lexcord brings together experience across interconnected areas of law, with advice shaped around the client's wider circumstances and practical objectives.",
       link: "About Lexcord",
     },
     why: {
       eyebrow: "Why Lexcord",
-      heading: "Clear responsibility. Practical direction.",
+      headingLine1: "Clear responsibility.",
+      headingLine2: "Practical direction.",
       items: [
         {
+          num: "01",
           heading: "Personal responsibility",
           body: "The solicitor responsible for the matter remains closely involved in the advice, communication and next steps.",
         },
         {
+          num: "02",
           heading: "Connected advice",
           body: "Where different areas of law intersect, the relevant issues are considered together.",
         },
         {
+          num: "03",
           heading: "Clear next steps",
           body: "Clients understand what has been identified, what decision is required and what happens next.",
         },
@@ -47,7 +52,8 @@ const LOWER = {
     },
     speak: {
       eyebrow: "Speak With Lexcord",
-      heading: "Start with the matter as it stands today",
+      headingLine1: "Start with the matter",
+      headingLine2: "as it stands today",
       body: "Tell us what has happened, what you are trying to achieve and whether any deadline, transaction or court date is already in place.",
       cta: "Book a consultation",
       link: "Explore our expertise",
@@ -59,23 +65,28 @@ const LOWER = {
   zh: {
     firm: {
       eyebrow: "关于律所",
-      heading: "考虑事务整体的法律建议",
-      body: "法律问题很少孤立存在。Lexcord 汇集了房产、商业、移民、家庭及争议事务的经验，根据客户的整体情况与实际目标提供法律建议。",
+      headingLine1: "考虑事务整体的",
+      headingLine2: "法律建议",
+      body: "法律问题很少孤立存在。Lexcord 汇集了各相互关联法律领域的经验，根据客户的整体情况与实际目标提供法律建议。",
       link: "了解 Lexcord",
     },
     why: {
       eyebrow: "为何选择 Lexcord",
-      heading: "清晰的责任。务实的方向。",
+      headingLine1: "清晰的责任。",
+      headingLine2: "务实的方向。",
       items: [
         {
+          num: "01",
           heading: "个人责任",
           body: "负责该事务的律师始终密切参与建议、沟通及后续步骤。",
         },
         {
+          num: "02",
           heading: "关联建议",
           body: "当不同法律领域相互交叉时，相关问题将被统筹考虑。",
         },
         {
+          num: "03",
           heading: "清晰的下一步",
           body: "客户了解已识别的内容、需要作出何种决策以及接下来将发生什么。",
         },
@@ -83,7 +94,8 @@ const LOWER = {
     },
     speak: {
       eyebrow: "与 Lexcord 交谈",
-      heading: "从事务目前的状况开始",
+      headingLine1: "从事务目前的",
+      headingLine2: "状况开始",
       body: "告诉我们发生了什么、您希望实现什么，以及是否已有截止日期、交易或法庭日期。",
       cta: "预约咨询",
       link: "探索我们的专业领域",
@@ -205,90 +217,138 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* ── The Firm ── */}
+      {/* ── The Firm — Editorial Brand Statement ── */}
       <section className={`section ${styles.firmSection}`}>
         <div className="container">
           <Reveal>
-            <div className={styles.firmContent}>
-              <span className="eyebrow">{c.firm.eyebrow}</span>
-              <h2 className={styles.firmHeading}>{c.firm.heading}</h2>
-              <p className={styles.firmBody}>{c.firm.body}</p>
-              <Link href="/about" className={styles.firmLink}>
-                {c.firm.link} <ArrowRight />
-              </Link>
+            <div className={styles.firmGrid}>
+              {/* Left — oversized heading with abstract motif */}
+              <div className={styles.firmHeadArea}>
+                <span className="eyebrow">{c.firm.eyebrow}</span>
+                <h2 className={styles.firmHeading}>
+                  <span className={styles.firmHeadLine}>{c.firm.headingLine1}</span>
+                  <span className={styles.firmHeadLine}>{c.firm.headingLine2}</span>
+                </h2>
+                {/* Abstract line motif — geometric, brand-palette, decorative */}
+                <div className={styles.firmMotif} aria-hidden="true">
+                  <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="12" x2="200" y2="88" stroke="currentColor" strokeWidth="0.8"/>
+                    <line x1="0" y1="72" x2="200" y2="102" stroke="currentColor" strokeWidth="0.8"/>
+                    <rect x="142" y="56" width="38" height="27" stroke="currentColor" strokeWidth="0.7"/>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Vertical rule */}
+              <div className={styles.firmDivider} aria-hidden="true" />
+
+              {/* Right — supporting copy, bottom-anchored */}
+              <div className={styles.firmSubArea}>
+                <p className={styles.firmBody}>{c.firm.body}</p>
+                <Link href="/about" className={styles.firmLink}>
+                  {c.firm.link} <ArrowRight />
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ── Why Lexcord ── */}
+      {/* ── Why Lexcord — Asymmetric Principles Grid ── */}
       <section className={`section ${styles.whySection}`}>
         <div className="container">
-          <Reveal>
-            <div className={styles.whyHead}>
-              <span className="eyebrow">{c.why.eyebrow}</span>
-              <h2 className={styles.whyHeading}>{c.why.heading}</h2>
+          <div className={styles.whyGrid}>
+            {/* Left — sticky heading */}
+            <div className={styles.whyHeadArea}>
+              <Reveal>
+                <span className="eyebrow">{c.why.eyebrow}</span>
+                <h2 className={styles.whyHeading}>
+                  <span className={styles.whyHeadLine}>{c.why.headingLine1}</span>
+                  <span className={styles.whyHeadLine}>{c.why.headingLine2}</span>
+                </h2>
+              </Reveal>
             </div>
-          </Reveal>
-          <Reveal>
-            <div className={styles.whyGrid}>
-              {c.why.items.map((item) => (
-                <div key={item.heading} className={styles.whyItem}>
-                  <h3 className={styles.whyItemHeading}>{item.heading}</h3>
-                  <p className={styles.whyItemBody}>{item.body}</p>
-                </div>
+
+            {/* Right — staggered items */}
+            <div className={styles.whyItemsArea}>
+              {c.why.items.map((item, i) => (
+                <Reveal key={item.num} delay={i * 90}>
+                  <div className={`${styles.whyItem} ${i === 1 ? styles.whyItemIndent : ""}`}>
+                    <span className={styles.whyNum}>{item.num}</span>
+                    <h3 className={styles.whyItemHeading}>{item.heading}</h3>
+                    <p className={styles.whyItemBody}>{item.body}</p>
+                  </div>
+                </Reveal>
               ))}
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* ── Speak With Lexcord ── */}
+      {/* ── Visual transition band ── */}
+      <div className={styles.transitionBand} aria-hidden="true">
+        <p className={styles.transitionPhrase}>For what matters next.</p>
+      </div>
+
+      {/* ── Speak With Lexcord — Distinctive Closing CTA ── */}
       <section className={styles.speakSection}>
+        {/* Subtle background continuity motif */}
+        <div className={styles.speakMotif} aria-hidden="true">
+          <svg viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="60" x2="300" y2="140" stroke="currentColor" strokeWidth="0.7"/>
+            <line x1="80" y1="0" x2="280" y2="200" stroke="currentColor" strokeWidth="0.55"/>
+            <rect x="198" y="88" width="28" height="20" stroke="currentColor" strokeWidth="0.55"/>
+          </svg>
+        </div>
+
         <div className="container">
-          <div className={styles.speakGrid}>
-            <div className={styles.speakLeft}>
-              <Reveal>
-                <span className="eyebrow eyebrow--light">{c.speak.eyebrow}</span>
-                <h2 className={styles.speakHeading}>{c.speak.heading}</h2>
-                <p className={styles.speakBody}>{c.speak.body}</p>
-              </Reveal>
-              <Reveal delay={80}>
-                <div className={styles.speakActions}>
-                  <Link href="/contact" className="btn btn--primary">
-                    {c.speak.cta} <ArrowRight />
-                  </Link>
-                  <Link href="/expertise" className={styles.speakSecondary}>
-                    {c.speak.link} <ArrowRight />
-                  </Link>
-                </div>
-              </Reveal>
+          {/* Upper — large heading */}
+          <Reveal>
+            <div className={styles.speakUpper}>
+              <span className="eyebrow eyebrow--light">{c.speak.eyebrow}</span>
+              <h2 className={styles.speakHeading}>
+                <span className={styles.speakHeadLine}>{c.speak.headingLine1}</span>
+                <span className={styles.speakHeadLine}>{c.speak.headingLine2}</span>
+              </h2>
             </div>
-            <dl className={styles.speakDetails}>
-              <Reveal delay={100}>
-                <div>
-                  <dt>{c.speak.officeLabel}</dt>
-                  <dd>
-                    <a href={MAPS} target="_blank" rel="noopener noreferrer">
-                      {t.footer.address}
-                    </a>
-                  </dd>
-                </div>
-              </Reveal>
-              <Reveal delay={140}>
-                <div>
-                  <dt>{c.speak.phoneLabel}</dt>
-                  <dd><a href={`tel:${PHONE_DIAL}`}>{PHONE_DISPLAY}</a></dd>
-                </div>
-              </Reveal>
-              <Reveal delay={180}>
-                <div>
-                  <dt>{c.speak.emailLabel}</dt>
-                  <dd><a href={`mailto:${EMAIL}`}>{EMAIL}</a></dd>
-                </div>
-              </Reveal>
+          </Reveal>
+
+          {/* Lower — copy and actions */}
+          <Reveal delay={80}>
+            <div className={styles.speakLower}>
+              <p className={styles.speakBody}>{c.speak.body}</p>
+              <div className={styles.speakActions}>
+                <Link href="/contact" className="btn btn--primary">
+                  {c.speak.cta} <ArrowRight />
+                </Link>
+                <Link href="/expertise" className={styles.speakSecondary}>
+                  {c.speak.link} <ArrowRight />
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Contact row — three columns */}
+          <Reveal delay={140}>
+            <dl className={styles.speakContactRow}>
+              <div className={styles.speakContactItem}>
+                <dt>{c.speak.officeLabel}</dt>
+                <dd>
+                  <a href={MAPS} target="_blank" rel="noopener noreferrer">
+                    {t.footer.address}
+                  </a>
+                </dd>
+              </div>
+              <div className={styles.speakContactItem}>
+                <dt>{c.speak.phoneLabel}</dt>
+                <dd><a href={`tel:${PHONE_DIAL}`}>{PHONE_DISPLAY}</a></dd>
+              </div>
+              <div className={styles.speakContactItem}>
+                <dt>{c.speak.emailLabel}</dt>
+                <dd><a href={`mailto:${EMAIL}`}>{EMAIL}</a></dd>
+              </div>
             </dl>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>
