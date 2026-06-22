@@ -200,7 +200,8 @@ const FEATURED_SLUGS = ["katherine-ho", "elijah-feng", "justin-ho", "chang-qi"];
 
 export function AboutContent() {
   const { lang } = useLang();
-  const c = CONTENT[lang];
+  const effectiveLang: "en" | "zh" = lang === "en" ? "en" : "zh";
+  const c = CONTENT[effectiveLang];
   const featured = FEATURED_SLUGS.map((slug) => team.find((m) => m.slug === slug)).filter(Boolean) as typeof team;
 
   return (
@@ -280,7 +281,7 @@ export function AboutContent() {
             {PRACTICE_AREAS.map((area, i) => (
               <Reveal key={area.slug} delay={i * 50}>
                 <Link href={`/expertise/${area.slug}`} className={styles.areaRow}>
-                  {lang === "zh" ? area.labelZh : area.label}
+                  {effectiveLang === "zh" ? area.labelZh : area.label}
                   <span>→</span>
                 </Link>
               </Reveal>
@@ -318,7 +319,7 @@ export function AboutContent() {
                   </div>
                   <div>
                     <p className={styles.personName}>{member.name}</p>
-                    <p className={styles.personRole}>{lang === "zh" ? member.roleZh : member.role}</p>
+                    <p className={styles.personRole}>{effectiveLang === "zh" ? member.roleZh : member.role}</p>
                     <Link href={`/people/${member.slug}`} className={styles.personProfileLink}>
                       {c.people.viewProfile} <ArrowRight />
                     </Link>
