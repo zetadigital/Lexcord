@@ -112,9 +112,6 @@ export const notaryZh: PracticeArea = {
       body: "对于其他部分目的地国家，可能需要 DFAT 核证，有时还需随后由相关使馆或领事馆进行合法化处理。",
     },
   ],
-  notaryColumnsNote:
-    "接收机构应确认其所需的认证、海牙认证（Apostille）、核证或合法化的具体形式。不同国家和机构的要求可能存在差异。",
-
   complexMattersEyebrow: "常见文件",
   complexMattersHeading: "个人、法律及商业文件",
   complexMatters: [
@@ -136,12 +133,6 @@ export const notaryZh: PracticeArea = {
     "境外留学或就业相关文件",
   ],
 
-  highlightEyebrow: "关于您的文件",
-  highlightHeading: "外语文件与到场要求",
-  highlightBody:
-    "外语文件在公证前可能需要翻译或进行额外审核。请提前提供文件及任何翻译件，以便我们确认是否需要由具备相应资质的译员出具翻译，或是否需要双语公证书。\n\n公证人须亲自核实身份、见证签名或确认容量与授权时，通常需要当事人亲自到场。我们将在审阅文件后告知是否需要到场。公证服务须预约办理；时间安排及费用视文件数量与类型而定。",
-  highlightVariant: "notary",
-
   expertsSectionEyebrow: "安排公证预约",
   expertsSectionHeading: "到访前请先发送文件",
   expertsSectionLede:
@@ -158,5 +149,5 @@ export const notaryZh: PracticeArea = {
   closingTitle: "公证人服务",
   closingCta: "预约办理",
 
-  layout: ["practice", "approach", "riskItems", "notaryColumns", "complexMatters", "highlight", "experts"],
+  layout: ["practice", "approach", "riskItems", "notaryColumns", "complexMatters", "experts"],
 };

@@ -112,9 +112,6 @@ export const notary: PracticeArea = {
       body: "For some other destinations, DFAT authentication may be required, sometimes followed by legalisation through the relevant embassy or consulate.",
     },
   ],
-  notaryColumnsNote:
-    "The receiving authority should confirm the exact form of certification, apostille, authentication or legalisation it requires. Requirements can differ between countries and institutions.",
-
   complexMattersEyebrow: "Common Documents",
   complexMattersHeading: "Personal, legal and commercial documents",
   complexMatters: [
@@ -136,12 +133,6 @@ export const notary: PracticeArea = {
     "Documents for overseas study or employment",
   ],
 
-  highlightEyebrow: "Your Documents",
-  highlightHeading: "Foreign-language documents and attendance",
-  highlightBody:
-    "Documents in another language may require a translation or additional review before they can be notarised. Please provide the document and any translation in advance so that we can confirm whether an appropriately qualified translator or bilingual notarial certificate may be required.\n\nPersonal attendance is commonly required where the Notary Public must verify identity, witness a signature or confirm capacity and authority. We will advise whether attendance is required after reviewing the document. Notarial services are available by appointment; timing and fees depend on the number and type of documents and whether additional certificates or steps are required.",
-  highlightVariant: "notary",
-
   expertsSectionEyebrow: "Arrange a Notarial Appointment",
   expertsSectionHeading: "Send the document before you attend",
   expertsSectionLede:
@@ -158,5 +149,5 @@ export const notary: PracticeArea = {
   closingTitle: "Notary Public",
   closingCta: "Book an appointment",
 
-  layout: ["practice", "approach", "riskItems", "notaryColumns", "complexMatters", "highlight", "experts"],
+  layout: ["practice", "approach", "riskItems", "notaryColumns", "complexMatters", "experts"],
 };
