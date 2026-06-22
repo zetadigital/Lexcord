@@ -358,14 +358,14 @@ const DICT: Record<Lang, Dictionary> = {
       contact: "联系我们",
       book: "预约咨询",
       firm: "律所",
-      panelHeadline: "每一个领域,同一份用心",
-      panelBlurb: "为企业、个人与家庭提供深思熟虑、切实可行的法律意见——每一件事务都以认真负责的态度亲力亲为、用心处理。",
+      panelHeadline: "每一个领域，同一份用心",
+      panelBlurb: "为企业、个人与家庭提供深思熟虑、切实可行的法律意见——每一件事务都亲力亲为，用心处理。",
       panelAbout: "了解律所",
     },
     footer: {
       blurb:
-        "覆盖全澳的清晰、审慎法律意见——从房产与商业事务,到遗产、知识产权、刑事、移民及公证服务。",
-      disclaimer: "本网站信息仅为一般性内容,不构成法律意见。请联系我们获取针对您具体情况的建议。",
+        "覆盖全澳的清晰、审慎法律意见——从房产与商业事务，到遗产、知识产权、刑事、移民及公证服务。",
+      disclaimer: "本网站信息仅为一般性内容，不构成法律意见。请联系我们获取针对您具体情况的建议。",
       expertise: "执业领域",
       firm: "律所",
       aboutLexcord: "关于律和",
@@ -374,8 +374,8 @@ const DICT: Record<Lang, Dictionary> = {
       rights: "版权所有。",
       australiaWide: "服务全澳",
       contactTitle: "联系方式",
-      address: "维多利亚州墨尔本市 Little Collins St 530 号 1508 室,邮编 3000",
-      lift: "电梯坐到 14 楼,对面电梯再上 15 楼,出电梯后右转直走。",
+      address: "维多利亚州墨尔本市 Little Collins St 530 号 1508 室，邮编 3000",
+      lift: "电梯坐到 14 楼，对面电梯再上 15 楼，出电梯后右转直走。",
       legal: "法律",
     },
     common: {
@@ -386,9 +386,9 @@ const DICT: Record<Lang, Dictionary> = {
       relatedPosts: "相关资讯",
       relatedPostsLede: "关于本领域的通俗解读——文章内容有待律所提供真实出版物。",
       postTitle: "文章标题占位",
-      postExcerpt: "提供内容后,此处将显示概括文章的简短导语。",
+      postExcerpt: "提供内容后，此处将显示概括文章的简短导语。",
       areaTeam: "您的法律团队",
-      areaTeamLede: "处理此类事务的律师。预约咨询即可开始。",
+      areaTeamLede: "处理此类事务的律师。预约咨询，即可开始。",
       areaTeamEmpty: "该领域的团队简介正在陆续加入。请联系我们,我们会为您对接合适的律师。",
       viewProfile: "查看简介",
     },
@@ -405,23 +405,23 @@ const DICT: Record<Lang, Dictionary> = {
     },
     summaries: {
       "property-law":
-        "商业地产、开发、租赁、纠纷与外国投资事务,服务全澳。",
+        "商业地产、开发、租赁、纠纷与外国投资事务，服务全澳。",
       conveyancing:
         "住宅、商业及楼花的全流程产权过户——从合同审阅到交割。",
       commercial:
-        "就合同、雇佣、纠纷与租赁,为初创企业、中小企业及大型企业提供直接、务实的商业法律意见。",
-      "family-law": "就离婚、子女抚养、财产分割与家庭暴力事务,提供专业而富有同理心的指引。",
+        "就合同、雇佣、纠纷与租赁，为初创企业、中小企业及大型企业提供直接、务实的商业法律意见。",
+      "family-law": "就离婚、子女抚养、财产分割与家庭暴力事务，提供专业而富有同理心的指引。",
       "wills-estates": "用心处理遗嘱、遗嘱信托、授权书、遗嘱认证与遗产管理。",
       "intellectual-property":
         "商标、专利、版权与外观设计——从首次注册到国际申请与维权。",
-      "criminal-law": "就交通、伤害、毒品、家庭暴力与保释事务,提供清晰、诚实的代理。",
+      "criminal-law": "就交通、伤害、毒品、家庭暴力与保释事务，提供清晰、诚实的代理。",
       "notary-public":
-        "为境外使用的文件提供具资质的公证服务,包括海牙认证(Apostille)与 DFAT 认证。",
+        "为境外使用的文件提供具资质的公证服务，包括海牙认证（Apostille）与 DFAT 认证。",
       "migration-law": "就技术、家庭、学生、商业、人道及复议途径提供注册移民意见。",
     },
     pages: {
       home: {
-        bannerTitle: "为您所重要的事。",
+        bannerTitle: "所重之事，我们在此。",
         bannerTagline: "用心建议。务实方向。以人为本。",
         bannerLede:
           "我们协助个人、家庭及企业，自信应对房产、商业、移民与纠纷等法律事务。",
@@ -431,15 +431,15 @@ const DICT: Record<Lang, Dictionary> = {
         servicesLearnMore: "了解更多",
         whyEyebrow: "为何选择律和",
         whyTitle: "为何选择律和?",
-        whySubtitle: "敏锐的法律思考,以用心的方式交付。",
+        whySubtitle: "洞察敏锐，服务用心。",
         why: [
           {
             title: "清晰而务实的建议",
-            text: "我们以清晰、直接、易于理解的方式,向您说明法律处境、可选方案与风险。",
+            text: "我们以清晰、直接、易于理解的方式，向您说明法律处境、可选方案与风险。",
           },
           {
-            title: "贴身的个性化关注",
-            text: "在提出下一步建议之前,我们会用心了解您的处境、优先事项与顾虑。",
+            title: "个人化的贴心关注",
+            text: "在提出下一步建议之前，我们会用心了解您的处境、优先事项与顾虑。",
           },
           {
             title: "在核心领域的深厚专长",
@@ -459,7 +459,7 @@ const DICT: Record<Lang, Dictionary> = {
         readyEyebrow: "与我们联系",
         readyTitle: "准备好谈谈您的事务了吗?",
         readyLede:
-          "与我们聊聊您的处境。预约一次保密咨询,或通过电话、邮件联系我们。",
+          "与我们谈谈您的情况。预约一次保密咨询，或通过电话、邮件联系我们。",
         addressLabel: "地址",
         phoneLabel: "电话",
         emailLabel: "邮箱",
@@ -469,7 +469,7 @@ const DICT: Record<Lang, Dictionary> = {
         heroTitlePre: "我们的执业领域,",
         heroTitleEm: "同一份用心",
         heroLede:
-          "律和兼具综合性事务所的广度与专业律师的深度——为个人、家庭与企业提供服务,覆盖全澳各州与领地。",
+          "律和兼具综合性事务所的广度与专业律师的深度——为个人、家庭与企业提供服务，覆盖全澳各州与领地。",
         exploreLabel: "了解更多",
       },
       resources: {
@@ -532,7 +532,7 @@ const DICT: Record<Lang, Dictionary> = {
           "欢迎联系我们的团队，与我们探讨如何协助处理您的法律事务。无论您有初步疑问，还是已准备好寻求专业意见，我们都诚挚欢迎您与我们沟通。",
         cardVisitLabel: "前往",
         cardVisitSub: "墨尔本 VIC 3000，澳大利亚",
-        cardVisitCta: "获取路线",
+        cardVisitCta: "查看路线",
         cardCallLabel: "致电",
         cardCallSub: "周一至周五，上午 9:00 至下午 5:30",
         cardCallCta: "立即致电",
@@ -557,7 +557,7 @@ const DICT: Record<Lang, Dictionary> = {
         bookWith: "预约咨询",
       },
       legalPending:
-        "本页为占位内容。本所的最终措辞有待确定,发布前应由具资质的执业者审核。",
+        "本页为占位内容。本所的最终措辞有待确定，发布前应由具资质的执业者审核。",
       placeholderTag: "占位",
     },
   },
@@ -571,7 +571,7 @@ const DICT: Record<Lang, Dictionary> = {
       book: "預約諮詢",
       firm: "律所",
       panelHeadline: "每一個領域，同一份用心",
-      panelBlurb: "為企業、個人與家庭提供深思熟慮、切實可行的法律意見——每一件事務都以認真負責的態度親力親為、用心處理。",
+      panelBlurb: "為企業、個人與家庭提供深思熟慮、切實可行的法律意見——每一件事務都親力親為，用心處理。",
       panelAbout: "了解律所",
     },
     footer: {
@@ -599,7 +599,7 @@ const DICT: Record<Lang, Dictionary> = {
       postTitle: "文章標題占位",
       postExcerpt: "提供內容後，此處將顯示概括文章的簡短導語。",
       areaTeam: "您的法律團隊",
-      areaTeamLede: "處理此類事務的律師。預約諮詢即可開始。",
+      areaTeamLede: "處理此類事務的律師。預約諮詢，即可開始。",
       areaTeamEmpty: "該領域的團隊簡介正在陸續加入。請聯絡我們，我們會為您對接合適的律師。",
       viewProfile: "查看簡介",
     },
@@ -627,7 +627,7 @@ const DICT: Record<Lang, Dictionary> = {
     },
     pages: {
       home: {
-        bannerTitle: "為您所重要的事。",
+        bannerTitle: "所重之事，我們在此。",
         bannerTagline: "用心建議。務實方向。以人為本。",
         bannerLede: "我們協助個人、家庭及企業，自信應對房產、商業、移民與糾紛等法律事務。",
         bannerCta1: "關於律和",
@@ -636,14 +636,14 @@ const DICT: Record<Lang, Dictionary> = {
         servicesLearnMore: "了解更多",
         whyEyebrow: "為何選擇律和",
         whyTitle: "為何選擇律和?",
-        whySubtitle: "敏銳的法律思考，以用心的方式交付。",
+        whySubtitle: "洞察敏銳，服務用心。",
         why: [
           {
             title: "清晰而務實的建議",
             text: "我們以清晰、直接、易於理解的方式，向您說明法律處境、可選方案與風險。",
           },
           {
-            title: "貼身的個性化關注",
+            title: "個人化的貼心關注",
             text: "在提出下一步建議之前，我們會用心了解您的處境、優先事項與顧慮。",
           },
           {
@@ -658,12 +658,12 @@ const DICT: Record<Lang, Dictionary> = {
           { quote: "回應及時、做法務實，真心站在我這一邊。我始終清楚自己的事務進展到哪一步。", name: "A. Chen", detail: "商業法" },
           { quote: "他們非常用心地處理了我的簽證申請，每一步都讓我了解進展。", name: "R. Kumar", detail: "移民法" },
           { quote: "建議清晰、收費合理、毫無意外。這正是你對一家律所的期待。", name: "M. Rossi", detail: "遺囑與遺產" },
-          { quote: "專業、沉穩、細致。在一段艱難的時期裡，我始終感到被支持。", name: "S. Nguyen", detail: "刑事法" },
+          { quote: "專業、沉穩、細緻。在一段艱難的時期裡，我始終感到被支持。", name: "S. Nguyen", detail: "刑事法" },
           { quote: "對細節把握精準，溝通也很輕鬆。我會毫不猶豫地推薦他們。", name: "D. Brown", detail: "知識產權" },
         ],
         readyEyebrow: "與我們聯絡",
         readyTitle: "準備好談談您的事務了嗎？",
-        readyLede: "與我們聊聊您的處境。預約一次保密諮詢，或通過電話、郵件聯絡我們。",
+        readyLede: "與我們談談您的情況。預約一次保密諮詢，或透過電話、郵件聯絡我們。",
         addressLabel: "地址",
         phoneLabel: "電話",
         emailLabel: "郵箱",
@@ -734,7 +734,7 @@ const DICT: Record<Lang, Dictionary> = {
           "歡迎聯絡我們的團隊，與我們探討如何協助處理您的法律事務。無論您有初步疑問，還是已準備好尋求專業意見，我們都誠摯歡迎您與我們溝通。",
         cardVisitLabel: "前往",
         cardVisitSub: "墨爾本 VIC 3000，澳大利亞",
-        cardVisitCta: "獲取路線",
+        cardVisitCta: "查看路線",
         cardCallLabel: "致電",
         cardCallSub: "週一至週五，上午 9:00 至下午 5:30",
         cardCallCta: "立即致電",

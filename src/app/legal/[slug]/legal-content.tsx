@@ -897,7 +897,7 @@ export function LegalContent({ slug }: { slug: string }) {
             {/* Sticky TOC — desktop only */}
             <aside className={styles.tocCol}>
               <nav aria-label="Page contents">
-                <p className={styles.tocTitle}>Contents</p>
+                <p className={styles.tocTitle}>{effectiveLang === "zh-tw" ? "目錄" : isChinese ? "目录" : "Contents"}</p>
                 <ol className={styles.tocList}>
                   {sections.map((s) => (
                     <li
@@ -917,7 +917,7 @@ export function LegalContent({ slug }: { slug: string }) {
             <div className={styles.contentCol}>
               {/* Mobile TOC */}
               <nav className={styles.mobileToc} aria-label="Page contents">
-                <p className={styles.mobileTocLabel}>Contents</p>
+                <p className={styles.mobileTocLabel}>{effectiveLang === "zh-tw" ? "目錄" : isChinese ? "目录" : "Contents"}</p>
                 <ol className={styles.mobileTocList}>
                   {sections.map((s) => (
                     <li key={s.id}>
@@ -943,7 +943,7 @@ export function LegalContent({ slug }: { slug: string }) {
 
               {/* Last updated */}
               <p className={styles.updated}>
-                {isChinese ? "最后更新：2026 年 6 月 22 日" : "Last updated: 22 June 2026"}
+                {effectiveLang === "zh-tw" ? "最後更新：2026 年 6 月 22 日" : isChinese ? "最后更新：2026 年 6 月 22 日" : "Last updated: 22 June 2026"}
               </p>
             </div>
           </div>
@@ -953,7 +953,7 @@ export function LegalContent({ slug }: { slug: string }) {
         <div className={styles.crossLinksWrap}>
           <div className="container">
             <div className={styles.crossLinks}>
-              <span className={styles.crossLinksLabel}>Legal</span>
+              <span className={styles.crossLinksLabel}>{isChinese ? "法律" : "Legal"}</span>
               {CROSS_LINKS.map((link) =>
                 link.slug === slug ? (
                   <span key={link.slug} className={styles.crossLinkCurrent}>
