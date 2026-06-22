@@ -3,112 +3,135 @@ import type { PracticeArea } from "../types";
 export const estate: PracticeArea = {
   slug: "wills-estates",
   navLabel: "Wills & Estates",
-  heroEyebrow: "Will & Estate",
-  heroTitle: "Planning for the {accent}people you love{/accent}",
+  heroEyebrow: "Expertise",
+  heroTitle: "Wills & Estates",
   heroLede:
-    "A Will is not just a document — it is a declaration of how you want to care for the people who matter to you, even when you are no longer here. We help individuals, couples, and families create clear, legally sound estate plans with sensitivity and without jargon.",
+    "Clear, considered advice for planning your affairs, protecting the people who matter and administering an estate when someone has died.",
 
-  servicesEyebrow: "Our Services",
-  servicesHeading: "Everything your estate plan needs",
+  seoTitle: "Wills and Estates Lawyers Melbourne | Estate Planning | Lexcord",
+  seoDescription:
+    "Lexcord provides clear advice on Wills, estate planning, powers of attorney, probate and estate disputes in Victoria.",
+
+  servicesEyebrow: "Wills and Estate Services",
+  servicesHeading: "Planning ahead and managing what follows",
   servicesIntro:
-    "From a simple Will for a young family to a complex multi-generational estate plan with testamentary trusts — we handle every dimension of estate law across all Australian states and territories.",
+    "Estate law involves decisions made during life as well as responsibilities that arise after death. We help clients put clear arrangements in place and guide executors and families through the legal process when those arrangements need to be carried out.",
+  practiceCardDot: true,
   services: [
     {
-      title: "Will Drafting & Review",
-      body: "A carefully drafted Will ensures your assets go where you intend. We draft new Wills and review existing ones — particularly after major life events like marriage, divorce, or the birth of children.",
-    },
-    {
-      title: "Testamentary Trusts",
-      body: "A testamentary trust is established by your Will and can provide significant tax advantages for beneficiaries, as well as protecting assets from creditors or relationship breakdown. Particularly valuable for larger estates.",
+      title: "Wills",
+      body: "Preparation and review of Wills that clearly record how assets are to be distributed, who will administer the estate and who should care for any dependent children.",
     },
     {
       title: "Estate Planning",
-      body: "Comprehensive planning that looks beyond the Will, including superannuation nominations, life insurance, jointly held assets, and strategies to minimise the tax burden on your estate and beneficiaries.",
+      body: "Advice extending beyond the Will, including jointly owned assets, superannuation nominations, life insurance, trusts and other arrangements that may affect how wealth passes.",
     },
     {
-      title: "Power of Attorney",
-      body: "A Power of Attorney allows someone you trust to manage your financial and legal affairs if you lose capacity. We prepare general and enduring Powers of Attorney tailored to your circumstances and jurisdiction.",
+      title: "Powers of Attorney",
+      body: "Preparation of enduring powers of attorney and related documents appointing trusted people to make financial, personal or medical decisions where permitted.",
     },
     {
-      title: "Probate & Estate Administration",
-      body: "We assist executors in obtaining probate, notifying beneficiaries, collecting and valuing assets, paying debts, and distributing the estate, guiding families through a process that can feel overwhelming at an already difficult time.",
+      title: "Testamentary Trusts",
+      body: "Advice on whether a testamentary trust may be appropriate for beneficiaries who are young, vulnerable, financially inexperienced or exposed to particular family or commercial risks.",
     },
     {
-      title: "Contesting a Will",
-      body: "Family provision claims allow eligible people who were inadequately provided for in a Will to apply to the court for a greater share. We advise both claimants and estates, with sensitivity and with an eye to resolution.",
+      title: "Probate and Estate Administration",
+      body: "Assistance with probate or letters of administration, identifying and collecting estate assets, addressing liabilities and distributing the estate to beneficiaries.",
     },
     {
-      title: "Executor Advice & Support",
-      body: "Being named an executor is an honour — but also a significant legal responsibility. We guide executors through their duties, help them avoid personal liability, and manage the administration process step by step.",
-    },
-    {
-      title: "Guardianship & Administration",
-      body: "Where a person loses capacity without appropriate documents in place, guardianship and administration orders may be required. We advise families and apply to the relevant state tribunal on behalf of those who need support.",
+      title: "Estate Disputes",
+      body: "Advice for executors, beneficiaries and eligible family members in disputes involving the validity of a Will, family provision claims, executor conduct or the administration of an estate.",
     },
   ],
+
+  approachEyebrow: "Our Approach",
+  approachHeading: "Clear arrangements, carefully carried through",
+  approachBody:
+    "We begin by understanding the people, assets and responsibilities involved, then prepare documents or guide the estate process in a way that is clear and practical.",
+  approachSteps: [
+    {
+      number: "01",
+      title: "Understand",
+      body: "We discuss your family circumstances, assets, responsibilities and priorities, including any issues that may require particular attention.",
+    },
+    {
+      number: "02",
+      title: "Plan",
+      body: "We identify which documents and arrangements may be appropriate and explain how assets are likely to pass under each option.",
+    },
+    {
+      number: "03",
+      title: "Document",
+      body: "We prepare clear, legally effective documents and confirm that they reflect your instructions before arranging execution.",
+    },
+    {
+      number: "04",
+      title: "Implement",
+      body: "Where an estate is being administered, we guide the executor or administrator through the required applications, notices, asset collection and distribution.",
+    },
+  ],
+
+  riskItemsEyebrow: "Planning Considerations",
+  riskItemsHeading: "A Will is only one part of the picture",
+  riskItemsIntro:
+    "Not every asset passes under a Will, and the most appropriate arrangements depend on the client's family, ownership structures and future responsibilities.",
+  riskItems: [
+    {
+      title: "Family circumstances",
+      body: "Marriage, separation, children, blended families, dependants and vulnerable beneficiaries may all affect how an estate plan should be structured.",
+    },
+    {
+      title: "Asset ownership",
+      body: "Jointly owned property, company interests, trusts and superannuation may pass under different legal arrangements and may not be controlled by the Will alone.",
+    },
+    {
+      title: "Decision-making during life",
+      body: "Powers of attorney and related personal or medical decision-making documents determine who may act if a person becomes unable to manage their own affairs.",
+    },
+    {
+      title: "Risk of dispute",
+      body: "Clear drafting, appropriate evidence and careful consideration of competing family interests may reduce uncertainty and assist if the estate is later challenged.",
+    },
+  ],
+
+  highlightEyebrow: "After a Death",
+  highlightHeading: "Legal guidance through an unfamiliar process",
+  highlightBody:
+    "Executors and administrators may need to locate the Will, identify assets and liabilities, apply for a grant, deal with institutions, respond to beneficiary enquiries and distribute the estate. We provide practical guidance through those responsibilities while helping the estate address any legal issues that arise.",
+  highlightVariant: "wills",
+
+  complexMattersEyebrow: "Additional Estate Matters",
+  complexMattersHeading: "Advice where the circumstances require more",
+  complexMatters: [
+    "Letters of administration where there is no Will",
+    "Informal or disputed Wills",
+    "Executor duties and potential liability",
+    "Removal or replacement of an executor",
+    "Family provision claims",
+    "Challenges to testamentary capacity or undue influence",
+    "Guardianship and administration applications",
+    "Missing beneficiaries or executors",
+    "Estate debts and creditor claims",
+    "Superannuation death benefit disputes",
+    "Jointly owned and trust-held assets",
+    "Cross-border assets and beneficiaries",
+  ],
+
+  expertsSectionEyebrow: "Your Wills and Estates Team",
+  expertsSectionHeading: "Put clear arrangements in place",
+  expertsSectionLede:
+    "Whether you are preparing your own estate plan, acting as an executor or concerned about the administration of an estate, speak with us about the documents, responsibilities and next steps involved.",
+  expertsCta: "Book a consultation",
 
   processHeading: "",
+  faqEyebrow: "",
+  faqHeading: "",
+  faqIntro: "",
+  faqs: [],
 
-  extra: {
-    variant: "stages",
-    eyebrow: "Estate Planning Through Life",
-    heading: "The right plan for every stage of life",
-    intro:
-      "Your estate planning needs change as your life does. Here is what we typically recommend at each stage.",
-    stages: [
-      {
-        marker: "20s",
-        kicker: "Young Adults — Build the Foundation",
-        title: "Build the Foundation",
-        body: "Most young adults have no estate plan. But if something happened to you, who would receive your assets? Who would speak for you if you lost capacity?",
-      },
-      {
-        marker: "30s",
-        kicker: "Growing Families — Protect What Matters",
-        title: "Protect What Matters",
-        body: "Marriage, children, property, and growing assets mean your estate plan needs updating. Who looks after your children if both parents are gone? Who manages assets for minor children?",
-      },
-      {
-        marker: "50s",
-        kicker: "Peak Wealth — Plan for Complexity",
-        title: "Plan for Complexity",
-        body: "Business interests, investment properties, blended families, and significant superannuation balances require a more sophisticated estate plan to minimise tax and avoid disputes.",
-      },
-      {
-        marker: "70s",
-        kicker: "Later Life — Protect & Preserve",
-        title: "Protect & Preserve",
-        body: "Planning for incapacity, aged care costs, and ensuring your wishes are honoured in full. Getting all documents in order while you have capacity to do so.",
-      },
-    ],
-  },
-
-  faqEyebrow: "Common Questions",
-  faqHeading: "Questions we hear often",
-  faqIntro:
-    "Estate planning raises questions that many people feel uncomfortable asking. There are no foolish questions here — only ones worth asking sooner rather than later.",
-  faqs: [
-    {
-      q: "What makes a Will legally valid in Australia?",
-      a: "For a Will to be legally valid in Australia, the person making it (the testator) must be 18 years or older (with limited exceptions), must be of sound mind and understand the nature and effect of the Will, and the Will must be in writing, signed by the testator in the presence of two independent witnesses who are also present at the same time and who both sign the Will in the testator's presence. Beneficiaries and their spouses should not act as witnesses, as this can invalidate gifts to them. The rules vary slightly between states, but these are the core requirements across Australia. A Will that does not meet these requirements may be invalid, which is why professional drafting is strongly recommended.",
-    },
-    {
-      q: "Does getting married or divorced affect my Will?",
-      a: "Yes — significantly. In most Australian states, marriage automatically revokes any existing Will, meaning you will have no valid Will after getting married unless you make a new one or your existing Will was made in contemplation of that specific marriage. Divorce, on the other hand, does not revoke the whole Will — but it typically revokes any gifts to the former spouse and removes them as executor. This means a divorced person's Will may pass assets in unintended ways. These rules vary between states, so we strongly recommend reviewing your Will after any major relationship change.",
-    },
-    {
-      q: "What is a testamentary trust and do I need one?",
-      a: "A testamentary trust is a trust established by your Will that comes into existence upon your death. Unlike a direct inheritance, assets held in a testamentary trust are managed by a trustee for the benefit of beneficiaries — which can provide significant advantages. These include: tax benefits for beneficiaries with high income, as income distributed to minor children from a testamentary trust can be taxed at adult marginal rates (rather than the penalty rate that normally applies); protection from creditors if a beneficiary faces bankruptcy or legal claims; and protection from relationship breakdown if you are concerned about a beneficiary's marriage or de facto relationship. Testamentary trusts are particularly valuable for larger estates, estates with minor beneficiaries, or where there are concerns about a beneficiary's financial management.",
-    },
-    {
-      q: "What does an executor actually have to do?",
-      a: "An executor's role is substantial and can be demanding. Responsibilities include: locating the original Will; applying for a grant of probate from the Supreme Court of the relevant state; notifying government agencies (Centrelink, the ATO, banks); locating, collecting and valuing all assets; paying the deceased's debts, taxes, and funeral expenses; managing the estate during administration (which can take 6–18 months); and distributing the estate to beneficiaries in accordance with the Will. Executors are personally liable if they distribute the estate incorrectly or fail to meet their legal obligations. We offer executor support and can manage as much or as little of the process as you need — from advice through to full administration.",
-    },
-  ],
-
-  closingKicker: "Take the first step",
-  closingTitle: "It begins with {accent}a single conversation{/accent}",
-  closingBody:
-    "You do not need to have all the answers before you speak with us. Many clients come to us unsure of what they need — and leave with a clear plan and real peace of mind. There is no pressure and no obligation.",
+  closingKicker: "Ready to proceed?",
+  closingTitle: "Wills and estates {accent}consultation{/accent}",
   closingCta: "Book a consultation",
+
+  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
 };

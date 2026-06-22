@@ -48,6 +48,36 @@ function PropertySitePlan() {
   );
 }
 
+/** Formal Will document art for the wills & estates "After a Death" highlight section. */
+function WillsEstateSvg() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Outer document border */}
+      <rect x="50" y="12" width="200" height="196" stroke="currentColor" strokeWidth="1.2" />
+      {/* Inner margin rule — dashed */}
+      <rect x="63" y="25" width="174" height="170" stroke="currentColor" strokeWidth="0.38" strokeDasharray="2 5" />
+      {/* Heading lines */}
+      <line x1="92" y1="52" x2="208" y2="52" stroke="currentColor" strokeWidth="0.78" />
+      <line x1="100" y1="63" x2="200" y2="63" stroke="currentColor" strokeWidth="0.78" />
+      {/* Section divider */}
+      <line x1="75" y1="77" x2="225" y2="77" stroke="currentColor" strokeWidth="0.28" />
+      {/* Clause A lines */}
+      <line x1="75" y1="90" x2="225" y2="90" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="75" y1="100" x2="218" y2="100" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="75" y1="110" x2="225" y2="110" stroke="currentColor" strokeWidth="0.5" />
+      {/* Section divider */}
+      <line x1="75" y1="122" x2="225" y2="122" stroke="currentColor" strokeWidth="0.28" />
+      {/* Clause B lines */}
+      <line x1="75" y1="135" x2="225" y2="135" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="75" y1="145" x2="212" y2="145" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="75" y1="155" x2="225" y2="155" stroke="currentColor" strokeWidth="0.5" />
+      {/* Signature block */}
+      <line x1="75" y1="178" x2="152" y2="178" stroke="currentColor" strokeWidth="0.62" />
+      <line x1="160" y1="178" x2="225" y2="178" stroke="currentColor" strokeWidth="0.62" />
+    </svg>
+  );
+}
+
 /** Layered case-file art for the criminal law "More Than the Charge" highlight section. */
 function CriminalBriefSvg() {
   return (
@@ -670,6 +700,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               {area.highlightVariant === "titlePlan" ? <TitlePlanSvg />
                : area.highlightVariant === "commercial" ? <CommercialDocumentSvg />
                : area.highlightVariant === "criminal" ? <CriminalBriefSvg />
+               : area.highlightVariant === "wills" ? <WillsEstateSvg />
                : <PropertySitePlan />}
             </div>
           </div>
