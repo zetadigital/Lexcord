@@ -88,6 +88,44 @@ function FamilyLawSvg() {
   );
 }
 
+/** Formal notarial certificate composition for the Notary Public highlight section. */
+function NotarySvg() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Outer certificate border */}
+      <rect x="20" y="14" width="260" height="192" stroke="currentColor" strokeWidth="1.2" />
+      {/* Inner ruled margin */}
+      <rect x="30" y="24" width="240" height="172" stroke="currentColor" strokeWidth="0.35" />
+      {/* Corner accent marks */}
+      <line x1="20" y1="42" x2="30" y2="42" stroke="currentColor" strokeWidth="0.55" />
+      <line x1="270" y1="42" x2="280" y2="42" stroke="currentColor" strokeWidth="0.55" />
+      <line x1="20" y1="178" x2="30" y2="178" stroke="currentColor" strokeWidth="0.55" />
+      <line x1="270" y1="178" x2="280" y2="178" stroke="currentColor" strokeWidth="0.55" />
+      {/* Header text lines */}
+      <line x1="96" y1="44" x2="204" y2="44" stroke="currentColor" strokeWidth="0.85" />
+      <line x1="110" y1="56" x2="190" y2="56" stroke="currentColor" strokeWidth="0.85" />
+      {/* Header divider */}
+      <line x1="40" y1="70" x2="260" y2="70" stroke="currentColor" strokeWidth="0.28" />
+      {/* Body text lines — first clause */}
+      <line x1="40" y1="86" x2="260" y2="86" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="40" y1="96" x2="248" y2="96" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="40" y1="106" x2="260" y2="106" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="40" y1="116" x2="236" y2="116" stroke="currentColor" strokeWidth="0.5" />
+      {/* Section divider */}
+      <line x1="40" y1="130" x2="260" y2="130" stroke="currentColor" strokeWidth="0.28" />
+      {/* Second clause */}
+      <line x1="40" y1="142" x2="260" y2="142" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="40" y1="152" x2="244" y2="152" stroke="currentColor" strokeWidth="0.5" />
+      <line x1="40" y1="162" x2="260" y2="162" stroke="currentColor" strokeWidth="0.5" />
+      {/* Footer divider */}
+      <line x1="40" y1="176" x2="260" y2="176" stroke="currentColor" strokeWidth="0.28" />
+      {/* Signature lines */}
+      <line x1="40" y1="192" x2="130" y2="192" stroke="currentColor" strokeWidth="0.6" />
+      <line x1="148" y1="192" x2="260" y2="192" stroke="currentColor" strokeWidth="0.6" />
+    </svg>
+  );
+}
+
 /** Orthographic product-drawing art for the IP "Connected Commercial Advice" highlight section. */
 function IpTechnicalSvg() {
   return (
@@ -680,12 +718,22 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               </div>
             </div>
           ) : (
-            /* ── Empty state ── */
-            <div className={styles.teamEmpty}>
-              <p>{c.areaTeamEmpty}</p>
-              <Link href="/contact" className="btn btn--ghost-light">
-                {t.nav.book} <ArrowRight />
-              </Link>
+            /* ── Empty state: no confirmed practitioner — structured closing section ── */
+            <div className={styles.teamNoPerson}>
+              <span className="eyebrow eyebrow--light">{area.expertsSectionEyebrow ?? c.areaTeam}</span>
+              <h2 className={styles.teamNoPersonHeading}>{area.expertsSectionHeading ?? area.navLabel}</h2>
+              {area.expertsSectionLede && (
+                <p className={styles.teamNoPersonLede}>{area.expertsSectionLede}</p>
+              )}
+              {area.expertsCta ? (
+                <Link href="/contact" className={styles.teamDiscussLink}>
+                  {area.expertsCta} <ArrowRight />
+                </Link>
+              ) : (
+                <Link href="/contact" className="btn btn--ghost-light">
+                  {t.nav.book} <ArrowRight />
+                </Link>
+              )}
             </div>
           )}
         </div>
@@ -744,6 +792,37 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
       </section>
     ) : null,
 
+    notaryColumns: area.notaryColumns?.length ? (
+      <section key="notaryColumns" className={`section ${styles.notaryColumnsSection}`}>
+        <div className="container">
+          <div className="section-head">
+            {area.notaryColumnsEyebrow && (
+              <span className="eyebrow">{area.notaryColumnsEyebrow}</span>
+            )}
+            {area.notaryColumnsHeading && (
+              <h2 style={{ fontSize: "var(--text-2xl)", marginTop: "1rem", textWrap: "balance" as const }}>
+                {area.notaryColumnsHeading}
+              </h2>
+            )}
+            {area.notaryColumnsIntro && (
+              <p className={styles.notaryColumnsIntro}>{area.notaryColumnsIntro}</p>
+            )}
+          </div>
+          <div className={styles.notaryColumnsGrid}>
+            {area.notaryColumns.map((col) => (
+              <div key={col.title} className={styles.notaryColumn}>
+                <h3 className={styles.notaryColumnTitle}>{col.title}</h3>
+                <p className={styles.notaryColumnBody}>{col.body}</p>
+              </div>
+            ))}
+          </div>
+          {area.notaryColumnsNote && (
+            <p className={styles.notaryColumnsNote}>{area.notaryColumnsNote}</p>
+          )}
+        </div>
+      </section>
+    ) : null,
+
     highlight: (area.highlightHeading || area.highlightBody) ? (
       <section key="highlight" className={`section ${styles.highlight}`}>
         <div className="container">
@@ -766,6 +845,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                : area.highlightVariant === "wills" ? <WillsEstateSvg />
                : area.highlightVariant === "ip" ? <IpTechnicalSvg />
                : area.highlightVariant === "family" ? <FamilyLawSvg />
+               : area.highlightVariant === "notary" ? <NotarySvg />
                : <PropertySitePlan />}
             </div>
           </div>

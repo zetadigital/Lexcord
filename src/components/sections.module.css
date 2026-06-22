@@ -1761,3 +1761,107 @@
     padding: 1.2rem 1.4rem;
   }
 }
+
+/* ============================================================
+   Notary Public — three-column explanatory block
+   (Notarisation / Apostille / Authentication)
+   ============================================================ */
+
+.notaryColumnsSection {
+  background: var(--paper);
+}
+
+.notaryColumnsIntro {
+  margin-top: 1rem;
+  font-size: var(--text-base);
+  color: var(--ink-light);
+  max-width: 60ch;
+  line-height: 1.65;
+}
+
+.notaryColumnsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--hairline);
+  margin-top: clamp(2rem, 1.25rem + 3vw, 3.5rem);
+}
+
+.notaryColumn {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem) clamp(1.25rem, 0.75rem + 1.5vw, 2rem);
+  border-right: 1px solid var(--hairline);
+}
+
+.notaryColumn:last-child {
+  border-right: none;
+}
+
+.notaryColumnTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.notaryColumnBody {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--ink-light);
+}
+
+.notaryColumnsNote {
+  margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  padding-top: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+  border-top: 1px solid var(--hairline);
+  font-size: var(--text-sm);
+  color: var(--ink-light);
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .notaryColumnsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .notaryColumn {
+    border-right: none;
+    border-bottom: 1px solid var(--hairline);
+    padding-top: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+    padding-bottom: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .notaryColumn:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ============================================================
+   Experts block — empty / no confirmed practitioner state
+   ============================================================ */
+
+.teamNoPerson {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 56ch;
+}
+
+.teamNoPersonHeading {
+  color: #fff;
+  font-size: clamp(var(--text-xl), 1.25rem + 1.5vw, var(--text-2xl));
+  margin-top: 1rem;
+  text-wrap: balance;
+}
+
+.teamNoPersonLede {
+  margin-top: 1.1rem;
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+  max-width: 52ch;
+  text-wrap: pretty;
+}

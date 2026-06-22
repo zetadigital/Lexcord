@@ -97,10 +97,17 @@ export type PracticeBlock =
   | "artJr"
   | "riskItems"
   | "highlight"
-  | "complexMatters";
+  | "complexMatters"
+  | "notaryColumns";
 
 /** A concise risk / key-consideration item (used in the riskItems block). */
 export interface RiskItem {
+  title: string;
+  body: string;
+}
+
+/** One column in the notarisation / apostille / authentication explanatory block. */
+export interface NotaryColumnItem {
   title: string;
   body: string;
 }
@@ -210,6 +217,13 @@ export interface PracticeArea {
   complexMattersEyebrow?: string;
   complexMattersHeading?: string;
   complexMatters?: string[];
+
+  /** Notarisation / Apostille / Authentication three-column explanatory block. */
+  notaryColumnsEyebrow?: string;
+  notaryColumnsHeading?: string;
+  notaryColumnsIntro?: string;
+  notaryColumns?: NotaryColumnItem[];
+  notaryColumnsNote?: string;
 
   /** Specific placeholder article titles for the Related Insights news block. */
   newsPlaceholders?: string[];

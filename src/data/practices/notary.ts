@@ -3,70 +3,160 @@ import type { PracticeArea } from "../types";
 export const notary: PracticeArea = {
   slug: "notary-public",
   navLabel: "Notary Public",
-  heroEyebrow: "Notary Public",
-  heroTitle: "Notarial services for {accent}documents used overseas{/accent}",
+  heroEyebrow: "Expertise",
+  heroTitle: "Notary Public",
   heroLede:
-    "When Australian documents are intended for use in a foreign country, they often require certification by a Notary Public. Our qualified Notary Public is available by appointment.",
+    "Notarial certification, witnessing and authentication of Australian documents intended for use overseas, available by appointment in Melbourne.",
 
-  servicesEyebrow: "What We Certify",
-  servicesHeading: "Notarial services we provide",
+  seoTitle: "Notary Public Melbourne | Document Certification for Overseas Use | Lexcord",
+  seoDescription:
+    "Lexcord provides notarial certification, witnessing and authentication of Australian documents for use overseas. Available by appointment in Melbourne.",
+
+  servicesEyebrow: "Notarial Services",
+  servicesHeading: "Documents prepared for use overseas",
   servicesIntro:
-    "A Notary Public can authenticate, certify, and witness a wide range of documents for international use. The following covers the most common services we are engaged to provide.",
+    "Requirements vary depending on the document, receiving country and overseas authority. We assist with common forms of notarisation and help identify whether further authentication may be required.",
+  practiceCardDot: true,
   services: [
     {
-      title: "Certification of Documents",
-      body: "Certifying that a copy of an original document is a true and accurate copy. Commonly required for passports, birth certificates, academic qualifications, company records, and licences for use abroad.",
+      title: "Certified Copies",
+      body: "Certification of copies of passports, identity documents, certificates, qualifications, licences, company records and other original documents for use overseas.",
     },
     {
-      title: "Authentication of Signatures",
-      body: "Witnessing and certifying the execution of documents, including powers of attorney, statutory declarations, deeds, and contracts, where a foreign authority requires notarial verification of the signatory's identity.",
+      title: "Witnessing Signatures",
+      body: "Witnessing and certifying the signing of powers of attorney, declarations, deeds, agreements and other documents where notarial verification is required.",
     },
     {
-      title: "Legal Documents for Foreign Use",
-      body: "Notarisation of legal instruments — including affidavits, agreements, and court documents required by foreign courts, tribunals, or government authorities in connection with legal proceedings or regulatory matters overseas.",
+      title: "Personal Documents",
+      body: "Notarisation of documents relating to overseas property, marriage, study, employment, immigration, succession and other personal matters.",
     },
     {
-      title: "Corporate & Commercial Documents",
-      body: "Notarisation of corporate documents for overseas use, including company constitutions, resolutions, powers of attorney granted by companies, and documents required for foreign business registration or transactions.",
+      title: "Corporate Documents",
+      body: "Notarisation of company extracts, constitutions, resolutions, authorisations, corporate powers of attorney and documents required for overseas transactions or registrations.",
     },
     {
-      title: "Apostille & DFAT Authentication",
-      body: "For documents destined for countries party to the Hague Apostille Convention, an apostille issued by the Department of Foreign Affairs and Trade (DFAT) may be required following notarisation. We advise on and assist with this process.",
+      title: "Legal and Court Documents",
+      body: "Notarisation of affidavits, declarations, agreements, authorities and documents required by overseas courts, regulators or government bodies.",
     },
     {
-      title: "Personal & Identity Documents",
-      body: "Certification of personal documents for immigration, overseas property purchase, marriage, study, or employment abroad, including statutory declarations, identity documents, and personal powers of attorney.",
+      title: "Apostille and Authentication",
+      body: "Guidance on the next steps where a notarised or original Australian document must also be submitted to DFAT for an apostille or authentication.",
     },
   ],
+
+  approachEyebrow: "The Appointment Process",
+  approachHeading: "Know what is required before you attend",
+  approachBody:
+    "Providing the document and destination details in advance helps us confirm the likely notarial requirements and what must be brought to the appointment.",
+  approachSteps: [
+    {
+      number: "01",
+      title: "Send the Details",
+      body: "Provide a copy of the document, identify the country where it will be used and tell us what the receiving authority has requested.",
+    },
+    {
+      number: "02",
+      title: "Confirm Requirements",
+      body: "We review the information provided and confirm the likely notarial service, identification requirements and whether any further steps may be needed.",
+    },
+    {
+      number: "03",
+      title: "Attend the Appointment",
+      body: "Bring the original documents and acceptable identification. Where a signature must be witnessed, do not sign the document beforehand unless instructed.",
+    },
+    {
+      number: "04",
+      title: "Complete the Next Step",
+      body: "After notarisation, the document may be ready for use or may need an apostille, DFAT authentication, consular legalisation or another destination-specific step.",
+    },
+  ],
+
+  riskItemsEyebrow: "Before Your Appointment",
+  riskItemsHeading: "Bring the originals and confirm the destination",
+  riskItemsIntro:
+    "A Notary Public must be able to verify the relevant document, identity and authority. Missing originals or unclear overseas requirements may mean the service cannot be completed at the first appointment.",
+  riskItems: [
+    {
+      title: "Original documents",
+      body: "Bring the original document to be certified or signed. A scan or ordinary photocopy may not be sufficient for the notarial act required.",
+    },
+    {
+      title: "Identification",
+      body: "Bring current government-issued photographic identification, ordinarily including your passport or driver licence. Additional identification may be required depending on the document.",
+    },
+    {
+      title: "Overseas instructions",
+      body: "Provide any written instructions from the receiving authority, overseas lawyer, bank, registry or government agency.",
+    },
+    {
+      title: "Signing authority",
+      body: "If signing for a company, trust, estate or another person, bring the documents showing your authority to sign in that capacity.",
+    },
+  ],
+
+  notaryColumnsEyebrow: "Understanding the Process",
+  notaryColumnsHeading: "Notarisation is not always the final step",
+  notaryColumnsIntro:
+    "The required process depends on the type of document and the country or authority receiving it.",
+  notaryColumns: [
+    {
+      title: "Notarisation",
+      body: "A Notary Public verifies or certifies a document, signature, identity or authority for use outside Australia.",
+    },
+    {
+      title: "Apostille",
+      body: "For use in certain countries participating in the Hague Apostille Convention, DFAT may issue an apostille confirming the authenticity of the Australian public signature or seal on the document.",
+    },
+    {
+      title: "Authentication",
+      body: "For some other destinations, DFAT authentication may be required, sometimes followed by legalisation through the relevant embassy or consulate.",
+    },
+  ],
+  notaryColumnsNote:
+    "The receiving authority should confirm the exact form of certification, apostille, authentication or legalisation it requires. Requirements can differ between countries and institutions.",
+
+  complexMattersEyebrow: "Common Documents",
+  complexMattersHeading: "Personal, legal and commercial documents",
+  complexMatters: [
+    "Passports and identity documents",
+    "Birth, death and marriage certificates",
+    "Academic certificates and transcripts",
+    "Professional licences and registrations",
+    "Powers of attorney",
+    "Affidavits and declarations",
+    "Overseas property documents",
+    "Consent and authority forms",
+    "Company constitutions and extracts",
+    "Board and shareholder resolutions",
+    "Corporate powers of attorney",
+    "Contracts and transaction documents",
+    "Court and regulatory documents",
+    "Documents relating to estates and succession",
+    "Certified translations and bilingual documents",
+    "Documents for overseas study or employment",
+  ],
+
+  highlightEyebrow: "Your Documents",
+  highlightHeading: "Foreign-language documents and attendance",
+  highlightBody:
+    "Documents in another language may require a translation or additional review before they can be notarised. Please provide the document and any translation in advance so that we can confirm whether an appropriately qualified translator or bilingual notarial certificate may be required.\n\nPersonal attendance is commonly required where the Notary Public must verify identity, witness a signature or confirm capacity and authority. We will advise whether attendance is required after reviewing the document. Notarial services are available by appointment; timing and fees depend on the number and type of documents and whether additional certificates or steps are required.",
+  highlightVariant: "notary",
+
+  expertsSectionEyebrow: "Arrange a Notarial Appointment",
+  expertsSectionHeading: "Send the document before you attend",
+  expertsSectionLede:
+    "Tell us what the document is, where it will be used and what the receiving authority has requested. We will review the information and confirm the appointment requirements. Appointments are arranged with Lexcord's qualified Notary Public.",
+  expertsCta: "Book an appointment",
 
   processHeading: "",
+  faqEyebrow: "",
+  faqHeading: "",
+  faqIntro: "",
+  faqs: [],
 
-  faqEyebrow: "Common Questions",
-  faqHeading: "Questions we hear often",
-  faqIntro:
-    "Notarial services are straightforward once you know what is required. These are the questions we are most frequently asked.",
-  faqs: [
-    {
-      q: "What is the difference between a Notary Public and a Justice of the Peace?",
-      a: "A Notary Public is a qualified lawyer who holds a specific commission to authenticate documents for international use — their certification is recognised by foreign governments, courts, and institutions worldwide. A Justice of the Peace (JP) can witness certain documents for use within Australia, but their certification is generally not accepted by foreign authorities. If your document is destined for use overseas, a Notary Public is almost always required.",
-    },
-    {
-      q: "Do I need a Notary Public or an Apostille — or both?",
-      a: "This depends on the country the document is destined for. For countries that are party to the Hague Apostille Convention, notarisation by a Notary Public is usually followed by an apostille — a certificate issued by DFAT that authenticates the notary's signature for international acceptance. For countries that are not party to the Convention, additional legalisation steps through the relevant embassy or consulate may be required. We advise on the specific requirements for your destination country when you contact us.",
-    },
-    {
-      q: "Can documents be notarised remotely or electronically?",
-      a: "In most cases, notarisation requires the physical presence of the signatory before the Notary Public — this is a fundamental requirement of the notarial process, as the Notary must verify your identity in person and witness your signature directly. Remote or electronic notarisation is not widely accepted by foreign authorities for international documents. Please contact us if you have specific circumstances that make attendance difficult and we will advise on your options.",
-    },
-    {
-      q: "How long does notarisation take?",
-      a: "For standard documents, the notarisation itself is typically completed within the appointment — which usually takes 15 to 30 minutes depending on the number and complexity of documents. If an apostille from DFAT is also required, that is a separate process managed through the Department of Foreign Affairs and Trade, with its own processing timeframe. We recommend contacting us in advance if you have a deadline, so we can advise on timing and, where possible, accommodate urgent requests.",
-    },
-  ],
+  closingKicker: "Arrange an appointment",
+  closingTitle: "Notary Public",
+  closingCta: "Book an appointment",
 
-  closingKicker: "Book an appointment",
-  closingTitle: "Ready to have your {accent}documents notarised?{/accent}",
-  closingBody:
-    "Contact us to arrange an appointment with our Notary Public. Please describe the documents you need certified and the country they are intended for, and we will confirm requirements and schedule a time.",
-  closingCta: "Book a consultation",
+  layout: ["practice", "approach", "riskItems", "notaryColumns", "complexMatters", "highlight", "experts"],
 };
