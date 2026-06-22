@@ -373,11 +373,12 @@ const BANNER_PHOTOS: Partial<Record<string, string>> = {
 interface PracticeSectionsProps {
   area: PracticeArea;
   areaZh: PracticeArea;
+  areaZhTw?: PracticeArea;
 }
 
-export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps) {
+export function PracticeSections({ area: areaEn, areaZh, areaZhTw }: PracticeSectionsProps) {
   const { lang, t } = useLang();
-  const area = lang === "zh" ? areaZh : areaEn;
+  const area = lang === "zh-tw" ? (areaZhTw ?? areaEn) : lang === "zh" ? areaZh : areaEn;
   const c = t.common;
 
   // Solicitors who work across this practice area.
@@ -645,7 +646,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
               {/* Right: featured lawyer card */}
               {(() => {
                 const m = areaTeam[0]!;
-                const specialtyLabel = lang === "zh" ? (m.specialtyZh ?? m.specialty) : m.specialty;
+                const specialtyLabel = lang !== "en" ? (m.specialtyZh ?? m.specialty) : m.specialty;
                 return (
                   <Link href={`/people/${m.slug}`} className={styles.teamFeatCard}>
                     <div className={styles.teamFeatPhotoWrap}>
@@ -660,7 +661,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                     <div className={styles.teamFeatInfo}>
                       <h3 className={styles.teamFeatName}>{m.name}</h3>
                       <span className={styles.teamFeatRole}>
-                        {lang === "zh" ? m.roleZh : m.role}
+                        {lang !== "en" ? m.roleZh : m.role}
                       </span>
                       {specialtyLabel && (
                         <span className={styles.teamFeatAreas}>{specialtyLabel}</span>
@@ -707,7 +708,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                     <div className={styles.teamFeatInfo}>
                       <h3 className={styles.teamFeatName}>{m.name}</h3>
                       <span className={styles.teamFeatRole}>
-                        {lang === "zh" ? m.roleZh : m.role}
+                        {lang !== "en" ? m.roleZh : m.role}
                       </span>
                       <span className={styles.teamFeatViewProfile}>
                         {c.viewProfile} <ArrowRight />

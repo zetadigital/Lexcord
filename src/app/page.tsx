@@ -104,6 +104,48 @@ const LOWER = {
       emailLabel: "电子邮件",
     },
   },
+  "zh-tw": {
+    firm: {
+      eyebrow: "關於律所",
+      headingLine1: "考慮事務整體的",
+      headingLine2: "法律建議",
+      body: "法律問題很少孤立存在。Lexcord 匯集了各相互關聯法律領域的經驗，根據客戶的整體情況與實際目標提供法律建議。",
+      link: "了解 Lexcord",
+    },
+    why: {
+      eyebrow: "為何選擇 Lexcord",
+      headingLine1: "清晰的責任。",
+      headingLine2: "務實的方向。",
+      items: [
+        {
+          num: "01",
+          heading: "個人責任",
+          body: "負責該事務的律師始終密切參與建議、溝通及後續步驟。",
+        },
+        {
+          num: "02",
+          heading: "關聯建議",
+          body: "當不同法律領域相互交叉時，相關問題將被統籌考慮。",
+        },
+        {
+          num: "03",
+          heading: "清晰的下一步",
+          body: "客戶了解已識別的內容、需要作出何種決策以及接下來將發生什麼。",
+        },
+      ],
+    },
+    speak: {
+      eyebrow: "與 Lexcord 交談",
+      headingLine1: "從事務目前的",
+      headingLine2: "狀況開始",
+      body: "告訴我們發生了什麼、您希望實現什麼，以及是否已有截止日期、交易或法庭日期。",
+      cta: "預約諮詢",
+      link: "探索我們的專業領域",
+      officeLabel: "墨爾本辦公室",
+      phoneLabel: "電話",
+      emailLabel: "電子郵件",
+    },
+  },
 } as const;
 
 function ArrowRight() {
@@ -154,7 +196,7 @@ function ServiceIcon({ slug }: { slug: string }) {
 export default function HomePage() {
   const { t, areaLabel, lang } = useLang();
   const h = t.pages.home;
-  const effectiveLang: "en" | "zh" = lang === "en" ? "en" : "zh";
+  const effectiveLang: "en" | "zh" | "zh-tw" = lang === "zh-tw" ? "zh-tw" : lang === "zh" ? "zh" : "en";
   const c = LOWER[effectiveLang];
 
   return (

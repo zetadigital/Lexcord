@@ -50,6 +50,10 @@ export function getPracticeZh(slug: string): PracticeArea | undefined {
   return zhBySlug.get(slug);
 }
 
+export function getPracticeZhTw(slug: string): PracticeArea | undefined {
+  return zhTwBySlug.get(slug);
+}
+
 /** Return the practice area for a slug in the requested language (falls back to English). */
 export function localizedPractice(
   enArea: PracticeArea,

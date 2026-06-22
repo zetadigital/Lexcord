@@ -17,11 +17,17 @@ const COPY = {
     body: "我们正在整理各执业领域的法律资讯与资源，敬请期待。",
     cta: "返回首页",
   },
+  "zh-tw": {
+    eyebrow: "資源中心",
+    heading: "即將上線",
+    body: "我們正在整理各執業領域的法律資訊與資源，敬請期待。",
+    cta: "返回首頁",
+  },
 } as const;
 
 export function ResourcesContent() {
   const { lang } = useLang();
-  const c = COPY[lang === "en" ? "en" : "zh"];
+  const c = COPY[lang === "zh-tw" ? "zh-tw" : lang === "zh" ? "zh" : "en"];
 
   return (
     <main>
