@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useLang } from "@/lib/i18n";
 import { Reveal } from "@/components/reveal";
 import { team } from "@/data/people";
-import { practiceAreas } from "@/data/practices";
 import styles from "./about.module.css";
 
 function ArrowRight() {
@@ -41,12 +40,6 @@ const CONTENT = {
         "What remains consistent is the way the work is approached: the solicitor responsible for the matter understands the background, explains the available options and remains accountable for moving the work forward.",
         "We do not treat legal work as a sequence of disconnected tasks. Where different areas of law intersect, our team works together so that the advice reflects the matter as a whole.",
       ],
-    },
-    practice: {
-      eyebrow: "Our Practice",
-      heading: "Legal advice across matters that shape individuals, families and businesses",
-      body: "Our work spans transactions, advisory matters, applications, court proceedings and disputes. The breadth of the practice allows us to recognise issues that may not sit neatly within one legal category.",
-      link: "Explore our expertise",
     },
     people: {
       eyebrow: "Our People",
@@ -87,12 +80,6 @@ const CONTENT = {
         "始终保持一致的是处理工作的方式：负责该事务的律师了解背景、解释可用选项，并对推动工作进展负责。",
         "我们不将法律工作视为一系列互不相关的任务。当不同法律领域相互交叉时，我们的团队协同工作，确保建议能够反映事务的整体情况。",
       ],
-    },
-    practice: {
-      eyebrow: "我们的执业领域",
-      heading: "为影响个人、家庭及企业的事务提供法律建议",
-      body: "我们的工作涵盖交易、咨询事务、申请、法庭诉讼及纠纷。执业领域的广度使我们能够识别可能不属于单一法律类别的问题。",
-      link: "探索我们的专业领域",
     },
     people: {
       eyebrow: "我们的团队",
@@ -246,7 +233,7 @@ const GUIDES = {
 const FEATURED_SLUGS = ["katherine-ho", "elijah-feng", "justin-ho", "chang-qi"];
 
 export function AboutContent() {
-  const { lang, areaLabel } = useLang();
+  const { lang } = useLang();
   const effectiveLang: "en" | "zh" = lang === "en" ? "en" : "zh";
   const c = CONTENT[effectiveLang];
   const g = GUIDES[effectiveLang];
@@ -371,41 +358,7 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* 5. OUR PRACTICE */}
-      <section className={`section ${styles.practiceSection}`}>
-        <div className={`container ${styles.practiceInner}`}>
-          <div className={styles.practiceLeft}>
-            <Reveal>
-              <span className="eyebrow">{c.practice.eyebrow}</span>
-              <h2 className={styles.practiceHeading}>{c.practice.heading}</h2>
-              <p className={styles.practiceBody}>{c.practice.body}</p>
-              <Link href="/expertise" className={styles.practiceLink}>
-                {c.practice.link} <ArrowRight />
-              </Link>
-            </Reveal>
-          </div>
-          <Reveal>
-            <nav className={styles.practiceRight} aria-label={c.practice.eyebrow}>
-              {practiceAreas.map((area) => (
-                <Link
-                  key={area.slug}
-                  href={`/expertise/${area.slug}`}
-                  className={styles.areaRow}
-                >
-                  <span>
-                    {effectiveLang === "zh"
-                      ? areaLabel(area.slug, area.navLabel)
-                      : area.navLabel}
-                  </span>
-                  <span aria-hidden="true">→</span>
-                </Link>
-              ))}
-            </nav>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 6. OUR PEOPLE */}
+      {/* 5. OUR PEOPLE */}
       <section className={`section ${styles.peopleSection}`}>
         <div className="container">
           <Reveal>
