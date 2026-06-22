@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { AboutContent } from "./about-content";
 
 export const metadata: Metadata = {
-  title: "About Lexcord",
+  title: "About Lexcord | Melbourne Law Firm",
   description:
-    "Lexcord is an Australian law firm offering clear, considered counsel across property, commercial, estates, intellectual property, criminal, notarial, and migration law.",
+    "Lexcord is a Melbourne-based law firm advising individuals, families and businesses across property, commercial, migration, family law, disputes and personal legal matters.",
 };
 
 export default function AboutPage() {
