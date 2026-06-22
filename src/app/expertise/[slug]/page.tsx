@@ -15,9 +15,23 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const area = getPractice(params.slug);
   if (!area) return {};
+  const title = area.seoTitle ?? area.navLabel;
+  const description = area.seoDescription ?? practiceSummaries[area.slug];
+  const url = `https://lexcord.com.au/expertise/${params.slug}`;
   return {
-    title: area.seoTitle ?? area.navLabel,
-    description: area.seoDescription ?? practiceSummaries[area.slug],
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      locale: "en_AU",
+      url,
+      title: `${title} — Lexcord Lawyers`,
+      description,
+      siteName: "Lexcord Lawyers",
+      images: [{ url: "https://lexcord.com.au/images/office/office-1.jpg", width: 1200, height: 800, alt: title }],
+    },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 

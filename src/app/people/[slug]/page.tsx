@@ -10,9 +10,26 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const member = getMember(params.slug);
   if (!member || member.placeholder) return { title: "Our People" };
+  const title = `${member.name} — ${member.role}`;
+  const description = member.bio[0];
+  const url = `https://lexcord.com.au/people/${params.slug}`;
+  const image = member.photo
+    ? `https://lexcord.com.au${member.photo}`
+    : "https://lexcord.com.au/images/office/office-1.jpg";
   return {
-    title: `${member.name} — ${member.role}`,
-    description: member.bio[0],
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "profile",
+      locale: "en_AU",
+      url,
+      title: `${title} — Lexcord Lawyers`,
+      description,
+      siteName: "Lexcord Lawyers",
+      images: [{ url: image, width: 800, height: 800, alt: member.name }],
+    },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
