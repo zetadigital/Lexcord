@@ -19,14 +19,6 @@ function initials(name: string) {
   return name.split(/\s+/).slice(0, 2).map((p) => p[0] ?? "").join("").toUpperCase();
 }
 
-function PhotoPlaceholder({ label, className }: { label: string; className?: string }) {
-  return (
-    <div className={`${styles.photo}${className ? ` ${className}` : ""}`} aria-hidden="true">
-      <span className={styles.photoLabel}>{label}</span>
-    </div>
-  );
-}
-
 const CONTENT = {
   en: {
     hero: {
@@ -55,12 +47,6 @@ const CONTENT = {
         { title: "Work across boundaries", body: "Where a matter involves more than one area of law, we coordinate the relevant experience within the firm and, where appropriate, with external professionals." },
       ],
     },
-    practice: {
-      eyebrow: "Our Practice",
-      heading: "Advice across the matters that shape businesses, individuals and families",
-      body: "Our work spans transactions, advisory matters, applications, court proceedings and disputes. The breadth of the practice allows us to recognise issues that may not sit neatly within one legal category.",
-      link: "Explore our expertise",
-    },
     people: {
       eyebrow: "Our People",
       heading: "The people responsible for your matter",
@@ -75,26 +61,6 @@ const CONTENT = {
         "Lexcord is based in central Melbourne and acts for clients whose personal, business and family arrangements often extend beyond Australia.",
         "Where a matter involves another jurisdiction, we identify the Australian legal issues and, where required, work with appropriately qualified lawyers and professionals overseas. The scope of each firm's role is kept clear so that the client understands who is responsible for each part of the matter.",
         "Our team's multilingual and international backgrounds also assist us in understanding the commercial, cultural and practical context in which cross-border matters arise.",
-      ],
-    },
-    standards: {
-      eyebrow: "Our Standards",
-      heading: "The way the work is done matters",
-      items: [
-        { title: "Professional responsibility", body: "We approach conflicts, confidentiality, costs and professional obligations with care and transparency." },
-        { title: "Clear communication", body: "Clients should understand what is being done, why it is being done and what decision or action is required from them." },
-        { title: "A sustainable practice", body: "Good legal work depends on people who can exercise sound judgment. We aim to maintain a professional environment in which our team can work carefully, responsibly and over the long term." },
-      ],
-    },
-    glance: {
-      eyebrow: "Lexcord at a Glance",
-      items: [
-        "Melbourne CBD office",
-        "Nine practice areas",
-        "Individuals, families and businesses",
-        "Multilingual and cross-border capability",
-        "Solicitor-led matters",
-        "In-person and virtual appointments",
       ],
     },
     closing: {
@@ -132,12 +98,6 @@ const CONTENT = {
         { title: "跨领域协作", body: "当事务涉及多个法律领域时，我们协调律所内的相关经验，并在适当情况下与外部专业人士合作。" },
       ],
     },
-    practice: {
-      eyebrow: "我们的执业领域",
-      heading: "为影响企业、个人与家庭的事务提供建议",
-      body: "我们的工作涵盖交易、咨询事务、申请、法庭诉讼及纠纷。执业领域的广度使我们能够识别可能不属于单一法律类别的问题。",
-      link: "探索我们的专业领域",
-    },
     people: {
       eyebrow: "我们的团队",
       heading: "负责您事务的人",
@@ -154,26 +114,6 @@ const CONTENT = {
         "我们团队的多语言和国际背景也有助于我们理解跨境事务发生的商业、文化和实际背景。",
       ],
     },
-    standards: {
-      eyebrow: "我们的标准",
-      heading: "工作的方式同样重要",
-      items: [
-        { title: "专业责任", body: "我们以关怀和透明的态度处理利益冲突、保密、费用及专业义务。" },
-        { title: "清晰沟通", body: "客户应了解正在做什么、为什么要做，以及需要他们作出什么决定或采取什么行动。" },
-        { title: "可持续的执业", body: "良好的法律工作取决于能够做出正确判断的人。我们致力于维护一个专业环境，使团队能够在其中认真、负责且长期地工作。" },
-      ],
-    },
-    glance: {
-      eyebrow: "律所概览",
-      items: [
-        "墨尔本 CBD 办公室",
-        "九个执业领域",
-        "为个人、家庭及企业提供建议",
-        "多语言及跨境服务能力",
-        "律师主导的事务",
-        "面对面及视频预约",
-      ],
-    },
     closing: {
       eyebrow: "与 Lexcord 交谈",
       heading: "从事务目前的状况开始",
@@ -183,18 +123,6 @@ const CONTENT = {
     },
   },
 } as const;
-
-const PRACTICE_AREAS = [
-  { label: "Property Law", labelZh: "房产法", slug: "property-law" },
-  { label: "Conveyancing", labelZh: "房产过户", slug: "conveyancing" },
-  { label: "Commercial", labelZh: "商业法", slug: "commercial" },
-  { label: "Family Law", labelZh: "家庭法", slug: "family-law" },
-  { label: "Wills & Estates", labelZh: "遗嘱与遗产", slug: "wills-estates" },
-  { label: "Intellectual Property", labelZh: "知识产权", slug: "intellectual-property" },
-  { label: "Criminal Law", labelZh: "刑事法", slug: "criminal-law" },
-  { label: "Notary Public", labelZh: "公证人服务", slug: "notary-public" },
-  { label: "Migration Law", labelZh: "移民法", slug: "migration-law" },
-];
 
 const FEATURED_SLUGS = ["katherine-ho", "elijah-feng", "justin-ho", "chang-qi"];
 
@@ -214,7 +142,16 @@ export function AboutContent() {
           <p className={styles.heroLede}>{c.hero.lede}</p>
           <p className={styles.heroLede2}>{c.hero.lede2}</p>
         </div>
-        <PhotoPlaceholder label="OFFICE HERO — wide landscape" className={styles.heroPhoto} />
+        <div className={styles.heroPhoto}>
+          <Image
+            src="/images/office/office-1.jpg"
+            alt="Lexcord Lawyers Melbourne office"
+            fill
+            priority
+            sizes="(max-width: 860px) 100vw, 55vw"
+            style={{ objectFit: "cover", objectPosition: "center top" }}
+          />
+        </div>
       </section>
 
       {/* 2. THE FIRM */}
@@ -236,9 +173,17 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* 3. PHOTO BREAK — full-width office photo */}
+      {/* 3. PHOTO BREAK */}
       <div className={styles.photoBreak}>
-        <PhotoPlaceholder label="OFFICE INTERIOR — wide landscape (21:8 ratio)" className={styles.photoBreakInner} />
+        <div className={styles.photoBreakInner}>
+          <Image
+            src="/images/office/office-3.jpg"
+            alt="Lexcord Lawyers Melbourne office interior"
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "center 35%" }}
+          />
+        </div>
       </div>
 
       {/* 4. HOW WE WORK */}
@@ -264,33 +209,7 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* 5. OUR PRACTICE */}
-      <section className={`section ${styles.practiceSection}`}>
-        <div className={`container ${styles.practiceInner}`}>
-          <div className={styles.practiceLeft}>
-            <Reveal>
-              <span className="eyebrow">{c.practice.eyebrow}</span>
-              <h2 className={styles.practiceHeading}>{c.practice.heading}</h2>
-              <p className={styles.practiceBody}>{c.practice.body}</p>
-              <Link href="/expertise" className={styles.practiceLink}>
-                {c.practice.link} <ArrowRight />
-              </Link>
-            </Reveal>
-          </div>
-          <nav className={styles.practiceRight} aria-label={c.practice.eyebrow}>
-            {PRACTICE_AREAS.map((area, i) => (
-              <Reveal key={area.slug} delay={i * 50}>
-                <Link href={`/expertise/${area.slug}`} className={styles.areaRow}>
-                  {effectiveLang === "zh" ? area.labelZh : area.label}
-                  <span>→</span>
-                </Link>
-              </Reveal>
-            ))}
-          </nav>
-        </div>
-      </section>
-
-      {/* 6. OUR PEOPLE */}
+      {/* 5. OUR PEOPLE */}
       <section className={`section ${styles.peopleSection}`}>
         <div className="container">
           <Reveal>
@@ -336,12 +255,20 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* 7. TEAM / WORKING PHOTO */}
+      {/* 6. WORKING PHOTO */}
       <div className={styles.teamPhoto}>
-        <PhotoPlaceholder label="TEAM PHOTOGRAPH or WORKING PHOTOGRAPH — wide (16:7 ratio)" className={styles.teamPhotoInner} />
+        <div className={styles.teamPhotoInner}>
+          <Image
+            src="/images/office/office-2.jpg"
+            alt="Lexcord Lawyers office"
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "center center" }}
+          />
+        </div>
       </div>
 
-      {/* 8. MELBOURNE & CROSS-BORDER */}
+      {/* 7. MELBOURNE & CROSS-BORDER */}
       <section className={`section ${styles.melbSection}`}>
         <div className={`container ${styles.melbInner}`}>
           <div className={styles.melbText}>
@@ -356,52 +283,20 @@ export function AboutContent() {
             ))}
           </div>
           <Reveal delay={100}>
-            <PhotoPlaceholder label="OFFICE EXTERIOR or CITY — portrait (4:3 ratio)" className={styles.melbPhoto} />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 9. OUR STANDARDS */}
-      <section className={`section ${styles.standardsSection}`}>
-        <div className="container">
-          <Reveal>
-            <div className={styles.standardsHead}>
-              <span className="eyebrow eyebrow--light">{c.standards.eyebrow}</span>
-              <h2 className={styles.standardsHeading}>{c.standards.heading}</h2>
-            </div>
-          </Reveal>
-          <Reveal>
-            <div className={styles.standardsGrid}>
-              {c.standards.items.map((item, i) => (
-                <div key={i} className={styles.standardsCol}>
-                  <h3 className={styles.standardsColTitle}>{item.title}</h3>
-                  <p className={styles.standardsColBody}>{item.body}</p>
-                </div>
-              ))}
+            <div className={styles.melbPhoto}>
+              <Image
+                src="/images/office/office-6.jpg"
+                alt="Melbourne CBD view from Lexcord office"
+                fill
+                sizes="(max-width: 860px) 100vw, 45vw"
+                style={{ objectFit: "cover", objectPosition: "center center" }}
+              />
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* 10. LEXCORD AT A GLANCE */}
-      <section className={`section ${styles.glanceSection}`}>
-        <div className="container">
-          <Reveal>
-            <div className={styles.glanceHead}>
-              <span className="eyebrow">{c.glance.eyebrow}</span>
-            </div>
-          </Reveal>
-          <Reveal>
-            <div className={styles.glanceGrid}>
-              {c.glance.items.map((item, i) => (
-                <div key={i} className={styles.glanceItem}>{item}</div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 11. CLOSING CTA */}
+      {/* 8. CLOSING CTA */}
       <section className={styles.aboutClosing}>
         <div className={`container ${styles.closingInner}`}>
           <div className={styles.closingText}>
@@ -422,7 +317,15 @@ export function AboutContent() {
             </Reveal>
           </div>
           <Reveal delay={120}>
-            <PhotoPlaceholder label="MEETING ROOM or OFFICE — landscape (4:3 ratio)" className={styles.closingPhoto} />
+            <div className={styles.closingPhoto}>
+              <Image
+                src="/images/office/office-7.jpg"
+                alt="Lexcord Lawyers"
+                fill
+                sizes="(max-width: 860px) 100vw, 35vw"
+                style={{ objectFit: "cover", objectPosition: "center center" }}
+              />
+            </div>
           </Reveal>
         </div>
       </section>
