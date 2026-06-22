@@ -17,6 +17,7 @@ import { ipZh } from "./ip";
 import { criminalZh } from "./criminal";
 import { notaryZh } from "./notary";
 import { migrationZh } from "./migration";
+import { ZH_TW } from "../zh-tw/index";
 import type { Lang } from "../../../lib/i18n";
 
 const EN: PracticeArea[] = [
@@ -43,6 +44,7 @@ const ZH: PracticeArea[] = [
 ];
 
 const zhBySlug = new Map(ZH.map((area) => [area.slug, area]));
+const zhTwBySlug = new Map(ZH_TW.map((area) => [area.slug, area]));
 
 export function getPracticeZh(slug: string): PracticeArea | undefined {
   return zhBySlug.get(slug);
@@ -54,12 +56,12 @@ export function localizedPractice(
   lang: Lang,
 ): PracticeArea {
   if (lang === "en") return enArea;
-  // zh-tw falls back to Simplified Chinese content (Traditional Chinese practice data pending)
+  if (lang === "zh-tw") return zhTwBySlug.get(enArea.slug) ?? enArea;
   return zhBySlug.get(enArea.slug) ?? enArea;
 }
 
 export const practiceAreasByLang: Record<Lang, PracticeArea[]> = {
   en: EN,
   zh: ZH,
-  "zh-tw": ZH,
+  "zh-tw": ZH_TW,
 };
