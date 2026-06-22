@@ -28,7 +28,7 @@ const OG_IMAGE = `${SITE_URL}/images/office/office-1.jpg`;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Lexcord Lawyers — Clear, Considered Legal Counsel Across Australia",
+    default: "Lexcord Melbourne | Commercial, Family, Migration & Property Law",
     template: "%s — Lexcord Lawyers",
   },
   description: SITE_DESCRIPTION,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_AU",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Lexcord Lawyers — Clear, Considered Legal Counsel Across Australia",
+    title: "Lexcord Melbourne | Commercial, Family, Migration & Property Law",
     description: SITE_DESCRIPTION,
     images: [{ url: OG_IMAGE, width: 1200, height: 800, alt: "Lexcord Lawyers Melbourne office" }],
   },
