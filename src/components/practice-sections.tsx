@@ -48,6 +48,46 @@ function PropertySitePlan() {
   );
 }
 
+/** Paired-document art for the family law "Different Issues, One Family" highlight section. */
+function FamilyLawSvg() {
+  return (
+    <svg viewBox="0 0 300 220" fill="none" aria-hidden="true" className={styles.highlightArt}>
+      {/* Left document — parenting / narrative paragraphs */}
+      <rect x="22" y="14" width="112" height="186" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="34" y1="36" x2="122" y2="36" stroke="currentColor" strokeWidth="0.72" />
+      <line x1="34" y1="47" x2="116" y2="47" stroke="currentColor" strokeWidth="0.72" />
+      <line x1="34" y1="68" x2="122" y2="68" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="78" x2="114" y2="78" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="88" x2="122" y2="88" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="108" x2="122" y2="108" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="118" x2="110" y2="118" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="138" x2="122" y2="138" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="148" x2="116" y2="148" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="158" x2="122" y2="158" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="178" x2="118" y2="178" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="34" y1="188" x2="106" y2="188" stroke="currentColor" strokeWidth="0.48" />
+      {/* Right document — property / schedule table */}
+      <rect x="166" y="14" width="112" height="186" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="178" y1="36" x2="266" y2="36" stroke="currentColor" strokeWidth="0.72" />
+      <line x1="178" y1="58" x2="266" y2="58" stroke="currentColor" strokeWidth="0.48" />
+      <line x1="216" y1="58" x2="216" y2="196" stroke="currentColor" strokeWidth="0.32" />
+      <line x1="178" y1="70" x2="266" y2="70" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="82" x2="266" y2="82" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="94" x2="266" y2="94" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="106" x2="266" y2="106" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="118" x2="266" y2="118" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="130" x2="266" y2="130" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="142" x2="266" y2="142" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="154" x2="266" y2="154" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="166" x2="266" y2="166" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="178" x2="266" y2="178" stroke="currentColor" strokeWidth="0.4" />
+      <line x1="178" y1="190" x2="266" y2="190" stroke="currentColor" strokeWidth="0.4" />
+      {/* Centre connector — same family, distinct frameworks */}
+      <line x1="134" y1="107" x2="166" y2="107" stroke="currentColor" strokeWidth="0.55" strokeDasharray="3 3" />
+    </svg>
+  );
+}
+
 /** Orthographic product-drawing art for the IP "Connected Commercial Advice" highlight section. */
 function IpTechnicalSvg() {
   return (
@@ -725,6 +765,7 @@ export function PracticeSections({ area: areaEn, areaZh }: PracticeSectionsProps
                : area.highlightVariant === "criminal" ? <CriminalBriefSvg />
                : area.highlightVariant === "wills" ? <WillsEstateSvg />
                : area.highlightVariant === "ip" ? <IpTechnicalSvg />
+               : area.highlightVariant === "family" ? <FamilyLawSvg />
                : <PropertySitePlan />}
             </div>
           </div>

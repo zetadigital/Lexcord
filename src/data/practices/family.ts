@@ -3,88 +3,139 @@ import type { PracticeArea } from "../types";
 export const family: PracticeArea = {
   slug: "family-law",
   navLabel: "Family Law",
-  heroEyebrow: "Family Law",
-  heroTitle: "Guiding families through difficult transitions",
-  bannerTitle: "Guiding families through difficult transitions",
+  heroEyebrow: "Expertise",
+  heroTitle: "Family Law",
   heroLede:
-    "When family matters become legal matters, you deserve a firm that balances expert advocacy with genuine compassion.",
+    "Clear, considered advice on separation, parenting, property and related family matters — with a focus on practical arrangements and informed decisions.",
 
-  introParagraphs: [
-    "When family matters escalate to the point where legal intervention becomes unavoidable, the path forward is rarely straightforward. Australian family law is intricate and deeply nuanced. Every decision carries weight, and a single misstep, often made in the absence of proper guidance, can mean forfeiting rights that should rightfully be yours.",
-    "At Lexcord Lawyers, we bring extensive experience and in-depth knowledge to this sensitive area of practice. We understand the critical moments — when to act, when to hold back, and how each decision can shape the outcome. Drawing on years of practical insight, we guide our clients through every interaction with their partner, ensuring that their legal rights are preserved at every turn.",
-    "Wherever possible, we work towards amicable resolutions, helping clients reach settlements with their former partners to avoid the emotional and financial toll of prolonged litigation. In matters where family, rights, and finances intersect, we strive to maintain a careful balance between all three, protecting what matters most, and helping our clients move forward.",
-  ],
+  seoTitle: "Family Lawyers Melbourne | Parenting, Property, Separation | Lexcord",
+  seoDescription:
+    "Lexcord provides clear family law advice on separation, parenting arrangements, property settlement, financial agreements and family violence matters in Victoria.",
 
-  servicesEyebrow: "Practice Area",
-  servicesHeading: "Every dimension of family law",
+  servicesEyebrow: "Family Law Services",
+  servicesHeading: "Advice for the decisions that follow separation",
   servicesIntro:
-    "Our practice covers the full spectrum of family law. From sensitive parenting disputes to complex financial matters across multiple jurisdictions.",
-  practiceNumbered: true,
+    "Family law matters may involve children, property, financial support and personal safety at the same time. We help clients understand the legal framework, identify immediate priorities and work towards arrangements that are clear and workable.",
+  practiceCardDot: true,
   services: [
     {
-      title: "Divorce & Separation",
-      body: "Navigating the legal dissolution of marriage, including the 12-month separation requirement and sole or joint applications under the Family Law Act 1975.",
+      title: "Separation and Divorce",
+      body: "Advice on separation, divorce applications, separation under one roof and the legal steps that may need to be addressed before or after a marriage ends.",
+    },
+    {
+      title: "Parenting Arrangements",
+      body: "Advice on parenting plans, consent orders and disputed parenting matters concerning where children live, time with each parent and other significant decisions affecting them.",
     },
     {
       title: "Property Settlement",
-      body: "Achieving fair division of assets, superannuation, and liabilities. We advise on the four-step court process and your 12-month window after divorce.",
+      body: "Advice on the division of property, liabilities, superannuation and financial resources following the breakdown of a marriage or de facto relationship.",
     },
     {
-      title: "Parenting Arrangement",
-      body: "Drafting parenting plans and consent orders that prioritise the best interests of your children — collaboratively or, where necessary, through the court.",
+      title: "Financial Agreements",
+      body: "Preparation, review and advice concerning binding financial agreements before, during or after a marriage or de facto relationship.",
     },
     {
-      title: "Family Violence Orders",
-      body: "Urgent intervention orders under the Family Violence Protection Act 2008 (Vic). We act quickly to ensure the safety of you and your children.",
+      title: "Child Support and Maintenance",
+      body: "Advice on child support assessments and agreements, adult child maintenance and spousal or de facto maintenance where financial support is in issue.",
     },
     {
-      title: "Child Support",
-      body: "Assistance with Child Support Agency assessments, private child support agreements, and variations where circumstances have changed.",
-    },
-    {
-      title: "De Facto Relationship",
-      body: "Establishing whether a de facto relationship legally exists is not always straightforward and the financial consequences can be significant.",
-    },
-    {
-      title: "Spousal Maintenance",
-      body: "Advising on eligibility, interim and final maintenance orders, and the factors the Federal Circuit and Family Court of Australia will consider.",
-    },
-    {
-      title: "Relocation & International",
-      body: "Matters involving relocation with children interstate or overseas, international child abduction, and the Hague Convention on parental rights.",
+      title: "Family Violence and Intervention Orders",
+      body: "Advice and representation in family violence intervention order proceedings, including applications, responses, interim orders and related family-law or criminal-law consequences.",
     },
   ],
+
+  approachEyebrow: "Our Approach",
+  approachHeading: "Clear advice before each decision is made",
+  approachBody:
+    "We begin by understanding the family circumstances and immediate concerns, then help the client determine which issues can be resolved by agreement and which may require formal steps.",
+  approachSteps: [
+    {
+      number: "01",
+      title: "Understand",
+      body: "We discuss the relationship history, children, financial position, safety concerns and any upcoming deadlines or court dates.",
+    },
+    {
+      number: "02",
+      title: "Prioritise",
+      body: "We identify the issues requiring immediate attention and explain the legal options, practical risks and information that may be needed.",
+    },
+    {
+      number: "03",
+      title: "Resolve",
+      body: "Where appropriate, we assist with negotiation, mediation and the preparation of agreements, parenting plans, consent orders or financial documents.",
+    },
+    {
+      number: "04",
+      title: "Represent",
+      body: "If agreement is not possible or urgent orders are required, we prepare the matter and represent the client through the relevant court process.",
+    },
+  ],
+
+  riskItemsEyebrow: "What Shapes the Advice",
+  riskItemsHeading: "Each issue affects the others",
+  riskItemsIntro:
+    "Parenting, property and financial issues are legally distinct, but the practical decisions made in one area may affect the family's wider arrangements.",
+  riskItems: [
+    {
+      title: "Children and routine",
+      body: "Parenting arrangements should consider the child's safety, age, relationships, schooling, care needs and the practical ability of each parent to implement the arrangement.",
+    },
+    {
+      title: "Property and disclosure",
+      body: "A property settlement requires an accurate understanding of assets, liabilities, superannuation, financial resources and relevant contributions made during and after the relationship.",
+    },
+    {
+      title: "Timing and deadlines",
+      body: "Different time limits may apply to divorce, property settlement, maintenance, appeals and court responses. Advice should be obtained before assuming that a claim can be delayed.",
+    },
+    {
+      title: "Safety and communication",
+      body: "Family violence, intervention orders and communication difficulties may affect how negotiations, changeovers, mediation and court proceedings should be managed.",
+    },
+  ],
+
+  highlightEyebrow: "Different Issues, One Family",
+  highlightHeading: "Parenting and property require different legal approaches",
+  highlightBody:
+    "The arrangements for children are determined under a different legal framework from property settlement and financial support. Although these issues often arise at the same time, each requires its own evidence, considerations and formal documentation. We help clients understand the distinction and coordinate the steps required across the broader matter.",
+  highlightVariant: "family",
+
+  complexMattersEyebrow: "Additional Family Matters",
+  complexMattersHeading: "Advice where the circumstances require more",
+  complexMatters: [
+    "De facto relationship status and eligibility",
+    "Separation under one roof",
+    "Divorce applications involving overseas marriages",
+    "Relocation with children",
+    "Recovery and location orders",
+    "International parenting disputes",
+    "Hague Convention matters",
+    "Contravention and enforcement applications",
+    "Urgent and interim parenting applications",
+    "Superannuation splitting",
+    "Disclosure and valuation issues",
+    "Asset preservation and injunctions",
+    "Consent orders",
+    "Binding financial agreements",
+    "Child support agreements and departure applications",
+    "Spousal and de facto maintenance",
+  ],
+
+  expertsSectionEyebrow: "Your Family Law Team",
+  expertsSectionHeading: "Start with a clear understanding of where you stand",
+  expertsSectionLede:
+    "Tell us what has changed, which issues require attention and whether any agreement, court date or urgent concern is already in place. We will help you understand the legal position and the practical next steps.",
+  expertsCta: "Book a consultation",
 
   processHeading: "",
+  faqEyebrow: "",
+  faqHeading: "",
+  faqIntro: "",
+  faqs: [],
 
-  faqEyebrow: "Q&A",
-  faqHeading: "Answer to what you are wondering",
-  faqIntro: "These are the questions we hear most often.",
-  faqSub: "These are the questions we hear most often",
-  faqAccordion: true,
-  faqs: [
-    {
-      q: "How long do I need to be separated before I can apply for divorce?",
-      a: "Under the Family Law Act 1975, you must have been separated for at least 12 months before you can apply for divorce. This period can include time you lived under the same roof, provided you can satisfy the court you were genuinely separated. If you have been married less than two years, you may also need to attempt counselling.",
-    },
-    {
-      q: "Do I have to go to court for property settlement?",
-      a: "No — the majority of property settlements are resolved by agreement and formalised through consent orders or a binding financial agreement (BFA), without any court appearance. We strongly encourage this approach as it is faster, less costly, and less adversarial. Court proceedings are generally a last resort.",
-    },
-    {
-      q: "Are de facto couples treated the same as married couples?",
-      a: "In most respects, yes. Victoria opted in to the federal property and maintenance regime for de facto couples under the Family Law Act. This means de facto partners (including same-sex couples) who separated after 1 March 2009 have essentially the same property and maintenance rights as married couples, subject to meeting eligibility criteria.",
-    },
-    {
-      q: "How much will my family law matter cost?",
-      a: "Costs depend significantly on the complexity of your matter and whether it resolves by agreement or proceeds to court. We provide a cost estimate at your initial consultation and offer fixed-fee arrangements for certain services. We are committed to costs transparency and will update you if the scope changes.",
-    },
-  ],
-
-  closingKicker: "Begin your journey",
-  closingTitle:
-    "If you're facing a family law matter, we're here to listen. {accent}Reach out for a confidential consultation today.{/accent}",
+  closingKicker: "Ready to proceed?",
+  closingTitle: "Family law {accent}consultation{/accent}",
   closingCta: "Book a consultation",
 
-  layout: ["intro", "practice", "experts", "news", "qa", "closing"],
+  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
 };
