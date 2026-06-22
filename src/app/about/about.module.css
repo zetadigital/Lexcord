@@ -606,11 +606,17 @@
 
   .melbInner {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* order must target the Reveal wrapper (direct grid child), not .melbPhoto inside it */
+  .melbInner > *:last-child {
+    order: -1;
   }
 
   .melbPhoto {
-    order: -1;
     aspect-ratio: 16 / 9;
+    min-height: 0;
   }
 }
 
