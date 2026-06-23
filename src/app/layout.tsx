@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { LanguageProvider } from "@/lib/i18n";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -116,6 +117,7 @@ export default function RootLayout({
           <SiteFooter />
           <FloatingCta />
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
