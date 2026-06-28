@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/lib/i18n";
+import { ThemeProvider, ANTI_FLASH_SCRIPT } from "@/lib/theme";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingCta } from "@/components/floating-cta";
@@ -109,21 +110,25 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={`${fraunces.variable} ${inter.variable}`}>
       <head>
+        {/* Anti-flash: apply saved/system theme before first paint */}
+        <script dangerouslySetInnerHTML={{ __html: ANTI_FLASH_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}
         />
       </head>
       <body>
-        <LanguageProvider>
-          <a href="#main" className="visually-hidden">
-            Skip to content
-          </a>
-          <SiteNav />
-          <main id="main">{children}</main>
-          <SiteFooter />
-          <FloatingCta />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <a href="#main" className="visually-hidden">
+              Skip to content
+            </a>
+            <SiteNav />
+            <main id="main">{children}</main>
+            <SiteFooter />
+            <FloatingCta />
+          </LanguageProvider>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -6,7 +6,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { practiceAreas } from "@/data/practices";
 import { useLang } from "@/lib/i18n";
+import { useTheme } from "@/lib/theme";
 import { LanguageToggle } from "./language-toggle";
+import { ThemeToggle } from "./theme-toggle";
 import styles from "./site-nav.module.css";
 
 const PHONE_DISPLAY = "+61 3 7054 5135";
@@ -30,6 +32,7 @@ export function SiteNav() {
   const [expOpen, setExpOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { t, areaLabel, lang } = useLang();
+  const { theme } = useTheme();
   const pathname = usePathname();
 
   function isActive(href: string) {
@@ -66,7 +69,10 @@ export function SiteNav() {
       {/* Utility bar: language (left), phone + book (right) */}
       <div className={styles.utility}>
         <div className={`container ${styles.utilityInner}`}>
-          <span className={styles.utilityLang}><LanguageToggle light={false} /></span>
+          <div className={styles.utilityLeft}>
+            <LanguageToggle light={false} />
+            <ThemeToggle />
+          </div>
           <div className={styles.utilityRight}>
             <a href={`tel:${PHONE_DIAL}`} className={styles.utilityPhone}>
               <PhoneIcon />
@@ -83,7 +89,7 @@ export function SiteNav() {
       <div className={`container ${styles.bar}`}>
         <Link href="/" className={styles.brand} aria-label="Lexcord Lawyers home">
           <Image
-            src="/images/brand/lexcord-navy.png"
+            src={theme === "dark" ? "/images/brand/lexcord-white.png" : "/images/brand/lexcord-navy.png"}
             alt="Lexcord Lawyers"
             width={176}
             height={63}
@@ -215,9 +221,10 @@ export function SiteNav() {
             ))}
           </nav>
 
-          {/* Language toggle below nav links */}
+          {/* Language + theme toggles below nav links */}
           <div className={styles.sheetLang}>
             <LanguageToggle light={false} />
+            <ThemeToggle />
           </div>
 
           <div className={styles.sheetFooter}>

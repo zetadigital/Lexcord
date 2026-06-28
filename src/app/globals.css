@@ -85,6 +85,48 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+/* ============================================================
+   Dark mode tokens
+   ============================================================ */
+
+[data-theme="dark"] {
+  /* Page surfaces */
+  --paper:   #0f1b2f;
+  --paper-2: #152234;
+  --card:    #182640;
+
+  /* Hairlines */
+  --hairline:        rgba(255, 255, 255, 0.07);
+  --hairline-strong: rgba(255, 255, 255, 0.13);
+
+  /* Text ramp */
+  --ink-900: #edf0f5;
+  --ink-700: #c4ccd8;
+  --ink-500: #8994a8;
+  --ink-400: #5f6a7c;
+
+  /* Semantic */
+  --bg:   var(--paper);
+  --text: var(--ink-900);
+
+  /* Eyebrow colours — need to be lighter on dark backgrounds */
+  --gold-600: #829abf;
+  --gold-500: #5d738f;
+
+  /* Glow-tint for subtle accent highlights */
+  --gold-soft: rgba(170, 195, 235, 0.06);
+
+  /* Shadows — deeper on dark */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.3), 0 12px 32px -12px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 2px 8px rgba(0, 0, 0, 0.4), 0 28px 56px -20px rgba(0, 0, 0, 0.65);
+}
+
+/* Headline accent — lighten on dark bg */
+[data-theme="dark"] .accent {
+  color: #7aa3d4;
+}
+
 /* ---- Reset ---- */
 *,
 *::before,
@@ -103,6 +145,15 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Smooth theme transition — only background + color so layout never reflows */
+html.theme-ready,
+html.theme-ready * {
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease !important;
 }
 
 body {
