@@ -44,6 +44,12 @@
   --muted: var(--ink-500);
   --accent: var(--navy-900);
 
+  /* ---- Foreground text tokens (theme-aware) ---- */
+  --fg:       var(--navy-900);
+  --fg-sub:   var(--navy-800);
+  --fg-muted: var(--navy-700);
+  --fg-link:  var(--navy-600);
+
   /* ---- Typography ---- */
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -113,6 +119,12 @@
   --gold-600: #829abf;
   --gold-500: #5d738f;
 
+  /* Foreground text tokens */
+  --fg:       var(--ink-900);
+  --fg-sub:   var(--ink-700);
+  --fg-muted: var(--ink-700);
+  --fg-link:  #829abf;
+
   /* Glow-tint for subtle accent highlights */
   --gold-soft: rgba(170, 195, 235, 0.06);
 
@@ -120,11 +132,6 @@
   --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.3), 0 12px 32px -12px rgba(0, 0, 0, 0.55);
   --shadow-lift: 0 2px 8px rgba(0, 0, 0, 0.4), 0 28px 56px -20px rgba(0, 0, 0, 0.65);
-}
-
-/* Headline accent — lighten on dark bg */
-[data-theme="dark"] .accent {
-  color: #7aa3d4;
 }
 
 /* ---- Reset ---- */
@@ -244,7 +251,7 @@ button {
 
 /* ---- Headline accent: subtle steel span (no gold) ---- */
 .accent {
-  color: var(--navy-600);
+  color: var(--fg-link);
 }
 
 .section-head {

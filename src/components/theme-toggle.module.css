@@ -7,7 +7,7 @@
   border-radius: 50%;
   border: 1px solid var(--hairline-strong);
   background: transparent;
-  color: var(--navy-900);
+  color: var(--fg);
   cursor: pointer;
   transition:
     background var(--dur-fast) var(--ease-out),
@@ -17,8 +17,8 @@
 
 .btn:hover {
   background: var(--gold-soft);
-  border-color: var(--navy-700);
-  color: var(--navy-700);
+  border-color: var(--fg-muted);
+  color: var(--fg-muted);
 }
 
 /* On dark-bg sections (light variant) */

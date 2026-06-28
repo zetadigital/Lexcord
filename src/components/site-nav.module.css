@@ -39,12 +39,12 @@
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--navy-900);
+  color: var(--fg);
   transition: color var(--dur-fast) var(--ease-out);
 }
 
 .utilityPhone:hover {
-  color: var(--navy-700);
+  color: var(--fg-muted);
 }
 
 .utilityBook {
@@ -52,14 +52,14 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--navy-900);
+  color: var(--fg);
   padding-left: 1.2rem;
   border-left: 1px solid var(--hairline-strong);
   transition: color var(--dur-fast) var(--ease-out);
 }
 
 .utilityBook:hover {
-  color: var(--navy-600);
+  color: var(--fg-link);
 }
 
 /* ---- Main bar ---- */
@@ -106,7 +106,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--navy-900);
+  color: var(--fg);
   background: transparent;
   border: 0;
   border-radius: var(--radius);
@@ -127,7 +127,7 @@
 }
 
 .navLink:hover {
-  color: var(--navy-700);
+  color: var(--fg-muted);
 }
 
 .navLink:hover::after {
@@ -135,7 +135,7 @@
 }
 
 .active {
-  color: var(--navy-900);
+  color: var(--fg);
 }
 
 .active::after {
@@ -323,7 +323,7 @@
   background: transparent;
   border: 0;
   padding: 0;
-  color: var(--navy-900);
+  color: var(--fg);
   cursor: pointer;
   border-radius: var(--radius);
   transition: background var(--dur-fast) var(--ease-out);
@@ -401,7 +401,7 @@
     background: transparent;
     border: 1.5px solid var(--hairline-strong);
     border-radius: 50%;
-    color: var(--navy-900);
+    color: var(--fg);
     cursor: pointer;
     transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
   }
@@ -409,7 +409,7 @@
   .sheetClose:hover {
     background: var(--navy-900);
     color: #fff;
-    border-color: var(--navy-900);
+    border-color: var(--fg);
   }
 
   /* Nav links */
@@ -426,7 +426,7 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.01em;
-    color: var(--navy-900);
+    color: var(--fg);
     text-decoration: none;
     padding: 0.55rem 0;
     border-bottom: 1px solid var(--hairline);
@@ -474,7 +474,7 @@
   }
 
   a.sheetContactRow:hover {
-    color: var(--navy-900);
+    color: var(--fg);
   }
 
   .sheetContactRow svg {

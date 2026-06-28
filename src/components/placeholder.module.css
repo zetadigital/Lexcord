@@ -43,7 +43,7 @@
 
 .text--light .tag {
   background: var(--gold-500);
-  color: var(--navy-950);
+  color: var(--fg);
 }
 
 /* ---- Image / media placeholder ---- */

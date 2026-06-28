@@ -82,7 +82,7 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  color: var(--navy-950);
+  color: var(--fg);
   margin-bottom: 0.6rem;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .cardCta:hover {
-  color: var(--navy-900);
+  color: var(--fg);
   gap: 0.65rem;
 }
 

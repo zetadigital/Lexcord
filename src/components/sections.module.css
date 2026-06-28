@@ -336,7 +336,7 @@
   place-items: center;
   border-radius: 50%;
   background: var(--amber);
-  color: var(--navy-950);
+  color: var(--fg);
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.95rem;
@@ -991,7 +991,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--navy-800);
+  color: var(--fg-sub);
   margin-bottom: 1.1rem;
 }
 
@@ -999,7 +999,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 1.4rem + 3.2vw, 3.8rem);
   font-weight: 600;
-  color: var(--navy-900);
+  color: var(--fg);
   letter-spacing: -0.025em;
   line-height: 1.05;
   text-wrap: balance;
@@ -1038,7 +1038,7 @@
 .introHeading {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
-  color: var(--navy-900);
+  color: var(--fg);
   letter-spacing: -0.02em;
   line-height: 1.12;
   margin-bottom: clamp(1.2rem, 0.8rem + 1.5vw, 1.8rem);
@@ -1051,7 +1051,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 0.95rem + 1.4vw, 1.75rem);
   line-height: 1.36;
-  color: var(--navy-700);
+  color: var(--fg-muted);
   font-style: italic;
   font-weight: 400;
   padding-left: clamp(1.4rem, 1rem + 1.5vw, 2.2rem);
@@ -1097,7 +1097,7 @@
 .coreServicesHeading {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
-  color: var(--navy-900);
+  color: var(--fg);
   letter-spacing: -0.02em;
   margin-top: 0.8rem;
   text-wrap: balance;
@@ -1123,7 +1123,7 @@
   font-family: var(--font-display);
   font-size: 2.6rem;
   font-weight: 300;
-  color: var(--navy-600);
+  color: var(--fg-link);
   line-height: 1;
   letter-spacing: -0.03em;
 }
@@ -1137,7 +1137,7 @@
 .coreCardTitle {
   font-size: var(--text-lg);
   font-weight: 600;
-  color: var(--navy-900);
+  color: var(--fg);
   line-height: 1.25;
   margin-bottom: 0.9rem;
   text-wrap: balance;
@@ -1172,7 +1172,7 @@
   content: "—";
   position: absolute;
   left: 0;
-  color: var(--navy-600);
+  color: var(--fg-link);
   font-size: 0.8rem;
 }
 
@@ -1182,7 +1182,7 @@
   border-top: 1px solid var(--hairline);
   font-size: 0.82rem;
   font-style: italic;
-  color: var(--navy-700);
+  color: var(--fg-muted);
   font-weight: 500;
   line-height: 1.5;
 }
@@ -1308,7 +1308,7 @@
 .artJrHeading {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
-  color: var(--navy-900);
+  color: var(--fg);
   letter-spacing: -0.02em;
   margin-top: 0.7rem;
   margin-bottom: 0.9rem;
@@ -1336,7 +1336,7 @@
 .artJrColTitle {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  color: var(--navy-900);
+  color: var(--fg);
   font-weight: 600;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid var(--navy-800);
@@ -1361,7 +1361,7 @@
   border-radius: var(--radius);
   border-left: 3px solid var(--navy-700);
   font-size: 0.91rem;
-  color: var(--navy-800);
+  color: var(--fg-sub);
   font-style: italic;
   line-height: 1.55;
 }
@@ -1419,7 +1419,7 @@
   font-family: var(--font-display);
   font-size: 0.95rem;
   letter-spacing: 0.04em;
-  color: var(--navy-600);
+  color: var(--fg-link);
 }
 
 .cardGapTitle {
@@ -1471,7 +1471,7 @@
 .whyCardTitle {
   font-size: var(--text-lg);
   font-weight: 600;
-  color: var(--navy-900);
+  color: var(--fg);
   margin-bottom: 0.65rem;
   line-height: 1.25;
 }
@@ -1524,7 +1524,7 @@
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 460;
-  color: var(--navy-900);
+  color: var(--fg);
   margin-top: 1rem;
   line-height: 1.1;
   text-wrap: balance;
@@ -1557,7 +1557,7 @@
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 460;
-  color: var(--navy-900);
+  color: var(--fg);
   line-height: 1.22;
   margin-bottom: 0.55rem;
 }
@@ -1609,7 +1609,7 @@
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 460;
-  color: var(--navy-900);
+  color: var(--fg);
   margin-top: 1rem;
   line-height: 1.1;
   text-wrap: balance;
@@ -1635,7 +1635,7 @@
   width: 100%;
   max-width: 380px;
   opacity: 0.2;
-  color: var(--navy-900);
+  color: var(--fg);
 }
 
 @media (max-width: 860px) {
@@ -1680,7 +1680,7 @@
 
 .complexItemText {
   font-size: var(--text-base);
-  color: var(--navy-800);
+  color: var(--fg-sub);
   line-height: 1.5;
 }
 

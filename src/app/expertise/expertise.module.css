@@ -13,7 +13,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 1.4rem + 4.5vw, 5.5rem);
   font-weight: 700;
-  color: var(--navy-900);
+  color: var(--fg);
   line-height: 0.92;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -113,7 +113,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 0.95rem + 0.8vw, 1.4rem);
   font-weight: 600;
-  color: var(--navy-900);
+  color: var(--fg);
   line-height: 1.2;
   letter-spacing: -0.015em;
 }
@@ -143,7 +143,7 @@
 
 .cardLink:hover .cardCta {
   gap: 0.65rem;
-  color: var(--navy-900);
+  color: var(--fg);
 }
 
 /* ── Responsive ── */

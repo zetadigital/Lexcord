@@ -24,7 +24,7 @@
   font-size: clamp(2.4rem, 1.5rem + 3.8vw, 4.6rem);
   line-height: 1.06;
   letter-spacing: -0.025em;
-  color: var(--navy-900);
+  color: var(--fg);
   text-wrap: balance;
   margin-top: 0.9rem;
 }
@@ -74,7 +74,7 @@
   font-size: clamp(2rem, 1.3rem + 3.3vw, 4rem);
   line-height: 1.06;
   letter-spacing: -0.02em;
-  color: var(--navy-900);
+  color: var(--fg);
   text-wrap: balance;
   margin-top: 1rem;
 }
@@ -164,7 +164,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 1rem + 0.9vw, 1.7rem);
   font-weight: 500;
-  color: var(--navy-900);
+  color: var(--fg);
   line-height: var(--leading-snug);
   margin-bottom: 1.1rem;
 }
@@ -217,7 +217,7 @@
 
 .practiceHeading {
   font-size: var(--text-2xl);
-  color: var(--navy-900);
+  color: var(--fg);
   margin-top: 1rem;
   text-wrap: balance;
 }
@@ -238,14 +238,14 @@
   margin-top: 1.5rem;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--navy-700);
+  color: var(--fg-muted);
   text-decoration: none;
   letter-spacing: 0.01em;
   transition: color var(--dur-fast) var(--ease-out), gap var(--dur-fast) var(--ease-out);
 }
 
 .practiceLink:hover {
-  color: var(--navy-900);
+  color: var(--fg);
   gap: 0.65rem;
 }
 
@@ -269,7 +269,7 @@
 }
 
 .areaRow:hover {
-  color: var(--navy-900);
+  color: var(--fg);
 }
 
 .areaRow span {
@@ -280,7 +280,7 @@
 }
 
 .areaRow:hover span {
-  color: var(--navy-700);
+  color: var(--fg-muted);
   transform: translateX(3px);
 }
 
@@ -332,14 +332,14 @@
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 500;
-  color: var(--navy-800);
+  color: var(--fg-sub);
 }
 
 .personName {
   font-family: var(--font-display);
   font-size: clamp(1rem, 0.85rem + 0.6vw, 1.18rem);
   font-weight: 500;
-  color: var(--navy-900);
+  color: var(--fg);
   line-height: 1.2;
 }
 
@@ -359,13 +359,13 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--navy-700);
+  color: var(--fg-muted);
   text-decoration: none;
   transition: color var(--dur-fast) var(--ease-out), gap var(--dur-fast) var(--ease-out);
 }
 
 .personProfileLink:hover {
-  color: var(--navy-900);
+  color: var(--fg);
   gap: 0.5rem;
 }
 
@@ -376,14 +376,14 @@
   margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--navy-700);
+  color: var(--fg-muted);
   text-decoration: none;
   letter-spacing: 0.01em;
   transition: color var(--dur-fast) var(--ease-out), gap var(--dur-fast) var(--ease-out);
 }
 
 .peopleSeeAll:hover {
-  color: var(--navy-900);
+  color: var(--fg);
   gap: 0.65rem;
 }
 
@@ -419,7 +419,7 @@
 
 .melbHeading {
   font-size: var(--text-2xl);
-  color: var(--navy-900);
+  color: var(--fg);
   margin-top: 1rem;
   text-wrap: balance;
 }

@@ -11,7 +11,7 @@
   font-size: var(--text-3xl);
   margin-top: 0;
   max-width: 16ch;
-  color: var(--navy-900);
+  color: var(--fg);
 }
 
 .introLede {
@@ -66,7 +66,7 @@
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 500;
-  color: var(--navy-800);
+  color: var(--fg-sub);
   letter-spacing: 0.02em;
 }
 
@@ -114,14 +114,14 @@
 }
 
 .nameLink:hover .name {
-  color: var(--navy-900);
+  color: var(--fg);
 }
 
 .role {
   margin-top: 0.2rem;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--navy-950);
+  color: var(--fg);
   letter-spacing: 0;
   text-transform: none;
 }
@@ -138,7 +138,7 @@
 }
 
 a.metaRow:hover {
-  color: var(--navy-800);
+  color: var(--fg-sub);
 }
 
 .metaRow svg {
@@ -255,7 +255,7 @@ a.metaRow:hover {
   font-family: var(--font-display);
   font-size: 3.4rem;
   font-weight: 500;
-  color: var(--navy-800);
+  color: var(--fg-sub);
 }
 
 .contactCard {
@@ -281,7 +281,7 @@ a.metaRow:hover {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--navy-600);
+  color: var(--fg-link);
 }
 
 .contactVal {
@@ -291,7 +291,7 @@ a.metaRow:hover {
 }
 
 .contactVal a:hover {
-  color: var(--navy-700);
+  color: var(--fg-muted);
 }
 
 .railCta {
@@ -308,7 +308,7 @@ a.metaRow:hover {
   font-size: 0.88rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--navy-600);
+  color: var(--fg-link);
   padding-bottom: 0.8rem;
   border-bottom: 1px solid var(--hairline-strong);
   margin-bottom: 1.4rem;
@@ -340,7 +340,7 @@ a.metaRow:hover {
 .qual svg {
   flex: none;
   margin-top: 4px;
-  color: var(--navy-700);
+  color: var(--fg-muted);
 }
 
 .areaTags {
@@ -359,8 +359,8 @@ a.metaRow:hover {
 }
 
 .areaTag:hover {
-  border-color: var(--navy-600);
-  color: var(--navy-700);
+  border-color: var(--fg-link);
+  color: var(--fg-muted);
 }
 
 @media (max-width: 1000px) {
