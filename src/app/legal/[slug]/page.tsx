@@ -31,7 +31,11 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const meta = META[params.slug];
   if (!meta) return {};
-  return { title: meta.title, description: meta.description };
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: { canonical: `https://lexcord.com.au/legal/${params.slug}` },
+  };
 }
 
 export default function LegalPage({ params }: { params: { slug: string } }) {
