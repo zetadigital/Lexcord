@@ -147,9 +147,9 @@ export const team: TeamMember[] = [
   {
     slug: "elijah-feng",
     name: "Elijah Feng",
-    role: "Director & Solicitor",
-    roleZh: "董事兼律师",
-    roleZhTw: "董事兼律師",
+    role: "Principal Solicitor",
+    roleZh: "主任律师",
+    roleZhTw: "主任律師",
     specialty: "Migration, Property & Business",
     specialtyZh: "移民、房产与商业",
     specialtyZhTw: "移民、房產與商業",
