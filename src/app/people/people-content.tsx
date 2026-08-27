@@ -35,7 +35,7 @@ export function PeopleContent() {
       <section className={`section ${styles.listSection}`}>
         <div className="container">
           <div className={styles.grid}>
-            {team.map((member) => {
+            {team.filter((m) => !m.placeholder).map((member) => {
               const role = lang !== "en" ? member.roleZh : member.role;
               const specialty = lang !== "en" ? member.specialtyZh : member.specialty;
               return (

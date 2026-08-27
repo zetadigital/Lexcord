@@ -350,6 +350,7 @@ export const team: TeamMember[] = [
   },
   {
     slug: "taylor-zhang",
+    placeholder: true,
     name: "Taylor Zhang",
     role: "Paralegal",
     roleZh: "律师助理",

@@ -4,7 +4,7 @@ import { team, getMember } from "@/data/people";
 import { PersonDetail } from "./person-detail";
 
 export function generateStaticParams() {
-  return team.map((m) => ({ slug: m.slug }));
+  return team.filter((m) => !m.placeholder).map((m) => ({ slug: m.slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
