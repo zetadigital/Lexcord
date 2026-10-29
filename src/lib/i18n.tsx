@@ -20,6 +20,7 @@ interface Dictionary {
     about: string;
     contact: string;
     book: string;
+    getStarted: string;
     firm: string;
     panelHeadline: string;
     panelBlurb: string;
@@ -148,6 +149,7 @@ const DICT: Record<Lang, Dictionary> = {
       about: "About",
       contact: "Contact",
       book: "Book a consultation",
+      getStarted: "Get started",
       firm: "Firm",
       panelHeadline: "Every area, one standard of care",
       panelBlurb:
@@ -357,6 +359,7 @@ const DICT: Record<Lang, Dictionary> = {
       about: "关于我们",
       contact: "联系我们",
       book: "预约咨询",
+      getStarted: "立即开始",
       firm: "律所",
       panelHeadline: "每一个领域，同一份用心",
       panelBlurb: "为企业、个人与家庭提供深思熟虑、切实可行的法律意见——每一件事务都亲力亲为，用心处理。",
@@ -569,6 +572,7 @@ const DICT: Record<Lang, Dictionary> = {
       about: "關於我們",
       contact: "聯絡我們",
       book: "預約諮詢",
+      getStarted: "立即開始",
       firm: "律所",
       panelHeadline: "每一個領域，同一份用心",
       panelBlurb: "為企業、個人與家庭提供深思熟慮、切實可行的法律意見——每一件事務都親力親為，用心處理。",
