@@ -4,12 +4,29 @@ import Link from "next/link";
 import Image from "next/image";
 import type { PracticeArea } from "@/data/types";
 import { team } from "@/data/people";
+import { INTAKE_TARGETS } from "@/data/intake";
 import { renderAccent } from "@/lib/accent";
 import { useLang } from "@/lib/i18n";
 import { Reveal } from "./reveal";
 import { Accordion } from "./accordion";
 import { PlaceholderText, PlaceholderImage } from "./placeholder";
 import styles from "./sections.module.css";
+
+/** Form / questionnaire glyph for the online-intake CTA button. */
+function IntakeFormIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true">
+      <path
+        d="M13.9 3H7.4A1.7 1.7 0 0 0 5.7 4.7v14.6A1.7 1.7 0 0 0 7.4 21h9.2a1.7 1.7 0 0 0 1.7-1.7V7.4L13.9 3z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path d="M13.7 3.2v4.3h4.4" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <path d="M8.9 12.5h6.2M8.9 16h4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 /** Architectural site-plan line art for the "More Than Settlement" highlight section. */
 function PropertySitePlan() {
@@ -386,6 +403,10 @@ export function PracticeSections({ area: areaEn, areaZh, areaZhTw }: PracticeSec
 
   const layout = area.layout ?? ["practice", "news", "experts", "closing"];
   const bannerPhoto = BANNER_PHOTOS[areaEn.slug];
+  // Hoisted so the JSX below reads from a narrowed local rather than relying
+  // on property narrowing through `area`.
+  const intake = area.intake;
+  const intakeTarget: typeof INTAKE_TARGETS[string] | undefined = INTAKE_TARGETS[areaEn.slug];
 
   const blocks: Record<string, JSX.Element | null> = {
     intro: area.introParagraphs?.length ? (
@@ -850,6 +871,43 @@ export function PracticeSections({ area: areaEn, areaZh, areaZhTw }: PracticeSec
                : <PropertySitePlan />}
             </div>
           </div>
+        </div>
+      </section>
+    ) : null,
+
+    intake: (intake && intakeTarget) ? (
+      <section key="intake" className={styles.intakeSection} aria-labelledby="intake-heading">
+        <div className="container">
+          <Reveal className={styles.intakePanel} as="div">
+            <h2 id="intake-heading" className={styles.intakeHeading}>
+              {renderAccent(intake.heading)}
+            </h2>
+
+            <div className={styles.intakeHalo}>
+              <div className={styles.intakeFrame}>
+                <Image
+                  src={intakeTarget.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1000px) 190px, 220px"
+                  style={intakeTarget.focus ? { objectPosition: intakeTarget.focus } : undefined}
+                />
+              </div>
+            </div>
+
+            <div className={styles.intakeAction}>
+              <p className={styles.intakeBody}>{intake.body}</p>
+              <a
+                className={styles.intakeBtn}
+                href={intakeTarget.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IntakeFormIcon />
+                {intake.cta}
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
     ) : null,

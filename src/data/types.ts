@@ -75,6 +75,20 @@ export interface ArtJrBlock {
   footer: string;
 }
 
+/**
+ * Inline CTA panel pointing at the practice area's online intake questionnaire.
+ * The URL and image live in `data/intake.ts` (slug-keyed); only the copy is
+ * translated, so each language mirror carries just these three strings.
+ */
+export interface IntakeBlock {
+  /** Headline. Supports {accent} markers. */
+  heading: string;
+  /** Short supporting line shown above the button. */
+  body: string;
+  /** Button label. */
+  cta: string;
+}
+
 /** A collapsible accordion section (why-choose / Q&A). */
 export interface AccordionBlock {
   eyebrow: string;
@@ -98,7 +112,8 @@ export type PracticeBlock =
   | "riskItems"
   | "highlight"
   | "complexMatters"
-  | "notaryColumns";
+  | "notaryColumns"
+  | "intake";
 
 /** A concise risk / key-consideration item (used in the riskItems block). */
 export interface RiskItem {
@@ -224,6 +239,9 @@ export interface PracticeArea {
   notaryColumnsIntro?: string;
   notaryColumns?: NotaryColumnItem[];
   notaryColumnsNote?: string;
+
+  /** Online intake CTA panel. Only renders when data/intake.ts has an entry for the slug. */
+  intake?: IntakeBlock;
 
   /** Specific placeholder article titles for the Related Insights news block. */
   newsPlaceholders?: string[];

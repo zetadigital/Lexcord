@@ -133,5 +133,11 @@ export const estateZhTw: PracticeArea = {
   closingTitle: "遺囑與遺產{accent}諮詢{/accent}",
   closingCta: "預約諮詢",
 
-  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
+  intake: {
+    heading: "妥善安排您的遺囑與財產，可以{accent}清晰而從容{/accent}。",
+    body: "填寫我們免費、無義務的線上問卷。",
+    cta: "線上開始",
+  },
+
+  layout: ["practice", "approach", "intake", "riskItems", "highlight", "complexMatters", "experts"],
 };

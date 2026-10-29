@@ -1865,3 +1865,174 @@
   max-width: 52ch;
   text-wrap: pretty;
 }
+
+/* ============================================================
+   Intake block — online questionnaire CTA panel
+   A tinted field (not a white content card) so it reads as a
+   distinct "act now" zone between two content sections. All
+   colours come from theme-aware tokens, so it inverts cleanly
+   in dark mode without a [data-theme] override.
+   ============================================================ */
+
+.intakeSection {
+  /* Tighter than a full section: the panel carries its own breathing room. */
+  padding-block: clamp(2.25rem, 1.25rem + 4vw, 4.5rem);
+}
+
+.intakePanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) auto minmax(0, 1fr);
+  grid-template-areas: "heading media action";
+  align-items: center;
+  gap: clamp(1.25rem, 0.5rem + 2.25vw, 2.75rem);
+  padding: clamp(1.4rem, 1rem + 1.2vw, 2rem) clamp(1.5rem, 0.75rem + 2.5vw, 3rem);
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+}
+
+.intakeHeading {
+  grid-area: heading;
+  font-size: clamp(1.45rem, 1.1rem + 1.35vw, 2.1rem);
+  line-height: 1.14;
+  text-wrap: balance;
+  margin: 0;
+}
+
+/* --- Circular image, on a pale disc that lifts it off the tinted field --- */
+
+.intakeHalo {
+  grid-area: media;
+  display: grid;
+  place-items: center;
+  width: clamp(10.5rem, 8rem + 7vw, 14rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--card);
+}
+
+.intakeFrame {
+  position: relative;
+  width: 87%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.intakeFrame img {
+  object-fit: cover;
+}
+
+/* --- Supporting line + button --- */
+
+.intakeAction {
+  grid-area: action;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1rem, 0.75rem + 0.8vw, 1.5rem);
+}
+
+.intakeBody {
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--ink-700);
+  max-width: min(26ch, 100%);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.intakeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  /* --fg / --paper invert together, so the pill stays the panel's darkest
+     element on light and its lightest on dark. */
+  background: var(--fg);
+  color: var(--paper);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px -14px rgba(19, 33, 61, 0.8);
+  transition: background-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.intakeBtn:hover {
+  background: var(--fg-sub);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -14px rgba(19, 33, 61, 0.7);
+}
+
+.intakeBtn:active {
+  transform: translateY(1px);
+}
+
+.intakeBtn svg {
+  flex: none;
+}
+
+/* --- Tablet: image moves to the left, copy stacks beside it --- */
+
+@media (max-width: 1000px) {
+  .intakePanel {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "media heading"
+      "media action";
+    column-gap: clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem);
+    row-gap: clamp(0.9rem, 0.6rem + 1vw, 1.4rem);
+  }
+
+  .intakeHalo {
+    width: clamp(9rem, 5rem + 14vw, 12rem);
+  }
+}
+
+/* --- Narrow: one centred column, image leading --- */
+
+@media (max-width: 680px) {
+  .intakePanel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "media"
+      "heading"
+      "action";
+    justify-items: center;
+    text-align: center;
+    row-gap: clamp(1.1rem, 0.9rem + 1vw, 1.6rem);
+    padding-block: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
+  }
+
+  .intakeHalo {
+    width: clamp(8.5rem, 5rem + 18vw, 11rem);
+  }
+
+  .intakeHeading {
+    max-width: min(20ch, 100%);
+  }
+
+  .intakeAction {
+    align-items: center;
+  }
+
+  .intakeBody {
+    max-width: min(34ch, 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intakeBtn {
+    transition: background-color var(--dur-fast) linear;
+  }
+
+  .intakeBtn:hover,
+  .intakeBtn:active {
+    transform: none;
+  }
+}

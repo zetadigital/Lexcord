@@ -4,17 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLang } from "@/lib/i18n";
+import { INTAKE_TARGETS } from "@/data/intake";
 import styles from "./floating-cta.module.css";
-
-/**
- * Practice areas with their own online intake flow (Settify). On these pages the
- * floating CTA sends the visitor straight into the questionnaire instead of the
- * generic "book a consultation" contact form.
- */
-const INTAKE_URLS: Record<string, string> = {
-  "/expertise/family-law": "https://lexcord.app.settify.com.au/v2/client/family",
-  "/expertise/wills-estates": "https://lexcord.app.settify.com.au/v2/client/wills",
-};
 
 export function FloatingCta() {
   const [visible, setVisible] = useState(false);
@@ -31,7 +22,12 @@ export function FloatingCta() {
   // Redundant on the contact page itself.
   if (pathname === "/contact") return null;
 
-  const intakeUrl = pathname ? INTAKE_URLS[pathname] : undefined;
+  // On a practice area with its own online intake flow, the FAB sends the
+  // visitor straight into the questionnaire instead of the contact form.
+  const areaSlug = pathname?.startsWith("/expertise/")
+    ? pathname.slice("/expertise/".length)
+    : undefined;
+  const intakeUrl = areaSlug ? INTAKE_TARGETS[areaSlug]?.href : undefined;
   const label = intakeUrl ? t.nav.getStarted : t.nav.book;
 
   const className = `${styles.fab} ${visible ? styles.visible : ""}`;

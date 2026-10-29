@@ -137,5 +137,11 @@ export const familyZhTw: PracticeArea = {
   closingTitle: "家庭法{accent}諮詢{/accent}",
   closingCta: "預約諮詢",
 
-  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
+  intake: {
+    heading: "我們相信，分居與離婚也可以{accent}平和而清晰地{/accent}處理。",
+    body: "填寫我們免費、無義務的線上問卷。",
+    cta: "線上開始",
+  },
+
+  layout: ["practice", "approach", "intake", "riskItems", "highlight", "complexMatters", "experts"],
 };

@@ -133,5 +133,11 @@ export const estate: PracticeArea = {
   closingTitle: "Wills and estates {accent}consultation{/accent}",
   closingCta: "Book a consultation",
 
-  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
+  intake: {
+    heading: "Putting your affairs in order can be {accent}clear and unhurried{/accent}.",
+    body: "Complete our free, no-obligation questionnaire.",
+    cta: "Get started online",
+  },
+
+  layout: ["practice", "approach", "intake", "riskItems", "highlight", "complexMatters", "experts"],
 };

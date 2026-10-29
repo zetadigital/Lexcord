@@ -133,5 +133,11 @@ export const estateZh: PracticeArea = {
   closingTitle: "遗嘱与遗产{accent}咨询{/accent}",
   closingCta: "预约咨询",
 
-  layout: ["practice", "approach", "riskItems", "highlight", "complexMatters", "experts"],
+  intake: {
+    heading: "妥善安排您的遗嘱与财产，可以{accent}清晰而从容{/accent}。",
+    body: "填写我们免费、无义务的在线问卷。",
+    cta: "在线开始",
+  },
+
+  layout: ["practice", "approach", "intake", "riskItems", "highlight", "complexMatters", "experts"],
 };
