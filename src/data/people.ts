@@ -163,7 +163,6 @@ export const team: TeamMember[] = [
       "Bachelor of Computer Science — Monash University",
       "Solicitor of the Supreme Court of Victoria",
       "Solicitor of the High Court of Australia",
-      "Registered Migration Agent (Australia)",
       "Immigration Adviser (New Zealand)",
     ],
     qualificationsZh: [
@@ -172,7 +171,6 @@ export const team: TeamMember[] = [
       "计算机科学学士 — 蒙纳士大学",
       "维多利亚州最高法院律师",
       "澳大利亚高等法院律师",
-      "澳大利亚注册移民代理",
       "新西兰注册移民顾问",
     ],
     qualificationsZhTw: [
@@ -181,7 +179,6 @@ export const team: TeamMember[] = [
       "電腦科學學士 — 蒙納士大學",
       "維多利亞州最高法院律師",
       "澳大利亞高等法院律師",
-      "澳大利亞注冊移民代理",
       "新西蘭注冊移民顧問",
     ],
     memberships: [
