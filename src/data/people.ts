@@ -154,7 +154,7 @@ export const team: TeamMember[] = [
     specialtyZh: "移民、房产与商业",
     specialtyZhTw: "移民、房產與商業",
     photo: "/images/team/elijah-feng.png",
-    areas: ["migration-law", "property-law", "conveyancing", "commercial"],
+    areas: ["migration-law", "property-law", "conveyancing", "commercial", "wills-estates"],
     email: "elijah.feng@lexcord.com.au",
     phone: FIRM_PHONE,
     qualifications: [
